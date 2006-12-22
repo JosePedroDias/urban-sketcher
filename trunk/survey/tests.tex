@@ -1,0 +1,87 @@
+\section{Tests}
+
+\subsection{Colors and URLs}
+Let's write in red from \textcolor{red}{now on}.\\
+We can put a \colorbox{cyan}{color box} too.\\
+This is an url: \url{http://urbansketcher.blogspot.com}
+
+\subsection{Footnote}
+This is an important cryptic subject\footnote{and this is its explanation}.
+
+\subsection{Bulleted List}
+\begin{itemize}
+	\item first
+	\item second
+	\item third
+\end{itemize}
+
+\subsection{Numbered List}
+\begin{enumerate}
+	\item foo
+	\item bar
+	\item baz
+\end{enumerate}
+
+\subsection{Columns}
+\begin{tabbing}
+	COLUMN1	\=COLUMN2	\=COLUMN3\\
+	Col1	\>Col2		\>Col3\\
+	Col1	\>Col2		\>Col3
+\end{tabbing}
+
+\subsection{Tables}
+
+% l, c, r defines a column and its horizontal formatting
+% | for a line between columns
+% \hline for a ruler between rows
+% & separates cells in the same row
+% valores no float:
+%	h - here
+%	t - ?
+%	p - ?
+%	b - ?
+\begin{table}[htpb]
+	\begin{tabular}{|c||cc|}
+		\hline
+		one & two & three \\
+		\hline\hline
+		four & five & six\\
+		seven & eight & nine\\
+		\hline
+	\end{tabular}
+	\caption{table with a caption}
+	\label{lTable1}
+\end{table}
+
+\begin{table}[htpb]
+	\begin{tabular}{|l|c|r|}
+		\hline
+		one & \multicolumn{2}{c|}{two \& three} \\
+		\hline
+		four & five & six\\
+		seven & eight & nine\\
+		\hline
+	\end{tabular}
+	\caption{another table with a caption}
+\end{table}
+
+Let's reference the first table \ref{lTable1} now
+
+\subsection{References}
+Here's a reference \cite{liu01smart}
+
+\subsection{Images}
+\begin{figure}[htb]
+	\centering
+	\includegraphics{gfx/tux.png}
+	\caption{Tux, the Linux mascot}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[scale=0.5]{gfx/platypus.jpg}
+	\caption{A platypus}
+\end{figure}
+
+%\subsection{Using the Glossary}
+%\glossary{EPS}{Encapsulated PostScript}

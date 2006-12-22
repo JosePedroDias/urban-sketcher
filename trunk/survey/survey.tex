@@ -1,0 +1,88 @@
+\documentclass[a4paper,12pt,titlepage]{article}
+\usepackage{geometry}       % allows changing page dimensions
+\geometry{a4paper,left=2cm,right=2cm,top=2.5cm,bottom=2cm}
+\usepackage[latin1]{inputenc}   % support the pt encoding
+\usepackage{graphicx}       % support graphic files
+\usepackage{color}          % should allow colored text
+\usepackage{url}            % should identify and format urls
+\usepackage{natbib}         % pretty bibtex
+\usepackage{enumerate}			% allows enumerations a)... I..., 1... etc.
+
+% CONSTRUCTIVE CRITICISM
+% too much the's and a's
+% too long sentences
+%
+% TODO
+% - ABSTRACT
+%   ok
+% - INTRODUCTION
+%   ok
+% - PROBLEM
+%   done, not too cool
+% - APPROACHES
+%   67%
+% - COMPARATIVE ANALYSIS
+%   0%
+% - CONCLUSIONS
+%   0%
+% - add comparative table
+% - IST logo @ title page
+
+%\title{\textsc{Survey}\\\textbf{creating urban scenery\\using multimodal interfaces}}
+\title{\textsc{Survey}\\\textbf{creating urban scenery\\using multimodal interfaces}\\\textcolor{red}{\small{DRAFT from \today}}}
+\author{\textbf{José Pedro Dias}\\n.48296\\\emph{jose.pedro.dias@gmail.com}}
+\date{December 2006}
+
+\makeindex
+%\makeglossary
+
+\begin{document}
+
+\maketitle
+%\newpage
+
+\tableofcontents
+%\listoffigures
+%\listoftables
+\newpage
+
+%\twocolumn
+	
+\baselineskip = 16pt    % bigger space between lines
+
+\section*{Abstract}
+\input{abstract}
+
+%\newpage
+
+\section{Introduction}
+\input{introduction}
+
+\newpage
+
+\section{The Problem}
+\input{problem}
+
+\newpage
+
+\section{Approaches}
+\input{approaches}
+
+\newpage
+
+\section{Comparative Analysis}
+\input{comparative}
+
+\newpage
+
+\section{Conclusions \& Future Work}
+\input{conclusions}
+
+%\onecolumn
+\newpage
+
+%\bibliographystyle{plain}
+\bibliographystyle{alpha}   % this style uses the authors first letters followed by year
+\bibliography{thesis}
+
+\end{document}

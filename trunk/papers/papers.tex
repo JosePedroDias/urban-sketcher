@@ -1,0 +1,41 @@
+\documentclass[a4paper,10pt,titlepage]{article}
+\usepackage{geometry}       % allows changing page dimensions
+\geometry{a4paper,left=2.5cm,right=2cm,top=1.5cm,bottom=1.5cm}
+\usepackage[latin1]{inputenc}   % support the pt encoding
+\usepackage{graphicx}       % support graphic files
+\usepackage{color}          % should allow colored text
+\usepackage{url}            % should identify and format urls
+\usepackage{natbib}         % pretty bibtex
+
+\title{\begin{Huge}\textbf{Related Work on}\end{Huge}\\creation of urban scenery\\using multimodal interfaces}
+\author{José Pedro Dias}
+\date{\today}
+
+%\makeindex
+%\makeglossary
+
+\begin{document}
+
+\maketitle
+%\newpage
+
+%\tableofcontents
+% \listoffigures \listoftables
+\newpage
+
+%\twocolumn
+
+\input{paper-summaries}
+
+% include changes page while input does not!
+%\include{tests}
+%\input{tests}
+
+%\onecolumn
+\newpage
+
+%\bibliographystyle{plain}
+\bibliographystyle{alpha}   % this style uses the authors first letters followed by year
+\bibliography{thesis}
+
+\end{document}
