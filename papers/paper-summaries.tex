@@ -1,0 +1,326 @@
+\section*{Sketching}
+
+
+
+\subsection*{Preserving the Freedom of Sketching\\to Create a Natural Computer-Based Sketch Tool}
+
+\begin{table}[htpb]
+    \begin{tabular}{|r|l|}
+        \hline
+        tag & \cite{FREEDOM01} \\
+        authors & Christine Alvarado and Randall Davis \\
+        url & http://rationale.csail.mit.edu/publications/Alvarado2001Preserving.pdf \\
+        year & 2001 \\
+        cited by & 11 \\
+        pages & 6 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+%The paper presents the work toward an interface for mechanical designers named ASSIST,
+%with the purpose of allowing them to sketch naturally and have the computer to interpret
+%their strokes into shapes like rods, hinges, polygons, etc.
+%
+%The interpretation is a three stages procedure:
+%
+%\begin{itemize}
+%	\item match strokes to a series of templates
+%	\item rank interpretations with several heuristics about drawing style and mechanical engineering
+%	\item return the most consistent hypothesis
+%\end{itemize}
+%
+%The authors emphasize the difficulty they faced when replacing the original human-made stroke
+%with the computer interpretation. Users prefer composing the whole drawing prior to the computer
+%interpretation replacement. Having the computer interpreting every stroke makes them feel they're
+%giving up control of the program. Even so, that was the path chosen by the authors because for
+%every extra stroke without giving feedback to the user the chance of misinterpretations increases.
+%Another relevant conclusion is that users expect symmetry to be kept regarding the interpreted
+%shapes, so it would be a good idea to detect and suggest alignment restrictions between shapes.
+
+
+
+\subsection*{Interactive beautification: a technique for rapid geometric design}
+
+\begin{table}[htpb]
+    \begin{tabular}{|r|l|}
+        \hline
+        tag & \cite{BEAUTY97} \\
+        authors & Takeo Igarashi and Satoshi Matsuoka and Sachiko Kawachiya and Hidehiko Tanaka \\
+        url & http://www-ui.is.s.u-tokyo.ac.jp/~~takeo/papers/uist97.pdf \\
+        %\multicolumn{2}{l r|l r|l r}{year & 1997 & cited by & 87 & pages & 10} \\
+        year & 1997 \\
+        cited by & 87 \\
+        pages & 10 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+%The paper presents a 2D sketching system named PEGASUS. It receives user strokes and converts
+%them generating candidates taking into account the restrictions for: vertex connection,
+%segment connection, parallelism, perpendicularity, alignment, congruence, symmetry and interval equality.
+%The application presents the user the most relevant candidates and highlights the highest relevant one.
+%The user can either accept it or select another candidate by tapping on it. The technique appears
+%to be of great use in my project - in architecture most walls subsume these constraints.
+%Additionally my users will model in 3D, which increases the interest in applying beautification algorithms
+%such as this one.
+
+
+
+\subsection*{Towards the use of cad models in VR applications}
+
+\begin{table}[htpb]
+    \begin{tabular}{|r|l|}
+        \hline
+        tag & \cite{CADVR06} \\
+        authors & Alberto Raposo and Eduardo T. L. Corseuil and \\
+        & Gustavo N. Wagner and Ismael H. F. dos Santos and Marcelo Gattass \\
+        url & http://www.tecgraf.puc-rio.br/~abraposo/pubs/VRCIA2006/VRCIA2006.zip \\
+        %\multicolumn{2}{l r|l r|l r}{year & 1997 & cited by & 87 & pages & 10} \\
+        year & 2006 \\
+        cited by & not in scholar \\
+        pages & 7 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+The authors create a desktop program named ENVIRON and a series of plug ins to common
+CAD programs (namely Bentley's MicroStation and Autodesk's 3D Studio Max).
+
+The aim of their work is making the bridge between CAD programs and VR systems.
+They point out a series of problems that arise in the conversion process:
+
+%\begin{itemize}
+%	\item \textbf{low performance} -- due to unneeded model complexity
+%	\item \textbf{lack of realism} -- usually users of CAD programs don't associate material
+%	or texture data to objects
+%	\item \textbf{inadequate treatment of geometry} -- the conversion often with loss of
+%	geometry, precision and errors such as badly oriented normals
+%	\item \textbf{loss of semantics} -- names, layers and other structures aren't converted
+%	\item \textbf{one way conversion} -- there's no direct way to apply the changes made in the
+%	VR system back to the CAD program 
+%\end{itemize}
+
+The authors discuss different ways to couple CAD and VR:
+
+\begin{itemize}
+	\item gateways through standard format such as VRML
+	\item defining a common format such as XMpLant
+	\item sharing an API such as OSG CAD
+	\item sharing the same core, rarely possible due to vendor specificity and closed APIs
+\end{itemize}
+
+Another approach is through the graphics pipeline of the 2 programs, and its 4 levels:
+feature modeler, modeler, tesselator and renderer.
+
+The application handles parametric objects, nurbs and triangle meshes. Importing these
+types bring additional problems such as T-vertices, which are discussed and a solution
+is given.
+
+Since the program is focused on oil platform creation, water and terrain rendering are
+relevant and algorithms for rendering these features are presented.
+
+The team developed ViRAL too, a pluggable extension that allows several VR devices and
+views to be used with the same base code.
+
+
+
+\subsection*{Sketching annotations in a 3D web environment}
+
+\begin{table}[htpb]
+    \begin{tabular}{|r|l|}
+        \hline
+        tag & \cite{SKAN02} \\
+        authors & Thomas Jung and Mark D. Gross and Ellen Yi-Luen Do \\
+        url & http://code.arc.cmu.edu/dmgftp/publications/pdfs/SpacePenCHI02.pdf \\
+        year & 2002 \\
+        cited by & 4 \\
+        pages & 2 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Space Pen was developed to fill the needs of architects which are frequently
+required to review the design of buildings with clients.
+
+Instead of being constrained to go there and stare at floor plans and sections,
+which clients find hard to interpret, Space Pen provides both floor pan view of the 
+floor the client is in with him marked as red as an additional first person perspective.
+
+The system allows surface sketching of annotation with optional text attachments.
+It also lets a user draw a temporary plane where shapes can be drawn. Rectangles
+might be interpreted as either windows or doors.
+
+
+
+\subsection*{Smart Sketchpad - An On-line Graphics Recognition System}
+
+\begin{table}[htpb]
+    \begin{tabular}{|r|l|}
+        \hline
+        tag & \cite{SMARTSK01} \\
+        authors & Liu Wenyin and Wenjie Qian and Rong Xiao and Xiangyu Jin \\
+        url & http://www.cs.cityu.edu.hk/~liuwy/publications/Smartsketchpad\_ICDAR01.pdf \\
+        year & 2001 \\
+        cited by & either 3 or 16 \\
+        pages & 5 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+%Smart Sketchpad recognizes standard shapes (rectangles, triangles, ellipses, straight lines)
+%and compound shapes such as arrowheads.
+%
+%The article describes the steps necessary for shape recognition:
+%
+%\begin{enumerate}
+%	\item input as a chain of points
+%	\item polygonalize to polyline and refine endpoints
+%	\item close near endpoints - if closed go to step 6
+%	\item if line ends near another line end, join them and go to step 3
+%	\item classify line as one of: straight line, polyline or free form curve. go to step 8
+%	\item close shape recognition *
+%	\item estimate the parameter of the closed shape
+%	\item test if shape can be combined with other shapes in the drawing. If so repeat step 8, else end
+%\end{enumerate}
+%
+%The $6^{th}$ step was tested with: rule-based system, support vector machine and neural network.
+%The most successfully approach was SVN, with 97,5\% success, closely followed by NN.
+
+
+
+\subsection*{Building the Design Studio of the Future}
+
+\begin{table}[htpb]
+    \begin{tabular}{|r|l|}
+        \hline
+        tag & \cite{DESFUT04} \\
+        authors & Aaron Adler and Jacob Eisenstein and Michael Oltmans \\
+        & and Lisa Guttentag and Randall Davis \\
+        url & http://www.rationale.csail.mit.edu/publications/Adler2004Building.pdf \\
+        year & 2004 \\
+        cited by & 3 \\
+        pages & 7 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Adler, Eisenstein et al. present the ongoing work at MIT seeking the most effective
+set of means by which one can express ideas to the computer.
+
+Several experiments are described, aiming at finding synergies in the use of speech, gestures and sketching.
+
+A sketching and speech application is presented, in which a user, besides the common shape recognition
+of his sketches, has some of his speech reasoned into additional info. Talking about subject such as shapes,
+spatial relations between them and their transformations in time rearranges the interpreted sketch
+reflecting the acquired speech data.
+
+
+
+\subsection*{Digital clay: deriving digital models from freehand sketches}
+
+\begin{table}[htpb]
+    \begin{tabular}{|r|l|}
+        \hline
+        tag & \cite{DIGCLAY00} \\
+        authors & Eric Schweikardt and Mark D. Gross \\
+        url & http://www.dtc.umn.edu/~ashesh/papers/gross-schweikardt-autoinconst.pdf \\
+        year & 2000 \\
+        cited by & 36 \\
+        pages & 9 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+%Digital Clay allows a user to draw freely and tries to convert the drawing into a 3D model.
+%
+%It uses two techniques to achieve that:
+%
+%\begin{itemize}
+%	\item Huffman-Clowes algorithm, which identifies concave and convex vertices, requiring
+%	every line to connect to another line and the program additionally demands the object
+%	drawn to be solid;
+%	\item infers 3D coordinates based on inherent rules that govern each type of drawing projection.
+%	Examples: axes of isometric drawings have equal angles between them;
+%	perspective drawings show foreshortening of lines as we get closer to the viewer
+%\end{itemize}
+%
+%The downfalls of this method are the impossibility of describing occluded faces and the limited
+%editing capacities available once the conversion has been done.
+
+
+
+%\hrule
+\newpage
+
+\section*{City Modeling}
+
+
+
+\subsection*{Continuous level-of-detail modeling of buildings in 3D city models}
+
+\begin{table}[htpb]
+    \begin{tabular}{|r|l|}
+        \hline
+        tag & \cite{LODCITY05} \\
+        authors & Jürgen Döllner and Henrik Buchholz \\
+        url & http://www.hpi.uni-potsdam.de/fileadmin/hpi/FG\_Doellner \\
+        & /publication/2005\_ACMGIS\_doellner/2005\_Doellner\_ContinuousLODModeling.pdf \\
+        year & 2005 \\
+        cited by & 2 \\
+        pages & 9 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+%The project presents a solution for modeling buildings that feature a continuous level-of-detail.
+%
+%The authors propose the following levels of detail for a building (derived from CityGML):
+%
+%\begin{itemize}
+%	\item simple block model
+%	\item model with defined roof geometry
+%	\item detailed indoor and outdoor building features
+%\end{itemize}
+%
+%A building is composed of a list of floor objects. A floor object refers to a floor prototype, which
+%contains the floor specification. This indirection allows a user to reuse floor prototypes in several
+%floors of the same building and allows rendering optimizations.
+%
+%Each floor prototype is defined by its ground plan, which is one or more polygons that define the area
+%on which walls can be constructed. There can be inner loops in order to allow features like courtyards.
+%A ground plan supports thickness, useful for defining terraces.
+%
+%On top of a ground plan one can place walls. A wall represents a vertical, planar polygon. The default
+%type of wall has no thickness, sufficient if a group of them forms a closed surface and can be only
+%seen from the outside. Thick walls can also be added. A wall can be lower or higher than 
+%its floor height, allowing balcony fronts and chimneys to be defined.
+%
+%The higher ground plans can have roofs. The most common roof types are supported (hipped, gabled, tent,
+%mansard, pent, barrel) and a roof is described only by choosing the floor type and placing its
+%most relevant points (know as the roof skeleton).
+%
+%Each floor prototype has a related floor decoration. A floor decoration is a collection of facade sections
+%and window sections. The former allows whole wall sections to be assigned a material while the latter
+%allows the definition of positioning and appearance of the floor's windows.
+
+This article has an ordered and coherent solution for a building's hierarchy solution.
+My project will benefit from this knowledge and I intend to apply a similar solution as long as it doesn't
+constrain my users creation expressiveness.
+
+
+%\subsection*{}
+%
+%\begin{table}[htpb]
+%    \begin{tabular}{|r|l|}
+%        \hline
+%        tag & \cite{} \\
+%        authors &  \\
+%        url &  \\
+%        year &  \\
+%        cited by &  \\
+%        pages &  \\
+%        \hline
+%    \end{tabular}
+%\end{table}
+
+

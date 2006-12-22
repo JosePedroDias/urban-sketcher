@@ -1,0 +1,64 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{geometry}          		 % allows changing page dimensions
+\geometry{a4paper,left=2.5cm,right=2cm,top=2.5cm,bottom=1.5cm}
+\usepackage[latin1]{inputenc}  		 % supports the pt encoding
+\usepackage{graphicx}         		  % support graphic files
+\usepackage{color}            		  % should allow colored text
+%\usepackage{url}            		    % should identify and format urls
+%\usepackage{natbib}             		% pretty bibtex
+%\usepackage{hyperref}							% good links for acrobat, colors, etc.
+%\hypersetup{final,colorlinks=true}	% sets up hyperref
+\pagestyle{empty}										% removes page numbering
+
+\begin{document}
+    \begin{center}
+        \begin{Huge}
+            \textbf{creation of urban scenery\\using multimodal interfaces}
+        \end{Huge}
+        \begin{Large}
+            \\[\baselineskip]
+            \textbf{-- Introdução à Investigação --}
+            \\[\baselineskip]
+            José Pedro Dias, n.48296
+            \\
+            IST Tagus Park
+        \end{Large}
+    \end{center}
+    \hrulefill
+    
+    \baselineskip = 18pt	% bigger space between lines
+    
+    My thesis aims at developing a program to allow the creation of buildings in urban sceneries making use of multimodal
+    interfaces. My project was made part of the Improve\footnote{Read the first entry of my blog,
+    http://urbansketcher.blogspot.com for an extensive explanation of Improve and the whole project.} consortium
+    - a group of european universities and companies,
+    the former providing developers and scientific innovation;
+    the latter providing experience in the fields of architecture and the automotive industry.
+    Being part of Improve, the project inherits requirements both in terms of functionalities to provide,
+    hardware to use and a set of frameworks to work on.
+    
+    My program is intended to be run in a collaborative scenario where both people using tablet PCs and using a laser
+    pointer in front of the powerwall\footnote{The powerwall consists of a cluster of 4 x 3 projectors and their
+    controlling computers, set up in Lourenço Fernandes lab at IST Tagus Park.} can generate and manipulate buildings,
+    navigate the city and read or post annotations on the geometry of the world.
+    
+    This project must therefore provide innovative solutions for the inputting of geometry, navigation in the scene and
+    the interface itself, since the input hardware for the users is expected to be the pen (on the tablet PC scenario)
+    or a laser pointer on the powerwall (on the powerwall scenario). Bear in mind that these devices, though somewhat
+    similar to the mouse device, have different requirements: there are no buttons available, have worse precision, etc.
+    
+    I will do an extensive evaluation of the current state of the art software in terms of
+    geometry modelling with a simple interface - Google SketchUp\footnote{Google Sketchup is a free software available
+    at http://www.sketchup.com/} - in order to identify good solutions in use by the software and
+    aspects that could be improved.
+    
+    I have divided my article research into the following areas:     
+    \begin{itemize}
+        \item \textbf{City Building}
+            -- ways of inputting building data, edit it and represent it.
+        \item \textbf{Sketch Recognition}
+            -- algorithms and techniques for interpreting sketches.
+        \item \textbf{Stroke Recognition}
+            -- algorithms for stroke recognition. This is lower level when compared to sketch recognition.
+    \end{itemize}
+\end{document}
