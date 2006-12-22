@@ -150,7 +150,7 @@ cxMin=10
 [Frame4_View0,0]
 Cursor.row=115
 Cursor.column=50
-TopSubLine=118
+TopSubLine=123
 
 [Frame5]
 Columns=1
@@ -179,7 +179,7 @@ cxMin=10
 [Frame5_View0,0]
 Cursor.row=87
 Cursor.column=5
-TopSubLine=84
+TopSubLine=89
 
 [Frame6]
 Columns=1
