@@ -3,15 +3,15 @@ Type=TeXnicCenterProjectSessionInformation
 Version=2
 
 [SessionInfo]
-ActiveTab=0
-FrameCount=8
-ActiveFrame=1
+ActiveTab=2
+FrameCount=9
+ActiveFrame=0
 
 [Frame0]
 Columns=1
 Rows=1
-Flags=0
-ShowCmd=1
+Flags=2
+ShowCmd=3
 MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-4
@@ -24,23 +24,23 @@ Class=CLatexEdit
 Document=survey.tex
 
 [Frame0_Row0]
-cyCur=231
+cyCur=411
 cyMin=10
 
 [Frame0_Col0]
-cxCur=851
+cxCur=1037
 cxMin=10
 
 [Frame0_View0,0]
-Cursor.row=10
-Cursor.column=0
-TopSubLine=0
+Cursor.row=28
+Cursor.column=11
+TopSubLine=26
 
 [Frame1]
 Columns=1
 Rows=1
-Flags=2
-ShowCmd=3
+Flags=0
+ShowCmd=1
 MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-4
@@ -53,17 +53,17 @@ Class=CLatexEdit
 Document=abstract.tex
 
 [Frame1_Row0]
-cyCur=411
+cyCur=228
 cyMin=10
 
 [Frame1_Col0]
-cxCur=1037
+cxCur=855
 cxMin=10
 
 [Frame1_View0,0]
-Cursor.row=12
-Cursor.column=34
-TopSubLine=0
+Cursor.row=18
+Cursor.column=32
+TopSubLine=12
 
 [Frame2]
 Columns=1
@@ -90,9 +90,9 @@ cxCur=855
 cxMin=10
 
 [Frame2_View0,0]
-Cursor.row=0
+Cursor.row=76
 Cursor.column=0
-TopSubLine=0
+TopSubLine=82
 
 [Frame3]
 Columns=1
@@ -119,9 +119,9 @@ cxCur=855
 cxMin=10
 
 [Frame3_View0,0]
-Cursor.row=59
+Cursor.row=60
 Cursor.column=0
-TopSubLine=49
+TopSubLine=62
 
 [Frame4]
 Columns=1
@@ -148,9 +148,9 @@ cxCur=855
 cxMin=10
 
 [Frame4_View0,0]
-Cursor.row=114
-Cursor.column=27
-TopSubLine=114
+Cursor.row=261
+Cursor.column=0
+TopSubLine=291
 
 [Frame5]
 Columns=1
@@ -177,7 +177,7 @@ cxCur=855
 cxMin=10
 
 [Frame5_View0,0]
-Cursor.row=8
+Cursor.row=0
 Cursor.column=0
 TopSubLine=0
 
@@ -238,4 +238,33 @@ cxMin=10
 Cursor.row=0
 Cursor.column=19
 TopSubLine=0
+
+[Frame8]
+Columns=1
+Rows=1
+Flags=0
+ShowCmd=1
+MinPos.x=-1
+MinPos.y=-1
+MaxPos.x=-4
+MaxPos.y=-23
+NormalPos.left=22
+NormalPos.top=22
+NormalPos.right=947
+NormalPos.bottom=321
+Class=CLatexEdit
+Document=aliases.tex
+
+[Frame8_Row0]
+cyCur=252
+cyMin=10
+
+[Frame8_Col0]
+cxCur=897
+cxMin=10
+
+[Frame8_View0,0]
+Cursor.row=15
+Cursor.column=0
+TopSubLine=1
 
