@@ -7,17 +7,25 @@
 In order to obtain an immersive experience, there's a number of hardware
 setups commonly available:
 \begin{description}
-	\item[HMD] --
-		Head mounted display has the benefits of sticking to the user's head, detecting head tilt.
-		On the other hand it serves one single user, most users report suffering
-		from fatigue after long periods of usage and it has limited resolution.
-	\item[CAVE] --
-		Shares the benefit of enclosing the user viewing area with HMDs.
+	\item[Head Mounted Display (HMD)] --
+	  Head mounting displays are shaped like glasses. They normally feature a gyroscope or similar device
+	  to measure head orientation and tilt.
+	  
+		Using a head mounted display has the benefit of sticking to the user's head and detecting head orientation.
+		On the other hand each HMD serves one single user.
+		Additionally most users report suffering from fatigue after long periods of usage and it has limited resolution.
+	\item[Cave Automatic Virtual Environment (CAVE)] --
+	  A CAVE is an immersive virtual reality environment where projectors are directed to four,
+	  five or six of the walls of a room-sized cube.
+	  
+		Shares with HMDs the benefit of enclosing the user's viewing area.
 		Has a better resolution though. The downside is the small number of simultaneous users who
-		can experience the CAVE simultaneously.
+		can experience the CAVE at the same time.
 	\item[Wall] --
-		Its size and resolution depends entirely on the setup, but normally a wall offers
-		high resolution (depends on the number of projectors in the grid and their resolution).
+	  TODO
+	  
+		Its size and resolution depend entirely on the setup, but normally a wall offers high resolution
+		(depends on the number of projectors in the grid and their resolution).
 		The presence of a wall doesn't limit the number of users.
 		The downside is that users have to face the wall!
 \end{description}
@@ -26,20 +34,21 @@ Any of these setups is suitable for single user interaction.
 In case of a reviewing session, in which at least two participants are required,
 CAVE or Wall are better suited.
 
-Using a Wall or CAVE presents other challenges: synchronization of
-the screens, viewport cropping, etc. Several systems exist which deliver
-high performance 3D graphics and deliver these features. Based on
-scene graphs there are OpenSceneGraph and OpenSG and others.
+Using a Wall or CAVE presents other challenges: the computers responsible for
+generating each projectors' images must be synchronized, its' color parameters calibrated,
+the viewport must be well cropped, etc.
+Several systems exist capable of delivering high performance 3D graphics and offering the features mentioned above.
+Based on scene graphs there are OpenSceneGraph and OpenSG and others.
 
-The last problem in this category is how to effectively render city
-landscape. One has to limit the detail of further away objects. Ideally
-the transition should be smooth but equally relevant is recognizing
-each building's main shape even far away. This is achieved implementing
-a solution like the following.
+The last problem in this category is how to effectively render city landscape.
+One has to limit the detail of objects further away.
+Ideally the transition should be smooth but recognizing each building's main shape
+even far away is equally relevant.
+This can be achieved implementing a solution like the following.
 
 \subsubsection{Continuous LOD}
 Jürgen Döllner and Henrik Buchholz \cite{LODCITY05} present a
-solution for modeling buildings that feature a continuous level-of-detail.
+solution for modeling buildings that feature a continuous level of detail.
 
 The authors propose the following levels of detail for a building (derived from
 CityGML\footnote{CityGML is a common information model for the representation of 3D urban objects.
@@ -68,14 +77,14 @@ Each floor prototype is defined by its ground plan, which is one or more polygon
 on which walls can be constructed. There can be inner loops in order to allow features like courtyards.
 A ground plan supports thickness, useful for defining terraces.
 
-On top of a ground plan one can place walls. A wall represents a vertical, planar polygon. The default
-type of wall has no thickness, sufficient if a group of them forms a closed surface and can be only
-seen from the outside. Thick walls can also be added. A wall can be lower or higher than 
-its floor height, allowing balcony fronts and chimneys to be defined.
+On top of a ground plan one can place walls. A wall represents a vertical, planar polygon.
+The default type of wall has no thickness, sufficient if a group of them form a closed surface
+and can be only seen from the outside. Thick walls can also be added.
+A wall can be lower or higher than its floor height, allowing balcony fronts and chimneys to be defined.
 
 The higher ground plans can have roofs. The most common roof types are supported (hipped, gabled, tent,
 mansard, pent, barrel) and a roof is described only by choosing the floor type and placing its
-most relevant points (know as the roof skeleton).
+most relevant points (known as the roof skeleton).
 
 Each floor prototype has a related floor decoration. A floor decoration is a collection of facade sections
 and window sections. The former allows whole wall sections to be assigned a material while the latter

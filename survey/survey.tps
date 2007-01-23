@@ -5,13 +5,13 @@ Version=2
 [SessionInfo]
 ActiveTab=0
 FrameCount=8
-ActiveFrame=0
+ActiveFrame=1
 
 [Frame0]
 Columns=1
 Rows=1
-Flags=2
-ShowCmd=3
+Flags=0
+ShowCmd=1
 MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-4
@@ -24,23 +24,23 @@ Class=CLatexEdit
 Document=survey.tex
 
 [Frame0_Row0]
-cyCur=379
+cyCur=231
 cyMin=10
 
 [Frame0_Col0]
-cxCur=1037
+cxCur=851
 cxMin=10
 
 [Frame0_View0,0]
-Cursor.row=0
+Cursor.row=10
 Cursor.column=0
 TopSubLine=0
 
 [Frame1]
 Columns=1
 Rows=1
-Flags=0
-ShowCmd=1
+Flags=2
+ShowCmd=3
 MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-4
@@ -53,16 +53,16 @@ Class=CLatexEdit
 Document=abstract.tex
 
 [Frame1_Row0]
-cyCur=228
+cyCur=411
 cyMin=10
 
 [Frame1_Col0]
-cxCur=855
+cxCur=1037
 cxMin=10
 
 [Frame1_View0,0]
-Cursor.row=6
-Cursor.column=88
+Cursor.row=12
+Cursor.column=34
 TopSubLine=0
 
 [Frame2]
@@ -90,9 +90,9 @@ cxCur=855
 cxMin=10
 
 [Frame2_View0,0]
-Cursor.row=33
-Cursor.column=6
-TopSubLine=35
+Cursor.row=0
+Cursor.column=0
+TopSubLine=0
 
 [Frame3]
 Columns=1
@@ -119,9 +119,9 @@ cxCur=855
 cxMin=10
 
 [Frame3_View0,0]
-Cursor.row=0
+Cursor.row=59
 Cursor.column=0
-TopSubLine=0
+TopSubLine=49
 
 [Frame4]
 Columns=1
@@ -148,9 +148,9 @@ cxCur=855
 cxMin=10
 
 [Frame4_View0,0]
-Cursor.row=115
-Cursor.column=50
-TopSubLine=123
+Cursor.row=114
+Cursor.column=27
+TopSubLine=114
 
 [Frame5]
 Columns=1
@@ -177,9 +177,9 @@ cxCur=855
 cxMin=10
 
 [Frame5_View0,0]
-Cursor.row=87
-Cursor.column=5
-TopSubLine=89
+Cursor.row=8
+Cursor.column=0
+TopSubLine=0
 
 [Frame6]
 Columns=1
@@ -235,7 +235,7 @@ cxCur=855
 cxMin=10
 
 [Frame7_View0,0]
-Cursor.row=89
-Cursor.column=0
-TopSubLine=93
+Cursor.row=0
+Cursor.column=19
+TopSubLine=0
 
