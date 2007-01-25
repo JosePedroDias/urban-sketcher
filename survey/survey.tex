@@ -9,9 +9,25 @@
 \usepackage{enumerate}			% allows enumerations a)... I..., 1... etc.
 \usepackage{rotating}				% allows text rotate via \begin{sideways} or \begin{turn}{ang_in_deg}
 \usepackage{lscape}					% allows pages in landspace \begin{landscape}page content\end{landscape}
-\usepackage{floatflt}				% side floats and tables
-
-\input{aliases}
+%\usepackage{floatflt}				% side floats and tables
+\usepackage{url}
+\usepackage[pdftex,
+	pdftitle					= {creating urban scenery using multimodal interfaces},
+	pdfauthor					= {José Pedro Dias},
+	bookmarks         = true,				% do bookmarks
+	bookmarksnumbered = true,				% keep sedtion numbers
+%	pdfpagemode       = None,				% start with closed bookmarks
+	pdfstartview      = FitH,				% starting view scale
+%	pdfpagelayout     = SinglePage,	% one page at a time
+%	linkcolor					= black,			% links inside the document
+%	citecolor					= black,			% for cites
+	linkcolor					= blue,				% links inside the document
+	citecolor					= red,				% for cites
+%	urlcolor					= green,			% for urls
+	colorlinks        = true]{hyperref}
+\usepackage[absolute]{textpos}		% allows absolute positioning of stuff
+\usepackage{my-customs}					  % my overloads
+\input{aliases}										% aliases for common formatting stuff
 
 % LANGUAGE PROBLEMS:
 % too much the's and a's
@@ -21,6 +37,12 @@
 % TACTICS:
 % get articles from gdx techniques such as raytrace, bsp, radiosity, etc.
 
+% ARTICLES TO FETCH/READ:
+% tiago g.
+% crossy, flowmenu, etc.
+% speech recognition, motion tracking, etc.
+% 
+
 %
 % TODO
 % - ABSTRACT
@@ -28,9 +50,10 @@
 % - INTRODUCTION
 %   ok
 % - PROBLEM
-%   done, not too cool
+%   done, lacks better intros
 % - APPROACHES
-%   67%
+%   +/-
+%		articles about viewing interface, getting user input
 % - COMPARATIVE ANALYSIS
 %   0%
 % - CONCLUSIONS
@@ -38,9 +61,20 @@
 % - add comparative table
 % - IST logo @ title page
 
-%\title{\textsc{Survey}\\\textbf{creating urban scenery\\using multimodal interfaces}}
-\title{\textsc{Survey}\\\textbf{creating urban scenery\\using multimodal interfaces}\\\textcolor{red}{\small{DRAFT from \today}}}
-\author{\textbf{José Pedro Dias}\\n.48296\\\emph{jose.pedro.dias@gmail.com}}
+\title{
+	% TODO: this generates 1 badbox
+	\begin{textblock}{0}(12.5,1)
+		\includegraphics[width=2.5cm]{gfx/logo-ist.jpg}
+	\end{textblock}
+	\textsc{Survey}\\
+	\textbf{creating urban scenery\\using multimodal interfaces}\\
+	\textcolor{red}{\small{DRAFT from \today}}
+}
+\author{
+	\textbf{José Pedro Dias}\\
+	n.48296\\
+	\emph{jose.pedro.dias@gmail.com}
+}
 \date{January 2007}
 
 \makeindex

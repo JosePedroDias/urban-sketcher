@@ -31,46 +31,57 @@ The creation of 3D drawings and brochures for marketing purposes is common pract
 It relies in techniques such as
 ray tracing\footnote{POVRay is a well known raytracer available at http://www.povray.org},
 radiosity,
-physically accurate light simulation\footnote{Maxwell Render -- http://www.maxwellrender.com; Indigo Renderer -- http://www.indigorenderer.com},
+physically accurate light simulation\footnote{
+Maxwell Render -- http://www.maxwellrender.com;
+Indigo Renderer -- http://www.indigorenderer.com}
 High Dynamic Range Imaging (HDRI), etc.
 These techniques produce believable results but take too much time to render in real time.
 
 % frases enormes!
 Another application of data coming from CAD systems is the generation of worlds optimized for navigation.
-Performance is paramount in these systems so algorithms such as Binary Space Partition (BSP) or octrees are applied
-for faster geometry rendering. The compromise between believability and fast rendering times
-is assured with techniques such as light maps and good usage of modern graphics card's Graphics Processing Unit (GPU),
-allowing the application of many computer graphics algorithms that would otherwise be impossible with such time constraints.
+Performance is paramount in these systems so algorithms such as Binary Space Partition (BSP)
+or octrees are applied for faster geometry rendering.
+The compromise between believability and fast rendering times is assured with techniques such as
+light maps and good usage of modern graphics card's Graphics Processing Unit (GPU),
+allowing the application of many computer graphics algorithms that would otherwise be impossible
+with such time constraints.
 There are numerous 3D engines capable of presenting such worlds with good performance.
 The major drawback in using them relies in how the user navigates the scene --
-most systems use the popular interface featured in most of the first or third person shooters available in the market,
+most systems use the popular interface featured in most of the first or third person shooters
+available in the market,
 which relies on 4 keyboard keys for user translation plus user rotation with a mouse.
 This interface works for youth game enthusiasts but presents an obstacle for most other people.
-There are other navigation metaphors available such as flying but they keep using keyboard and mouse as their input interface.
+There are other navigation metaphors available such as flying but they keep using keyboard and mouse
+as their input interface.
 
 Exporting the geometry from a CAD program, which is a common solution, comes with several problems,
 as stated by Alberto Raposo et al.\cite{CADVR06}:
 \begin{itemize}
-	\item[] \textbf{low performance} -- due to unneeded model complexity;
-	\item[] \textbf{lack of realism} -- usually users of CAD programs don't associate material
+	\item \textbf{low performance} -- due to unneeded model complexity;
+	\item \textbf{lack of realism} -- usually users of CAD programs don't associate material
 	or texture data to objects;
-	\item[] \textbf{inadequate treatment of geometry} -- the conversion often occurs with loss of
+	\item \textbf{inadequate treatment of geometry} -- the conversion often occurs with loss of
 	geometry, precision and errors such as badly oriented normals.
 \end{itemize}
 
 % client side benefits
-Using a computer system to present a virtual building with the purpose of selling an idea, doing real estate business
-or simulating virtual tours demands better metaphors, better interface design and the least possible cluttering
-of the view in order to achieve a richer user experience and get an overall good impression.
+Using a computer system to present a virtual building with the purpose of selling an idea,
+doing real estate business or simulating virtual tours demands better metaphors,
+better interface design and the least possible cluttering of the view in order
+to achieve a richer user experience and get an overall good impression.
 
 % architect benefits
-From the architect's point of view, using such a system early in the process, if preceded by geographical data capturing,
+From the architect's point of view, using such a system early in the process,
+if preceded by geographical data capturing,
 allows him to better perceive the construction area, which shall improve seamless building integration.
-Additionally, applying such a system in the building design workflow allows the generation of models able to
-complement or even replace the first prototyping stages, commonly represented nowadays by rough sketches.
+Additionally, applying such a system in the building design workflow allows the generation
+of models able to complement or even replace the first prototyping stages,
+commonly represented nowadays by rough sketches.
 
 % document structure
 The author starts by identifying the various domains in which problems arise.
-Then a series of approaches to solve them is listed and the author reasons which ones better fit the problem at hand.
+Then a series of approaches to solve them is listed and the author reasons which ones better fit
+the problem at hand.
 Later on a comparative analysis between applications in the market allowing architecture modeling is conducted.
-The document ends with a set of conclusions and points out directions for future work in addressing this subject.
+The document ends with a set of conclusions and points out directions for future work in
+addressing this subject.
