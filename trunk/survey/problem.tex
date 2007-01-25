@@ -1,21 +1,51 @@
-% how and why to divide into these subproblems
+% problem intro
+Currently an architect starts the building design workflow by drawing rough
+freeform sketches of the desired building. These drawings are highly subjective
+and clients have a hard time in their interpretation and validation.
+The information captured in such drawings has little use in the remaining stages
+of building design.
 
-% deliver?
-We want to deliver a solution capable of being:
+% TODO: insert draft sketches here!
+
+There are systems which are commonly used for professional building layouts, systems
+like Autodesk's Autocad. The architect replicates his former ideas in the rigid
+standardized interface offered by these systems. This is a rigorous endeavor,
+taking much time to be asserted.
+
+After the main project documents are issued comes the time when the idea has to
+be pitched to end clients. In order to gather buyers and investors its common to
+generate colorful previews of the building featuring increasingly realistic
+features such as detailed materials, light propagation and crowd simulations.
+
+% TODO: insert maxwell renderer pics
+
+The author desires to serve architects with a multimodal, non strict modeling
+system to allow both architects drafting in 3D and clients viewing, navigating
+and criticizing those drafts. For this to happen the desired solution must be:
+
 \begin{itemize}
-	\item a sketch board for architects, who can create and edit buildings and their features;
-	\item a virtual urban scenery for anyone -- therefore with gentle learning curve -- and suitable for showcasing and reviewing architectural designs.
+	\item[] a {\bf sketch board for architects} -- who can create and edit buildings and their features;
+	\item[] a {\bf virtual urban scenery} for anyone -- therefore with a gentle learning curve, suitable for showcasing and reviewing architectural designs.
 \end{itemize}
-In order to achieve these goals, there's a number of problems that need to be addressed.
 
-% navigate in it?
-% where -> at which?
+% families of problems
+Building such a system involves solving the following problems:
+\begin{itemize}
+	\item[]finding and sticking to a useful representation for urban scenery;
+	\item[]offering proper input interface for the users;
+	\item[]allowing a simple way of sketching geometry with easy learning curve;
+	\item[]aiding the user via suggestions and a fluid and efficient transforms;
+	\item[]navigation interface.
+\end{itemize}
+
+
+% navigation, +/-
 One must be able to understand the world representation, navigate it and create or modify its contents.
-In order to be immersed in the world, the interface should be larger than a regular computer screen,
-in order for the users to better convey the proportions of the structural elements.
+In order to be immersed in the world, the interface should be larger than a regular computer screen
+and proportions of the structural elements should be kept/suggested.
 User input has to be based on devices that give him more expressiveness and allow human error,
-preferably helping him out in subjects where a machine works better than humans do, such as figuring
-out parallels or calculating areas.
+preferably helping him out in subjects where a machine works better than humans do,
+such as figuring out parallels or calculating areas.
 
 
 % opensg/goggles/wall, etc
@@ -23,13 +53,12 @@ out parallels or calculating areas.
 \subsection{Representing Urban Scenery}
 How can the system produce the most immersive experience for one user?
 What if its a group of people? All this constrained by having to get user input at the same time.
-
 How can we address the complexity of rendering a city?
 
 
 % laser, motion, speech, gestures, smart widgets
 \subsection{Getting User Input}
-What are the viable alternatives to keyboard/mouse interaction with these objectives?
+What are the viable alternatives to keyboard/mouse interaction with these objectives in mind?
 How can a user sketch his ideas, give orders, navigate? Should users move, point, talk?
 
 
@@ -40,8 +69,7 @@ out of it? Should the process be iterative or all in one step? How permissive sh
 it be to irregular shapes?
  
 
-% by which?
-% Helping the User: 
+% sketches in user space
 \subsection{Helping the User: Suggested Constraints}
 There's a subset of geometry that appears quite often in buildings.
 The walls are generally box shaped, as are most windows. We often use concepts of symmetry,
@@ -51,6 +79,8 @@ It would be of great use if while sketching one could be aided in keeping the ra
 a rectangle, draw parallel or perpendicular lines, do extrusions and lathes.
 
 What are the available ways by which one could be aided in these tasks?
+How should the computer present reasoned content and replace inaccurate user content?
+Users are very sensitive to losing control of applications.
 
 
 % navigation
