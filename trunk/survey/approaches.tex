@@ -3,56 +3,67 @@
 % and add an illustrative picture
 % then criticize the presented solutions
 
-\subsection{Representing Urban Scenery}
+\subsection{Viewing Interface}
 In order to obtain an immersive experience, there's a number of hardware
 setups commonly available:
 
-\begin{floatingfigure}[r]{3cm}
-%[r]{5mm}
-		\includegraphics{gfx/hmd-cluster-cave.png}
-		\caption{HMD, Cluster, CAVE}
-		\label{FIG-HMD-CLUSTER-CAVE}
-	\end{floatingfigure}
-
 \begin{description}
 	\item[Head Mounted Display (HMD)] --
-	  Head mounting displays are shaped like glasses.
-	  They normally feature a gyroscope or similar device to measure head orientation and tilt.
+	  Head mounting displays are devices shaped like glasses, projecting a pair of stereo
+	  transformed images to the user's retinas.
+	  They normally feature a gyroscope or similar apparatus to measure head orientation and tilt.
+	  There are two kinds of HMDs: in the former the images are projected in small opaque screens;
+	  in the latter the projected surface is translucid, allowing blending of real and virtual worlds.
 	  
 		Using a head mounted display has the benefit of sticking to the user's head
 		and detecting head orientation.
 		On the other hand each HMD serves one single user.
-		Additionally most users report suffering from fatigue after long periods of
+		Additionally, most users report suffering from fatigue after long periods of
 		usage and it has limited resolution.
 			
 	\item[Cave Automatic Virtual Environment (CAVE)] --
 	  A CAVE is an immersive virtual reality environment where projectors are directed to four,
-	  five or six of the walls of a room-sized cube.
+	  five or all the six walls of a room-sized cube.
 	  
-		Shares with HMDs the benefit of enclosing the user's viewing area.
-		Has a better resolution though. The downside is the small number of simultaneous users who
-		can experience the CAVE at the same time.
+		It shares the benefit of enclosing the user's viewing area with HMDs.
+		Has a better resolution though.
+		The downside is the small number of simultaneous users who can experience the CAVE at the same time.
 	
 	\item[Wall] --
-	  TODO
+	  A wall is a large surface, usually planar, filled by an image.
+	  The whole image projection is responsibility of a cluster of projectors set up in a wall.
+	  Each projector renders part of the surface and the border between projections is ideally minimal.
+	  Each projector is controlled by an independent computer.
 	  
 		Its size and resolution depend entirely on the setup, but normally a wall offers high resolution
-		(depends on the number of projectors in the grid and their resolution).
-		The presence of a wall doesn't limit the number of users.
-		The downside is that users have to face the wall!
+		(depends on the number of projectors in the grid and each projector's resolution).
+		Due to the large surface of the wall, several users may be served as once.
+		The downside is users having to face the wall to experience the image entirely.
 \end{description}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=12cm]{gfx/hmd-cluster-cave.png}
+	\caption{HMD, Wall, CAVE}
+	\label{FIG-HMD-CLUSTER-CAVE}
+\end{figure}
 
 Any of these setups is suitable for single user interaction.
 In case of a reviewing session, in which at least two participants are required,
-CAVE or Wall are better suited.
+CAVE or Wall are better suited, since they alone offer a solution for a small group.
 
 Using a Wall or CAVE presents other challenges: the computers responsible for
 generating each projectors' images must be synchronized, its' color parameters calibrated,
 the viewport must be well cropped, etc.
-Several systems exist capable of delivering high performance 3D graphics and offering the features mentioned above.
-Based on scene graphs there are OpenSceneGraph and OpenSG and others.
+Several systems exist capable of delivering high performance 3D graphics and
+offering the features mentioned above.
+Based on scene graphs there are two well known solutions: OpenSceneGraph and OpenSG.
 
-The last problem in this category is how to effectively render city landscape.
+\subsection{Representing Urban Scenery}
+In order to obtain an immersive experience, there's a number of hardware
+setups commonly available:
+
+How to effectively render city landscape.
 One has to limit the detail of objects further away.
 Ideally the transition should be smooth but recognizing each building's main shape
 even far away is equally relevant.
@@ -105,16 +116,55 @@ allows the definition of positioning and appearance of the floor's windows.
 TODO: other relevant articles?
 
 \subsection{Getting User Input}
-Obtaining user input can happen in an infinity of interface combinations.
-In virtual reality the most common solutions may feature:
-\begin{itemize}
-	\item image processing using camera(s)
-	\item speech recognition
-	\item motion tracking
-	\item space ball, space pilot, etc.
-	\item HMD's rotation data
-	\item tracked artifacts for direct manipulation
-\end{itemize}
+Obtaining user input can be handled by an infinite combination of interfaces.
+In virtual reality the most common solutions may feature a combination of:
+\begin{description}
+	\item[Image Processing] --
+		A camera or a set of cameras continuously captures the environment and detects relevant
+		features using vision algorithms.
+		Subjects' position and orientation may then be determined using triangulation techniques.
+	\item[Speech Recognition] --
+		Users give specific verbal orders captured by a microphone, 
+		which are interpreted by a speech recognition engine.
+		The freedom of speech handled by the engine depends on its quality and the purpose of
+		the recognition -- spanning from simple commands to free formed sentences.
+	\item[Motion Tracking] --
+		This method is akin to image processing, but optimized for tracking subjects position
+		and orientation.
+		Small reflective markers are attached to each subject relevant parts and infrared cameras
+		are calibrated in order to be able to read the markers and determine their position
+		and orientation precisely.
+		See figure \ref{FIG-MOTION-TRACKING}.
+	\item[HMD's Rotation Data] --
+		When a user is wearing an HMD device, its head rotation and tilt data can be captured,
+		allowing the virtual world to act accordingly, e.g. rotating and tilting the VR world.
+	\item[Tracked Artifacts for Direct Manipulation] --
+		When motion tracking is available, users can manipulate artifacts and their positioning,
+		orientation and/or relative status can determine actions in the world, e.g. point at
+		something, dragging, rotation.
+	\item[Space Ball, Space Pilot, etc.] --
+		These are special devices which allow 6 degrees or freedom (6DOF) manipulation.
+		The user holds the device in his hands and the device's data can map several actions to
+		the read axes.
+		See figure \ref{FIG-SPACE-DEVICES}.
+\end{description}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=8cm]{gfx/MotionCapture.jpg}
+	\caption{Motion tracking example:
+		the subject wears a suit with several markers distributed so that his skeleton
+		relative orientations can be reasoned.
+		An array of infrared cameras is rigged to the ceiling, reading marker positions.}
+	\label{FIG-MOTION-TRACKING}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=10cm]{gfx/space-devices.png}
+	\caption{Two kinds of space balls and one space pilot.}
+	\label{FIG-SPACE-DEVICES}
+\end{figure}
 
 The least intrusive interface would use either motion tracking or image processing and speech recognition.
 Speech recognition allows commands to be given to the system. The remaining interface allows knowing positioning
