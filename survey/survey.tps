@@ -3,9 +3,9 @@ Type=TeXnicCenterProjectSessionInformation
 Version=2
 
 [SessionInfo]
-ActiveTab=3
+ActiveTab=0
 FrameCount=10
-ActiveFrame=5
+ActiveFrame=2
 
 [Frame0]
 Columns=1
@@ -32,9 +32,9 @@ cxCur=851
 cxMin=10
 
 [Frame0_View0,0]
-Cursor.row=25
-Cursor.column=16
-TopSubLine=16
+Cursor.row=20
+Cursor.column=0
+TopSubLine=22
 
 [Frame1]
 Columns=1
@@ -68,8 +68,8 @@ TopSubLine=0
 [Frame2]
 Columns=1
 Rows=1
-Flags=0
-ShowCmd=1
+Flags=2
+ShowCmd=3
 MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-4
@@ -82,17 +82,17 @@ Class=CLatexEdit
 Document=introduction.tex
 
 [Frame2_Row0]
-cyCur=228
+cyCur=451
 cyMin=10
 
 [Frame2_Col0]
-cxCur=855
+cxCur=990
 cxMin=10
 
 [Frame2_View0,0]
-Cursor.row=0
-Cursor.column=0
-TopSubLine=47
+Cursor.row=37
+Cursor.column=6
+TopSubLine=30
 
 [Frame3]
 Columns=1
@@ -155,8 +155,8 @@ TopSubLine=385
 [Frame5]
 Columns=1
 Rows=1
-Flags=2
-ShowCmd=3
+Flags=0
+ShowCmd=1
 MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-4
@@ -169,17 +169,17 @@ Class=CLatexEdit
 Document=comparative.tex
 
 [Frame5_Row0]
-cyCur=451
+cyCur=228
 cyMin=10
 
 [Frame5_Col0]
-cxCur=990
+cxCur=855
 cxMin=10
 
 [Frame5_View0,0]
-Cursor.row=9
-Cursor.column=87
-TopSubLine=0
+Cursor.row=107
+Cursor.column=0
+TopSubLine=104
 
 [Frame6]
 Columns=1
@@ -235,9 +235,9 @@ cxCur=855
 cxMin=10
 
 [Frame7_View0,0]
-Cursor.row=80
-Cursor.column=20
-TopSubLine=76
+Cursor.row=205
+Cursor.column=0
+TopSubLine=204
 
 [Frame8]
 Columns=1
@@ -264,9 +264,9 @@ cxCur=897
 cxMin=10
 
 [Frame8_View0,0]
-Cursor.row=30
-Cursor.column=36
-TopSubLine=17
+Cursor.row=22
+Cursor.column=0
+TopSubLine=9
 
 [Frame9]
 Columns=1
