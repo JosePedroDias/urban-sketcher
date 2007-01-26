@@ -1,3 +1,4 @@
+\TODO{articles about viewing interface, getting user input, smart sketchpad image}
 % group articles by domain 
 % for every article write a short summary of its relevant features
 % and add an illustrative picture
@@ -113,7 +114,6 @@ Each floor prototype has a related floor decoration. A floor decoration is a col
 and window sections. The former allows whole wall sections to be assigned a material while the latter
 allows the definition of positioning and appearance of the floor's windows.
 
-TODO: other relevant articles?
 
 \subsection{Getting User Input}
 Obtaining user input can be handled by an infinite combination of interfaces.
@@ -166,10 +166,11 @@ In virtual reality the most common solutions may feature a combination of:
 	\label{FIG-SPACE-DEVICES}
 \end{figure}
 
-The least intrusive interface would use either motion tracking or image processing and speech recognition.
-Speech recognition allows commands to be given to the system. The remaining interface allows knowing positioning
-and rotation of users or parts of their bodies. Tracking artifacts may either allow the artifact to serve as a
-pointer or as a metaphor for direct manipulation.
+The least intrusive interface would use speech recognition and either motion tracking or image processing,
+the former being more driven to the purpose.
+Speech recognition allows commands to be given to the system.
+The remaining interface allows knowing positioning and rotation of users or parts of their bodies.
+Tracking artifacts may either serve as a pointer or as a metaphor for direct manipulation.
 
 \subsection{Sketching for Geometry Creation and Editing}
 
@@ -178,7 +179,7 @@ Wenyin et al. created Smart Sketchpad \cite{SMARTSK01}.
 Smart Sketchpad recognizes standard shapes (rectangles, triangles, ellipses, straight lines)
 and compound shapes such as arrowheads.
 
-Their article describes the steps necessary for shape recognition:
+The article describes the steps necessary for shape recognition:
 \begin{enumerate}
 	\item input as a chain of points
 	\item polygonalize to polyline and refine endpoints
@@ -190,11 +191,11 @@ Their article describes the steps necessary for shape recognition:
 	\item test if shape can be combined with other shapes in the drawing. If so repeat step 8, else end
 \end{enumerate}
 
-The $6^{th}$ step was tested with: rule-based system, support vector machine and neural network.
+The $6^{th}$ step was tested with both rule-based systems, support vector machines and neural networks.
 The most successfully approach was SVN, with 97,5\% success, closely followed by NN.
 
 \subsubsection{Assist}
-Alvarado and Davis present a work toward an interface for mechanical designers named Assist \cite{FREEDOM01},
+Alvarado and Davis present a work towards an interface for mechanical designers named Assist \cite{FREEDOM01},
 with the purpose of allowing them to sketch naturally and have the computer interpreting
 their strokes into shapes like rods, hinges, polygons, etc.
 
@@ -216,7 +217,7 @@ every extra stroke without giving feedback to the user increases the chance of m
 Another relevant conclusion is that users expect symmetry to be kept regarding the interpreted
 shapes, so it would be a good idea to detect and suggest alignment restrictions between shapes.
 
-\begin{figure}[htb]
+\begin{figure}[hb]
 	\centering
 	\includegraphics[width=15cm]{gfx/freedom01-1.png}
 	\caption{Assist: A car on the hill. Drawn by the user (left), as interpreted and displayed (right).}
@@ -241,7 +242,7 @@ It uses two techniques to achieve that:
 The downfalls of this method are the impossibility of describing occluded faces and the limited
 editing capacities available once the conversion has been done.
 
-\begin{figure}[htb]
+\begin{figure}[hb]
 	\centering
 	\includegraphics[width=15cm]{gfx/digclay00-1.png}
 	\caption{Digital Clay: Raw sketch input and its 3D interpretation.}
@@ -250,7 +251,18 @@ editing capacities available once the conversion has been done.
 
 \subsubsection{Discussion}
 
-TODO!
+In \cite{SMARTSK01} useful comparison between alternative implementations of their
+shape recognition algorithm is shown.
+It points out support vector machines as the best performance alternative.
+The algorithm itself is relatively simple and may be generalized to 3D shapes.
+
+The method proposed in \cite{FREEDOM01} works nicely but is applied only in 2D space.
+Additionally, users found the automatic replacement of geometric shapes as losing control of the application.
+
+
+The method proposed in \cite{DIGCLAY00} shouldn't be used since it only allows describing part
+of geometry (the occluded geometry is undefined) and since it's a discrete algorithm it can't
+be reapplied.
 
 \subsection{Helping the User: Suggested Constraints}
 

@@ -27,6 +27,7 @@
 	colorlinks        = true]{hyperref}
 \usepackage[absolute]{textpos}		% allows absolute positioning of stuff
 \usepackage{my-customs}					  % my overloads
+\usepackage{makeidx}
 \input{aliases}										% aliases for common formatting stuff
 
 % LANGUAGE PROBLEMS:
@@ -45,24 +46,14 @@
 
 %
 % TODO
-% - ABSTRACT
-%   good
-% - INTRODUCTION
-%   ok
-% - PROBLEM
-%   done, lacks better intros
-% - APPROACHES
-%   +/-
-%		articles about viewing interface, getting user input
 % - COMPARATIVE ANALYSIS
 %   0%
 % - CONCLUSIONS
 %   0%
 % - add comparative table
-% - IST logo @ title page
 
 \title{
-	% TODO: this generates 1 badbox
+	%\TODO{this generates 1 badbox}
 	\begin{textblock}{0}(12.5,1)
 		\includegraphics[width=2.5cm]{gfx/logo-ist.jpg}
 	\end{textblock}
@@ -89,6 +80,8 @@
 %\listoffigures
 %\listoftables
 \newpage
+
+\parskip=0.5\baselineskip
 
 %\twocolumn
 	
@@ -130,5 +123,7 @@
 %\bibliographystyle{plain}
 \bibliographystyle{alpha}   % this style uses the authors first letters followed by year
 \bibliography{thesis}
+
+%\printindex
 
 \end{document}
