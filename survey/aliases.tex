@@ -1,15 +1,23 @@
-\def\hellow{
-	\textcolor{red}{HELLO!}
+%\def\hellow{
+%	\textcolor{red}{HELLO!}
+%}
+%
+%% with receiving param
+%\def\hellow2#1{
+%	\textcolor{red}{begin #1 end}
+%}
+%
+%% alternative way of starting ending a command
+%\def\hellow3#1{
+%	{\bf#1}
+%	\begin{bf}#1\end{bf}
+%}
+
+% show TODOs
+\def\TODO#1{
+	%\glossary{#1}
+	\textcolor{red}{\textbf{TODO:} #1}
 }
 
-% with receiving param
-\def\hellow2#1{
-	\textcolor{red}{begin #1 end}
-}
-
-% alternative way of starting ending a command
-\def\hellow3#1{
-	{\bf#1}
-	\begin{bf}#1\end{bf}
-}
-
+% hide TODOs
+%\def\TODO#1{}

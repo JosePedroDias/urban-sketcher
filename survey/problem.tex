@@ -1,3 +1,4 @@
+\TODO{still lacks better intros}
 % problem intro
 Currently an architect starts the building design workflow by drawing rough
 freeform sketches of the desired building. These drawings are highly subjective
@@ -5,8 +6,8 @@ and clients have a hard time in their interpretation and validation.
 The information captured in such drawings has little use in the remaining stages
 of building design.
 
-% TODO: insert draft sketches here!
 
+% TODO: insert draft sketches here!
 There are systems which are commonly used for professional building layouts, systems
 like Autodesk's Autocad. The architect replicates his former ideas in the rigid
 standardized interface offered by these systems. This is a rigorous endeavor,
@@ -18,10 +19,10 @@ generate colorful previews of the building featuring increasingly realistic
 features such as detailed materials, light propagation and crowd simulations.
 
 % TODO: insert maxwell renderer pics
-
 The author desires to serve architects with a multimodal, non strict modeling
 system to allow both architects drafting in 3D and clients viewing, navigating
 and criticizing those drafts. For this to happen the desired solution must be:
+
 
 \begin{itemize}
 	\item a {\bf sketch board for architects} -- who can create and edit buildings and their features;
@@ -50,25 +51,29 @@ such as figuring out parallels or calculating areas.
 
 % opensg/goggles/wall, etc
 \subsection{Viewing Interface}
-How can the system produce the most immersive experience for one user?
-What if its a group of people? All this constrained by having to get user input at the same time.
+We aim at producing an immersive experience for a user or a small group of users.
+How can that be accomplished, having to get user input at the same time?
+
 
 % city representations
 \subsection{Representing Urban Scenery}
+A building can be as detailed as we want it to be.
+Ideally, the architectural creations are surrounded by the environment
+where they'll be built. So the system must be robust and enough to represent a city block.
 How can we address the complexity of rendering a city?
 
 
 % laser, motion, speech, gestures, smart widgets
 \subsection{Getting User Input}
-What are the viable alternatives to keyboard/mouse interaction with these objectives in mind?
+What are the viable alternatives to standard keyboard/mouse interaction with these objectives in mind?
 How can a user sketch his ideas, give orders, navigate? Should users move, point, talk?
 
 
 % sketching
 \subsection{Sketching for Geometry Creation and Editing}
-Given sketching input, how can the system interpret the sketch and reason an object
-out of it? Should the process be iterative or all in one step? How permissive should
-it be to irregular shapes?
+Given sketching input, how can the system interpret the sketch and reason an object out of it?
+Should the process be iterative or all in one step?
+How permissive should it be to irregular shapes?
  
 
 % sketches in user space
@@ -88,5 +93,5 @@ Users are very sensitive to losing control of applications.
 % navigation
 \subsection{Navigation}
 By what means should the user convey his position and orientation in the world?
-What can he do and how? How to avoid users getting lost in the virtual world?
-
+What can he do and how can he move?
+How to avoid users getting lost in the virtual world?
