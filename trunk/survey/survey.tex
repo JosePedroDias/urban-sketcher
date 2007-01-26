@@ -18,13 +18,17 @@
 %	pdfpagemode       = None,				% start with closed bookmarks
 	pdfstartview      = FitH,				% starting view scale
 %	pdfpagelayout     = SinglePage,	% one page at a time
-%	linkcolor					= black,			% links inside the document
-%	citecolor					= black,			% for cites
-	linkcolor					= blue,				% links inside the document
-	citecolor					= red,				% for cites
+	linkcolor					= black,			% links inside the document
+	citecolor					= black,			% for cites
+%	linkcolor					= blue,				% links inside the document
+%	citecolor					= red,				% for cites
 %	urlcolor					= green,			% for urls
 	colorlinks        = true]{hyperref}
 \usepackage[absolute]{textpos}		% allows absolute positioning of stuff
+
+\usepackage{pict2e}								% these 2 are for table a\b cells
+\usepackage{slashbox}							% pict2e is optional but enhances the result
+
 \usepackage{my-customs}					  % my overloads
 \input{aliases}										% aliases for common formatting stuff
 
