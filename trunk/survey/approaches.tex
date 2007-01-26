@@ -1,4 +1,4 @@
-\TODO{articles about viewing interface, getting user input, smart sketchpad image}
+\TODO{articles about viewing interface, getting user input, smart sketchpad image, end 3.6.1}
 % group articles by domain 
 % for every article write a short summary of its relevant features
 % and add an illustrative picture
@@ -42,7 +42,7 @@ setups commonly available:
 		The downside is users having to face the wall to experience the image entirely.
 \end{description}
 
-\begin{figure}[htb]
+\begin{figure}[!ht]
 	\centering
 	\includegraphics[width=12cm]{gfx/hmd-cluster-cave.png}
 	\caption{HMD, Wall, CAVE}
@@ -81,12 +81,12 @@ and regional models with respect to their geometrical, topological, semantical a
 More info at: http://www.citygml.org}, see Figure \ref{FIG-LODCITY}):
 
 \begin{itemize}
-	\item simple block model
-	\item model with defined roof geometry
-	\item detailed indoor and outdoor building features
+	\item Simple block model
+	\item Model with defined roof geometry
+	\item Detailed indoor and outdoor building features
 \end{itemize}
 
-\begin{figure}[htb]
+\begin{figure}[!ht]
 	\centering
 	\includegraphics[width=15cm]{gfx/lodcity05-1.png}
 	\caption{Continuous LOD: a) block model; b) building split into floors; c) geometry refinement; d) appearance refinement.}
@@ -134,7 +134,7 @@ In virtual reality the most common solutions may feature a combination of:
 		Small reflective markers are attached to each subject relevant parts and infrared cameras
 		are calibrated in order to be able to read the markers and determine their position
 		and orientation precisely.
-		See figure \ref{FIG-MOTION-TRACKING}.
+		See Figure \ref{FIG-MOTION-TRACKING}.
 	\item[HMD's Rotation Data] --
 		When a user is wearing an HMD device, its head rotation and tilt data can be captured,
 		allowing the virtual world to act accordingly, e.g. rotating and tilting the VR world.
@@ -146,10 +146,10 @@ In virtual reality the most common solutions may feature a combination of:
 		These are special devices which allow 6 degrees or freedom (6DOF) manipulation.
 		The user holds the device in his hands and the device's data can map several actions to
 		the read axes.
-		See figure \ref{FIG-SPACE-DEVICES}.
+		See Figure \ref{FIG-SPACE-DEVICES}.
 \end{description}
 
-\begin{figure}[htb]
+\begin{figure}[!ht]
 	\centering
 	\includegraphics[width=8cm]{gfx/MotionCapture.jpg}
 	\caption{Motion tracking example:
@@ -159,7 +159,7 @@ In virtual reality the most common solutions may feature a combination of:
 	\label{FIG-MOTION-TRACKING}
 \end{figure}
 
-\begin{figure}[htb]
+\begin{figure}[!ht]
 	\centering
 	\includegraphics[width=10cm]{gfx/space-devices.png}
 	\caption{Two kinds of space balls and one space pilot.}
@@ -181,14 +181,14 @@ and compound shapes such as arrowheads.
 
 The article describes the steps necessary for shape recognition:
 \begin{enumerate}
-	\item input as a chain of points
-	\item polygonalize to polyline and refine endpoints
-	\item close near endpoints - if closed go to step 6
-	\item if line ends near another line end, join them and go to step 3
-	\item classify line as one of: straight line, polyline or free form curve. go to step 8
-	\item close shape recognition *
-	\item estimate the parameter of the closed shape
-	\item test if shape can be combined with other shapes in the drawing. If so repeat step 8, else end
+	\item Input as a chain of points;
+	\item Polygonalize to polyline and refine endpoints;
+	\item Close near endpoints. If closed go to step 6;
+	\item If line ends near another line end, join them and go to step 3;
+	\item Classify line as one of: straight line, polyline or free form curve. Go to step 8;
+	\item Close shape recognition; *
+	\item Estimate the parameter of the closed shape;
+	\item Test if shape can be combined with other shapes in the drawing. If so repeat step 8, else end.
 \end{enumerate}
 
 The $6^{th}$ step was tested with both rule-based systems, support vector machines and neural networks.
@@ -202,9 +202,9 @@ their strokes into shapes like rods, hinges, polygons, etc.
 The interpretation is a three stages procedure:
 
 \begin{itemize}
-	\item match strokes to a series of templates
-	\item rank interpretations with several heuristics about drawing style and mechanical engineering
-	\item return the most consistent hypothesis
+	\item Match strokes to a series of templates;
+	\item Rank interpretations with several heuristics about drawing style and mechanical engineering;
+	\item Return the most consistent hypothesis.
 \end{itemize}
 
 Figure \ref{FIG-FREEDOM01} illustrates the result.
@@ -217,7 +217,7 @@ every extra stroke without giving feedback to the user increases the chance of m
 Another relevant conclusion is that users expect symmetry to be kept regarding the interpreted
 shapes, so it would be a good idea to detect and suggest alignment restrictions between shapes.
 
-\begin{figure}[hb]
+\begin{figure}[!ht]
 	\centering
 	\includegraphics[width=15cm]{gfx/freedom01-1.png}
 	\caption{Assist: A car on the hill. Drawn by the user (left), as interpreted and displayed (right).}
@@ -242,7 +242,7 @@ It uses two techniques to achieve that:
 The downfalls of this method are the impossibility of describing occluded faces and the limited
 editing capacities available once the conversion has been done.
 
-\begin{figure}[hb]
+\begin{figure}[!ht]
 	\centering
 	\includegraphics[width=15cm]{gfx/digclay00-1.png}
 	\caption{Digital Clay: Raw sketch input and its 3D interpretation.}
@@ -251,9 +251,9 @@ editing capacities available once the conversion has been done.
 
 \subsubsection{Discussion}
 
-In \cite{SMARTSK01} useful comparison between alternative implementations of their
-shape recognition algorithm is shown.
-It points out support vector machines as the best performance alternative.
+In \cite{SMARTSK01} a useful comparison between alternative implementations of their
+shape recognition algorithm is performed.
+It favors support vector machines as the best performance alternative.
 The algorithm itself is relatively simple and may be generalized to 3D shapes.
 
 The method proposed in \cite{FREEDOM01} works nicely but is applied only in 2D space.
@@ -275,11 +275,11 @@ alignment, congruence, symmetry and interval equality.
 The application presents the most relevant candidates to the user and highlights the highest relevant one.
 The user can either accept it or select another candidate by tapping on it as seen of Figure \ref{FIG-PEGASUS}.
 
-\begin{figure}[htb]
+\begin{figure}[!ht]
 	\centering
 	\includegraphics[width=6cm]{gfx/beauty97-1.png}
 	\includegraphics[width=6.5cm]{gfx/beauty97-2.png}
-	\caption{Pegasus: A diagram drawn on Pegasus without using any editing commands such as rotation, copy or gridding (left); interaction with multiple candidates (right).}
+	\caption{Pegasus: A diagram drawn on Pegasus without using any editing commands such as rotation, copy or griding (left); interaction with multiple candidates (right).}
 	\label{FIG-PEGASUS}
 \end{figure}
 
@@ -317,15 +317,13 @@ The maintenance strategy solves critical situations such as (see Figure \ref{FIG
 		to fly along the terrain border.
 \end{enumerate}
 
-\begin{figure}[htb]
+\begin{figure}[!ht]
 	\centering
 	\includegraphics[width=5cm]{gfx/smartcam05-1.png}
 	\includegraphics[height=3cm]{gfx/smartcam05-2.png}
 	\caption{SPB Cam: Maintenance strategy for keeping high orientation values (left); Adjustment strategy for ensuring of feasible view specifications (right).}
 	\label{FIG-SMARTCAM1}
 \end{figure}
-
-TODO end article!
 
 
 %\subsubsection{}
