@@ -22,18 +22,20 @@ Three dimensional drawings and brochures are created and scale models are built,
 people with no architectural background to better perceive the building before it is built.
 
 Nowadays architecture is slowly but steadily embracing usage of computers in the designing process.
-Authoring systems such as Autodesk's AutoCAD\footnote{AutoCAD -- http://www.autodesk.com/autocad}
+Authoring systems such as Autodesk's AutoCAD
+\footnote{AutoCAD -- http://www.autodesk.com/autocad}\nocite{SITE-AUTOCAD}
 are currently used to produce a set of views and floor plans necessary to construct a building.
 These systems are optimized for such tasks, having limited support for general 3D volume and surface creation.
 
 % more references to software?
 The creation of 3D drawings and brochures for marketing purposes is common practice.
 It relies in techniques such as
-ray tracing\footnote{POVRay is a well known raytracer available at http://www.povray.org},
+ray tracing\footnote{POVRay is a well known raytracer available at http://www.povray.org}\nocite{SITE-POVRAY},
 radiosity,
 physically accurate light simulation\footnote{
-Maxwell Render -- http://www.maxwellrender.com;
-Indigo Renderer -- http://www.indigorenderer.com}
+both these engines support realistic light simulation:
+Maxwell Render -- http://www.maxwellrender.com\nocite{SITE-MAXWELL};
+Indigo Renderer -- http://www.indigorenderer.com\nocite{SITE-INDIGO}}
 High Dynamic Range Imaging (HDRI), etc.
 These techniques produce believable results but take too much time to render in real time.
 
@@ -57,10 +59,10 @@ as their input interface.
 Exporting the geometry from a CAD program, which is a common solution, comes with several problems,
 as stated by Alberto Raposo et al.\cite{CADVR06}:
 \begin{itemize}
-	\item \textbf{low performance} -- due to unneeded model complexity;
-	\item \textbf{lack of realism} -- usually users of CAD programs don't associate material
+	\item \textbf{Low performance} -- due to unneeded model complexity;
+	\item \textbf{Lack of realism} -- usually users of CAD programs don't associate material
 	or texture data to objects;
-	\item \textbf{inadequate treatment of geometry} -- the conversion often occurs with loss of
+	\item \textbf{Inadequate treatment of geometry} -- the conversion often occurs with loss of
 	geometry, precision and errors such as badly oriented normals.
 \end{itemize}
 
