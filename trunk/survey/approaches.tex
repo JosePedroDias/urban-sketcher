@@ -1,4 +1,8 @@
-\TODO{articles about viewing interface, getting user input, smart sketchpad image, end 3.6.1}
+\TODO{articles about viewing interface,
+constraints
+and getting user input,
+add smart sketchpad image,
+end Navigation}
 % group articles by domain 
 % for every article write a short summary of its relevant features
 % and add an illustrative picture
@@ -209,11 +213,12 @@ The interpretation is a three stages procedure:
 
 Figure \ref{FIG-FREEDOM01} illustrates the result.
 
-The authors emphasize the difficulty they faced when replacing the original human-made stroke
-by its computer interpretation. Users prefer composing the whole drawing prior to computer
-interpretation replacement. Having the computer interpreting every stroke makes them feel they're
-giving up control of the program. Even so, that was the path chosen by the authors because
-every extra stroke without giving feedback to the user increases the chance of misinterpretations.
+The authors emphasize the difficulty they faced when replacing the original
+human-made strokes by its computer interpretations.
+Users prefer composing the whole drawing prior to computer interpretation replacement,
+as opposed to a changeable estimation that refreshes at every added stroke.
+Having the computer interpreting every stroke makes them feel they're losing control of the program. Even so, that was the path chosen by the authors because every extra stroke without giving feedback to the user increases the chance of misinterpretations.
+
 Another relevant conclusion is that users expect symmetry to be kept regarding the interpreted
 shapes, so it would be a good idea to detect and suggest alignment restrictions between shapes.
 
@@ -231,16 +236,21 @@ See input and 3D result in Figure \ref{FIG-DIGCLAY}.
 It uses two techniques to achieve that:
 
 \begin{itemize}
-	\item Huffman-Clowes algorithm, which identifies concave and convex vertices, requiring
-	every line to connect to another line and the program additionally demands the object
-	drawn to be solid;
-	\item infers 3D coordinates based on inherent rules that govern each type of drawing projection.
-	Examples: axes of isometric drawings have equal angles between them;
-	perspective drawings show foreshortening of lines as we get closer to the viewer.
+	\item The Huffman-Clowes algorithm, which identifies concave and convex vertices,
+	requiring every line to connect to another line.
+	The program additionally demands the object drawn to be solid;
+	\item The 3D coordinates are inferred based on inherent rules
+	that govern each type of drawing projection.
+	Examples of applied rules:
+	\begin{itemize}
+		\item Axes of isometric drawings have equal angles between them;
+		\item Perspective drawings show foreshortening of lines as we get closer to the viewer.
+	\end{itemize}
 \end{itemize}
 
-The downfalls of this method are the impossibility of describing occluded faces and the limited
-editing capacities available once the conversion has been done.
+The downfalls of this method are
+the impossibility of describing occluded faces and
+the limited editing capacities available once the conversion has been done.
 
 \begin{figure}[!ht]
 	\centering
@@ -253,58 +263,72 @@ editing capacities available once the conversion has been done.
 
 In \cite{SMARTSK01} a useful comparison between alternative implementations of their
 shape recognition algorithm is performed.
-It favors support vector machines as the best performance alternative.
-The algorithm itself is relatively simple and may be generalized to 3D shapes.
+Wenyin at al. conclude in their paper that Support Vector Machines are the faster implementation.
+The proposed algorithm itself is relatively simple and may be generalized to 3D shapes.
 
-The method proposed in \cite{FREEDOM01} works nicely but is applied only in 2D space.
-Additionally, users found the automatic replacement of geometric shapes as losing control of the application.
+The method proposed by Alvarado and Davis in \cite{FREEDOM01} works nicely but has applications
+only in 2D space.
+Additionally, users felt uneasy as the geometric shapes they drawn kept continuously being
+replaced by the computer program, making them feel having lost control of the application.
 
-
-The method proposed in \cite{DIGCLAY00} shouldn't be used since it only allows describing part
-of geometry (the occluded geometry is undefined) and since it's a discrete algorithm it can't
-be reapplied.
+Schweikardt and Gross \cite{DIGCLAY00} developed the only system discussed here that allows 3D drawing.
+Though its results are interesting, it shouldn't be used because it only allows describing part
+of geometry (the occluded geometry is undefined) and because it doesn't allow successive
+iterations to fill in the undefined geometry.
 
 \subsection{Helping the User: Suggested Constraints}
 
 \subsubsection{Pegasus}
 Igarashi and Hinckley present a 2D sketching system named Pegasus \cite{BEAUTY97}.
-It receives user strokes and converts them, generating candidates by taking into account restrictions for:
+It receives user strokes and converts them, generating candidates by taking into
+account restrictions for:
 vertex connection, segment connection, parallelism, perpendicularity,
 alignment, congruence, symmetry and interval equality.
 
-The application presents the most relevant candidates to the user and highlights the highest relevant one.
-The user can either accept it or select another candidate by tapping on it as seen of Figure \ref{FIG-PEGASUS}.
+The application presents the most relevant candidates to the user and highlights
+the highest relevant one.
+The user can either accept it or select another candidate by tapping on it as seen
+in Figure \ref{FIG-PEGASUS}.
 
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=6cm]{gfx/beauty97-1.png}
 	\includegraphics[width=6.5cm]{gfx/beauty97-2.png}
-	\caption{Pegasus: A diagram drawn on Pegasus without using any editing commands such as rotation, copy or griding (left); interaction with multiple candidates (right).}
+	\caption{Pegasus: A diagram drawn on Pegasus without using any editing commands such as rotation,
+		copy or griding (left); interaction with multiple candidates (right).}
 	\label{FIG-PEGASUS}
 \end{figure}
 
 \subsubsection{Discussion}
 
-TODO
-%(PEGASUS): The technique appears to be of great use in my project - in architecture most walls subsume these constraints.
-%Additionally my users will model in 3D, which increases the interest in applying beautification algorithms
-%such as this one.
+Igarashi at al. present in \cite{BEAUTY97} a useful way of aiding the user.
+Most elements in architecture subsume to these constraints.
+Applying a technique of this kind gains more relevance in
+the 3D architecture problem because users will be modeling in 3D.
+Humans are more prone to drawing errors in a task like this,
+benefiting more from beautification algorithms.
 
 \subsection{Navigation}
 
 \subsubsection{Smart and Physically Based Navigation}
-In order to ensure users not ''getting lost'' in the virtual space, Buchholz, Bohnet and Döllner \cite{SMARTCAM05} propose
-a camera that is is both smart and physically-based. Smart in the sense that it is aware of confusing,
-disorienting viewing situations and provides means to circumvent them. Physically based because it is
-supported by a physically based model of the 3D motion to ensure steady, continuous user movements.
+In order to ensure users not ``getting lost'' in the virtual space,
+Buchholz, Bohnet and Döllner \cite{SMARTCAM05}
+propose a camera that is is both smart and physically-based.
+It is smart in the sense that it is aware of confusing,
+disorienting viewing situations, providing means to circumvent them.
+It is physically based because it is supported by a physically based model of 3D motion
+to ensure steady, continuous user movements.
 
-In order to solve the disorientation problem the camera has to identify situations when to intervene. For that
-matter a metric, called orientation value, was created. Each view is classified by counting its pixels, granting
-different scores: highest values for landmarks; high values for terrain; low values for the sky.
-Therefore a threshold can be established and views below it are classified ''disoriented''.
+In order to solve the disorientation problem, the camera must identify situations
+when to intervene.
+For that matter a metric, called orientation value, was created.
+Each view is classified by counting its pixels, granting each one a different value:
+landmarks are granted the highest values; terrain gets high values and sky gets low values.
+A threshold can then be established and views below it are classified ``disoriented''.
 
-When such an event takes place, smart navigation techniques restrict camera control. The constraints posed
-to user control must be as comprehensible as possible. Camera movement should also be time-coherent and physically sound.
+When such an event takes place, smart navigation techniques restrict camera control.
+The constraints posed to user control must be as comprehensible as possible.
+Camera movement should also be time-coherent and physically sound.
 
 The maintenance strategy solves critical situations such as (see Figure \ref{FIG-SMARTCAM1}, left):
 
@@ -319,8 +343,8 @@ The maintenance strategy solves critical situations such as (see Figure \ref{FIG
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=5cm]{gfx/smartcam05-1.png}
-	\includegraphics[height=3cm]{gfx/smartcam05-2.png}
+	\includegraphics[height=8cm]{gfx/smartcam05-1.png}
+	\includegraphics[height=6cm]{gfx/smartcam05-2.png}
 	\caption{SPB Cam: Maintenance strategy for keeping high orientation values (left); Adjustment strategy for ensuring of feasible view specifications (right).}
 	\label{FIG-SMARTCAM1}
 \end{figure}
