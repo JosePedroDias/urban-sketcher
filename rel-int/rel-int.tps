@@ -5,13 +5,13 @@ Version=2
 [SessionInfo]
 ActiveTab=0
 FrameCount=9
-ActiveFrame=0
+ActiveFrame=1
 
 [Frame0]
 Columns=1
 Rows=1
-Flags=2
-ShowCmd=3
+Flags=0
+ShowCmd=1
 MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-4
@@ -24,23 +24,23 @@ Class=CLatexEdit
 Document=rel-int.tex
 
 [Frame0_Row0]
-cyCur=451
+cyCur=273
 cyMin=10
 
 [Frame0_Col0]
-cxCur=990
+cxCur=824
 cxMin=10
 
 [Frame0_View0,0]
-Cursor.row=32
-Cursor.column=38
-TopSubLine=23
+Cursor.row=4
+Cursor.column=0
+TopSubLine=0
 
 [Frame1]
 Columns=1
 Rows=1
-Flags=0
-ShowCmd=1
+Flags=2
+ShowCmd=3
 MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-4
@@ -53,16 +53,16 @@ Class=CLatexEdit
 Document=intro.tex
 
 [Frame1_Row0]
-cyCur=270
+cyCur=451
 cyMin=10
 
 [Frame1_Col0]
-cxCur=828
+cxCur=990
 cxMin=10
 
 [Frame1_View0,0]
-Cursor.row=0
-Cursor.column=0
+Cursor.row=15
+Cursor.column=52
 TopSubLine=0
 
 [Frame2]
@@ -150,7 +150,7 @@ cxMin=10
 [Frame4_View0,0]
 Cursor.row=40
 Cursor.column=0
-TopSubLine=34
+TopSubLine=42
 
 [Frame5]
 Columns=1
@@ -266,5 +266,5 @@ cxMin=10
 [Frame8_View0,0]
 Cursor.row=221
 Cursor.column=29
-TopSubLine=223
+TopSubLine=232
 
