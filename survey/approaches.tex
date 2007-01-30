@@ -48,7 +48,7 @@ setups commonly available:
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=12cm]{gfx/hmd-cluster-cave.png}
+	\includegraphics[width=11cm]{gfx/hmd-cluster-cave.png}
 	\caption{HMD, Wall, CAVE}
 	\label{FIG-HMD-CLUSTER-CAVE}
 \end{figure}
@@ -80,7 +80,7 @@ The authors propose the following levels of detail for a building (derived from
 CityGML\footnote{CityGML is a common information model for the representation of 3D urban objects.
 It defines the classes and relations for the most relevant topographic objects in cities
 and regional models with respect to their geometrical, topological, semantical and appearance properties.
-More info at: http://www.citygml.org}, see Figure \ref{FIG-LODCITY}):
+More info at: http://www.citygml.org}, see Fig.\ref{FIG-LODCITY}):
 
 \begin{itemize}
 	\item Simple block model
@@ -90,7 +90,7 @@ More info at: http://www.citygml.org}, see Figure \ref{FIG-LODCITY}):
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=15cm]{gfx/lodcity05-1.png}
+	\includegraphics[width=11cm]{gfx/lodcity05-1.png}
 	\caption{Continuous LOD: a) block model; b) building split into floors; c) geometry refinement; d) appearance refinement.}
 	\label{FIG-LODCITY}
 \end{figure}
@@ -136,7 +136,7 @@ In virtual reality the most common solutions may feature a combination of:
 		Small reflective markers are attached to each subject relevant parts and infrared cameras
 		are calibrated in order to be able to read the markers and determine their position
 		and orientation precisely.
-		See Figure \ref{FIG-MOTION-TRACKING}.
+		See Fig.\ref{FIG-MOTION-TRACKING}.
 	\item[HMD's Rotation Data] --
 		When a user is wearing an HMD device, its head rotation and tilt data can be captured,
 		allowing the virtual world to act accordingly, e.g. rotating and tilting the VR world.
@@ -148,25 +148,39 @@ In virtual reality the most common solutions may feature a combination of:
 		These are special devices which allow 6 degrees or freedom (6DOF) manipulation.
 		The user holds the device in his hands and the device's data can map several actions to
 		the read axes.
-		See Figure \ref{FIG-SPACE-DEVICES}.
+		See Fig.\ref{FIG-SPACE-DEVICES}.
 \end{description}
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=8cm]{gfx/MotionCapture.jpg}
-	\caption{Motion tracking example:
+	\subfigure[
+		Motion tracking example:
 		the subject wears a suit with several markers distributed so that his skeleton
 		relative orientations can be reasoned.
-		An array of infrared cameras is rigged to the ceiling, reading marker positions.}
-	\label{FIG-MOTION-TRACKING}
+		An array of infrared cameras is rigged to the ceiling, reading marker positions.
+	]{\label{FIG-MOTION-TRACKING}\includegraphics[width=5.5cm]{gfx/MotionCapture.jpg}}
+	\subfigure[
+		Two kinds of space balls and one space pilot.
+	]{\label{FIG-SPACE-DEVICES}\includegraphics[width=6.5cm]{gfx/space-devices.png}}
+	\caption{Interfaces}
 \end{figure}
 
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[width=10cm]{gfx/space-devices.png}
-	\caption{Two kinds of space balls and one space pilot.}
-	\label{FIG-SPACE-DEVICES}
-\end{figure}
+%\begin{figure}[!ht]
+%	\centering
+%	\includegraphics[width=6cm]{gfx/MotionCapture.jpg}
+%	\caption{Motion tracking example:
+%		the subject wears a suit with several markers distributed so that his skeleton
+%		relative orientations can be reasoned.
+%		An array of infrared cameras is rigged to the ceiling, reading marker positions.}
+%	\label{FIG-MOTION-TRACKING}
+%\end{figure}
+%
+%\begin{figure}[!ht]
+%	\centering
+%	\includegraphics[width=8cm]{gfx/space-devices.png}
+%	\caption{Two kinds of space balls and one space pilot.}
+%	\label{FIG-SPACE-DEVICES}
+%\end{figure}
 
 The least intrusive interface would use speech recognition and either motion tracking or image processing,
 the former being more driven to the purpose.
@@ -209,7 +223,7 @@ The interpretation is a three stages procedure:
 	\item Return the most consistent hypothesis.
 \end{itemize}
 
-Figure \ref{FIG-FREEDOM01} illustrates the result.
+Fig.\ref{FIG-FREEDOM01} illustrates the result.
 
 The authors emphasize the difficulty they faced when replacing the original
 human-made strokes by its computer interpretations.
@@ -222,14 +236,14 @@ shapes, so it would be a good idea to detect and suggest alignment restrictions 
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=15cm]{gfx/freedom01-1.png}
+	\includegraphics[width=11cm]{gfx/freedom01-1.png}
 	\caption{Assist: A car on the hill. Drawn by the user (left), as interpreted and displayed (right).}
 	\label{FIG-FREEDOM01}
 \end{figure}
 
 \subsubsection{Digital Clay}
 Digital Clay \cite{DIGCLAY00} allows a user to draw freely and tries to convert the drawing into a 3D model.
-See input and 3D result in Figure \ref{FIG-DIGCLAY}.
+See input and 3D result in Fig.\ref{FIG-DIGCLAY}.
 
 It uses two techniques to achieve that:
 
@@ -252,7 +266,7 @@ the limited editing capacities available once the conversion has been done.
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=15cm]{gfx/digclay00-1.png}
+	\includegraphics[width=11cm]{gfx/digclay00-1.png}
 	\caption{Digital Clay: Raw sketch input and its 3D interpretation.}
 	\label{FIG-DIGCLAY}
 \end{figure}
@@ -286,12 +300,12 @@ alignment, congruence, symmetry and interval equality.
 The application presents the most relevant candidates to the user and highlights
 the highest relevant one.
 The user can either accept it or select another candidate by tapping on it as seen
-in Figure \ref{FIG-PEGASUS}.
+in Fig.\ref{FIG-PEGASUS}.
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=6cm]{gfx/beauty97-1.png}
-	\includegraphics[width=6.5cm]{gfx/beauty97-2.png}
+	\includegraphics[width=5cm]{gfx/beauty97-1.png}
+	\includegraphics[width=5.5cm]{gfx/beauty97-2.png}
 	\caption{Pegasus: A diagram drawn on Pegasus without using any editing commands such as rotation,
 		copy or griding (left); interaction with multiple candidates (right).}
 	\label{FIG-PEGASUS}
@@ -328,7 +342,7 @@ When such an event takes place, smart navigation techniques restrict camera cont
 The constraints posed to user control must be as comprehensible as possible.
 Camera movement should also be time-coherent and physically sound.
 
-The maintenance strategy solves critical situations such as (see Figure \ref{FIG-SMARTCAM1}, left):
+The maintenance strategy solves critical situations such as (see Fig.\ref{FIG-SMARTCAM1}, left):
 
 \begin{enumerate}[a)]
 	\item The user rotates the flight direction and causes the camera to look too far beyond the terrain border.
@@ -341,8 +355,8 @@ The maintenance strategy solves critical situations such as (see Figure \ref{FIG
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[height=8cm]{gfx/smartcam05-1.png}
-	\includegraphics[height=6cm]{gfx/smartcam05-2.png}
+	\includegraphics[height=7cm]{gfx/smartcam05-1.png}
+	\includegraphics[height=5cm]{gfx/smartcam05-2.png}
 	\caption{SPB Cam: Maintenance strategy for keeping high orientation values (left); Adjustment strategy for ensuring of feasible view specifications (right).}
 	\label{FIG-SMARTCAM1}
 \end{figure}

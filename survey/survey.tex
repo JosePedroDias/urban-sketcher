@@ -1,36 +1,15 @@
-\documentclass[a4paper,12pt,titlepage]{article}
-\usepackage{geometry}       % allows changing page dimensions
-\geometry{a4paper,left=2cm,right=2cm,top=2.5cm,bottom=2cm}
+%\documentclass[a4paper]{llncs}
+\documentclass{llncs}
+\usepackage{llncsdoc}
 \usepackage[latin1]{inputenc}   % support the pt encoding
-\usepackage{graphicx}       % support graphic files
-\usepackage{color}          % should allow colored text
-\usepackage{url}            % should identify and format urls
-\usepackage{natbib}         % pretty bibtex
-\usepackage{enumerate}			% allows enumerations a)... I..., 1... etc.
-\usepackage{rotating}				% allows text rotate via \begin{sideways} or \begin{turn}{ang_in_deg}
-\usepackage{lscape}					% allows pages in landspace \begin{landscape}page content\end{landscape}
-\usepackage{url}
-\usepackage[pdftex,
-	pdftitle					= {creating urban scenery using multimodal interfaces},
-	pdfauthor					= {José Pedro Dias},
-	bookmarks         = true,				% do bookmarks
-	bookmarksnumbered = true,				% keep sedtion numbers
-%	pdfpagemode       = None,				% start with closed bookmarks
-	pdfstartview      = FitH,				% starting view scale
-%	pdfpagelayout     = SinglePage,	% one page at a time
-	linkcolor					= black,			% links inside the document
-	citecolor					= black,			% for cites
-%	linkcolor					= blue,				% links inside the document
-%	citecolor					= red,				% for cites
-%	urlcolor					= green,			% for urls
-	colorlinks        = true]{hyperref}
-\usepackage[absolute]{textpos}		% allows absolute positioning of stuff
+\usepackage{graphicx}   		    % support graphic files
+\usepackage{subfigure}   		 	    % for subfigure usage
+\usepackage{enumerate}					% allows enumerations a)... I..., 1... etc.
 
 \usepackage{pict2e}								% these 2 are for table a\b cells
 \usepackage{slashbox}							% pict2e is optional but enhances the result
 
-\usepackage{my-customs}					  % my overloads
-\input{aliases}										% aliases for common formatting stuff
+\input{aliases}									% \TODO
 
 % LANGUAGE PROBLEMS:
 % too much the's and a's
@@ -64,78 +43,35 @@
 % speech recognition, motion tracking, etc.
 % 
 
-\title{
-	%\TODO{this generates 1 badbox}
-	\begin{textblock}{0}(12.5,1)
-		\includegraphics[width=2.5cm]{gfx/logo-ist.jpg}
-	\end{textblock}
-	\textsc{Survey}\\
-	\textbf{creating urban scenery\\using multimodal interfaces}\\
-	\textcolor{red}{\small{DRAFT from \today}}
-}
-\author{
-	\textbf{José Pedro Dias}\\
-	n.48296\\
-	\emph{jose.pedro.dias@gmail.com}
-}
-\date{January 2007}
-
-\makeindex
-%\makeglossary
+\title{creating urban scenery\\using multimodal interfaces}
+\author{José Pedro Dias}
+\institute{IST,Universidade Técnica de Lisboa\\Rua Alves Redol, 1000-029 Lisboa}
+%\email{jose.pedro.dias}
 
 \begin{document}
 
 \maketitle
-%\newpage
 
-\tableofcontents
-%\listoffigures
-%\listoftables
-\newpage
-
-\parskip=0.5\baselineskip
-
-%\twocolumn
-	
-\baselineskip = 16pt    % bigger space between lines
-
-\section*{Abstract}
-%\begin{abstract}
+\begin{abstract}
 \input{abstract}
-%\end{abstract}
-
-%\newpage
+\end{abstract}
 
 \section{Introduction}
 \input{introduction}
 
-\newpage
-
 \section{The Problem}
 \input{problem}
-
-\newpage
 
 \section{Approaches}
 \input{approaches}
 
-\newpage
-
 \section{Comparative Analysis}
 \input{comparative}
-
-\newpage
 
 \section{Conclusions \& Future Work}
 \input{conclusions}
 
-%\onecolumn
-\newpage
-
-%\bibliographystyle{plain}
-\bibliographystyle{alpha}   % this style uses the authors first letters followed by year
+\bibliographystyle{splncs}
 \bibliography{thesis}
-
-%\printindex
 
 \end{document}

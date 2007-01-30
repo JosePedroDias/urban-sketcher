@@ -12,7 +12,7 @@ The section ends with the author's ideas for an alternative solution.
 
 \subsection{AutoCAD}
 AutoCAD is the \emph{de facto} standard software for architecture designs.
-It has a steep learning curve (Figure \ref{FIG-AUTOCAD}) but is nevertheless
+It has a steep learning curve (Fig.\ref{FIG-AUTOCAD}) but is nevertheless
 learned all over the world.
 
 One of its formats, DXF, is widely supported in 3D modelers and engines.
@@ -23,24 +23,24 @@ This program favors 2D drawing and modeling over real 3D concepts,
 but a skillful operator can create every shape necessary to an architectural scenario.
 Internally AutoCAD doesn't support any interactive preview of the created designs.
 
-It renders using the Mental Ray\footnote{Mental Ray rendering engine -- http://www.autodesk.com/mentalray}\nocite{SITE-MENTAL} engine.
+It renders using the Mental Ray\footnote{Mental Ray rendering engine -- http://www.autodesk.com/mentalray}%\nocite{SITE-MENTAL} engine.
 Animations can be made using camera paths.
 
 \begin{figure}[!ht]
     \centering
-    \includegraphics[width=12cm]{gfx/autocad-1.png}
+    \includegraphics[width=9cm]{gfx/autocad-1.png}
     \caption{AutoCAD: A typical layout of a floor plan.}
     \label{FIG-AUTOCAD}
 \end{figure}
 
 \subsection{ArchiCAD}
-\nocite{SITE-ARCHICAD}
+%\nocite{SITE-ARCHICAD}
 GraphiSoft ArchiCAD\footnote{GraphiSoft ArchiCAD -- http://www.graphisoft.com/products/archicad}
 aims at conquering new architecture students who haven't been exposed to AutoCAD.
 
 It offers pre-made views and document templates for every architectural driven need.
 It is by definition a 3D CAD program and it is praised by architects for its easy 3D
-manipulation capabilities (Figure \ref{FIG-ARCHICAD}).
+manipulation capabilities (Fig.\ref{FIG-ARCHICAD}).
 
 The program features templates for common architectural elements.
 ArchiCAD has navigation capabilities too, allowing first person perspective navigation of the model.
@@ -52,13 +52,13 @@ There's a Software Development Kit for ArchiCAD plugin creation.
 
 \begin{figure}[!ht]
     \centering
-    \includegraphics[width=12cm]{gfx/archicad-1.png}
+    \includegraphics[width=9cm]{gfx/archicad-1.png}
     \caption{ArchiCAD: Notice basic selection and template properties editing in the 3D view.}
     \label{FIG-ARCHICAD}
 \end{figure}
 
 \subsection{Revit Building}
-\nocite{SITE-REVIT}
+%\nocite{SITE-REVIT}
 Revit Building\footnote{AutoCAD Revit Building -- http://www.autodesk.com/revit}
 is another Autodesk product.
 Unlike AutoCAD, which spans its use to other areas such as mechanical engineering,
@@ -67,7 +67,7 @@ Revit Building was explicitly thought out for architectural design.
 It works completely in 3D and has native templates for doors, windows, roofs, etc.
 Features the concept of mass, lacking in most packages.
 Common constraints are detected. Thick walls can be drawn as lines and solids can
-be cut as floors (compare the top-left and bottom right views in Figure \ref{FIG-REVIT}).
+be cut as floors (compare the top-left and bottom right views in Fig.\ref{FIG-REVIT}).
 
 Revit Building features powerful templates for complex tasks such as roof design.
 It has a simple raytacer and radiosity engine. Cameras can be placed but only for view
@@ -79,13 +79,13 @@ something much harder to do in AutoCAD.
 
 \begin{figure}[!ht]
     \centering
-    \includegraphics[width=12cm]{gfx/revit-1.png}
+    \includegraphics[width=9cm]{gfx/revit-1.png}
     \caption{Revit Building: Solid shapes can be combined with boolean operations and converted into buildings.}
     \label{FIG-REVIT}
 \end{figure}
 
 \subsection{SketchUp}
-\nocite{SITE-SKETCHUP}
+%\nocite{SITE-SKETCHUP}
 Google SketchUp\footnote{Google SketchUp -- http://www.sketchup.com}
 is a friendly program for the novice 3D modeler.
 It features a simple interface and most of its tools are basic,
@@ -105,11 +105,11 @@ Curve manipulation and generation of surfaces is nonexistent.
 Allows plugin design in the Ruby language.
 
 Another bonus from being part of the Google software library, SketchUp features import/export capabilities to Google Earth
-\footnote{Google Earth -- http://earth.google.com}\nocite{SITE-EARTH}.
+\footnote{Google Earth -- http://earth.google.com}%\nocite{SITE-EARTH}.
 This allows capturing a patch of land to SketchUp, design a building there and export the patch
 back with its new contents to Google Earth.
 
-A great feature SketchUp is realtime shadows (Figure \ref{FIG-SKETCHUP}) -- since there's only one viewport, shadows are crucial to give the user a sense of depth to a scene.
+A great feature SketchUp is realtime shadows (Fig.\ref{FIG-SKETCHUP}) -- since there's only one viewport, shadows are crucial to give the user a sense of depth to a scene.
 
 In renders cartoonish styled views and allows interpolation of cameras to render simple animations.
 
@@ -118,7 +118,7 @@ The professional version of the program allows exporting to common 3D architectu
 
 \begin{figure}[!ht]
     \centering
-    \includegraphics[width=12cm]{gfx/sketchup-1.png}
+    \includegraphics[width=9cm]{gfx/sketchup-1.png}
     \caption{SketchUp: Basic shape extrusions. Notice the shadows in the viewport.}
     \label{FIG-SKETCHUP}
 \end{figure}
@@ -127,41 +127,41 @@ The professional version of the program allows exporting to common 3D architectu
 
 \subsection{Comparison Table of Available Solutions}
 \begin{table}[!ht]
-    \centering
-		\begin{tabular}{|c|c|c|c|c|}
-			\hline
-			\backslashbox{Features}{Solutions}		& AutoCAD		& ArchiCAD	& Revit Building	& SketchUp	\\
-			\hline
-			Design in 2D						&		\GdA		&		\GdB		&				\GdB			&		\GdC		\\
-			\hline
-			Design in 3D						&		\GdD		&		\GdC		&				\GdB			&		\GdB		\\
-			\hline
-			Architectural Templates	&		\GdD		&		\GdB		&				\GdA			&		\GdC		\\
-			\hline
-			Supported Formats				&		\GdC		&		\GdC		&				\GdB			&		\GdD / \GdB \footnotemark\\
-			\hline
-			Interactive Modes				&		\GdE		&		\GdB		&				\GdC 			&		\GdE		\\
-			\hline
-			Rendering Capabilities	&		\GdB		&		\GdB		&				\GdC			&		\GdD		\\
-			\hline
-			Extensibility						&		\GdA		&		\GdC		&				\GdE			&		\GdC		\\
-			\hline
-		\end{tabular}
-		\caption{Different solutions in the market compared.}
-		\label{TB-COMP-SOL}
+  \centering
+  \caption{Different solutions in the market compared.}
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		\backslashbox{Features}{Solutions}		& AutoCAD		& ArchiCAD	& Revit Building	& SketchUp	\\
+		\hline
+		Design in 2D						&		\GdA		&		\GdB		&				\GdB			&		\GdC		\\
+		\hline
+		Design in 3D						&		\GdD		&		\GdC		&				\GdB			&		\GdB		\\
+		\hline
+		Architectural Templates	&		\GdD		&		\GdB		&				\GdA			&		\GdC		\\
+		\hline
+		Supported Formats				&		\GdC		&		\GdC		&				\GdB			&		\GdD / \GdB \footnotemark\\
+		\hline
+		Interactive Modes				&		\GdE		&		\GdB		&				\GdC 			&		\GdE		\\
+		\hline
+		Rendering Capabilities	&		\GdB		&		\GdB		&				\GdC			&		\GdD		\\
+		\hline
+		Extensibility						&		\GdA		&		\GdC		&				\GdE			&		\GdC		\\
+		\hline
+	\end{tabular}
+	\label{TB-COMP-SOL}
 \end{table}
 \footnotetext{SketchUp exporting capabilities depend on using free or commercial version}
 
 \begin{table}[!ht]
-    \centering
-		\begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
-			\hline
-			very bad	& bad			& average	& good		& very good	\\
-			\hline
-				\GdE		&	\GdD		&	\GdC		&	\GdB		&	\GdA			\\
-			\hline
-		\end{tabular}
+  \centering
   \caption{Legend of Table \ref{TB-COMP-SOL}}
+	\begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
+		\hline
+		very bad	& bad			& average	& good		& very good	\\
+		\hline
+			\GdE		&	\GdD		&	\GdC		&	\GdB		&	\GdA			\\
+		\hline
+	\end{tabular}
   \label{TB-COMP-SOL-LEGEND}
 \end{table}
 
