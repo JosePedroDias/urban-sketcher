@@ -1,0 +1,122 @@
+\documentclass[a4paper,12pt,titlepage,portuges]{article}
+\usepackage{geometry}       % allows changing page dimensions
+\geometry{a4paper,left=2cm,right=2cm,top=2.5cm,bottom=2cm}
+\usepackage[latin1]{inputenc}   % support the pt encoding
+\usepackage[portuguese]{babel}
+\usepackage{graphicx}       % support graphic files
+\usepackage{color}          % should allow colored text
+\usepackage{url}            % should identify and format urls
+\usepackage{natbib}         % pretty bibtex
+\usepackage{enumerate}			% allows enumerations a)... I..., 1... etc.
+%\usepackage{rotating}				% allows text rotate via \begin{sideways} or \begin{turn}{ang_in_deg}
+%\usepackage{lscape}					% allows pages in landspace \begin{landscape}page content\end{landscape}
+\usepackage{url}
+\usepackage[pdftex,
+	pdftitle					= {creating urban scenery using multimodal interfaces},
+	pdfauthor					= {José Pedro Dias},
+	bookmarks         = true,				% do bookmarks
+	bookmarksnumbered = true,				% keep sedtion numbers
+%	pdfpagemode       = None,				% start with closed bookmarks
+	pdfstartview      = FitH,				% starting view scale
+%	pdfpagelayout     = SinglePage,	% one page at a time
+	linkcolor					= black,			% links inside the document
+	citecolor					= black,			% for cites
+%	linkcolor					= blue,				% links inside the document
+%	citecolor					= red,				% for cites
+%	urlcolor					= green,			% for urls
+	colorlinks        = true]{hyperref}
+\usepackage[absolute]{textpos}		% allows absolute positioning of stuff
+
+\usepackage{fancyhdr}							% cool headers and footers with \{l,c,h}head and \{l,c,h}foot
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}
+\lhead{Relatório de TFC - Título}
+\rhead{\today}
+\lfoot{José Pedro Dias}
+\cfoot{}													% tira nr de página do meio do footer
+\rfoot{\thepage}
+
+
+%\usepackage{pict2e}								% these 2 are for table a\b cells
+%\usepackage{slashbox}							% pict2e is optional but enhances the result
+
+\usepackage{my-customs}					  % my overloads
+\input{aliases}										% aliases for common formatting stuff
+
+\title{
+	%\TODO{this generates 1 badbox}
+	\begin{textblock}{0}(12.5,1)
+		\includegraphics[width=2.5cm]{gfx/logo-ist.jpg}
+	\end{textblock}
+	\textsc{Relatório Intercalar}\\
+	\textbf{creating urban scenery\\using multimodal interfaces}
+}
+\author{
+	\textbf{José Pedro Dias}\\
+	n.48296\\
+	\emph{jose.pedro.dias@gmail.com}
+}
+\date{Janeiro de 2007}
+
+%\makeindex
+%\makeglossary
+
+\begin{document}
+
+\maketitle
+%\newpage
+
+\tableofcontents
+%\listoffigures
+%\listoftables
+\newpage
+
+\parskip=0.5\baselineskip
+
+%\twocolumn
+	
+\baselineskip = 16pt    % bigger space between lines
+
+\section{Introdução}
+\input{intro}
+
+\newpage
+
+\section{Objectivos e Resultados a Obter}
+\input{obj-res}
+
+\newpage
+
+\section{Trabalho Relacionado}
+\input{trab-rel}
+
+\newpage
+
+\section{Trabalho Realizado}
+\input{trab-rea}
+
+\newpage
+
+\section{Trabalho Proposto}
+\input{trab-pro}
+
+\newpage
+
+\section{Plano de Trabalhos}
+\input{plano}
+
+\newpage
+
+\section{Conclusões}
+\input{conc}
+
+%\onecolumn
+\newpage
+
+%\bibliographystyle{plain}
+\bibliographystyle{alpha}   % this style uses the authors first letters followed by year
+\bibliography{thesis}
+
+%\printindex
+
+\end{document}
