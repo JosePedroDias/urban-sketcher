@@ -5,7 +5,7 @@ Version=2
 [SessionInfo]
 ActiveTab=0
 FrameCount=10
-ActiveFrame=7
+ActiveFrame=3
 
 [Frame0]
 Columns=1
@@ -32,9 +32,9 @@ cxCur=824
 cxMin=10
 
 [Frame0_View0,0]
-Cursor.row=38
-Cursor.column=20
-TopSubLine=27
+Cursor.row=5
+Cursor.column=51
+TopSubLine=0
 
 [Frame1]
 Columns=1
@@ -61,8 +61,8 @@ cxCur=828
 cxMin=10
 
 [Frame1_View0,0]
-Cursor.row=45
-Cursor.column=68
+Cursor.row=0
+Cursor.column=0
 TopSubLine=0
 
 [Frame2]
@@ -90,15 +90,15 @@ cxCur=828
 cxMin=10
 
 [Frame2_View0,0]
-Cursor.row=44
-Cursor.column=114
+Cursor.row=0
+Cursor.column=0
 TopSubLine=0
 
 [Frame3]
 Columns=1
 Rows=1
-Flags=0
-ShowCmd=1
+Flags=2
+ShowCmd=3
 MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-4
@@ -111,16 +111,16 @@ Class=CLatexEdit
 Document=trab-rel.tex
 
 [Frame3_Row0]
-cyCur=270
+cyCur=458
 cyMin=10
 
 [Frame3_Col0]
-cxCur=828
+cxCur=1031
 cxMin=10
 
 [Frame3_View0,0]
 Cursor.row=5
-Cursor.column=1
+Cursor.column=0
 TopSubLine=0
 
 [Frame4]
@@ -177,9 +177,9 @@ cxCur=828
 cxMin=10
 
 [Frame5_View0,0]
-Cursor.row=52
-Cursor.column=68
-TopSubLine=54
+Cursor.row=9
+Cursor.column=0
+TopSubLine=0
 
 [Frame6]
 Columns=1
@@ -206,15 +206,15 @@ cxCur=828
 cxMin=10
 
 [Frame6_View0,0]
-Cursor.row=19
-Cursor.column=0
-TopSubLine=5
+Cursor.row=15
+Cursor.column=9
+TopSubLine=1
 
 [Frame7]
 Columns=1
 Rows=1
-Flags=2
-ShowCmd=3
+Flags=0
+ShowCmd=1
 MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-4
@@ -227,16 +227,16 @@ Class=CLatexEdit
 Document=conc.tex
 
 [Frame7_Row0]
-cyCur=451
+cyCur=270
 cyMin=10
 
 [Frame7_Col0]
-cxCur=1031
+cxCur=828
 cxMin=10
 
 [Frame7_View0,0]
-Cursor.row=5
-Cursor.column=30
+Cursor.row=0
+Cursor.column=0
 TopSubLine=0
 
 [Frame8]
@@ -264,9 +264,9 @@ cxCur=828
 cxMin=10
 
 [Frame8_View0,0]
-Cursor.row=167
-Cursor.column=13
-TopSubLine=164
+Cursor.row=186
+Cursor.column=3
+TopSubLine=183
 
 [Frame9]
 Columns=1
@@ -294,6 +294,6 @@ cxMin=10
 
 [Frame9_View0,0]
 Cursor.row=22
-Cursor.column=1
+Cursor.column=0
 TopSubLine=8
 
