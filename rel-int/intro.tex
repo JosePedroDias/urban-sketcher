@@ -7,6 +7,8 @@
 %sem necessidade de documentos acessórios (ou consultar outras partes deste documento). 
 %(no máximo 1 página)
 
+\TODO{definição de motion tracking?}
+
 Este trabalho tem como objectivo desenvolver um sistema que permita a criação
 de esboços arquitecturais fazendo uso de interfaces multimodais.
 
@@ -15,15 +17,21 @@ Trata-se de um conjunto de universidades e empresas, fornecendo as universidades
 investigadores e inovação científica e as empresas experiência nos domínios em que operam:
 nomeadamente arquitectura e indústria automóvel.\nocite{SITE-IMPROVE}
 
-O projecto herda do Improve requisitos tanto a nível de funcionalidade, hardware a utilizar
-como na \emph{framework} em que assenta.
+O projecto herda do Improve requisitos  de funcionalidade, hardware a utilizar
+e a \emph{framework} em que assenta, o AICI.
 
 O sistema está pensado para correr num cenário colaborativo, podendo interagir com o mesmo pessoas
 munidas de um TabletPC ou frente à LemeWall.
 
-A LemeWall é um \emph{cluster} de computadores e projectores montados numa matriz 4 por 3 que projectam numa tela.
+A LemeWall é um \emph{cluster}\footnote{
+\emph{Cluster} de computadores -- trata-se de um conjunto de máquinas ligadas entre si e que trabalham
+com um objectivo comum. Têm um poder computacional muito grande, sendo hoje em dia cada vez mais comuns
+pela sua performance e preço, vantajosa face ao uso de \emph{mainframes}.
+A LemeWall assenta num \emph{cluster} que distribui a renderização da imagem da tela.
+} de computadores e projectores montados numa matriz 4 por 3
+que projectam numa tela uma imagem composta, idealmente uniforme.
 Este espaço está munido de câmaras com filtro de infravermelhos de modo a identificar lasers
-apontados para a tela e um sistema de \emph{motion tracking} da STT, uma das empresas pertencente
+apontados para a tela e um sistema de \emph{motion tracking} da STT\footnote{http://www.simtechniques.com/}\nocite{SITE-STT}, uma das empresas pertencente
 ao Improve. Este sistema permite obter a posição e orientação de um conjunto de marcadores reflectores,
 podendo os mesmos ser configurados de modo a seguir artefactos, membros e/ou a cabeça de utilizadores.
 
@@ -34,5 +42,5 @@ O sistema permitirá criar e manipular edifícios, navegar numa cidade virtual e l
 anotações sobre a geometria do mundo.
 
 Este projecto pretende desenvolver soluções inovadoras para a criação e introdução de geometria,
-navegação no mundo e na própria interface, dados os dispositivos de entrada - caneta do TabletPC
-ou ponteiro de laser.
+navegação no mundo e na pela própria interface que usa, dados os dispositivos de entrada:
+caneta do TabletPC; ponteiro de laser, artefactos e voz na LemeWall.
