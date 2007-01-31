@@ -8,13 +8,19 @@
 %onde apresentam os principais resultados obtidos. 
 %(no máximo 1,5 páginas).
 
-Este projecto é motivado pela vontade de auxiliar uma profissão de importância como é a arquitectura.
+\TODO{Falta conteúdo - ler blog, ver wiki. Tópicos manhosos :P}
+
+Este projecto é motivado pela vontade de auxiliar os profissionais do ramo da arquitectura.
+Nas últimas décadas tem sido uma das disciplinas que mais exige dos computadores,
+mantendo-se estagnado o modo como o utilizador interage com o software.
+Este projecto pretende encontrar formas alternativas de o fazer.
 A inclusão do projecto no consórcio Improve é igualmente motivante, estabelecendo um conjunto
 de objectivos e prazos adicionais ao projecto.
 
 O projecto teve início no final de Setembro.
-Houve uma reunião com o consórcio em Lisboa, no INESC Lisboa a que o autor compareceu
-e onde foi introduzido aos problemas de desenvolvimento e prazos estipulados.
+Houve uma reunião com o consórcio Improve, no INESC Lisboa, a que o autor compareceu
+e onde se familiarizou com o estado actual de desenvolvimento do projecto, os desafios que
+coloca e os prazos e \emph{deliverables} estipulados.
 
 Houve igualmente um conjunto de reuniões com vista a elucidar os diversos alunos de mestrado quanto
 às tarefas que deles se espera e os prazos a cumprir.
@@ -24,17 +30,39 @@ de modo a fornecer aos orientadores uma ferramenta que lhes permita acompanhar o
 assim como documentar as diversas etapas para uso do autor.
 
 Seguiu-se uma fase de preparação para as ferramentas a usar.
-Foram executados pequenos programas para ganhar à vontade no uso do OpenSG \cite{SITE-OPENSG}
+Foram executados pequenos programas para ganhar à vontade no uso do OpenSG\footnote{
+OpenSG é um grafo de cena que permite um melhor aproveitamento da vertente gráfica
+de um sistema, optimizando a sequência de chamadas à placa gráfica e facultando ao
+programador classes úteis para o mesmo se abstrair da complexidade do problema.
+Este sistema foi escolhido pela \emph{framework} AICI uma vez que permite a distribuição
+da renderização por vários nós.
+}\nocite{SITE-OPENSG}
 e instalado todo o software necessário ao desenvolvimento do projecto, entre ele:
 
 \begin{description}
-	\item[Microsoft Visual Studio 2003]
+	\item[Microsoft Visual Studio 2003] --
 		como ambiente de compilação;
-	\item[TortoiseSVN]
+	\item[TortoiseSVN] --
 		para uso de repositório, permitindo o desenvolvimento colaborativo de software;
-	\item[Framework AICI]
-		conjunto de classes sobre o qual assenta o Improve e que é baseado em OpenSG
+	\item[AICI] --
+		Trata-se uma \emph{framework} de eventos construída em cima do OpenSG.
+		Permite receber dados de entrada de diversos dispositivos (rato, caneta, artefactos, etc.)
+		e mapear comandos e acções a eventos simples ou complexos desses dispositivos,
+		facilitando a programação em sistemas de tão complexa interacção de entrada.
 \end{description}
 
-Foram efectuadas diversas reuniões com o propósito de definir objectivos para o projecto
-e foram escritos casos de uso.
+Foram efectuadas diversas reuniões com o propósito de definir objectivos do projecto
+e foram escritos casos de uso de modo a estabelecer as funcionalidades suportadas pelo sistema
+e sequências válidas de acções que permitam efectuar tarefas comuns em cenários de arquitectura.
+
+Foi conduzido um levantamento de artigos relevantes no domínio do projecto, nas áreas de:
+representação de geometria complexa (para a robusta visualização de cidades),
+interfaces imersivas (para melhor aproveitamento da LemeWall),
+interfaces de entrada (para integrar \emph{motion tracking}, reconhecimento de voz, etc.),
+interpretação de esboços,
+interfaces sugestivas e restrições de geometria.
+
+Foi implementado até ao momento um sistema de gestão de nós de geometria,
+um gestor de selecções (suportando \emph{picking} de objectos e selecção \emph{lasso}).
+Foi criada uma interface de selecção de comandos baseada em gates, inspirada no artigo
+\cite{CROSSY}.
