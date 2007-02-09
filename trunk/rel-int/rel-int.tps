@@ -3,9 +3,9 @@ Type=TeXnicCenterProjectSessionInformation
 Version=2
 
 [SessionInfo]
-ActiveTab=0
+ActiveTab=1
 FrameCount=10
-ActiveFrame=3
+ActiveFrame=7
 
 [Frame0]
 Columns=1
@@ -32,9 +32,9 @@ cxCur=824
 cxMin=10
 
 [Frame0_View0,0]
-Cursor.row=5
-Cursor.column=51
-TopSubLine=0
+Cursor.row=40
+Cursor.column=0
+TopSubLine=29
 
 [Frame1]
 Columns=1
@@ -97,8 +97,8 @@ TopSubLine=0
 [Frame3]
 Columns=1
 Rows=1
-Flags=2
-ShowCmd=3
+Flags=0
+ShowCmd=1
 MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-4
@@ -111,17 +111,17 @@ Class=CLatexEdit
 Document=trab-rel.tex
 
 [Frame3_Row0]
-cyCur=458
+cyCur=270
 cyMin=10
 
 [Frame3_Col0]
-cxCur=1031
+cxCur=828
 cxMin=10
 
 [Frame3_View0,0]
-Cursor.row=5
-Cursor.column=0
-TopSubLine=0
+Cursor.row=122
+Cursor.column=50
+TopSubLine=176
 
 [Frame4]
 Columns=1
@@ -150,7 +150,7 @@ cxMin=10
 [Frame4_View0,0]
 Cursor.row=68
 Cursor.column=0
-TopSubLine=63
+TopSubLine=72
 
 [Frame5]
 Columns=1
@@ -206,15 +206,15 @@ cxCur=828
 cxMin=10
 
 [Frame6_View0,0]
-Cursor.row=15
-Cursor.column=9
-TopSubLine=1
+Cursor.row=17
+Cursor.column=5
+TopSubLine=3
 
 [Frame7]
 Columns=1
 Rows=1
-Flags=0
-ShowCmd=1
+Flags=2
+ShowCmd=3
 MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-4
@@ -227,16 +227,16 @@ Class=CLatexEdit
 Document=conc.tex
 
 [Frame7_Row0]
-cyCur=270
+cyCur=458
 cyMin=10
 
 [Frame7_Col0]
-cxCur=828
+cxCur=1031
 cxMin=10
 
 [Frame7_View0,0]
-Cursor.row=0
-Cursor.column=0
+Cursor.row=14
+Cursor.column=107
 TopSubLine=0
 
 [Frame8]
@@ -264,9 +264,9 @@ cxCur=828
 cxMin=10
 
 [Frame8_View0,0]
-Cursor.row=186
-Cursor.column=3
-TopSubLine=183
+Cursor.row=9
+Cursor.column=30
+TopSubLine=0
 
 [Frame9]
 Columns=1

@@ -3,3 +3,198 @@
 %no fundo deve ser uma versão mais curta do vosso trabalho de Introdução à Investigação.As referências devem remeter para a Bibliografia.
 %(no máximo 10 páginas).
 
+\subsection{Exportar Geometria de um programa de CAD}
+Alberto Raposo et al. \cite{CADVR06} identificam um conjunto de problemas que advêm da
+exportação de geometria de um programa de CAD para visualização em tempo real:
+\begin{description}
+	\item[Baixa Performance] -- devido a complexidade desnecessária no modelo;
+	\item[Falta de Realismo] -- uma vez que os utilizadores de programas de CAD não costumam associar
+	dados de materiais ou texturas aos objectos;
+	\item[Tratamento Inadequado de Geometria] -- a conversão ocorre frequentemente com perda de geometria,
+	precisão e erros tais como normais mal orientadas.
+\end{description}
+
+\subsection{Interfaces Imersivas}
+De modo a obter uma experiência imersiva, há um conjunto de soluções de hardware comuns, a saber:
+\begin{description}
+	\item[Head Mounted Display (HMD)] --
+		HMD são dispositivos com forma semelhante a óculos que projectam um par de imagens com transformação
+		estereoscópica nas retinas do utilizador. Costumam ter um giroscópio ou outro sistema que lhes
+		permite medir a orientação da cabeça do utilizador. Existem dois tipos de HMDs:
+		no primeiro as imagens são projectadas em pequenos ecrãs opacos; no segundo a superfície de projecção
+		é translúcida, permitindo a sobreposição de conteúdo virtual sobre o real.
+		
+		O uso de HMDs tem a vantagem de permanecer ligado à cabeça do utilizador e detectar a sua orientação.
+		Por outro lado cada HMD serve um e só um utilizador e a resolução do HMD é limitada.
+		Além disso, muitos utilizadores revelam fadiga após longos períodos de uso. 
+	\item[Cave Automatic Virtual Environment (CAVE)] --
+		Uma CAVE é um ambiente imersivo de realidade virtual composto por um conjunto de 4, 5 ou 6 projectores
+		orientados para as respectivas paredes de uma sala de dimensões cúbicas.
+		Partilha com os HMDs a vantagem de circundar a área de visualização do utilizador. Oferece, no entanto,
+		melhor resolução. Tem como desvantagem o pequeno número de utilizadores que podem fazer uso da CAVE
+		simultaneamente.
+	\item[Wall] --
+		Uma wall é uma superfície extensa, normalmente planar, preenchida por uma imagem. A resposabilidade
+		de desenho da imagem é repartida por um conjunto de projectores dispostos numa matriz. Cada projector
+		desenha parte da superfície e idealmente as fronteiras de projecção são irreconhecíveis.
+		Cada projector é controlado por um computador.
+		
+		O tamanho e resolução da Wall dependem inteiramente do número de projectores e da resolução de cada
+		um, tendo a Wall normalmente muito alta resolução. Devido à grande área de superfície, a Wall
+		serve simultaneamente mais utilizadores que as restantes soluções. Tem como desvantagem a necessidade
+		dos utilizadores de olharem na direcção da Wall.
+\end{description}
+		
+		\begin{figure}[!ht]
+			\centering
+			\includegraphics[width=11cm]{gfx/hmd-cluster-cave.png}
+			\caption{HMD, Wall, CAVE}
+			\label{FIG-HMD-CLUSTER-CAVE}
+		\end{figure}
+		
+
+
+
+\subsection{Representação de Edifícios}
+
+Jürgen Döllner e Henrik Buchholz \cite{LODCITY05} fornecem uma representação capaz de descrever
+a diferentes distâncias edíficios, capturando as suas características mais relevantes.
+
+
+\subsection{Esboços}
+
+Wenyin et al. \cite{SMARTSK01} com o seu Smart Sketchpad conseguem reconhecer formas simples
+(rectângulos, triângulos, elípses e linhas rectas) e compostas (tais como setas).
+O artigo descreve os passos necessários ao reconhecimento da forma, seguindo-se a comparação
+de três implementações da mesma, recorrendo a um sistema baseado em regras,
+Support Vector Machines e redes neuronais. A melhor performance foi atingida com SVM.
+
+Alvarado e Davids \cite{FREEDOM01} demonstram um sistema denominado Assist, que permite 
+o desenho de experiências físicas envolvendo polígonos, roldanas e eixos. A criação das
+experiências é feita por meio de esboços. A interpretação dos esboços é feita a cada
+novo \emph{stroke} do utilizador, algo que os utilizadores acharam confuso -- dando-lhes
+a sensação de estarem a perder o controle da interface.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=11cm]{gfx/freedom01-1.png}
+	\caption{Assist: Um carro a descer uma rampa. Desenho original à esquerda, interpretação do programa à direita.}
+	\label{FIG-FREEDOM01}
+\end{figure}
+
+Eric Schweikardt e Mark Gross conseguem com o seu Digital Clay \cite{DIGCLAY00} um sistema
+capaz de interpretar um esboço composto por linhas em perspectiva num modelo tridimensional
+das áreas visíveis do desenho. Este programa recorre ao algoritmo de Huffman-Clowes para
+detectar vértices côncavos e convexos e a um conjunto de regras de inferência tais como:
+os eixos em desenhos em perspectiva isométrica mantém ângulos idênticos;
+em desenhos em perspectiva as linhas separam-se mais à medida que nos aproximamos do objecto.
+Este sistema é limitado já que não permite a integração de diversos desenhos de vistas
+distintas de modo a preencher os dados ocludidos no desenho.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=11cm]{gfx/digclay00-1.png}
+	\caption{Digital Clay: Desenho original à esquerda, interpretação 3D à direita.}
+	\label{FIG-DIGCLAY}
+\end{figure}
+
+\subsection{Restrições de Geometria}
+
+Igarashi et al. \cite{BEAUTY97} descrevem um sistema simples que corrige strokes de
+modo a harmonizar paralelismo, perpendicularidade, tamanho, ligação de vértices,
+alinhamento, congruência e simetria. Diversos candidatos são sugeridos ao utilizador,
+escolhendo o mesmo a melhor alternativa ao tocar na melhor alternativa.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=5cm]{gfx/beauty97-1.png}
+	\includegraphics[width=5.5cm]{gfx/beauty97-2.png}
+	\caption{Pegasus: Diagrama desenhado no Pegasus sem usar qualquer comando de edição (esquerda);
+	interacção com múltiplos candidatos (direita).}
+	\label{FIG-PEGASUS}
+\end{figure}
+
+
+\subsection{Navegação}
+
+Buchholz, Bohnet e Döllner \cite{SMARTCAM05} desenvolvem um conjunto de técnicas que auxiliam
+o utilizador a não se perder no mundo virtual, previligiando items relevantes na vista face
+a conteúdo como o céu ou o terreno, por um lado e implementando uma câmara física com molas
+de modo ao movimento permanecer fluído, por outro.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[height=7cm]{gfx/smartcam05-1.png}
+	\includegraphics[height=5cm]{gfx/smartcam05-2.png}
+	\caption{Câmara SPB: Estratégia de manutenção para manter conteúdo relevante na vista do utilizador (esquerda); Estratégia de ajustamento (direita).}
+	\label{FIG-SMARTCAM1}
+\end{figure}
+
+
+\subsection{Comparação entre Software Comercial}
+
+\begin{table}[!ht]
+  \centering
+  \caption{Comparação entre diferentes soluções no mercado.}
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		\backslashbox{Funcionalidades}{Soluções}		& AutoCAD		& ArchiCAD	& Revit Building	& SketchUp	\\
+		\hline
+		Design em 2D						&		\GdA		&		\GdB		&				\GdB			&		\GdC		\\
+		\hline
+		Design em 3D						&		\GdD		&		\GdC		&				\GdB			&		\GdB		\\
+		\hline
+		Templates	de Arquitectura &		\GdD		&		\GdB		&				\GdA			&		\GdC		\\
+		\hline
+		Formatos Suportados				&		\GdC		&		\GdC		&				\GdB			&		\GdD / \GdB \footnotemark\\
+		\hline
+		Modos de Interacção				&		\GdE		&		\GdB		&				\GdC 			&		\GdE		\\
+		\hline
+		Capacidades de Rendering	&		\GdB		&		\GdB		&				\GdC			&		\GdD		\\
+		\hline
+		Extensibilidade						&		\GdA		&		\GdC		&				\GdE			&		\GdC		\\
+		\hline
+	\end{tabular}
+	\label{TB-COMP-SOL}
+\end{table}
+\footnotetext{Apenas a versão comercial do SketchUp permite exportar para outros formatos}
+
+\begin{table}[!ht]
+  \centering
+  \caption{Legenda da Tabela \ref{TB-COMP-SOL}}
+	\begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
+		\hline
+		mt. má	& má			& suf.	& boa		& mt. boa	\\
+		\hline
+			\GdE		&	\GdD		&	\GdC		&	\GdB		&	\GdA			\\
+		\hline
+	\end{tabular}
+  \label{TB-COMP-SOL-LEGEND}
+\end{table}
+
+\subsection{Discussão da Tabela}
+
+AutoCAD assume um \emph{workflow} bem definido, que demora tempo a dominar.
+Existe maneira de modelar qualquer forma arquitectónica que se queira, ainda que muitas vezes
+o processo de modelação seja complexo.
+Uma vez que se trata de um sistema de uso geral (suporta por exemplo engenharia),
+o AutoCAD não traz \emph{templates} arquitecturais, uma funcionalidade disponível tanto no ArchiCAD
+como no Revit Building.
+
+O Revit Building é a visão da Autodesk para um programa fácil de dominar e no entanto suficientemente
+poderoso para design de arquitectura. O Revit Building e o ArchiCAD são os sistemas mais semelhantes
+nesta comparação.
+O Revit Building tem funcionalidades mais poderosas que o ArchiCAD, fornecendo no entanto o ArchiCAD uma
+panóplia de \emph{templates} de documentação que poupam ao arquitecto a massuda tarefa de gerar à mão todos
+os documentos requeridos no normal \emph{workflow} de um arquitecto.
+
+O SketchUp é sem dúvida o mais amador dos sistemas aqui analisados.
+Oferece um limitado leque de operações geométricas e não fornece uma biblioteca de \emph{templates},
+tentando colmatar esta limitação disponibilizando um vasto repositório público de modelos \emph{online}.
+Como ponto forte o SketchUp tem a sua suave curva de aprendizagem -- qualquer um é capaz de modelar
+um piso simples sem experiência em poucos minutos -- e a ligação ao software Google Earth.
+
+Seria muito proveitoso se outros programas tivessem permissão de obter dados geográficos
+(tanto de texturas como de relevo) de uma área da terra recorrendo ao Google Earth ou serviço semelhante.
+Tal capacidade daria um precioso ponto de partida ao arquitecto, permitindo-lhe mais facilmente enquadrar
+a sua criação na paisagem circundante.

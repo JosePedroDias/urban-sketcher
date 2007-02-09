@@ -854,14 +854,17 @@ FUNCTION {mastersthesis}
   fin.entry
 }
 
+% modified for websites by jose.pedro.dias@gmail.com
 FUNCTION {misc}
 { output.bibitem
   format.authors "author" output.check
-  stupid.colon
-  format.title "title" output.check
+  %stupid.colon
+  %format.title "title" output.check
+  title output
   howpublished new.block.checka
   howpublished output
-  format.date parens output
+  %format.date parens output
+  format.date output
   and.the.note
   fin.entry
   empty.misc.check
