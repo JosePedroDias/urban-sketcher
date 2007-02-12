@@ -5,6 +5,8 @@
 
 \subsection{Multimodal Interfaces}
 
+\subsubsection{Hardware Setups}
+
 In order to obtain an immersive experience, there's a number of hardware
 setups commonly available:
 
@@ -66,8 +68,101 @@ OpenSceneGraph\cite{SITE-OSG}
 and
 OpenSG\cite{SITE-OPENSG}.
 
+\subsubsection{User Input}
+
+Obtaining user input can be handled by an infinite combination of interfaces.
+In virtual reality the most common solutions may feature a combination of:
+\begin{description}
+	\item[Image Processing] --
+		A camera or a set of cameras continuously captures the environment and detects relevant
+		features using vision algorithms.
+		Subjects' position and orientation may then be determined using triangulation techniques.
+	\item[Speech Recognition] --
+		Users give specific verbal orders captured by a microphone, 
+		which are interpreted by a speech recognition engine.
+		The freedom of speech handled by the engine depends on its quality and the purpose of
+		the recognition -- spanning from simple commands to free formed sentences.
+	\item[Motion Tracking] --
+		This method is akin to image processing, but optimized for tracking subjects position
+		and orientation.
+		Small reflective markers are attached to each subject relevant parts and infrared cameras
+		are calibrated in order to be able to read the markers and determine their position
+		and orientation precisely.
+		See Fig.\ref{FIG-MOTION-TRACKING}.
+	\item[HMD's Rotation Data] --
+		When a user is wearing an HMD device, its head rotation and tilt data can be captured,
+		allowing the virtual world to act accordingly, e.g. rotating and tilting the VR world.
+	\item[Tracked Artifacts for Direct Manipulation] --
+		When motion tracking is available, users can manipulate artifacts and their positioning,
+		orientation and/or relative status can determine actions in the world, e.g. point at
+		something, dragging, rotation.
+	\item[Space Ball, Space Pilot, etc.] --
+		These are special devices which allow 6 degrees or freedom (6DOF) manipulation.
+		The user holds the device in his hands and the device's data can map several actions to
+		the read axes.
+		See Fig.\ref{FIG-SPACE-DEVICES}.
+\end{description}
+
+\begin{figure}[!ht]
+	\centering
+	\subfigure[
+		Motion tracking example:
+		the subject wears a suit with several markers distributed so that his skeleton
+		relative orientations can be reasoned.
+		An array of infrared cameras is rigged to the ceiling, reading marker positions.
+	]{\label{FIG-MOTION-TRACKING}\includegraphics[width=5.5cm]{gfx/MotionCapture.jpg}}
+	\subfigure[
+		Two kinds of space balls and one space pilot.
+	]{\label{FIG-SPACE-DEVICES}\includegraphics[width=6.5cm]{gfx/space-devices.png}}
+	\caption{Interfaces}
+\end{figure}
+
 \subsubsection{Studies}
 
+Huot et al. \cite{TOW3D}.
+
+Biström et al. \cite{POST} present requirements for an efficient post-WIMP user interface,
+focusing on navigation, selection and manipulation of objects.
+WIMP interfaces can't cover all today's user needs. WIMP widgets are individually easy to
+learn, but hard to aggregate. The discrete steps in dialog/menu interfaces divert the user
+from the realtime working feel and denies the user from performing parallel actions.
+
+Many studies have demonstrated 3D application development to be significantly more difficult
+o implement than their 2D counterparts. Simple adaptation of 2D WIMP interfaces to three
+dimensions does not provide a good solution to the problem. There's not one technique identified
+as the best for this problem -- the solution must be based on the requirements of each application case.
+
+Biström et al. suggests an interface where both hands are used. The most precise work, such as manipulations,
+is handled by the dominant hand. The non-dominant hand handles rough positioning or switches between
+navigational modes.
+
+They analyzed Google Earth's \cite{SITE-EARTH} interface. They identify the following limitations:
+\begin{itemize}
+	\item Only one object is in study (the planet Earth);
+	\item The meta data layers have scarce interaction features;
+	\item The view manipulation and moving of the planet is limited to one movement at a time.
+\end{itemize}
+
+A post-WIMP user interface is then devised for Google Earth. Two mice are given to the user.
+The beginning screen presents all solar system planets and the user can pick a planet to examine.
+Planet manipulation is similar to Google Earth's default view but no mouse pointer is available.
+The dominant hands mouse controls the rotation of the object around X and Y axis if the primary mouse button is pushed. The non-dominant hands mouse controls the movement on the z-axis which is equal to
+zooming if it is moved vertically if the primary mouse button is pushed.
+
+The user must understand the use of the two mice and the functions of the mouse
+buttons before he starts.
+Managing  two 2D controls requires good manual skills and precision from both hands
+and the ability to observe, process and control things is parallel,
+which generally is not needed in desktop computing. 
+Correcting of navigational errors is however easy as the natural reflex of rewinding the control
+compensates the faulty action.
+
+Application performance is expected to be better than in the original application
+as different commands and actions can be given in parallel.
+Proportional 2D mouse controls which can produce continuous logarithmic output, an advantage
+when comparing to using the keyboard or mouse pointed buttons for the same action.
+
+\TODO{review this text}
 
 \subsubsection{Systems}
 
@@ -105,14 +200,14 @@ It estimates connectivity between curves by a threshold maximum distance.
 %\cite{TANINT}
 %digital tape drawing and eraser pen to design 3d curves for automotive design
 
-\cite{GROSS}
-3D modeling on large displays: construction planes, tape drawing, 2 hand interaction
+%\cite{GROSS}
+%3D modeling on large displays: construction planes, tape drawing, 2 hand interaction
 
-Cao and Balakrishnan propose themselves in devising an input technique to serve
-large display interaction. VisionWand is a plastic rod with colored ends, tracked by
-two low budget cameras. The tracking results in a 3D ray. Since the rod has no
-electronics to support button clicking or similar actions, a set of gestures was
-defined to allow user command input (see Fig. \ref{FIG-VISIONWAND}).
+Cao and Balakrishnan devise an input technique to serve large display interaction \cite{WAND}.
+VisionWand is a plastic rod with colored ends, tracked by two low budget cameras.
+The tracking results in a 3D ray. Since the rod has no electronics to support button clicking
+or similar actions, a set of gestures was defined to allow user command input
+(see Fig. \ref{FIG-VISIONWAND}).
 VisionWand points out interesting functionality for the tracking data:
 pointing with different ends of the wand invokes either manipulation or query actions,
 while parallel posture activates a menu.
@@ -128,23 +223,222 @@ In pie menus, wand orientation controls option selection.
 	\label{FIG-VISIONWAND}
 \end{figure}
 
+%\cite{GESREC}
+%hand tracking for gesture recognition. Forward HMMs and NNs tested.
 
-\cite{WAND}
-tracked wand interaction - postures, gestures
+In informal group meetings or small lectures, a whiteboard is often used as the central
+communication medium. Participants gather in front of the whiteboard and anyone
+can scribble text or diagrams to share his or her thoughts.
 
-\cite{GESREC}
-hand tracking for gesture recognition. Forward HMMs and NNs tested.
+Rekimoto \cite{WBOARD} presents a digital whiteboard where each participant is given
+a palmtop computer. It works as a tool palette, remote commander, text entry box as
+well as a temporary data buffer during whiteboard collaboration interaction.
 
+Usual digital whiteboards suffer from the following limitations:
+\begin{description}
+	\item[Difficult text entry] --
+		Current digital whiteboards have limited precision and tracking rate, making
+		writing in it harder than on a conventional whiteboard. The resulting pen strokes
+		and characters are often shaky and hard to read, not only for the computer (i.e. OCR
+		software) but also to humans. Even though computer recognizable characters are
+		not strictly necessary, are far easier to move, copy, erase or search than unrecognized strokes.
+		Recognized texts are also valuable for retrieving information from meeting logs.		
+	\item[Large display renders current GUIs ineffective] --
+		Many desktop sized applications features a menu bar at the top and toolbars at top/left of the
+		window. This layout isn't suitable for large displays since it causes out-of-reach problems.
+	\item[Whiteboard interactions become a bottleneck] --
+		Most existing whiteboard applications are designed to be used by one user at a time.
+		Single-threaded features such as pop-up or pull-down menus prohibit parallel activities
+		among	collaborators.
+\end{description}
 
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=6cm]{gfx/wboard.png}
+	\includegraphics[width=6cm]{gfx/wboard2.png}
+	\caption{Digital Whiteboard:
+		Pick-and-drop interaction (left);
+		Working areas for each participant's palmtop (right).}
+	\label{FIG-WBOARD}
+\end{figure}
+
+Their solution involves each participant carrying a palmtop with a pen. The pen works both
+with the palmtop and the digital whiteboard. A direct manipulation method called Pick-and-drop
+(see Fig. \ref{FIG-WBOARD} left) was developed. It allows a user to pick an object in his
+palmtop and dropping it in the whiteboard.  From an implementation point of view,
+data is transferred through the network, but from the user interface point of view,
+this technique allows a user to pick up digital data as if it were a physical object.
+Text entry is performed on the PDA and each user can use the method he favors (i.e.:
+handwritten recognition, softkeyboard, or simplified stroke input methods such as Unistroke
+or Graffiti).
+Instead of placing tool palettes or menu bars on the whiteboard, Participants would have their own
+tool palettes on a PDA.
+
+The main window is a multi page tool panel. A user can flip to several tool palette
+pages by selecting page tabs on top of the window.
+The other window is a temporary work buffer. A user can store several data elements in this window
+and paste it to the whiteboard using a Pick-and-Drop operation. (see Fig. \ref{FIG-WBOARD} right).
+
+Rekimoto concludes that putting many functions on the palmtops, users tend to concentrate too much
+on their own palmtop devices, thus degrading mutual awareness among the participants.
+Pick-and-Drop often worked better than drag-and-drop, particularly when user had to move objects
+for a long distance. Drag-and-drop forces a user to keep the pen tip in contact with the board
+during the entire operation, a restriction not suitable for large display surfaces.
 
 \subsection{Sketching}
 \subsubsection{Beautification}
+
+Igarashi and Hinckley present a 2D sketching system named Pegasus \cite{BEAUTY97}.
+It receives user strokes and converts them, generating candidates by taking into
+account restrictions for:
+vertex connection, segment connection, parallelism, perpendicularity,
+alignment, congruence, symmetry and interval equality.
+
+The application presents the most relevant candidates to the user and highlights
+the highest relevant one.
+The user can either accept it or select another candidate by tapping on it as seen
+in Fig.\ref{FIG-PEGASUS}.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=5cm]{gfx/beauty97-1.png}
+	\includegraphics[width=5.5cm]{gfx/beauty97-2.png}
+	\caption{Pegasus: A diagram drawn on Pegasus without using any editing commands such as rotation,
+		copy or griding (left); interaction with multiple candidates (right).}
+	\label{FIG-PEGASUS}
+\end{figure}
+
 \subsubsection{2D to 3D Reconstruction}
+
+Digital Clay \cite{DIGCLAY00} allows a user to draw freely and tries to convert the drawing into a 3D model.
+See input and 3D result in Fig.\ref{FIG-DIGCLAY}.
+
+It uses two techniques to achieve that:
+
+\begin{description}
+	\item[The Huffman-Clowes algorithm], which identifies concave and convex vertices,
+	requiring every line to connect to another line.
+	The program additionally demands the object drawn to be solid;
+	\item[The 3D coordinates are inferred] based on inherent rules that govern each type of drawing projection.
+	i.e.: axes of isometric drawings have equal angles between them;
+	perspective drawings show foreshortening of lines as we get closer to the viewer.
+\end{description}
+
+The downfalls of this method are the impossibility of describing occluded faces and
+the limited editing capacities available once the conversion has been done.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=11cm]{gfx/digclay00-1.png}
+	\caption{Digital Clay: Raw sketch input and its 3D interpretation.}
+	\label{FIG-DIGCLAY}
+\end{figure}
+
 \subsubsection{Suggestive Interfaces and Grammars}
+
+Wenyin et al. created Smart Sketchpad \cite{SMARTSK01}.
+Smart Sketchpad recognizes standard shapes (rectangles, triangles, ellipses, straight lines)
+and compound shapes such as arrowheads.
+
+The article describes the steps necessary for shape recognition:
+\begin{enumerate}
+	\item Input as a chain of points;
+	\item Polygonalize to polyline and refine endpoints;
+	\item Close near endpoints. If closed go to step 6;
+	\item If line ends near another line end, join them and go to step 3;
+	\item Classify line as one of: straight line, polyline or free form curve. Go to step 8;
+	\item Close shape recognition; *
+	\item Estimate the parameter of the closed shape;
+	\item Test if shape can be combined with other shapes in the drawing. If so repeat step 8, else end.
+\end{enumerate}
+
+The $6^{th}$ step was tested with both rule-based systems, support vector machines and neural networks.
+The most successfully approach was SVN, with 97,5\% success, closely followed by NN.
 
 \subsection{Navigation}
 
+In order to ensure users not ``getting lost'' in the virtual space,
+Buchholz, Bohnet and Döllner \cite{SMARTCAM05}
+propose a camera that is is both smart and physically-based.
+It is smart in the sense that it is aware of confusing,
+disorienting viewing situations, providing means to circumvent them.
+It is physically based because it is supported by a physically based model of 3D motion
+to ensure steady, continuous user movements.
+
+In order to solve the disorientation problem, the camera must identify situations
+when to intervene.
+For that matter a metric, called orientation value, was created.
+Each view is classified by counting its pixels, granting each one a different value:
+landmarks are granted the highest values; terrain gets high values and sky gets low values.
+A threshold can then be established and views below it are classified ``disoriented''.
+
+When such an event takes place, smart navigation techniques restrict camera control.
+The constraints posed to user control must be as comprehensible as possible.
+Camera movement should also be time-coherent and physically sound.
+
+The maintenance strategy solves critical situations such as (see Fig.\ref{FIG-SMARTCAM1}, left):
+
+\begin{enumerate}[a)]
+	\item The user rotates the flight direction and causes the camera to look too far beyond the terrain border.
+		The rotation is accepted but outweighed by a slight rear movement away from the border.
+	\item The user is flying forward beyond the terrain border.
+		The maintenance strategy temporarily tilts down the view direction until a maximum angle is reached.
+	\item If no more tilting is possible, the strategy rotates the flight direction parallel to the terrain
+		to fly along the terrain border.
+\end{enumerate}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[height=7cm]{gfx/smartcam05-1.png}
+	\includegraphics[height=5cm]{gfx/smartcam05-2.png}
+	\caption{SPB Cam: Maintenance strategy for keeping high orientation values (left); Adjustment strategy for ensuring of feasible view specifications (right).}
+	\label{FIG-SMARTCAM1}
+\end{figure}
+
 \subsection{Knowledge Representation}
+
+Jürgen Döllner and Henrik Buchholz \cite{LODCITY05} present a
+solution for modeling buildings that feature continuous level of detail.
+
+The authors propose the following levels of detail for a building (derived from
+CityGML\footnote{CityGML is a common information model for the representation of 3D urban objects.
+It defines the classes and relations for the most relevant topographic objects in cities
+and regional models with respect to their geometrical, topological, semantical and appearance properties.
+More info at: http://www.citygml.org}, see Fig.\ref{FIG-LODCITY}):
+
+\begin{itemize}
+	\item Simple block model
+	\item Model with defined roof geometry
+	\item Detailed indoor and outdoor building features
+\end{itemize}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=11cm]{gfx/lodcity05-1.png}
+	\caption{Continuous LOD: a) block model; b) building split into floors; c) geometry refinement; d) appearance refinement.}
+	\label{FIG-LODCITY}
+\end{figure}
+
+A building is composed of a list of floor objects. A floor object refers to a floor prototype, which
+contains the floor specification. This indirection allows a user to reuse floor prototypes in several
+floors of the same building and allows rendering optimizations.
+
+Each floor prototype is defined by its ground plan, which is one or more polygons that define the area
+on which walls can be constructed. There can be inner loops in order to allow features like courtyards.
+A ground plan supports thickness, useful for defining terraces.
+
+On top of a ground plan one can place walls. A wall represents a vertical, planar polygon.
+The default type of wall has no thickness, sufficient if a group of them form a closed surface
+and can be only seen from the outside. Thick walls can also be added.
+A wall can be lower or higher than its floor height, allowing balcony fronts and chimneys to be defined.
+
+The higher ground plans can have roofs. The most common roof types are supported (hipped, gabled, tent,
+mansard, pent, barrel) and a roof is described only by choosing the floor type and placing its
+most relevant points (known as the roof skeleton).
+
+Each floor prototype has a related floor decoration. A floor decoration is a collection of facade sections
+and window sections. The former allows whole wall sections to be assigned a material while the latter
+allows the definition of positioning and appearance of the floor's windows.
 
 \subsection{Text Entry}
 

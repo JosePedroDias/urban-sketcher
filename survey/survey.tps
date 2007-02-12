@@ -5,7 +5,7 @@ Version=2
 [SessionInfo]
 ActiveTab=0
 FrameCount=9
-ActiveFrame=3
+ActiveFrame=7
 
 [Frame0]
 Columns=1
@@ -32,9 +32,9 @@ cxCur=824
 cxMin=10
 
 [Frame0_View0,0]
-Cursor.row=16
-Cursor.column=18
-TopSubLine=0
+Cursor.row=35
+Cursor.column=13
+TopSubLine=27
 
 [Frame1]
 Columns=1
@@ -90,15 +90,15 @@ cxCur=828
 cxMin=10
 
 [Frame2_View0,0]
-Cursor.row=59
-Cursor.column=0
-TopSubLine=62
+Cursor.row=0
+Cursor.column=5
+TopSubLine=0
 
 [Frame3]
 Columns=1
 Rows=1
-Flags=2
-ShowCmd=3
+Flags=0
+ShowCmd=1
 MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-4
@@ -111,17 +111,17 @@ Class=CLatexEdit
 Document=approaches.tex
 
 [Frame3_Row0]
-cyCur=474
+cyCur=270
 cyMin=10
 
 [Frame3_Col0]
-cxCur=1031
+cxCur=828
 cxMin=10
 
 [Frame3_View0,0]
-Cursor.row=129
-Cursor.column=0
-TopSubLine=99
+Cursor.row=348
+Cursor.column=11
+TopSubLine=418
 
 [Frame4]
 Columns=1
@@ -148,9 +148,9 @@ cxCur=828
 cxMin=10
 
 [Frame4_View0,0]
-Cursor.row=111
-Cursor.column=19
-TopSubLine=108
+Cursor.row=0
+Cursor.column=32
+TopSubLine=0
 
 [Frame5]
 Columns=1
@@ -213,8 +213,8 @@ TopSubLine=0
 [Frame7]
 Columns=1
 Rows=1
-Flags=0
-ShowCmd=1
+Flags=2
+ShowCmd=3
 MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-4
@@ -227,17 +227,17 @@ Class=CLatexEdit
 Document=thesis.bib
 
 [Frame7_Row0]
-cyCur=270
+cyCur=474
 cyMin=10
 
 [Frame7_Col0]
-cxCur=828
+cxCur=1031
 cxMin=10
 
 [Frame7_View0,0]
-Cursor.row=194
-Cursor.column=13
-TopSubLine=194
+Cursor.row=187
+Cursor.column=16
+TopSubLine=193
 
 [Frame8]
 Columns=1
@@ -264,7 +264,7 @@ cxCur=869
 cxMin=10
 
 [Frame8_View0,0]
-Cursor.row=291
+Cursor.row=14
 Cursor.column=0
-TopSubLine=329
+TopSubLine=14
 
