@@ -1,62 +1,63 @@
-% Contexto + Problema
+% Context + Problem
 
 % http://en.wikipedia.org/wiki/Architecture
+
+\subsection{The Evolution of Architecture}
 Architecture is the art and science of designing buildings and structures.
-It is an interdisciplinary field and has similarities to applied science and
-engineering, but unlike them, which focus more on functional and feasibility aspects of design, 
-architecture deals with building costs, space and volume, texture and lighting
+It is an interdisciplinary field which has similarities to applied science and
+engineering, but unlike them, focusing on functional and feasibility aspects of design, 
+architecture deals with building costs, space and volume, materials and lighting
 in order to achieve an aesthetically pleasing result.
 
 For centuries methods and norms have arisen. Architects tools of work were based on paper and ruler.
 With the evolution of computational power throughout the last century, 
-increasingly more complete, fast and robust computer aided design (CAD) systems were developed and so did
+increasingly more complete, fast and robust Computer Aided Design (CAD) systems were developed and so did
 devices capable of manipulating architectural entities -- such as the mouse, trackball, tablet, etc.
 
+\subsection{Current Workflow for Building Design}
 % only geographical, drawings?
 Elaborating architectural designs usually starts by drawing rough sketches of the subject
-in order to convey form, proportion and lighting. Relevant geographical data about the location
-where the building is to be established are acquired. A series of two dimensional drawings is created
-in order to precisely define building features and dimensions.
+in order to convey form, proportion and lighting.
+Relevant geographical data about the location where the building is to be established is acquired.
+A series of two dimensional drawings is created in order to precisely define building features, dimensions and location.
 These drawings serve as input for civil engineers and the rest of staff responsible for constructing the building.
-Three dimensional drawings and brochures are created and scale models are built, allowing
-people with no architectural background to better perceive the building before it is built.
+Three dimensional drawings and brochures are created and scale models are built,
+allowing people with no architectural background to better perceive the building before it is built.
 
 Nowadays architecture is slowly but steadily embracing usage of computers in the designing process.
 Authoring systems such as Autodesk's AutoCAD
 \cite{SITE-AUTOCAD}
 are currently used to produce a set of views and floor plans necessary to construct a building.
-These systems are optimized for such tasks, having limited support for general 3D volume and surface creation.
+These systems are optimized for such tasks, having limited support for general 3D volume and surface creation
+and rely heavily in desktop interfaces with keyboard/mouse.
 
-% more references to software?
 The creation of 3D drawings and brochures for marketing purposes is common practice.
 It relies in techniques such as
-ray tracing\footnote{POVRay is a well known raytracer available at http://www.povray.org}\nocite{SITE-POVRAY},
+ray tracing \cite{SITE-POVRAY},
 radiosity,
-physically accurate light simulation
-\footnote{Both these engines support realistic light simulation:
-Maxwell -- http://www.maxwellrender.com\nocite{SITE-MAXWELL};
-Indigo -- http://www.indigorenderer.com\nocite{SITE-INDIGO}
-}
+physically accurate light simulation \cite{SITE-MAXWELL}, \cite{SITE-INDIGO}; 
 High Dynamic Range Imaging (HDRI), etc.
 These techniques produce believable results but take too much time to render in real time.
 
-% frases enormes!
-Another application of data coming from CAD systems is the generation of worlds optimized for navigation.
-Performance is paramount in these systems so algorithms such as Binary Space Partition (BSP)
-or octrees are applied for faster geometry rendering.
+% articles for bsps, octtrees, light rendering alg?
+Another application for data coming from CAD systems is the generation of worlds optimized for navigation.
+Performance is paramount in these systems so algorithms such space partition --
+Binary Space Partitions (BSPs) for closed space rendering,
+OctTrees for open space rendering --
+and multiple Levels Of Detail (LOD) for each shape are commonly used.
 The compromise between believability and fast rendering times is assured with techniques such as
-light maps and good usage of modern graphics card's Graphics Processing Unit (GPU),
-allowing the application of many computer graphics algorithms that would otherwise be impossible
-with such time constraints.
-There are numerous 3D engines capable of presenting such worlds with good performance.
-The major drawback in using them relies in how the user navigates the scene --
-most systems use the popular interface featured in most first or third person shooters
-available in the market,
-relying on 4 keyboard keys for user translation plus user rotation with a mouse.
-This interface works for youth game enthusiasts but presents an obstacle for most other people.
-There are other navigation metaphors available such as flying but they keep using keyboard and mouse
-as their input interface.
+light maps and using recent graphics card's Graphics Processing Unit (GPU),
+shifting complex computer graphics algorithms out of the Central Processing Unit (CPU),
+obtaining frame rates otherwise impossible with current hardware.
 
+There are numerous 3D engines capable of presenting such worlds with good performance.
+The major drawbacks in their usage rely on how the user navigates the scene --
+most systems use the popular interface featured in most first or third person shooters,
+relying on mouse/keyboard for input --
+and on the lack of support for out-of-the-box interaction with shapes.
+\TODO{UGLY PHRASE!}
+
+\newpage
 Exporting the geometry from a CAD program, which is a common solution, comes with several problems,
 as stated by Alberto Raposo et al.\cite{CADVR06}:
 \begin{description}
@@ -67,23 +68,35 @@ as stated by Alberto Raposo et al.\cite{CADVR06}:
 	geometry, precision and errors such as badly oriented normals.
 \end{description}
 
+\subsection{Benefits and Goals of an Integrated Approach}
 % client side benefits
 Using a computer system to present a virtual building with the purpose of selling an idea,
 doing real estate business or simulating virtual tours demands better metaphors,
 better interface design and the least possible cluttering of the view in order
 to achieve a richer user experience and get an overall good impression.
+Navigating and reviewing content should be simple tasks to perform.
 
 % architect benefits
 From the architect's point of view, using such a system early in the process,
 if preceded by geographical data capturing,
-allows him to better perceive the construction area, which shall improve seamless building integration.
+allows him to better perceive the construction area, which improves a seamless building integration.
 Additionally, applying such a system in the building design workflow allows the generation
 of models able to complement or even replace the first prototyping stages,
 commonly represented nowadays by rough sketches.
+The possibility of collaborative remote design and content reviewing offers a cheaper
+alternative for distributed projects and allows a shorter validation cycle with the clients.
 
-% document structure
-The documents starts with the identification of various domains in which problems arise.
-Then a series of approaches to solve them is listed.
+\subsection{Document Structure}
+% structure for the rest of the document
+This document continues with the identification of various problems that need to be solved in order
+to fulfill these goals.
+A series of projects in this area is then discussed.
+Several subjects are then analyzed:
+input modalities (using laser pointers, tablet PC pen, motion tracking and voice commands);
+output modalities (using tablet PCs, powerwalls or head mounted displays);
+shape creation and transformation (for modeling simple buildings, their translation, scaling, etc.);
+scene navigation (using several modalities) and
+content reviewing (by creating and editing shape attached annotations).
 Later on a comparative analysis between applications in the market allowing architecture modeling is conducted.
 The document ends with a set of conclusions and directions for future work in
-addressing this subject are pointed out.
+addressing this subject.
