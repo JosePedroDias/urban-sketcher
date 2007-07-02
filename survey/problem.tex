@@ -13,10 +13,9 @@ such as Autodesk Autocad \cite{SITE-AUTOCAD}.
 The architect replicates his former ideas in the rigid standardized interface
 offered by these systems. This is a rigorous endeavor, taking much time to be asserted.
 
-After the main project documents are issued comes the time when the idea has to
-be pitched to end clients.
-In order to gather buyers and investors its common to generate colorful previews of the building featuring increasingly realistic features such as detailed materials, light propagation and crowd simulations. See
-Fig. \ref{FIG-REALISTIC}.
+After the main project documents are issued comes the time when the idea has to be pitched to end clients.
+In order to gather buyers and investors its common to generate colorful previews of the building featuring increasingly realistic features such as detailed materials, light propagation and crowd simulations.
+See Fig. \ref{FIG-REALISTIC}.
 
 \begin{figure}[!ht]
 	\centering
@@ -26,37 +25,43 @@ Fig. \ref{FIG-REALISTIC}.
 	\label{FIG-REALISTIC}
 \end{figure}
 
-Despite the advances in computation, the architect work flow keeps these three separated stages
+% 3 stage process
+\TODO{Redo workflow figures}
+Despite the ongoing advances in computation, the architectural workflow keeps these three separated stages
 that don't share media or applications (Fig. \ref{FIG-WORKFLOW1}).
 Both the conceptual design stage and the final reviewing and marketing stage would benefit from 
-an integrated system with a comprehensive set of design actions and good navigation and annotation
-capabilities.
+an integrated system with a comprehensive set of design actions
+and good navigation and content reviewing capabilities.
 
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=12cm]{gfx/workflow1.png}
-	\caption{Architect's project work flow}
+	\caption{Architectural project work flow}
 	\label{FIG-WORKFLOW1}
 \end{figure}
 
+% remote and multi-user reviews - costs and cycle
+The possibility to make part of a review session remotely can benefit both parts:
+it is more cost-effective for the architects than hosting each review event and
+it allows a shorter reviewing cycle, 
+
+% merge with environment and experiment more
+The architect can benefit from the system by being able to experiment different locations
+for the building and obtain a better integration between the new design and its surroundings.
+
+% constraints to the architect
 In order for an architect to use a computer program for drawing early designs,
 it must be flexible enough not to limit the architect in expressing his vision.
 Most current systems constrain architect's creativity \cite{TOW3D}.
 
-% beautification
-Sketching beautification supports this feature by interpreting strokes
-into lines and other geometric primitives.
+% constraints to the client
 
-% 2D->3D
-There are commonly drawn shapes in architecture such as box shaped walls or windows.
-The enhanced strokes shall then be interpreted to generate 3D shapes such as these.
 
-% suggestive
-The system might also identify geometry constraints such as parallelism and symmetry,
-suggesting the designer with precise alternatives for his strokes.
 
 % multimodal int.
-A set of input and output devices must then be assembled with the purpose of offering
+A set of input and output modalities must be assembled and orchestrated
+
+ must then be assembled with the purpose of offering
 the users an immersive experience. Therefore this set must be chosen and
 means must be given to users to allow them to perform actions like walking or creating
 annotations.
@@ -69,8 +74,4 @@ Reviewing could also be done remotely.
 Either in a local or remote set, the system should allow
 concurrent browsing and editing of the world.
 
-% knowledge rep.
-A building can be as detailed as we want it to be.
-The system must be robust and enough to represent a city block, therefore it must have a
-robust representation of buildings and other structures composing the world.
 
