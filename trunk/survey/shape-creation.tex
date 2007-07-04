@@ -1,5 +1,68 @@
 % SHAPE CREATION AND TRANSFORMATIONS
 % for modeling simple buildings
 % their translation, scaling, etc.
-\TODO{shape creation}
-\TODO{transformations}
+%\TODO{shape creation}
+%\TODO{transformations}
+
+In this section two solutions suitable for conceptual sketching of 3D forms are analyzed.
+
+\subsubsection{SESAME, 2006}
+
+Oh, Stuerzlinger and Danahy \cite{SESAME3D} developed SESAME (Sketch, Extrude, Sculpt, and Manipulate Easily).
+This system tries to provide an interface as powerful and easy to use as 2D sketching on paper.
+It is defended by the authors that a 3D model is more easily understood between users than a regular conceptual
+design.
+It is optimized for modification and allows the creation and editing of volumetric geometry by extruding 2D
+contours or sculpting 3D volumes.
+It features an enhanced suggestive interface, allowing the creation of lines, arcs and freeform curves with
+constraints.
+SESAME supports also automatic grouping of objects, i.e., objects related
+between themselves (ex: cup on top of table) affect each other.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=6cm]{gfx/sesame.png}
+	\caption{A view of a drawing done in 40 minutes with SESAME}
+	\label{FIG-SESAME}
+\end{figure}
+
+\paragraph{Discussion}
+\label{sec:Paragraph}
+
+The user tests conducted comparing SESAME against the popular modeling package Autodesk 3D Studio Max
+show that even for experienced 3DSM users the drawings done with SESAME were more creative and satisfying.
+This is a promising direction for an urban sketching software to go, as long as multimodal input techniques
+can be supported.
+
+
+
+\subsubsection{SmartPaper, 2004}
+
+Shesh and Chen \cite{SMARTPAPER} developed SmartPaper, a system designed to support
+2D sketching, featuring oversketching capabilities, sketch on 3D, 3D transforms and
+CSG operations. It employs a non-photorealistic rendering technique to convey the
+drawing a sketchy look.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=5cm]{gfx/smartpaper.png}
+	\caption{Drawing done with SmartPaper}
+	\label{FIG-SMARTPAPER}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=8cm]{gfx/smartpaper2.png}
+	\caption{The process of modeling a lamp in SmartPaper}
+	\label{FIG-SMARTPAPER2}
+\end{figure}
+
+\paragraph{Discussion}
+\label{sec:Paragraph}
+
+The biggest limitation found in SmartPaper is the lack of curved line support.
+Another requirement is that the user must draw all object's edges, not only
+the visible ones. In the case of extruded objects this is not problematic, since
+the original face would always have to be drawn anyway.
+The resulting geometry appears to be irregular but since the goal is to do
+conceptual drawings this is not an issue.
