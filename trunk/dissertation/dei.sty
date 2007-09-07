@@ -1,0 +1,409 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{dei}
+
+\newif\ifPDF
+  \ifx\pdfoutput\undefined\PDFfalse
+  \else\ifnum\pdfoutput > 0\PDFtrue
+       \else\PDFfalse
+       \fi
+  \fi
+
+% pacotes de base
+\RequirePackage[english]{babel}
+\RequirePackage[latin1]{inputenc}
+\RequirePackage[T1]{fontenc}
+
+% enumerate
+\usepackage{enumerate}
+
+% urls
+\usepackage{url}
+\newcommand\email{\begingroup \urlstyle{rm}\Url}
+\newcommand\web{\begingroup \urlstyle{tt}\Url}
+
+% arial
+\usepackage{helvet}
+\renewcommand*\familydefault{\sfdefault}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%  Requisitos %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Citações em formato número, ordenado e comprimido: ex: [1,2,7-10]
+\RequirePackage[sort&compress]{natbib}
+\bibpunct{[}{]}{,}{n}{}{}
+
+\RequirePackage[small,center]{caption} % legendas das figuras em tamanho pequeno e centrado
+
+\RequirePackage{txfonts}
+\RequirePackage[tmargin=2.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm]{geometry}
+
+%% mostrar os números no subsubsection
+\stepcounter{secnumdepth}
+
+%\setlength\parindent{0cm}
+%% Separação de linhas de 1.5
+\linespread{1.5}
+
+\RequirePackage{flafter}
+
+%% Requisitos difíceis
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Not so Evil Hack
+%% Para centrar as figuras por omissão
+
+\def\@float#1{%
+  \@ifnextchar[%
+    {\@xfloatcenter{#1}}%
+    {\edef\reserved@a{\noexpand\@xfloat{#1}[\csname fps@#1\endcsname]}%
+     \reserved@a}}
+
+\def\@xfloatcenter #1[#2]{
+  \@xfloat #1[#2]\centering}
+
+%\renewenvironment{figure}
+%                 {\@float{figure}}
+%                 {\end@float}
+
+%% corrigir os espaços exagerados das listas
+%% tirado de http://www.tug.org/tex-archive/macros/latex/contrib/adfathesis/adfathesis.cls
+
+\def\@listi{\leftmargin\leftmargini
+    \labelsep .5em%
+    \labelwidth\leftmargini
+    \advance\labelwidth-\labelsep
+    \parsep \z@
+    \topsep 0.4ex \@plus\p@ 
+    \itemsep 0\p@ \@plus1\p@}
+\let\@listI\@listi
+\@listi
+\def\@listii{\leftmargin\leftmarginii
+    \labelsep .5em%
+    \labelwidth\leftmarginii
+    \advance\labelwidth-\labelsep
+    \topsep 0\p@ \@plus\p@
+    \parsep \z@ \@plus\p@
+    \itemsep \parsep}
+\def\@listiii{\leftmargin\leftmarginiii
+    \labelsep .5em%
+    \labelwidth\leftmarginiii
+    \advance\labelwidth-\labelsep
+    \topsep 0\p@ \@plus\p@
+    \parsep \z@
+    \partopsep \z@ \@plus\p@
+    \itemsep \topsep}
+\def\@listiv{\leftmargin\leftmarginiv
+    \labelsep .5em%
+    \labelwidth\leftmarginiv
+    \advance\labelwidth-\labelsep
+    \topsep 0\p@ \@plus\p@
+    \parsep \z@
+    \partopsep \z@ \@plus\p@
+    \itemsep \topsep}
+\def\@listv{\leftmargin\leftmarginv
+     \labelsep  .5em%
+     \labelwidth\leftmarginv
+     \advance\labelwidth-\labelsep%
+     \topsep    0\p@ \@plus\p@
+     \parsep    \z@
+     \itemsep   \z@ \@plus\p@}
+\def\@listvi{\leftmargin\leftmarginvi
+     \labelsep  .5em
+     \labelwidth\leftmarginvi
+     \advance\labelwidth{-\labelsep}%
+     \topsep    0\p@ \@plus\p@
+     \parsep    \z@
+     \itemsep   \z@ \@plus\p@}
+
+
+%% Usar a fonte Arial com 16pt seguido de 3pt de espaço
+\def\@makechapterhead#1{%
+%  \vspace*{50\p@}%
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+        \Large\sffamily\bfseries \thechapter\ \ %
+    \fi
+    \interlinepenalty\@M
+    \Large\sffamily\bfseries #1\par%
+    \vspace{3pt plus 10pt}\nobreak}}
+
+\def\@makeschapterhead#1{%
+  {\parindent \z@ \raggedright
+    \normalfont
+    \interlinepenalty\@M
+     \Large\sffamily\bfseries #1\par%
+    \vspace{3pt plus 10pt}\nobreak}}
+
+%% Restantes comandos de secção
+\renewcommand\section{\@startsection{section}{1}{\z@}%
+                                    {-3.5ex \@plus -1ex \@minus -.2ex}%
+                                    {2.3ex \@plus.2ex}%
+                                    {\sffamily\large\bfseries}}
+
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+                                       {-3.25ex\@plus -1ex \@minus -.2ex}%
+                                       {1.5ex \@plus .2ex}%
+                                       {\sffamily\normalsize\bfseries}}
+
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+                                          {-3.25ex\@plus -1ex \@minus -.2ex}%
+                                          {1.5ex \@plus .2ex}%
+                                          {\sffamily\normalsize}}
+
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+                                      {.5ex \@plus4ex \@minus.4ex}%
+                                      {.3ex \@plus .1ex \@minus -.1ex}%
+                                      {\normalfont\normalsize\bfseries}}
+
+\renewcommand\subparagraph{\@startsection{subparagraph}{5}{\parindent}%
+                                         {3.25ex \@plus1ex \@minus .2ex}%
+                                         {-1em}%
+                                         {\normalfont\normalsize\bfseries}}
+
+\newenvironment{subsubsubsection}[1]
+{\paragraph{#1}
+\begin{list}{}{\setlength{\leftmargin}{2em}\addtolength{\parsep}{2ex}}
+\item}
+{\end{list}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%  Capa e rodapé %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Imagens e cores
+\ifPDF \RequirePackage[pdftex]{graphicx,color}
+\else  \RequirePackage[dvips]{graphicx,color}
+\fi
+
+% rotating
+\RequirePackage{rotating}
+
+%% As cores utilizadas na capa
+\definecolor{azul-ist}{rgb}{0.17254902,0.41960784,0.58039216}
+\definecolor{cinza}{rgb}{0.75294118,0.75294118,0.75294118}
+
+% mudar o formato da data
+\newcommand{\valordata}{%
+  \number\day-%
+  \ifnum\month<10 0\number\month\else\number\month\fi-%
+  \number\year}
+
+\newcommand\valornometrabalho{}
+\newcommand\valornotatrabalho{}
+\newcommand\textolistaalunoA{}
+\newcommand\textolistaalunoB{}
+\newcommand\textolistaalunoC{}
+\newcommand\listaalunos{\textolistaalunoA\textolistaalunoB\textolistaalunoC}
+
+\RequirePackage{fancyhdr}
+
+\newcommand{\estilopadrao}{
+  \fancyhf{} % limpar os campos do cabeçalho e rodapé
+  %\fancyhead[RO,LE]{\small \valordata}
+  %\fancyhead[LO,RE]{\small \valornometrabalho}
+  \fancyfoot[LE,RO]{\small \thepage}
+  %\fancyfoot[RE,LO]{\small \listaalunos}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+  \addtolength{\headheight}{0pt} % deixar espaço para a régua
+}
+
+% Estilo de página padrão
+\pagestyle{fancyplain}
+\estilopadrao
+% Estilo das páginas de capítulo
+\fancypagestyle{plain}{\estilopadrao}
+% Estilo das páginas vazias
+\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
+\mbox{}
+\thispagestyle{empty}
+\newpage
+\if@twocolumn\hbox{}\newpage\fi\fi\fi}
+
+\def\@endpart{
+\let\var\thepage
+\renewcommand\thepage{}
+\cleardoublepage
+\let\thepage\var
+}
+
+%% Interface da Capa
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand\titulonumerotrabalho{N.º da Proposta:}
+\newcommand\numerotrabalho[1]{\renewcommand\textonumerotrabalho{\textbf{\titulonumerotrabalho} \valornumerotrabalho\\}\renewcommand\valornumerotrabalho{#1}}
+\newcommand\nometrabalho[1]{\renewcommand\valornometrabalho{#1}}
+\newcommand\notatrabalho[1]{\renewcommand\valornotatrabalho{#1}}
+
+\newcommand\titulocoorientadorplural{Co-Orientadores:}
+\newcommand\titulocoorientador{Co-Orientador:}
+\newcommand\orientador[1]{\renewcommand\nomeorientador{#1}}
+\newcommand\coorientador[1]{\renewcommand\nomecoorientadorA{#1}%
+                            \renewcommand\textocoorientador{\\\textbf{\titulocoorientador}\\%
+                                                            {\small \textocoorientadorA\textocoorientadorB}}}
+\newcommand\coorientadorB[1]{\renewcommand\nomecoorientadorB{#1}\renewcommand\textocoorientadorB{\\\nomecoorientadorB\assinatura}
+                                                                \renewcommand\titulocoorientador{\titulocoorientadorplural}}
+
+\newcommand\alunoA[2]{\renewcommand\nomealunoA{#1}\renewcommand\numeroalunoA{#2}} %% colocar os comandos para activar o texto da capa e rodapé
+\newcommand\alunoB[2]{\renewcommand\nomealunoB{#1}\renewcommand\numeroalunoB{#2}
+                      \renewcommand\textoalunoB{\\\numeroalunoB, \nomealunoB \assinatura}
+                      \renewcommand\textolistaalunoB{, \nomealunoB}
+		      \renewcommand\tituloalunos{\tituloalunosplural}}
+\newcommand\alunoC[2]{\renewcommand\nomealunoC{#1}\renewcommand\numeroalunoC{#2}
+		      \renewcommand\textoalunoC{\\\numeroalunoC, \nomealunoC \assinatura}
+		      \renewcommand\textolistaalunoC{, \nomealunoC}}
+
+\newcommand\departamento[1]{\renewcommand\nomedepartamento{#1}}
+\newcommand\tipodocumento[1]{\renewcommand\textotipodocumento{#1}}
+\newcommand\curso[2]{\renewcommand\nomecurso{#1}\renewcommand\nomecursoabrev{#2}}
+\newcommand\anolectivo[1]{\renewcommand\valoranolectivo{#1}}
+
+
+% abreviações
+\newcommand\meic{\tipodocumento{Tese de Mestrado}
+                 \curso{em Engenharia Informática\\e de Computadores}{MEIC}}
+\newcommand\deic{\tipodocumento{Tese de Doutoramento}
+                 \curso{em Engenharia Informática\\e de Computadores}{DEIC}}
+% outros
+\newcommand\data[1]{\renewcommand\valordata{#1}}
+
+%% Parâmetros da capa
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand\nomedepartamento{Departamento\\de Engenharia\\Informática\\}
+\newcommand\textotipodocumento{Tese de Mestrado\\ do curso de}
+\newcommand\nomecurso{Licenciatura em Engenharia Informática\\ e de Computadores}
+\newcommand\nomecursoabrev{MEIC}
+\newcommand\valoranolectivo{2006 / 2007}
+
+%% Valores teste
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand\valornumerotrabalho{XX}
+%\newcommand\valornometrabalho{Nome do trabalho}
+\newcommand\nomeorientador{Nome do Orientador}
+\newcommand\nomecoorientadorA{Nome co-orientador A}
+\newcommand\nomecoorientadorB{Nome co-orientador B}
+
+\newcommand\nomealunoA{Nome do aluno A}
+\newcommand\numeroalunoA{Numero do aluno A}
+\newcommand\nomealunoB{Nome do aluno B}
+\newcommand\numeroalunoB{Numero do aluno B}
+\newcommand\nomealunoC{Nome do aluno C}
+\newcommand\numeroalunoC{Numero do aluno C}
+
+%% Comandos opcionais
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand\textonumerotrabalho{}
+
+\newcommand\textoalunoB{}
+\newcommand\textoalunoC{}
+
+\newcommand\textocoorientadorB{}
+
+\newcommand\textocoorientador{}
+
+%% Comandos base
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand\textoalunoA{\numeroalunoA, \nomealunoA \assinatura}
+\renewcommand\textolistaalunoA{\nomealunoA}
+
+\newcommand\textoanolectivo{Ano Lectivo \valoranolectivo}
+
+\newcommand\textotitulocapa{\textotipodocumento\\%
+                            \nomecurso\\ (\nomecursoabrev)\\ \textoanolectivo\\}
+
+%\newcommand\titulonometrabalho{Título:}
+%\newcommand\textonometrabalho{\textbf{\titulonometrabalho} \valornometrabalho\\}
+\newcommand\textonometrabalho{\valornometrabalho\\}
+
+\newcommand\textonotatrabalho{\valornotatrabalho}
+
+\newcommand\tituloorientadorplural{Professores Orientadores:}
+\newcommand\tituloorientador{Professor Orientador:}
+
+\newcommand\textoorientador{\textbf{\tituloorientador}\\
+{\small \nomeorientador \assinatura}}
+
+\newcommand\textocoorientadorA{\nomecoorientadorA\assinatura}
+
+\newcommand\tituloalunosplural{Alunos:}
+\newcommand\tituloalunos{Aluno:}
+
+\newcommand\textoalunos{\textbf{\tituloalunos}\\
+{\small \textoalunoA\textoalunoB\textoalunoC}}
+
+\newcommand\textocapa[1]{%
+{\par\noindent%
+\setlength{\baselineskip}{1.5\baselineskip}%
+\mdseries%
+\ignorespaces
+#1\par}}
+
+\newcommand\assinatura{\small\hspace{\stretch{2}}\parbox{18em}{\textcolor{cinza}{\hrulefill\ (assinatura) \hrulefill}}}
+
+%% Comandos de estrutura
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand\logotipocapa{
+{\begin{minipage}{\textwidth}
+{\includegraphics[width=9cm]{logo-ist}}\\[.2em]
+%\linespread{1.0}
+%\small \bfseries \sffamily
+%\textcolor{azul-ist}{\nomedepartamento
+\end{minipage}}}
+
+%\newcommand\titulocapa{
+%\begin{minipage}{.7\textwidth}
+%\begin{center}
+%\linespread{1.3}
+%{\Large \sffamily \textotitulocapa}
+%\end{center}
+%\end{minipage}
+%}
+
+\newcommand\cabecalhocapa{
+\logotipocapa%
+%\titulocapa%
+}
+
+\newcommand\propostacapa{%
+\textocapa{%
+\textonumerotrabalho
+\textonometrabalho
+\textonotatrabalho}
+}
+
+\newcommand\professorescapa{%
+\textocapa{%
+\textoorientador
+\textocoorientador}
+}
+
+\newcommand\alunoscapa{%
+\textocapa{%
+\textoalunos}
+}
+
+\newcommand\corpocapa{%
+\par
+\vspace{\stretch{2}}
+\propostacapa%
+%\vspace{\stretch{1}}
+%\professorescapa%
+%\vspace{\stretch{1}}
+%\alunoscapa%
+\vspace{\stretch{3}}
+\paragraph{}
+}
+
+\newcommand\capa{
+\thispagestyle{empty}%
+\cabecalhocapa%
+\corpocapa%
+\newpage
+}

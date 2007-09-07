@@ -1,0 +1,38 @@
+%\def\hellow{
+%	\textcolor{red}{HELLO!}
+%}
+%
+%% with receiving param
+%\def\hellow2#1{
+%	\textcolor{red}{begin #1 end}
+%}
+%
+%% alternative way of starting ending a command
+%\def\hellow3#1{
+%	{\bf#1}
+%	\begin{bf}#1\end{bf}
+%}
+
+
+\def\begintodo{
+  %\chapter{TODO}
+  %\label{TODO}
+	%\addcontentsline{toc}{chapter}{TODO}
+}
+
+% show TODOs
+\def\TODO#1{
+	\textcolor{red}{\textbf{TODO:} #1}
+	\addcontentsline{toc}{subsection}{To Do}
+}
+
+% hide TODOs
+%\def\TODO#1{}
+
+
+% grades!
+\def\GdE{\includegraphics[width=0.35cm]{gfx/grade1.png}}
+\def\GdD{\includegraphics[width=0.35cm]{gfx/grade2.png}}
+\def\GdC{\includegraphics[width=0.35cm]{gfx/grade3.png}}
+\def\GdB{\includegraphics[width=0.35cm]{gfx/grade4.png}}
+\def\GdA{\includegraphics[width=0.35cm]{gfx/grade5.png}}
