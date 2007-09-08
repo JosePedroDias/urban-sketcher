@@ -5,10 +5,10 @@
 \section{Context}
 
 Nowadays one has at his disposal an immense array of input and output devices
-capable of capturing any sense or property and representing fictional realities
+capable of capturing any sense or property and representing alternate realities
 with credibility.
 
-% acabar frase do wimp
+% acabar frase do wimp, ~set of concepts
 Systems dealing heavily with tridimensional content
 tend to be overly technical, confined to a set of concepts
 and base themselves on a desktop mouse / keyboard / monitor interface
@@ -23,23 +23,44 @@ creating a multimodal interface for the creation of city sceneries.
 % WORKS?!
 Having made part of previous projects of less complexity in the college's
 multimedia lab and having dealt with problems such as rendering 3D content
-to a cluster of computers, there already was some familiarity with the subject.
+to a cluster of computers, there was already familiarity with the subject.
 
 % Project project?
 % http://urbansketcher.blogspot.com/2006_09_01_archive.html
 The fact that the project got to be part of the IMPROVE project,
-a consortium of universities, hardware companies and studios in the
-areas of architecture and car design just made the objectives more ambitious
-and brought more experienced people and their different perspectives to the project.
+a consortium sponsored by the european union made up of universities and companies,
+only made the objectives more ambitious,
+bringing experienced people and their different perspectives to the project.
 
 
 \subsection{The Architectural Problem}
 
 \TODO{intro survey}
 
-\subsection{The Lab}
+\subsection{The Multimedia Lab}
 
-\TODO{ADD REFERENCES TO LEME WALL}
+% from rel-int
+
+% projector
+% screen -> oco...
+LemeWall is a computer cluster of computers and projectors, with the projectors
+being mounted in a matrix of 4 x 3, composing an image by back-projection on a screen.
+The computers form a intranet allowing any computer to control them all and render to the screen.
+
+\TODO{inserir imagem leme wall! esquema tb O:)}
+
+The lab has a set of infrared cameras mounted on the back that are capable of detecting
+laser pointers when pointed at the screen.
+
+\TODO{Artigo lasers to jota? artigo do leme?}
+
+\TODO{imagem motion tracking / esquema de cams de IMMI}
+
+Additionally motion tracking systems from STT have been used in the lab, for with two and four cameras,
+allowing real-time capturing of a set of reflective markers' positions in the area near to the screen.
+
+LemeWall is located at Prof. Lourenço Fernandes Lab, in Instituto Superior Técnico, Tagus Park, Oeiras.
+
 
 \subsection{Taking Part in IMPROVE}
 
@@ -62,9 +83,9 @@ supporting both tablet PC and the power wall.
 Although the two scenarios are very different, the applications must share a common functionality subset
 (such as displaying the same geometry, providing annotation support and navigation) and a consistent user interface.
 
-\TODO{ADD REFERENCES TO GIDES}
+\TODO{ADD REFERENCES TO GIDES, image of GIDES?}
 
-Since then IST had been using GIDES++ to test IMPROVE's functionality.
+Since the beginning of IMPROVE in 2005, IST had been using GIDES++ to test IMPROVE's functionality.
 GIDES++ is a CAD/CAM application in orthographic 3D with a non-intrusive interface, having been developed by several students
 throughout the last years.
 
@@ -72,8 +93,9 @@ A decision was made that GIDES++ could no longer serve IMPROVE due to its monoli
 
 \TODO{ADD REFERENCES TO OpenSG}
 \TODO{ADD REFERENCES TO AICI}
+\TODO{ADD REFERENCES TO OSGA}
 
-A new project was built from the ground up with the restrictions of hardware and interaction in mind,
+A new project was built from the ground up with the requirements of hardware and interaction in mind,
 making use of OpenSG, a scene graph system with support for rendering and synchronization between nodes of a cluster, providing other features such as multi-threading.
 
 On top of it an event framework named AICI was used and extended from our team. AICI is a framework developed
@@ -88,6 +110,20 @@ Each application can both subscribe types of events and/or generate them.
 %%%%%%%%%%%%%%%%%%%
 
 \section{Objectives}
+
+The main purposes of the project are to allow architects to test possible solutions for
+building planning and to provide a way for clients and architects to review them.
+
+The project is therefore thought out to be applied in early stages of the conception of
+architectural projects to convey the clients the spatial distribution of the proposals
+in discussion. The system may serve also as an interface for clients to explore the
+surroundings of the buildings later on, for selling out an idea or misce marketing purposes.
+
+The content creator, which is here called the architect, is able to create facades of buildings,
+manipulate their transformation properties and other characteristics.
+
+Creating three dimensional content should be easy and not a precise task, the generated content
+is a rough approximation.
 
 \TODO{improve architectural workflow at early stages}
 

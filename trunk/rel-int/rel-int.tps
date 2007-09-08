@@ -119,8 +119,8 @@ cxCur=828
 cxMin=10
 
 [Frame3_View0,0]
-Cursor.row=122
-Cursor.column=50
+Cursor.row=0
+Cursor.column=0
 TopSubLine=176
 
 [Frame4]
@@ -150,7 +150,7 @@ cxMin=10
 [Frame4_View0,0]
 Cursor.row=68
 Cursor.column=0
-TopSubLine=72
+TopSubLine=0
 
 [Frame5]
 Columns=1
@@ -227,17 +227,17 @@ Class=CLatexEdit
 Document=conc.tex
 
 [Frame7_Row0]
-cyCur=458
+cyCur=451
 cyMin=10
 
 [Frame7_Col0]
-cxCur=1031
+cxCur=1065
 cxMin=10
 
 [Frame7_View0,0]
 Cursor.row=14
-Cursor.column=107
-TopSubLine=0
+Cursor.column=39
+TopSubLine=9
 
 [Frame8]
 Columns=1

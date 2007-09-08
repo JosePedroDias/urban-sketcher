@@ -1,0 +1,123 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass[a4paper,helvetica,nologo,flagCMYK]{europecv}
+
+\usepackage[T1]{fontenc}	% BETTER FONTS I GUESS
+%\usepackage{lmodern}			% DOESN'T SEEM TO WORK WELL
+%\usepackage{microtype}		% NOT FOUND BY MIKTEX :P
+%\usepackage{booktabs}		% USE WITH documentclass[booktabs] to change the appearance of the language table
+
+\usepackage[a4paper,left=1.5cm,right=2cm,top=2cm,bottom=2.5cm]{geometry}
+
+\usepackage{ifpdf}
+\usepackage[english]{babel}
+
+\ifpdf
+    \usepackage[pdftex]{graphicx}
+\else
+     \usepackage{graphicx}
+\fi
+
+\usepackage{url}
+\ifpdf
+  \usepackage[pdftex,colorlinks]{hyperref}
+\else
+ \usepackage{hyperref}
+\fi
+
+
+% personal data
+% TODO: ACENTOS
+\ecvname{Sacramento Aleixo Dias, Jose Pedro}
+\ecvfootername{Jose Pedro Dias}
+\ecvaddress{TODO:morada}
+\ecvemail{jose.pedro.dias@gmail.com}
+\ecvtelephone{+351 916 957 194}
+\ecvnationality{Portuguese}
+\ecvdateofbirth{January 12, 1981}
+\ecvgender{Male}
+\ecvbeforepicture{\raggedleft}
+\ecvpicture[height=3cm]{examples/at}
+\ecvafterpicture{\ecvspace{-4.5cm}}
+
+
+\begin{document}
+\begin{europecv}
+
+\ecvitem{}{}
+
+
+\ecvpersonalinfo
+
+
+
+\ecvsection{Work experience}
+
+\ecvitem{Dates}{From March 2005 to July 2005}
+\ecvitem{Occupation or position held}{Webdesigner}
+\ecvitem{Main activities and responsibilies}{Creation and maintenance of a documentation management system for the Multimedia Lab}
+\ecvitem[15pt]{Name and address of employer}{Instituto Superior Tecnico - LEMe}
+
+\ecvitem{Dates}{From September 2004 to January 2005}
+\ecvitem{Occupation or position held}{Webdesigner}
+\ecvitem{Main activities and responsibilies}{Creation and maintenance of a dynamic site to Tuna Feminina of FFUL}
+\ecvitem{Name and address of employer}{Tuna Feminina da Universidade de Farmacia da Universidade de Lisboa}
+
+
+
+\ecvsection{Education and training}
+
+\ecvitem{Dates}{From September 1999 to present time}
+\ecvitem{Title of qualification awarded}{Senior year of a master's degree in Computer Engineering}
+\ecvitem{Name and type of organisation providing education and training}{Instituto Superior Tecnico, Universidade Tecnica de Lisboa, Oeiras, Portugal}
+
+
+
+\ecvsection{Personal skills and competences}
+
+% FALTA OTHER LANGUAGES
+\ecvmothertongue[10pt]{Portuguese}
+\ecvmothertongue[10pt]{}
+\ecvlanguageheader{(*)}
+\ecvlanguage{English}{\ecvCOne}{\ecvCOne}{\ecvBTwo}{\ecvBTwo}{\ecvCOne}
+\ecvlanguagefooter{(*)}
+
+\ecvitem[15pt]{Social skills and competences}{Tennis, TODO}
+
+\ecvitem{IT skills and competences}{\textbf{Operating Systems:}}
+\ecvitem{}{Microsoft Windows XP family}
+\ecvitem[15pt]{}{GNU/Linux}
+
+\ecvitem{}{\textbf{Main Programming Languages:}}
+\ecvitem{}{Java}
+% TODO: SHARP
+\ecvitem{}{C / .net / ASP.net}
+\ecvitem{}{C++ and C}
+\ecvitem{}{SQL}
+\ecvitem[15pt]{}{Python, Ruby}
+
+\ecvitem{}{\textbf{Other Languages:}}
+\ecvitem{}{HTML / CSS / JavaScript}
+\ecvitem{}{XML}
+\ecvitem[15pt]{}{LATEX}
+
+\ecvitem{Art skills and competences}{Adobe Photoshop}
+\ecvitem{}{Blender 3D}
+\ecvitem[15pt]{}{Inkscape}
+
+\ecvitem{Additional information}{honest}
+\ecvitem{}{reliable}
+\ecvitem[15pt]{}{devoted to work}
+
+\ecvitem{Driving licence}{Category B}
+\ecvitem[15pt]{}{From 2003/03/14 to 2046/01/11}
+
+\ecvitem{Personal Interests}{Literature}
+\ecvitem{}{Music}
+\ecvitem{}{Computer Graphics}
+\ecvitem{}{Movies}
+\ecvitem{}{Sports}
+
+
+
+\end{europecv}
+\end{document} 
