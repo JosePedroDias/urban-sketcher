@@ -4,11 +4,86 @@
 
 \section{Context}
 
+Nowadays one has at his disposal an immense array of input and output devices
+capable of capturing any sense or property and representing fictional realities
+with credibility.
+
+% acabar frase do wimp
+Systems dealing heavily with tridimensional content
+tend to be overly technical, confined to a set of concepts
+and base themselves on a desktop mouse / keyboard / monitor interface
+with WIMP.
+
+\TODO{ADD TYPICAL IMAGE OF 3D SOFTWARE} 
+
+Being an avid user of such systems and someone who enjoys well designed
+interfaces, the author became interested in the proposed idea of
+creating a multimodal interface for the creation of city sceneries.
+
+% WORKS?!
+Having made part of previous projects of less complexity in the college's
+multimedia lab and having dealt with problems such as rendering 3D content
+to a cluster of computers, there already was some familiarity with the subject.
+
+% Project project?
+% http://urbansketcher.blogspot.com/2006_09_01_archive.html
+The fact that the project got to be part of the IMPROVE project,
+a consortium of universities, hardware companies and studios in the
+areas of architecture and car design just made the objectives more ambitious
+and brought more experienced people and their different perspectives to the project.
+
+
+\subsection{The Architectural Problem}
+
 \TODO{intro survey}
 
-\TODO{improve}
+\subsection{The Lab}
 
-\TODO{sala multimédia}
+\TODO{ADD REFERENCES TO LEME WALL}
+
+\subsection{Taking Part in IMPROVE}
+
+% http://urbansketcher.blogspot.com/2006_09_01_archive.html
+
+\TODO{ADD REFERENCES TO IMPROVE}
+
+IMPROVE is a consortium of universities, hardware manufacturers and design studios in
+the areas of architecture and car design.
+The universities provide the developers and scientific innovation.
+The hardware manufacturers come up with prototype hardware devices
+to answer the project's needs and  support the developers in using them.
+The design studios serve as the main testers of the system, providing
+suggestions and feedback to the project so that the final results better suit their needs.
+
+The IMPROVE project is funded by the European Union.
+Instituto Superior Técnico got responsible for creating an application to the architecture scenario
+supporting both tablet PC and the power wall.
+
+Although the two scenarios are very different, the applications must share a common functionality subset
+(such as displaying the same geometry, providing annotation support and navigation) and a consistent user interface.
+
+\TODO{ADD REFERENCES TO GIDES}
+
+Since then IST had been using GIDES++ to test IMPROVE's functionality.
+GIDES++ is a CAD/CAM application in orthographic 3D with a non-intrusive interface, having been developed by several students
+throughout the last years.
+
+A decision was made that GIDES++ could no longer serve IMPROVE due to its monolithic development and constrained 3D capabilities.
+
+\TODO{ADD REFERENCES TO OpenSG}
+\TODO{ADD REFERENCES TO AICI}
+
+A new project was built from the ground up with the restrictions of hardware and interaction in mind,
+making use of OpenSG, a scene graph system with support for rendering and synchronization between nodes of a cluster, providing other features such as multi-threading.
+
+On top of it an event framework named AICI was used and extended from our team. AICI is a framework developed
+both in Germany and South Korea, being part of IMPROVE's consortium.
+
+OSGA is a communication framework based on XML, developed as a IST/INESC project.
+It provides a way of sharing events between several applications through a clean XML schema.
+Each application can both subscribe types of events and/or generate them.
+
+\TODO{TOO MUCH FRAMEWORK DETAILS?}
 
 %%%%%%%%%%%%%%%%%%%
 
@@ -19,6 +94,47 @@
 \TODO{provide interface for large screens / table PCs}
 
 \TODO{interface for reviewing sessions (local or remote)}
+
+
+Este projecto propõe-se auxiliar um arquitecto no estudo de possíveis soluções arquitecturais.
+Está pensado para ser usado na fase em que o mesmo executa esboços, antes da elaboração
+de documentos precisos do mesmo ou posteriormente à solução desenhada, para vender a ideia.
+
+O mesmo deve fornecer ferramentas que permitam ao arquitecto desenhar fachadas de edifícios
+e testar a disposição dos mesmos de forma experimental.
+Esta tarefa deve permitir-lhe tomar decisões quanto ao futuro traçado do edifício ou conjunto
+de edifícios e validar com clientes a solução alcançada.
+
+Num cenário de revisão com clientes será então possível a vários utilizadores navegar no mundo,
+fazer pequenas manipulações de geometria e aparência (ex: translacções, alterações de materiais)
+e geração e leitura de anotações.
+Este cenário poderá ocorrer com os utilizadores no mesmo local ou ligados em rede.
+
+O sucesso deste projecto medir-se-á em 3 vertentes:
+\begin{description}
+	\item[Expressividade o sistema] --
+		O sistema deve ser capaz de complementar ou substituir os esboços de estudo do arquitecto.
+		Para tal deve permitir ao mesmo testar configurações comuns de edifícios e deve fazê-lo
+		sem que o arquitecto se veja forçado a lutar contra a interface.
+	\item[Inovação da interface] --
+		O sistema permitirá testar um conjunto heterogéneo de interfaces de entrada.
+		Uma combinação de esboço com caneta/laser, manipulação de artefactos e comandos por voz
+		implica um estilo de interacção distinto do Window, Icon, Menu, Pointing device (WIMP),
+		o mais popular actualmente no software comercial deste segmento.
+		A eficácia com que o utilizador utilizar este sistema e a sua curva de aprendizagem
+		ditarão quão bem sucedida é a interface.
+	\item[Ponte entre arquitecto e cliente] --
+		Outro ponto forte deste sistema será a capacidade de fornecer ao cliente a capacidade
+		de navegar no modelo arquitectural e validar o mesmo.
+		Os clientes não são à partida utilizadores competentes na leitura e visualização dos
+		mais comuns documentos de arquitectura -- vistas ortogonais, cortes, etc.
+		Espera-se obter um impacto mais favorável nos clientes ao facultar-lhes este sistema.
+\end{description}
+
+O sistema será alvo de testes de usabilidade de modo a averiguar o cumprimento destes objectivos.
+Os mesmos serão elaborados de modo medir a performance deste sistema face a um sistema convencional
+num conjunto de cenários de utilização, marcando os tempos das tarefas e obtendo \emph{feedback} dos utilizadores.
+
 
 %%%%%%%%%%%%%%%%%%%
 
