@@ -35,7 +35,30 @@ bringing experienced people and their different perspectives to the project.
 
 \subsection{The Architectural Problem}
 
-\TODO{intro survey}
+% survey page 4
+Currently an architect starts the building design work flow by drawing
+rough free form sketches of the desired building.
+These drawings are highly subjective and clients have a hard time in their interpretation and validation.
+The information captured in such drawings has little use in the remaining stages of building design.
+
+% REF AUTOCAD GRAPHCAD, etc
+Systems such as Autocad TODO are commonly used for professional building layouts.
+The architect replicates his former ideas in the rigid standardized interface offered by these systems.
+This is a rigorous endeavor, taking much time to be asserted.
+
+After the main project documents are issued comes the time when the idea has to be pitched to end clients.
+In order to gather buyers and investors its common to generate colorful previews of the building featuring
+increasingly realistic features such as detailed materials, light propagation and crowd simulations.
+
+Despite the ongoing advances in computation, the architectural work flow
+keeps these three separated stages that don't share media or applications.
+Both the conceptual design stage and the final reviewing and marketing stage would
+benefit from an integrated system with a comprehensive set of design actions
+and good navigation and content reviewing capabilities.
+
+The architect can benefit from the system by being able to experiment different
+locations for the building and obtain a better integration between the new
+design and its surroundings.
 
 \subsection{The Multimedia Lab}
 
@@ -98,7 +121,7 @@ A decision was made that GIDES++ could no longer serve IMPROVE due to its monoli
 A new project was built from the ground up with the requirements of hardware and interaction in mind,
 making use of OpenSG, a scene graph system with support for rendering and synchronization between nodes of a cluster, providing other features such as multi-threading.
 
-On top of it an event framework named AICI was used and extended from our team. AICI is a framework developed
+On top of it an event framework named AICI was used and extended by our team. AICI is a framework developed
 both in Germany and South Korea, being part of IMPROVE's consortium.
 
 OSGA is a communication framework based on XML, developed as a IST/INESC project.
@@ -114,62 +137,50 @@ Each application can both subscribe types of events and/or generate them.
 The main purposes of the project are to allow architects to test possible solutions for
 building planning and to provide a way for clients and architects to review them.
 
-The project is therefore thought out to be applied in early stages of the conception of
-architectural projects to convey the clients the spatial distribution of the proposals
-in discussion. The system may serve also as an interface for clients to explore the
-surroundings of the buildings later on, for selling out an idea or misce marketing purposes.
+The project is therefore thought out to be applied in early stages in the conception of
+architectural projects for clients to convey the spatial distribution of the proposals in discussion.
+The content creator, which is henceforth called the architect, should be given the tools so he
+can create facades of buildings and test different building configurations in an experimental fashion.
+Creating three dimensional content should be an easy and imprecise task --
+it should be considered a rough approximation.
 
-The content creator, which is here called the architect, is able to create facades of buildings,
-manipulate their transformation properties and other characteristics.
+The system may also serve as an interface for clients to explore the
+surroundings of the buildings at a later stage,
+either to validate the design or for marketing purposes.
 
-Creating three dimensional content should be easy and not a precise task, the generated content
-is a rough approximation.
+It is therefore crucial for a novice user to get the grip of the system easily.
+Tasks such as navigating the scene or attaching notes to objects ought to be of simple execution.
+Clients might also do small manipulations on the geometry or appearance of objects.
 
-\TODO{improve architectural workflow at early stages}
+Both scenarios should support users individually working with tablet PCs or
+a collaborative scenario in front of a power wall.
 
-\TODO{provide interface for large screens / table PCs}
+The success of this project shall therefore be evaluated by fulfilling the following goals:
 
-\TODO{interface for reviewing sessions (local or remote)}
-
-
-Este projecto propõe-se auxiliar um arquitecto no estudo de possíveis soluções arquitecturais.
-Está pensado para ser usado na fase em que o mesmo executa esboços, antes da elaboração
-de documentos precisos do mesmo ou posteriormente à solução desenhada, para vender a ideia.
-
-O mesmo deve fornecer ferramentas que permitam ao arquitecto desenhar fachadas de edifícios
-e testar a disposição dos mesmos de forma experimental.
-Esta tarefa deve permitir-lhe tomar decisões quanto ao futuro traçado do edifício ou conjunto
-de edifícios e validar com clientes a solução alcançada.
-
-Num cenário de revisão com clientes será então possível a vários utilizadores navegar no mundo,
-fazer pequenas manipulações de geometria e aparência (ex: translacções, alterações de materiais)
-e geração e leitura de anotações.
-Este cenário poderá ocorrer com os utilizadores no mesmo local ou ligados em rede.
-
-O sucesso deste projecto medir-se-á em 3 vertentes:
+\TODO{REVER DEPOIS}
 \begin{description}
-	\item[Expressividade o sistema] --
-		O sistema deve ser capaz de complementar ou substituir os esboços de estudo do arquitecto.
-		Para tal deve permitir ao mesmo testar configurações comuns de edifícios e deve fazê-lo
-		sem que o arquitecto se veja forçado a lutar contra a interface.
-	\item[Inovação da interface] --
-		O sistema permitirá testar um conjunto heterogéneo de interfaces de entrada.
-		Uma combinação de esboço com caneta/laser, manipulação de artefactos e comandos por voz
-		implica um estilo de interacção distinto do Window, Icon, Menu, Pointing device (WIMP),
-		o mais popular actualmente no software comercial deste segmento.
-		A eficácia com que o utilizador utilizar este sistema e a sua curva de aprendizagem
-		ditarão quão bem sucedida é a interface.
-	\item[Ponte entre arquitecto e cliente] --
-		Outro ponto forte deste sistema será a capacidade de fornecer ao cliente a capacidade
-		de navegar no modelo arquitectural e validar o mesmo.
-		Os clientes não são à partida utilizadores competentes na leitura e visualização dos
-		mais comuns documentos de arquitectura -- vistas ortogonais, cortes, etc.
-		Espera-se obter um impacto mais favorável nos clientes ao facultar-lhes este sistema.
+	\item[Expressiveness of the system] --
+		The user should be given the expressiveness power of a sketch board.
+		There should be common building templates and be configurable with a good interface.
+	\item[Good interface design] --
+		The system will feature a varied set of input interfaces.
+		The mixed use of sketching with laser pointer/pen, handling of artifacts and issuing
+		voice commands implies an interaction metaphor far from the WIMP interaction,
+		by far the most common approach to this problem.
+		The effectiveness and efficacy of the user interaction with the system and the
+		learning curve will dictate how well we have succeeded.
+	\item[Filling the gap between architect and client] --
+		Another goal of the system is to allow the client to navigate throughout the
+		architectural model and validate it with small manipulations and note attachments.
+		Clients aren't used to visualizing the implicit model by the interpretation of 
+		common architectural documents such as orthogonal views or cuts.
+		They would surely benefit from a 3D virtual approximation.
 \end{description}
 
-O sistema será alvo de testes de usabilidade de modo a averiguar o cumprimento destes objectivos.
-Os mesmos serão elaborados de modo medir a performance deste sistema face a um sistema convencional
-num conjunto de cenários de utilização, marcando os tempos das tarefas e obtendo \emph{feedback} dos utilizadores.
+The system will be subject to usability tests in order to evaluate the fulfillment of these goals.
+%O sistema será alvo de testes de usabilidade de modo a averiguar o cumprimento destes objectivos.
+%Os mesmos serão elaborados de modo medir a performance deste sistema face a um sistema convencional
+%num conjunto de cenários de utilização, marcando os tempos das tarefas e obtendo \emph{feedback} dos utilizadores.
 
 
 %%%%%%%%%%%%%%%%%%%
