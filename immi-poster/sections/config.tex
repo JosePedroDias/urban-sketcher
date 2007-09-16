@@ -1,0 +1,51 @@
+\section{Configuração Física}
+
+%\subsection{Motion Tracking}
+
+A captura de movimentos efectuou-se recorrendo à fixação de marcadores reflectores nos braços do utilizador e
+à instalação de um conjunto de 4 câmaras com lâmpadas de infra-vermelhos, cuja imagem é processada por um computador
+que identifica em cada imagem os marcadores visíveis no espaço-imagem, faz a computação da posição espacial referente a cada marcador pelo cruzamento dos dados das 4 câmaras e efectua uma etiquetagem dos marcadores segundo uma posição inicial dos braços.
+
+%\begin{figure}[!ht]
+%  \centering
+%  \includegraphics[width=0.47\linewidth]{4cam-setup-pt.png}
+%  \caption{configuração de captura de movimentos}
+%  \label{fig:setups}
+%\end{figure}
+
+%\subsection{Reconhecimento de Fala}
+
+Tivemos à nossa disposição o Microsoft Speech API 5.1, versão american english.
+A captura de comandos de voz foi efectuada com um microfone wireless da Microsoft,
+após a comparação do reconhecimento do mesmo face a um microfone fixo e um Bluetooth.
+
+%O mesmo mostrou-se problemática
+
+%\subsubsection{Gramática}
+
+%Foi projectada uma pequena gramática que permitisse a activação dos diferentes modos multimodais:
+%\begin{description}
+%	\item[Fly:]  begin flying , stop flying
+%	\item[Drag:] begin drag, stop drag
+%	\item[Rotate:] begin rotate ( X \(|\) Y \(|\) Z ) , stop rotate
+%	\item[Scale:] begin scale ( X \(|\) Y \(|\) Z \(|\) Overall ) , stop scale
+%\end{description}
+%
+%O reconhecedor mostrou-se algo limitado, tendo sido necessário adaptar a gramática a palavras não ambíguas entre si ou
+%que gerassem falsos positivos.
+%
+%%Preliminarmente realizou-se um teste para escolher o melhor hardware para reconhecimento de voz, entre um microfone Wireless, %um fixo a captar toda a sala e um auricular Bluetooth. Os comandos disponíveis na aplicação foram ditados repetidas vezes por 3 %utilizadores, em ordem aleatória e com os 3 dispositivos.
+%
+%%Conclui-se que o microfone Wireless era a melhor opção com uma taxa de reconhecimento média de 99\%, mas para distâncias curtas %(\(<\)3m) o auricular Bluetooth teve resultados semelhantes, com 98\%. O microfone fixo captou muito ruído e produziu resultados %muito insatisfatórios de menos de 50\%.
+
+\subsection{Gramática}
+
+Foi projectada uma pequena gramática que permitisse a activação dos diferentes modos multimodais:
+
+\textbf{Fly:}		begin flying , stop flying\\
+\textbf{Drag:}	begin drag, stop drag\\
+\textbf{Rotate:}begin rotate ( X \(|\) Y \(|\) Z ) , stop rotate\\
+\textbf{Scale:}	begin scale ( X \(|\) Y \(|\) Z \(|\) Overall ) , stop scale
+
+O reconhecedor mostrou-se algo limitado, tendo sido necessário adaptar a gramática a palavras não ambíguas entre si ou
+que gerassem falsos positivos.

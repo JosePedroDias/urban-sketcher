@@ -1,0 +1,57 @@
+\documentclass[10pt,a4paper,twocolumn]{article}
+% \usepackage{epcg_en}  % for English
+\usepackage{epcg_pt}  % for Portuguese
+
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{times}
+
+%\usepackage{showkeys}
+
+%\usepackage{epsfig}
+
+%\usepackage[T1]{fontenc}	% BETTER FONTS I GUESS
+%\usepackage{ucs}
+%\usepackage[utf8]{inputenc}
+\usepackage[latin1]{inputenc}
+\pagestyle{empty}
+%\usepackage{pdfsync}
+
+\title{GeoSculpt -- edição de geometria 3D baseada em traços}
+
+
+%\author{José Pedro Dias\\
+%Instituto Superior Técnico -- Pólo Tagus Park \\
+%Av. Prof. Dr. Cavaco Silva, 2744-016 Porto Salvo \\
+%\small{\texttt{jose.pedro.dias@ist.utl.pt}}}
+
+\author{
+\begin{tabular}{ccc}
+	José Pedro Dias & Joaquim Jorge \\
+	Instituto Superior Técnico & INESC-ID \\
+	Av. Prof. Dr. Cavaco Silva & R. Alves Redol, 9 \\
+	2744-016 Porto Salvo & 1000-029 Lisboa \\
+	\small{\texttt{jose.pedro.dias@ist.utl.pt}} & \small{\texttt{jaj@inesc.pt}}
+\end{tabular}
+}
+
+
+%\date{}
+\graphicspath{{figures/}}
+
+% ABSTRACT
+\input{sections/abstract.tex}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\input{sections/body}
+
+%Incialmente nao estava comentado
+% \nocite{*}
+
+\bibliography{epcg}
+\bibliographystyle{long_pt} % for portuguese
+% \bibliographystyle{long_en} % for english
+\end{document}

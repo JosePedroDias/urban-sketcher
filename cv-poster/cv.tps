@@ -5,7 +5,7 @@ Version=2
 [SessionInfo]
 ActiveTab=0
 FrameCount=6
-ActiveFrame=4
+ActiveFrame=2
 
 [Frame0]
 Columns=1
@@ -16,19 +16,19 @@ MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-4
 MaxPos.y=-23
-NormalPos.left=154
-NormalPos.top=154
-NormalPos.right=1081
-NormalPos.bottom=467
+NormalPos.left=0
+NormalPos.top=0
+NormalPos.right=971
+NormalPos.bottom=245
 Class=CLatexEdit
-Document=introduction.tex
+Document=sections\intro.tex
 
 [Frame0_Row0]
-cyCur=266
+cyCur=198
 cyMin=10
 
 [Frame0_Col0]
-cxCur=899
+cxCur=943
 cxMin=10
 
 [Frame0_View0,0]
@@ -47,51 +47,51 @@ MaxPos.x=-4
 MaxPos.y=-23
 NormalPos.left=22
 NormalPos.top=22
-NormalPos.right=953
-NormalPos.bottom=339
+NormalPos.right=997
+NormalPos.bottom=271
 Class=CLatexEdit
-Document=..\survey\introduction.tex
+Document=sections\estrutura.tex
 
 [Frame1_Row0]
-cyCur=270
+cyCur=202
 cyMin=10
 
 [Frame1_Col0]
-cxCur=903
+cxCur=947
 cxMin=10
 
 [Frame1_View0,0]
-Cursor.row=0
-Cursor.column=0
-TopSubLine=0
+Cursor.row=16
+Cursor.column=75
+TopSubLine=4
 
 [Frame2]
 Columns=1
 Rows=1
-Flags=0
-ShowCmd=1
+Flags=2
+ShowCmd=3
 MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-4
 MaxPos.y=-23
-NormalPos.left=22
-NormalPos.top=22
-NormalPos.right=931
-NormalPos.bottom=387
+NormalPos.left=44
+NormalPos.top=44
+NormalPos.right=1019
+NormalPos.bottom=293
 Class=CLatexEdit
-Document=acronyms.tex
+Document=sections\operacoes.tex
 
 [Frame2_Row0]
-cyCur=318
+cyCur=339
 cyMin=10
 
 [Frame2_Col0]
-cxCur=881
+cxCur=1065
 cxMin=10
 
 [Frame2_View0,0]
-Cursor.row=9
-Cursor.column=17
+Cursor.row=0
+Cursor.column=0
 TopSubLine=0
 
 [Frame3]
@@ -103,54 +103,54 @@ MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-4
 MaxPos.y=-23
-NormalPos.left=44
-NormalPos.top=44
-NormalPos.right=953
-NormalPos.bottom=409
+NormalPos.left=66
+NormalPos.top=66
+NormalPos.right=1041
+NormalPos.bottom=315
 Class=CLatexEdit
-Document=aliases.tex
+Document=sections\interface.tex
 
 [Frame3_Row0]
-cyCur=318
+cyCur=202
 cyMin=10
 
 [Frame3_Col0]
-cxCur=881
+cxCur=947
 cxMin=10
 
 [Frame3_View0,0]
-Cursor.row=15
+Cursor.row=0
 Cursor.column=0
-TopSubLine=11
+TopSubLine=0
 
 [Frame4]
 Columns=1
 Rows=1
-Flags=2
-ShowCmd=3
+Flags=0
+ShowCmd=1
 MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-4
 MaxPos.y=-23
-NormalPos.left=132
-NormalPos.top=132
+NormalPos.left=88
+NormalPos.top=88
 NormalPos.right=1063
-NormalPos.bottom=496
+NormalPos.bottom=337
 Class=CLatexEdit
-Document=design.tex
+Document=sections\conclusoes.tex
 
 [Frame4_Row0]
-cyCur=299
+cyCur=202
 cyMin=10
 
 [Frame4_Col0]
-cxCur=1065
+cxCur=947
 cxMin=10
 
 [Frame4_View0,0]
-Cursor.row=29
-Cursor.column=0
-TopSubLine=15
+Cursor.row=12
+Cursor.column=52
+TopSubLine=0
 
 [Frame5]
 Columns=1
@@ -161,15 +161,15 @@ MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-4
 MaxPos.y=-23
-NormalPos.left=66
-NormalPos.top=66
-NormalPos.right=1041
-NormalPos.bottom=302
+NormalPos.left=110
+NormalPos.top=110
+NormalPos.right=1085
+NormalPos.bottom=386
 Class=CLatexEdit
-Document=dissertation.tex
+Document=paper.tex
 
 [Frame5_Row0]
-cyCur=189
+cyCur=229
 cyMin=10
 
 [Frame5_Col0]
@@ -177,7 +177,7 @@ cxCur=947
 cxMin=10
 
 [Frame5_View0,0]
-Cursor.row=120
-Cursor.column=19
-TopSubLine=112
+Cursor.row=8
+Cursor.column=1
+TopSubLine=0
 

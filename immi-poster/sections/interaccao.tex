@@ -1,0 +1,71 @@
+\section{Modos de interacção}
+
+Segue-se a descrição dos diferentes modos de interacção suportados pela aplicação.
+
+%\newpage
+
+\subsection{Navegação no espaço}
+
+A navegação no espaço faz uso dos braços estendidos (imitando o super-homem) para determinar a direcção e velocidade do voo.
+
+O controlo da velocidade de voo é regulada pela distância entre mãos:
+quanto mais afastadas estiverem as mãos mais lento é o deslocamento,
+até a uma amplitude limite -- cerca de 90º -- em que o utilizador pára no ar;
+a velocidade máxima é atingida com as mãos juntas (fig. \ref{fig:fly-speed}).
+
+A direcção lateral do voo é afectada elevando um braço mais que o outro,
+sendo que quanto maior for a diferença de elevação, maior a rotação imprimida.
+Para rodar para direita deve levantar-se o braço esquerdo e baixar o direito
+(fig. \ref{fig:fly-yaw}); vice-versa para rodar para a esquerda.
+
+A alteração da altitude do voo efectua-se elevando ou baixando simultaneamente os braços (fig. \ref{fig:fly-pitch}).
+
+\begin{figure}[h]
+  \centering
+  \subfloat[Speed]{\label{fig:fly-speed}
+    \includegraphics[width=0.26\linewidth]{fly-speed.png}}
+  \quad
+  \subfloat[Yaw]{\label{fig:fly-yaw}
+    \includegraphics[width=0.26\linewidth]{fly-yaw.png}}
+  \quad
+  \subfloat[Pitch]{\label{fig:fly-pitch}
+    \includegraphics[width=0.26\linewidth]{fly-pitch.png}}
+  \caption{Modo Voar}
+  \label{fig:voar}
+\end{figure}
+
+% \newpage
+
+\subsection{Manipulação de objectos seleccionados}
+
+Para mover um objecto deve estender-se o braço direito. A sua direcção determina a translacção do objecto
+mapeada no plano horizontal do mundo (fig. \ref{fig:move}).
+
+Para rodar um objecto deve estender-se o braço direito em direcção ao cenário e fazer um movimento circular
+no plano paralelo ao ecrã imediatamente à frente do utilizador(como se estivesse a limpar um vidro).
+O sentido da rotação do braço é mapeado directamente no sentido da rotação do objecto (fig. \ref{fig:rotate}).
+O eixo de rotação é previamente escolhido através do comando de voz que inicia o modo.
+
+Para alterar a escala do objecto seleccionado tem relevância a distância entre mãos.
+A posição inicial dos braços aquando a selecção do modo escala serve de ponto de partida para a alteração da mesma.
+Daí em diante, para aumentar a escala de um objecto deve afastar-se as mãos e para o reduzir aproximá-las
+(fig. \ref{fig:scale}).
+A escala é restringida a um eixo previamente escolhido através do comando de voz que inicia o modo.
+
+\begin{figure}[ht]
+  \begin{center}
+  	\includegraphics[width=.55\linewidth]{move.png}
+		\caption{Modo mover}
+		\label{fig:move}
+		
+		\includegraphics[width=.55\linewidth]{rotate.png}
+		\caption{Modo rodar}
+		\label{fig:rotate}
+
+		\includegraphics[width=.55\linewidth]{scale.png}
+		\caption{Modo escala}
+		\label{fig:scale}
+  \end{center}
+\end{figure}
+
+
