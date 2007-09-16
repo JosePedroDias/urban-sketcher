@@ -1,0 +1,11 @@
+\section{Problemas}
+
+\subsection{Motion Tracking}
+
+A configuração ARTrack tem apenas duas câmaras frontais ao utilizador e ambas têm de captar os pontos de referência usados nos braços do utilizador. Não havendo redundância de câmaras é relativamente frequente a oclusão dos pontos de referência quando se utilizam os braços entusiasticamente. O problema foi resolvido recorrendo o outro sistema de motion tracking Matrox, desta vez com quatro câmaras à volta do utilizador. A fiabilidade aumentou substancialmente e permite ao utilizador uma maior liberdade de movimentos.
+
+Não foi utilizada a fase final da plataforma de tracking disponibilizada (onde é calculada a matriz transformação por artefacto), neste caso específico uma matriz por cada braço do utilizador. Foi tomada tal decisão pois as matrizes obtidas falhavam frequentemente o sentido da orientação e eram pouco precisas, além do facto da sua obtenção não ser uma mais-valia como dado de entrada no sistema.
+
+\subsection{Voz}
+
+Foi necessária a alteração da gramática escolhida para desambiguar alguns comandos de voz. As palavras "start", "stop" e "quit" são difíceis de distinguir, sendo erroneamente reconhecidas. Sem esta alteração o sistema não seria usável.

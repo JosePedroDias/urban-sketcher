@@ -1,0 +1,60 @@
+\section{Configuração Física}\label{sec:config}
+
+\subsection{Motion Tracking}
+
+Em diferentes fases do projecto estiveram disponíveis duas configurações de motion tracking.
+
+Em ambas os marcadores que o utilizador tem que usar são esferas revestidas com um material de características especulares especiais, com elevado índice reflectivo na gama dos infra-vermelhos. Os marcadores são posicionados nos braços como demonstrado na [Figura \ref{fig:markers}].
+
+\begin{figure}[!ht]
+\centering
+   \includegraphics[width=.45\linewidth]{markers.png}
+ \caption{Marcadores}
+\label{fig:markers}
+\end{figure}
+
+A primeira configuração, de ora em diante denominada ARTrack (devido à marca das câmaras), é composta por duas câmaras ARTrack de infra-vermelhos que processam directamente a imagem para pontos 2D centrados em cada marcador. Enviam por rede os pontos para o servidor de tracking que faz a computação da posição espacial referente a cada marcador e posteriormente a sua etiquetagem de acordo com o modelo para o qual está configurado (neste caso dois braços, cada um com dois marcadores, um no pulso e o outro no antebraço).
+As duas câmaras foram posicionadas frente ao utilizador, junto ao ecrã de larga escala [Figura \ref{fig:2cam}].
+
+A segunda configuração, de ora em diante denominada por Matrox (devido à marca da placa de frame-grabbing), recorre a quatro câmaras simples com saídas analógicas e lâmpadas infra-vermelhas anexadas [Figura \ref{fig:4cam}], estando o servidor de tracking munido de uma placa de frame-grabbing que executa a primeira fase (cálculo das posições 2D dos marcadores por câmara). O resto do processo desenrola-se de igual maneira face à primeira configuração, nomeadamente no que diz respeito às fases de processamento para posições tridimensionais e etiquetagem dos marcadores.
+
+\begin{figure}[!h]
+  \centering
+  \subfloat[ARTrack]{\label{fig:2cam}%
+    \includegraphics[width=0.47\linewidth]{2cam-setup-pt.png}}
+  \quad%
+  \subfloat[Matrox]{\label{fig:4cam}%
+    \includegraphics[width=0.47\linewidth]{4cam-setup-pt.png}}
+  \caption{Setups disponíveis}
+  \label{fig:setups}
+\end{figure}
+
+\subsubsection{Diferenças Entre as Configuraçãoes Disponíveis}
+
+A precisão obtida comparando as calibrações efectuadas com as duas configurações (ARTrack e Matrox) é semelhante.
+A sobrecarga no servidor devido à inclusão de mais uma fase no "ciclo de tracking", talvez devido ao pequeno número de marcadores, não é crítica, tendo sido possível amostrar o movimento do utilizador 50 vezes por segundo em ambas as soluções.
+
+O que é determinante entre as duas configurações é o número de câmaras. A presença de 4 câmaras a ler simultaneamente os marcadores do utilizador faculta um grau de redundância de dados que permite ao utilizador executar movimentos mais complexos, com oclusões. Mesmo quando a pose do utilizador é mal interpretada pelo sistema, o período para retomar o tracking correcto é mais curto.
+
+\subsection{Reconhecimento de Voz}
+
+Tivemos à nossa disposição o Microsoft Speech API 5.1, versão american english. 
+
+\subsubsection{Gramática}
+
+Foi projectada uma pequena gramática que permitisse entre outras funcionalidades a activação e paragem do modo "super-homem".
+Os comandos incorporados foram:
+\begin{description}
+	\item[Fly:]  begin flying , stop flying
+	\item[Drag:] begin drag, stop drag
+	\item[Rotate:] begin rotate ( X \(|\) Y \(|\) Z ) , stop rotate
+	\item[Scale:] begin scale ( X \(|\) Y \(|\) Z \(|\) Overall ) , stop scale
+\end{description}
+
+Preliminarmente realizou-se um teste para escolher o melhor hardware para reconhecimento de voz, entre um microfone Wireless, um fixo a captar toda a sala e um auricular Bluetooth. Os comandos disponíveis na aplicação foram ditados repetidas vezes por 3 utilizadores, em ordem aleatória e com os 3 dispositivos.
+
+Conclui-se que o microfone Wireless era a melhor opção com uma taxa de reconhecimento média de 99\%, mas para distâncias curtas (\(<\)3m) o auricular Bluetooth teve resultados semelhantes, com 98\%. O microfone fixo captou muito ruído e produziu resultados muito insatisfatórios de menos de 50\%.
+
+O reconhecedor mostrou-se algo limitado, tendo sido necessário adaptar a gramática a palavras não ambiguas entre si, explicadas.
+
+

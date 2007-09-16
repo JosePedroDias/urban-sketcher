@@ -1,0 +1,17 @@
+\section{Estrutura}
+
+A estrutura do modelo geométrico proposta é baseada em faces de 4 vértices. 
+Esta estrutura implica que:
+
+\begin{itemize}
+	\item cada aresta seja partilhada por duas faces;
+	\item cada aresta pertencente a uma face tenha uma face oposta.
+\end{itemize}
+
+Além de guardar a lista de vértices e respectivas posições, assim como a lista de faces
+(uma face é uma lista de quatro índices de vértices), é gerada uma estrutura auxiliar,
+o mapa de arestas, que associa a cada aresta as faces que lhe são vizinhas. Esta informação
+vai permitir o cálculo de diversos vectores auxiliares assim como tornar possível a operação
+de corte de \textit{loop} de faces.
+
+Outras estruturas são igualmente definidas, como um lista de cores ou materiais por face.

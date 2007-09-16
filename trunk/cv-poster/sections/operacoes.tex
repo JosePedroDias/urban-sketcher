@@ -1,0 +1,67 @@
+\section{Operações Suportadas}
+
+Segue-se a descrição de direcções suportadas pelas operações, como ilustrado
+na figura \ref{fig:shots}.
+
+\subsection{Alteração da Geometria}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.9\linewidth]{shots2.png}
+	\caption{operações no ImmiView}
+	\label{fig:shots}
+\end{figure}
+
+
+\textbf{Extrusão} --
+a direcção é definida pela comparação com as normais exterior e interior da face origem.
+O comprimento baseado no comprimento do traço.
+
+
+\textbf{Bevel} --
+a dimensão do \textit{bevel} é dependente do comprimento do traço.
+
+
+\textbf{Mover Face} --
+suporta não só as direcções normais como também as co-lineares com as arestas fronteira da face.
+
+
+\textbf{Mover Aresta} --
+suporta para além das normais à aresta, as direcções das faces vizinhas da mesma.
+
+
+\textbf{Corte de Aresta} --
+processa-se imediatamente, replicando o corte por arestas opostas até terminar o \textit{loop} de face.
+
+\subsection{Outras operações}
+
+\textbf{Undo} --
+um mecanismo de \textit{undo} foi implementado, baseado no padrão de desenho
+Memento \cite{despat}, capaz de armazenar a informação relevante sobre um objecto geométrico,
+tendo cada objecto associada uma pilha de estados de modo a poder regressar
+a qualquer passo anterior de modelação.
+
+\textbf{Salvaguarda e Carregamento} --
+uma forma geométrica pode ser guardada para posterior carregamento num formato
+XML definido. O mesmo segue o seguinte padrão:
+\begin{scriptsize}
+	\begin{verbatim}
+	<?xml version="1.0" encoding="utf-8"?>
+	  <shape>
+	    <vertices count="56">
+	      <vertex x="-1" y="-0.627882" z="5.29942"/>
+	      ...
+	    </vertices>
+	  <faces count="54">
+	    <face v1="0" v2="1" v3="2" v4="3"/>
+	    ...
+	  </faces>
+	  <colors count="54">
+	    <color r="0.9" g="0.9" b="0.9"/>
+	    ...
+	  </colors>
+	</shape>
+	\end{verbatim}
+\end{scriptsize}
+
+
