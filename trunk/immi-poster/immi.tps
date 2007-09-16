@@ -119,7 +119,7 @@ cxCur=847
 cxMin=10
 
 [Frame3_View0,0]
-Cursor.row=0
+Cursor.row=4
 Cursor.column=0
 TopSubLine=0
 
@@ -148,9 +148,9 @@ cxCur=847
 cxMin=10
 
 [Frame4_View0,0]
-Cursor.row=70
-Cursor.column=0
-TopSubLine=67
+Cursor.row=32
+Cursor.column=31
+TopSubLine=15
 
 [Frame5]
 Columns=1
@@ -206,7 +206,7 @@ cxCur=903
 cxMin=10
 
 [Frame6_View0,0]
-Cursor.row=16
+Cursor.row=9
 Cursor.column=0
 TopSubLine=0
 
@@ -227,7 +227,7 @@ Class=CLatexEdit
 Document=sections\testes.tex
 
 [Frame7_Row0]
-cyCur=339
+cyCur=366
 cyMin=10
 
 [Frame7_Col0]
@@ -235,9 +235,9 @@ cxCur=1065
 cxMin=10
 
 [Frame7_View0,0]
-Cursor.row=17
-Cursor.column=46
-TopSubLine=12
+Cursor.row=4
+Cursor.column=0
+TopSubLine=0
 
 [Frame8]
 Columns=1
@@ -264,7 +264,7 @@ cxCur=903
 cxMin=10
 
 [Frame8_View0,0]
-Cursor.row=6
-Cursor.column=30
-TopSubLine=0
+Cursor.row=22
+Cursor.column=95
+TopSubLine=10
 
