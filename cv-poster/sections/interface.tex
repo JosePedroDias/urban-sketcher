@@ -1,15 +1,17 @@
 \section{Interface com Utilizador}
 
-A escolha de face opera-se pelo desenhar exclusivamente sobre a face.
-A escolha de aresta opera-se cruzando a mesma, tendo início numa das suas faces vizinhas e acabando na outra.
+A escolha de face efectua-se desenhando exclusivamente sobre a face.
+A escolha de aresta efectua-se cruzando a mesma, tendo início numa das suas faces vizinhas e acabando na outra.
 A figura \ref{fig:selection} ilustra este processo.
 
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.9\linewidth]{face-edge-selection.png}
-	\caption{selecção de aresta ou face}
+	\includegraphics[width=0.8\linewidth]{face-edge-selection.png}
+	\vspace{-3mm}
+	\caption{selecção de aresta e de face}
 	\label{fig:selection}
+	\vspace{-3mm}
 \end{figure}
 
 Uma vez escolhido o componente, um menu contextual surge, permitindo a escolha
@@ -17,23 +19,26 @@ de uma operação a aplicar (ver figura \ref{fig:contextual}).
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.75\linewidth]{contextual.png}
+	\includegraphics[width=0.65\linewidth]{contextual.png}
+	\vspace{-3mm}
 	\caption{activação de menu contextual de aresta}
 	\label{fig:contextual}
+	\vspace{-3mm}
 \end{figure}
 
 Em diversas operações suportadas um dos parâmetros é a direcção.
-Quando assim é, um sistema de escolha de direcção entra em funcionamento.
+Quando assim é, entra em funcionamento o algoritmo de escolha de direcção .
 A direcção do traço efectuado é comparada com os diversos sugeridos, aplicando-se
-a que mais se aproximar do mesmo (ver figura \ref{fig:election}).
-Este mecanismo é denominado no software da especialidade como \textit{snapping}.
-
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.35\linewidth]{election.png}
-	\caption{eleição do vector mais próximo}
-	\label{fig:election}
-\end{figure}
+a que mais se aproximar do mesmo, mecanismo popularizado como \textit{snapping}.
+% (ver figura \ref{fig:election}).
+%Este mecanismo é denominado no software da especialidade como \textit{snapping}.
+%
+%\begin{figure}[!h]
+%	\centering
+%	\includegraphics[width=0.35\linewidth]{election.png}
+%	\caption{eleição do vector mais próximo}
+%	\label{fig:election}
+%\end{figure}
 
 %A figura \ref{fig:icons} lista as operações suportadas e respectivos ícones.
 %

@@ -1,12 +1,24 @@
 \abstract{
-Procura-se com este trabalho suportar um processo de modelação de formas tridimensionais simples
-mas capaz de permitir a execução das mais frequentes operações com geometria.
-O mesmo assenta num modelo de dados coerente, controlado por uma interface contextual
-que permite ao utilizador invocar operações primitivas,
-testar a sua aplicação em tempo real e escolher direcções úteis de aplicação
-(normal à face, aresta dentro da face vizinha, etc.).
-A selecção e aplicação das operações assenta sobre o modelo de interface baseado em traços.
+A criação de conteúdo tridimensional encontra-se frequentemente associada a uma interface com o
+utilizador com dezenas de botões, atalhos de teclas e parâmetros numéricos.
+Os ambientes de visualização de larga escala não têm tradição de servir este propósito.
+Este artigo apresenta uma solução que permite a um utilizador munido
+de um ponteiro laser convencional frente a um ecrã de larga escala ou
+de um tablet PC com caneta
+elabore operações geométricas sobre um modelo tridimensional.
+Este modo de interacção decorre no próprio ambiente de visualização, sendo baseado em traços e menus contextuais.
+O sistema determina as direcções mais naturais de aplicação de operações(normal à face, aresta dentro da face vizinha, etc.).
+O utilizador escolhe então os parâmetros da operação com a execução de um traço que desambigua direcção e distância.
+O presente documento descreve a interface disponibilizada, operações permitidas e representação interna. 
 }
 
 \keywords{manipulação directa, modelação tridimensional, interacção por via de gestos.}
 
+
+%Procura-se com este trabalho suportar um processo de modelação de formas tridimensionais simples
+%mas capaz de permitir a execução das mais frequentes operações com geometria.
+%O mesmo assenta num modelo de dados coerente, controlado por uma interface contextual
+%que permite ao utilizador invocar operações primitivas,
+%testar a sua aplicação em tempo real e escolher direcções úteis de aplicação
+%(normal à face, aresta dentro da face vizinha, etc.).
+%A selecção e aplicação das operações assenta sobre o modelo de interface baseado em traços.
