@@ -1,12 +1,9 @@
-\section{Estrutura}
+\section{Representação Interna}
 
 A estrutura do modelo geométrico proposta é baseada em faces de 4 vértices. 
 Esta estrutura implica que:
-
-\begin{itemize}
-	\item cada aresta seja partilhada por duas faces;
-	\item cada aresta pertencente a uma face tenha uma face oposta.
-\end{itemize}
+cada aresta seja partilhada por duas faces;
+cada aresta pertencente a uma face tenha uma face oposta.
 
 Além de guardar a lista de vértices e respectivas posições, assim como a lista de faces
 (uma face é uma lista de quatro índices de vértices), é gerada uma estrutura auxiliar,
@@ -14,4 +11,32 @@ o mapa de arestas, que associa a cada aresta as faces que lhe são vizinhas. Esta
 vai permitir o cálculo de diversos vectores auxiliares assim como tornar possível a operação
 de corte de \textit{loop} de faces.
 
-Outras estruturas são igualmente definidas, como um lista de cores ou materiais por face.
+%Outras estruturas são igualmente definidas, como um lista de cores ou materiais por face.
+
+O mecanismo de \textit{undo} foi implementado, baseado no padrão de desenho Memento \cite{despat}.
+Cada objecto tem associada uma pilha de estados de modo a poder regressar a qualquer passo anterior de modelação.
+
+A persistência de objectos recorre a uma estrutura simples em XML, como se ilustra:
+
+%\textbf{Salvaguarda e Carregamento} --
+%uma forma geométrica pode ser guardada para posterior carregamento num formato
+%XML definido. O mesmo segue o seguinte padrão:
+\begin{scriptsize}
+	\begin{verbatim}
+	<?xml version="1.0" encoding="utf-8"?>
+	  <shape>
+	    <vertices count="56">
+	      <vertex x="-1" y="-0.627882" z="5.29942"/>
+	      ...
+	    </vertices>
+	  <faces count="54">
+	    <face v1="0" v2="1" v3="2" v4="3"/>
+	    ...
+	  </faces>
+	  <colors count="54">
+	    <color r="0.9" g="0.9" b="0.9"/>
+	    ...
+	  </colors>
+	</shape>
+	\end{verbatim}
+\end{scriptsize}

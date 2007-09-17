@@ -1,9 +1,23 @@
 \section{Introdução}
 
-O propósito deste trabalho é a definição de um processo simples de edição de formas tridimensionais.
-De forma a atingir este objectivo é suportado um conjunto de operações que capacitam as mais comuns alterações geométricas.
+O propósito deste trabalho é o de permitir a utilizadores a execução de operações geométricas sobre
+modelos tridimensionais.
+As operações devem ser fornecidas ao utilizador de forma contextual, no próprio ambiente de visualização,
+fornecendo um conjunto de restrições direccionais de modo a auxiliá-lo a obter o efeito desejado.
 
-As operações devem ser fornecidas ao utilizador de forma contextual e
-configuradas de forma a auxiliar o mesmo a obter mais facilmente o que deseja.
-Este sistema é então incluído no protótipo multimodal ImmiView presente no laboratório Lourenço Fernandes
-no Tagus Park \cite{leme}, de modo a permitir a sua aplicação em cenários baseados em tablet PC ou power wall.
+A aplicação de uma operação inicia-se com a selecção através de um traço de uma face ou aresta a afectar,
+o que despoleta o aparecimento de um menu contextual.
+O utilizador escolhe então a operação a aplicar, sendo esse mesmo traço interpretado para determinação
+dos parâmetros da operação.
+
+O sistema foi implementado como funcionalidade do protótipo multimodal ImmiView presente no laboratório Lourenço Fernandes
+do IST Tagus Park \cite{leme}, permitindo a sua aplicação em cenários com tablet PCs ou ecrãs de larga escala.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.4\linewidth]{ex-monitor.png}
+	\vspace{-3mm}
+	\caption{monitor modelado no sistema}
+	\label{fig:example}
+	\vspace{-3mm}
+\end{figure}
