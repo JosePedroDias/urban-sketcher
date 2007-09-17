@@ -5,13 +5,13 @@ Version=2
 [SessionInfo]
 ActiveTab=0
 FrameCount=9
-ActiveFrame=7
+ActiveFrame=0
 
 [Frame0]
 Columns=1
 Rows=1
-Flags=0
-ShowCmd=1
+Flags=2
+ShowCmd=3
 MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-4
@@ -24,16 +24,16 @@ Class=CLatexEdit
 Document=paper.tex
 
 [Frame0_Row0]
-cyCur=297
+cyCur=410
 cyMin=10
 
 [Frame0_Col0]
-cxCur=843
+cxCur=1065
 cxMin=10
 
 [Frame0_View0,0]
-Cursor.row=27
-Cursor.column=44
+Cursor.row=26
+Cursor.column=20
 TopSubLine=10
 
 [Frame1]
@@ -61,9 +61,9 @@ cxCur=847
 cxMin=10
 
 [Frame1_View0,0]
-Cursor.row=0
-Cursor.column=0
-TopSubLine=0
+Cursor.row=24
+Cursor.column=118
+TopSubLine=10
 
 [Frame2]
 Columns=1
@@ -150,7 +150,7 @@ cxMin=10
 [Frame4_View0,0]
 Cursor.row=32
 Cursor.column=31
-TopSubLine=15
+TopSubLine=16
 
 [Frame5]
 Columns=1
@@ -179,7 +179,7 @@ cxMin=10
 [Frame5_View0,0]
 Cursor.row=40
 Cursor.column=13
-TopSubLine=29
+TopSubLine=31
 
 [Frame6]
 Columns=1
@@ -213,8 +213,8 @@ TopSubLine=0
 [Frame7]
 Columns=1
 Rows=1
-Flags=2
-ShowCmd=3
+Flags=0
+ShowCmd=1
 MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-4
@@ -227,11 +227,11 @@ Class=CLatexEdit
 Document=sections\testes.tex
 
 [Frame7_Row0]
-cyCur=366
+cyCur=309
 cyMin=10
 
 [Frame7_Col0]
-cxCur=1065
+cxCur=903
 cxMin=10
 
 [Frame7_View0,0]

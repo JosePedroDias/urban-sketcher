@@ -5,7 +5,7 @@ Version=2
 [SessionInfo]
 ActiveTab=0
 FrameCount=8
-ActiveFrame=3
+ActiveFrame=6
 
 [Frame0]
 Columns=1
@@ -32,8 +32,8 @@ cxCur=943
 cxMin=10
 
 [Frame0_View0,0]
-Cursor.row=3
-Cursor.column=24
+Cursor.row=0
+Cursor.column=0
 TopSubLine=0
 
 [Frame1]
@@ -61,8 +61,8 @@ cxCur=947
 cxMin=10
 
 [Frame1_View0,0]
-Cursor.row=37
-Cursor.column=8
+Cursor.row=0
+Cursor.column=0
 TopSubLine=26
 
 [Frame2]
@@ -90,15 +90,15 @@ cxCur=947
 cxMin=10
 
 [Frame2_View0,0]
-Cursor.row=43
-Cursor.column=14
+Cursor.row=0
+Cursor.column=0
 TopSubLine=27
 
 [Frame3]
 Columns=1
 Rows=1
-Flags=2
-ShowCmd=3
+Flags=0
+ShowCmd=1
 MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-4
@@ -111,11 +111,11 @@ Class=CLatexEdit
 Document=sections\interface.tex
 
 [Frame3_Row0]
-cyCur=437
+cyCur=202
 cyMin=10
 
 [Frame3_Col0]
-cxCur=1065
+cxCur=947
 cxMin=10
 
 [Frame3_View0,0]
@@ -148,8 +148,8 @@ cxCur=947
 cxMin=10
 
 [Frame4_View0,0]
-Cursor.row=12
-Cursor.column=73
+Cursor.row=0
+Cursor.column=0
 TopSubLine=0
 
 [Frame5]
@@ -177,15 +177,15 @@ cxCur=947
 cxMin=10
 
 [Frame5_View0,0]
-Cursor.row=8
-Cursor.column=1
-TopSubLine=0
+Cursor.row=33
+Cursor.column=73
+TopSubLine=21
 
 [Frame6]
 Columns=1
 Rows=1
-Flags=0
-ShowCmd=1
+Flags=2
+ShowCmd=3
 MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-4
@@ -198,16 +198,16 @@ Class=CLatexEdit
 Document=sections\abstract.tex
 
 [Frame6_Row0]
-cyCur=278
+cyCur=410
 cyMin=10
 
 [Frame6_Col0]
-cxCur=925
+cxCur=1065
 cxMin=10
 
 [Frame6_View0,0]
-Cursor.row=11
-Cursor.column=104
+Cursor.row=14
+Cursor.column=85
 TopSubLine=0
 
 [Frame7]
