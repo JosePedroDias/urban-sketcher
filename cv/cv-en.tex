@@ -20,11 +20,23 @@
 
 \usepackage{url}
 \ifpdf
-  \usepackage[pdftex,colorlinks]{hyperref}
+  \usepackage[pdftex,
+	%	pdftitle					= {creating urban scenery using multimodal interfaces},
+	%	pdfauthor					= {Jos� Pedro Dias},
+		bookmarks         = true,				% do bookmarks
+		bookmarksnumbered = true,				% keep sedtion numbers
+		pdfpagemode       = UseNone,		% start with closed bookmarks
+		pdfstartview      = FitH,				% starting view scale
+	%	pdfpagelayout     = SinglePage,	% one page at a time
+		linkcolor					= black,			% links inside the document
+		citecolor					= black,			% for cites
+	%	linkcolor					= blue,				% links inside the document
+	%	citecolor					= red,				% for cites
+	%	urlcolor					= green,			% for urls
+		colorlinks        = true]{hyperref}
 \else
  \usepackage{hyperref}
 \fi
-
 
 % personal data
 \ecvname{Sacramento Aleixo Dias, José Pedro}
@@ -35,28 +47,38 @@
 \ecvnationality{Portuguese}
 \ecvdateofbirth{January 12, 1981}
 \ecvgender{Male}
-\ecvbeforepicture{\raggedleft}
+%\ecvbeforepicture{\raggedleft}
 %\ecvpicture[height=3cm]{img/at}
-\ecvafterpicture{\ecvspace{-4.5cm}}
+%\ecvafterpicture{\ecvspace{-4.5cm}}
 
 
 \begin{document}
 \begin{europecv}
 
-\ecvitem{}{}
+%\ecvitem{}{}
 
+%\vspace{-20pt}
 \ecvpersonalinfo
 \ecvsection{Work experience}
+
+\ecvitem{Dates}{From April 2007 to September 2007}
+\ecvitem{Occupation or position held}{Programmer}
+\ecvitem{Main activities and responsibilies}{Development of a geographical metadata editor in Java}
+\ecvitem{Name and address of employer}{Xpand IT Solutions}
+\ecvitem{}{Parque das Nações}
+\ecvitem{}{Avenida D. João II}
+\ecvitem{}{Lote 1.13.01 - F, 3º Piso}
+\ecvitem[12pt]{}{1990-078 Lisboa}
 
 \ecvitem{Dates}{From March 2005 to July 2005}
 \ecvitem{Occupation or position held}{Webdesigner}
 \ecvitem{Main activities and responsibilies}{Creation and maintenance of a documentation management system for the Multimedia Lab}
-\ecvitem[15pt]{Name and address of employer}{Instituto Superior Técnico - LEMe}
+\ecvitem[12pt]{Name and address of employer}{Instituto Superior Técnico - LEMe}
 
-\ecvitem{Dates}{From September 2004 to January 2005}
-\ecvitem{Occupation or position held}{Webdesigner}
-\ecvitem{Main activities and responsibilies}{Creation and maintenance of a dynamic site to Tuna Feminina of FFUL}
-\ecvitem{Name and address of employer}{Tuna Feminina da Universidade de Farmácia da Universidade de Lisboa}
+%\ecvitem{Dates}{From September 2004 to January 2005}
+%\ecvitem{Occupation or position held}{Webdesigner}
+%\ecvitem{Main activities and responsibilies}{Creation and maintenance of a dynamic site to Tuna Feminina of FFUL}
+%\ecvitem{Name and address of employer}{Tuna Feminina da Universidade de Farmácia da Universidade de Lisboa}
 
 
 
@@ -66,45 +88,48 @@
 \ecvitem{Title of qualification awarded}{Senior year of a master's degree in Computer Engineering}
 \ecvitem{Name and type of organisation providing education and training}{Instituto Superior Técnico, Universidade Técnica de Lisboa, Oeiras, Portugal}
 
-
+%\newpage
 
 \ecvsection{Personal skills and competences}
 
 \ecvmothertongue[10pt]{Portuguese}
-\ecvmothertongue[10pt]{}
 \ecvlanguageheader{(*)}
 \ecvlanguage{English}{\ecvCOne}{\ecvCOne}{\ecvBTwo}{\ecvBTwo}{\ecvCOne}
-\ecvlanguagefooter{(*)}
+\ecvlanguagefooter[12pt]{(*)}
 
-\ecvitem[15pt]{Social skills and competences}{Tennis, TODO}
+\ecvitem[12pt]{Social skills and competences}{Conducted usability tests for the IMPROVE\footnote{IMPROVE project: http://www.improve-eu.info; other resources: http://www.urbanlearningspace.com/projects/improve} project at Glasgow.}
 
 \ecvitem{IT skills and competences}{\textbf{Operating Systems:}}
 \ecvitem{}{Microsoft Windows XP family}
-\ecvitem[15pt]{}{GNU/Linux}
+\ecvitem[12pt]{}{GNU/Linux}
 
-\ecvitem{}{\textbf{Main Programming Languages:}}
+\ecvitem{}{\textbf{Main Programming Languages (obtained during college):}}
 \ecvitem{}{Java}
 % TODO: SHARP
-\ecvitem{}{C / .net / ASP.net}
 \ecvitem{}{C++ and C}
+\ecvitem{}{C\#.net / ASP.net}
 \ecvitem{}{SQL}
-\ecvitem[15pt]{}{Python, Ruby}
+\ecvitem[12pt]{}{Python, Ruby}
+
+\ecvitem[12pt]{}{Master's Degree on ``Creating Urban Sceneries using Multimodal Interfaces''\footnote{Master's blog with documentation and videos at: http://urbansketcher.blogspot.com}
+where dealt closely with OpenSG\footnote{OpenSG website: http://opensg.vrsource.org/trac} to interact with a power wall,
+allowing novel navigation metaphors and 3D shape editing. Project endorsed by European Union's IMPROVE project.}
 
 \ecvitem{}{\textbf{Other Languages:}}
 \ecvitem{}{HTML / CSS / JavaScript}
 \ecvitem{}{XML}
-\ecvitem[15pt]{}{LATEX}
+\ecvitem[12pt]{}{\LaTeX}
 
-\ecvitem{Art skills and competences}{Adobe Photoshopss}
+\ecvitem{Art skills and competences}{Adobe Photoshop}
 \ecvitem{}{Blender 3D}
-\ecvitem[15pt]{}{Inkscape}
+\ecvitem[12pt]{}{Inkscape}
 
 \ecvitem{Additional information}{honest}
 \ecvitem{}{reliable}
-\ecvitem[15pt]{}{devoted to work}
+\ecvitem[12pt]{}{devoted to work}
 
 \ecvitem{Driving licence}{Category B}
-\ecvitem[15pt]{}{From 2003/03/14 to 2046/01/11}
+\ecvitem[12pt]{}{From 2003/03/14 to 2046/01/11}
 
 \ecvitem{Personal Interests}{Literature}
 \ecvitem{}{Music}
