@@ -21,10 +21,16 @@
 }
 
 % show TODOs
-\def\TODO#1{
-	\textcolor{red}{\textbf{TODO:} #1}
-	%\addcontentsline{toc}{subsection}{To Do}
-}
+\ifpdf
+	\def\TODO#1{
+		\textcolor{red}{\textbf{TODO:} #1}
+		%\addcontentsline{toc}{subsection}{To Do}
+	}
+\else
+	\def\TODO#1{
+		\textbf{TODO:} #1
+	}
+\fi
 
 % hide TODOs
 %\def\TODO#1{}
