@@ -3,23 +3,37 @@
 \usepackage{dei}
 %\usepackage[all]{xy}
 %\usepackage{supertabular}
+\usepackage{ifpdf}
+
+\usepackage[latin1]{inputenc}
+\usepackage[english]{babel}
+
+\ifpdf
+	\usepackage[pdftex]{graphicx}
+\else
+	\usepackage{graphicx}
+\fi
 
 \usepackage{url}
-\usepackage[pdftex,
-	pdftitle					= {creating urban scenery using multimodal interfaces},
-	pdfauthor					= {José Pedro Dias},
-	bookmarks         = true,				% do bookmarks
-	bookmarksnumbered = true,				% keep sedtion numbers
-%	pdfpagemode       = None,				% start with closed bookmarks
-	pdfstartview      = FitH,				% starting view scale
-%	pdfpagelayout     = SinglePage,	% one page at a time
-	linkcolor					= black,			% links inside the document
-	citecolor					= black,			% for cites
-%	linkcolor					= blue,				% links inside the document
-%	citecolor					= red,				% for cites
-%	urlcolor					= green,			% for urls
-	colorlinks        = true]{hyperref}
 
+\ifpdf
+	\usepackage[pdftex,
+		pdftitle					= {creating urban scenery using multimodal interfaces},
+		pdfauthor					= {José Pedro Dias},
+		bookmarks         = true,				% do bookmarks
+		bookmarksnumbered = true,				% keep sedtion numbers
+	%	pdfpagemode       = None,				% start with closed bookmarks
+		pdfstartview      = FitH,				% starting view scale
+	%	pdfpagelayout     = SinglePage,	% one page at a time
+		linkcolor					= black,			% links inside the document
+		citecolor					= black,			% for cites
+	%	linkcolor					= blue,				% links inside the document
+	%	citecolor					= red,				% for cites
+	%	urlcolor					= green,			% for urls
+		colorlinks        = true]{hyperref}
+\else
+	\usepackage{hyperref}
+\fi
 
 \input{aliases}
 
