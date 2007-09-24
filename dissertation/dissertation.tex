@@ -39,7 +39,8 @@
 
 \begin{document}
 
-%capa
+% cover page
+
 \thispagestyle{empty}
 \includegraphics[width=9cm]{logo-ist}
 \vspace{4.5cm}
@@ -66,54 +67,41 @@
 
 \frontmatter
 
-\chapter*{Resumo}
-\addcontentsline{toc}{chapter}{Resumo}
 \input{resumo}
 
-\chapter*{Abstract}
-\addcontentsline{toc}{chapter}{Abstract}
 \input{abstract}
 
-\chapter*{Acknowledgements}
-\addcontentsline{toc}{chapter}{Acknowledgements}
 \input{acknowledgements}
 
 \newpage
+
 \renewcommand\contentsname{Table of Contents}
 \tableofcontents\newpage
+
 \listoffigures
 \addcontentsline{toc}{chapter}{\listfigurename}\newpage
+
 \listoftables
 \addcontentsline{toc}{chapter}{\listtablename}\newpage
-\chapter*{List of Acronyms}
-\addcontentsline{toc}{chapter}{List of Acronyms}
+
 \input{acronyms}
 
-%\part{Report}
+% main content
+
 \mainmatter
 
-\begintodo
-
-\chapter{Introduction}
 \input{introduction}
 
-\chapter{Related Work}
 \input{related-work}
 
-\chapter{Analysis}
 \input{analysis}
 
-\chapter{Design}
 \input{design}
 
-\chapter{Implementation}
 \input{implementation}
 
-\chapter{Evaluation}
-\label{cha:evaluation}
 \input{evaluation}
 
-\chapter{Conclusion}
 \input{conclusion}
 
 %%%%%%%%%%%%%%%%%%%
