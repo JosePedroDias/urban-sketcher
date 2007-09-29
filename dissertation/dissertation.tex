@@ -35,6 +35,12 @@
 	\usepackage{hyperref}
 \fi
 
+\usepackage{subfigure}	% for subfigure usage
+\usepackage{enumerate}	% allows enumerations a)... I..., 1... etc.
+\usepackage{pict2e}			% these 2 are for table a\b cells
+\usepackage{slashbox}		% pict2e is optional but enhances the result
+\usepackage{pdfpages}		% used to annex pdf documents
+
 \input{aliases}
 
 \begin{document}
@@ -113,12 +119,14 @@
 
 %%%%%%%%%%%%%%%%%%%
 
-%\part{\appendixname}
-%\appendix
+\part{\appendixname}
+\appendix
 
-%\chapter{Appendix One}
-%\label{cha:appendix-1}
-%\input{appendix1}
+\chapter{Appendix One: Related Papers}
+
+% pagecommand={\thispagestyle{}}
+\includepdf[pages={1,2},addtotoc={1, section, 8, GeoSculpt Short Paper, poster-cv}]{appendix/poster-cv.pdf}
+\includepdf[pages={1,2},addtotoc={1, section, 8, Multimodal Short Paper, poster-immi}]{appendix/poster-immi.pdf}
 
 %%%%%%%%%%%%%%%%%%%
 
