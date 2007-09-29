@@ -1,8 +1,111 @@
 \chapter{Analysis}
 
+\section{Comparative Analysis of Building Modeling Software}
+
 \TODO{use the comparative analysis from survey}
+
+\section{Common Modeling Operations Offered by Polygon-based 3D Software}
 
 \TODO{inspect modeling operations from common modeling software}
 
-\TODO{architect interviews (prof ist + sousa seco)}
+\section{Interviews with Architects}
 
+The author conducted two interviews with experts in this domain.
+The interview with Architect José Seco focused mainly on ways to classify
+buildings. The second interview with \TODO{NAME?} was conducted with
+the main concern of understanding the architect current work flow and 
+ways to improve it.
+
+\subsection{Building Characteristics}
+
+A building can be described in several dimensions.
+
+Its purpose: residential buildings, office, retail commerce, factory facilities, schools, hospitals, leisure, etc.
+
+Its volume: defined by the number of allowed floors.
+This comes from a maximum floor height, defined by the local \TODO{PODER}, based on the population density
+set to the area of construction.
+
+Blueprint Configuration: influence by the topography, terrain type, access routes (roads, etc).
+
+A building may have different floors serving different purposes,
+ex: first floor with small commerce and remaining ones for residential purposes.
+
+Another legislated subject is the useful construction area ratio, defining the terrain left empty, green areas, etc.
+
+The ceiling of a building can be classified by either being terrace-based (plain) or being slanted.
+
+There are three common relative distribution of buildings:
+\begin{itemize}
+	\item individual buildings, with a large area separating each one;
+	\item \TODO{GEMINADOS}, with one wall shared by each pair of consecutive buildings;
+	\item \TODO{EM BANDA}, with a set of buildings lined up in a direction, with a minimum distance between them.
+\end{itemize}
+
+\TODO{FIGURE SHOWING RELATIVE DIST OF BUILDINGS}
+
+There are additional issues regarding building planning.
+Most materials should ideally come from nearby natural resources;
+the glassed areas in the facades respect a ration (ex: $\frac{1}{10}$ of the facade).
+
+
+\subsection{Work Flow Improvements}
+
+Nowadays most \TODO{CAMARAS?} can provide digitally accurate data of the area the architectural
+project is destined to occupy. The most common and useful documents are
+aerial photographies of the terrain
+\TODO{CURVAS DE NÍVEL}, providing discrete but accurate measuring of the area topography.
+
+Making use of the provided data early in the project would be very effective.
+Most architects and engineers need to set the exact place where the project is to be developed
+by reading the hard to interpret \TODO{CURVAS DE NÍVEL} and/or by effectively scouting the
+area on foot.
+
+An alternative would be to feed the system with this data and get a simulation of the actual 3D
+area, both in terms of appearance and volume. If the system could simulate lighting conditions
+-- i.e. Sun at different day times and different months --  for lighting studies,
+with early sketch studies of the main volumes tried at different locations in the area.
+A good sectioning tool would be of great use in this task too, allowing a more effective reading
+of the interaction of building and terrain at different angles.
+
+The development of the main building volumes is an iterative process with strong subjective aspects.
+In can begin with box shapes making up the volumes, testing the set with different lighting conditions.
+After being asked for a sketch-based approach for the definition of the building volume,
+the proposed process started from a 2D blueprint being extruded upward,
+followed by a redefinition of edges and curves.
+
+\TODO{FIGURE SECTION, DIFFERENT LIGHTING CONDITIONS, REDEFINITION OF VOLUMES}
+
+If on site visits are made, pictures or video footage can be captured and their content could be
+attached to their virtual counterparts, so that by exploring the virtual representation of the construction
+area one could make use of real views captured earlier.
+This would allow other members of the team to get a more integrated presentation of this data
+and for a straightforward way of later referencing them by inspection of the virtual scene.
+
+\subsection{Discussion}
+
+From the several discussed building properties, some of them must be set by the user
+while others could be derived from related data.
+Strong candidates for properties set by user intervention are both the
+buildings blueprints and the building's height.
+
+The placement of the buildings should be free but means should be given so that
+making blocks of similar buildings to be a simpler process,
+supporting the most common relative building distributions.
+
+The system should facilitate the fast creation of building facades.
+The architectural styles should map the most common building purposes and styles, so that the creation
+of a large building (or several of them) can be a matter of defining placement, volume and purpose of a building.
+The materials, floor heights and roof types of buildings could also be mapped into the architectural styles' properties.
+
+Regarding the creation of the surrounding environment where the project is to take place,
+a more tight integration between provided content and the projected architecture could be accomplished.
+
+Even if not directly supported by the system, the usage of height maps / \TODO{CURVAS DE NÍVEL} and aerial photography
+for the generation of the virtual scenario where the building creation and experimenting is to take place should
+be streamlined with a work flow.
+
+Currently the software used by architects does not provide out of the box support
+for the integration of such data, let alone the correct exploitation of its potential,
+therefore a well thought out navigation system should be provided so that a creative user could easily find areas for
+construction and a client user could easily explore the virtual scenario.

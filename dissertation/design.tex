@@ -15,8 +15,16 @@ Its purpose shall then be chosen, generating a building
 with a given facade color and material properties and
 its facade components.
 
-One can then define an office building by defining its dimensions
+One can then define an office building by setting its dimensions
 and purpose, letting the system generate the facade details.
+
+The process of facade generation is based on a chosen style,
+picked by the user from a set of available \emph{architecture styles}.
+Those styles define the facade color theme, material, roof type and 
+a short grammar allowing a way to set the odds of different facade details appearing
+at different floors.
+Architecture styles are defined a priori, in an orderly manner.
+At the system one can only make use the previously defined styles.
 
 \TODO{ADD FIGURE OF BUILDING VOLUME AND ANOTHER ONE WITH THE GENERATED BUILDING}
 
@@ -31,15 +39,15 @@ by replacing, adding or deleting attachments.
 If other features are required for the building,
 additional shapes can be summoned.
 
-A \emph{template shape} is on which has modifiable properties.
-Unlike a facade attachment, the form of a template shape
-is not fixed, but follows a recipe for its generation, based
-on the values assigned to its properties.
+A \emph{template shape} is one which has modifiable properties.
+Unlike facade attachments, the form of template shapes
+is not fixed, but follows a recipe for its generation,
+based on the values assigned to its properties.
 The most basic template shape allows altering its dimensions.
 More complex template shapes offer additional properties.
 
 An example of a template shape is linear stairs.
-Besides their sizing, one can change the number of steps and
+Besides their dimensions, one can change the number of steps and
 whether the stairs have solid casing or are made of discrete structures.
 
 \TODO{INSERT STAIR EXAMPLE HERE}
@@ -50,6 +58,10 @@ supported by the system.
 Custom shapes are useful to provide a way of representing
 specific features to facades, such as a porch or an original window frame.
 
+The creation of both architectural styles and facade attachments,
+although not available inside the program, should be a simple process,
+supported by a set of tools, providing an alternative work flow for new
+content generation.
 
 % ---------------------------------------
 
@@ -89,7 +101,7 @@ The generation of city blocks should be aided by supporting building replication
 
 \subsection{Scene Reviewing}
 
-Means must be given for users to take notes of features they're not pleased with.
+Means must be given for users to take notes on features they're not pleased with.
 A note should allow free expression of its contents and should remain attach to the
 subject of critic, so the remaining people can undoubtedly understand the subject
 the note is about and either take measures about it or answer the posted content.
@@ -109,9 +121,8 @@ Given the hardware at hand for the projected scenarios,
 users will be handling either a computer pen for using the tablet PC or a laser pointer for using the power wall.
 
 Using such devices, the clicking action can not be accurately detected.
-The author and the remaining team behind the multimedia lab read about this problem,
-analyzed proposed alternatives {TODO: AQUELE ARTIGO DAS GATES MANHOSAS},
-coming up with a novel interface concept, akin to this article but different capabilities, the \emph{gate} concept.
+The author and the remaining team behind the multimedia lab have read about this problem and analyzed proposed alternatives {TODO: AQUELE ARTIGO DAS GATES MANHOSAS},
+coming up with a novel interface concept, akin to this article but with different capabilities: the \emph{gate} concept.
 
 A gate is a two dimensional area delimited by two imaginary lines. To activate the desired behavior associated
 with it one has to cross the space between the lines, hence the gate name.
@@ -188,5 +199,8 @@ Users might want to save a custom made shape or building. Due to the absence of 
 saves along with it the creation time information and a screen shot.
 Later on, when performing the load operation, a list of screen shots gets displayed, ordered from the most
 recent save to the least recent one.
+
+This allows the inspection of the latests saves, ordered somewhat like a time-line. One could identify the
+desired save by correlating the times or by recognizing the annexed screen shot.
 
 \TODO{...}
