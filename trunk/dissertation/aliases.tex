@@ -15,19 +15,33 @@
 
 
 % show TODOs
-\ifpdf
-	\def\TODO#1{
-		\textcolor{red}{#1}
-		%\addcontentsline{toc}{subsection}{To Do}
-	}
-\else
-	\def\TODO#1{
-		\textbf{TODO:} #1
-	}
-\fi
+%\ifpdf
+%	\def\TODO#1{
+%		\textcolor{red}{#1}
+%		%\addcontentsline{toc}{subsection}{To Do}
+%	}
+%\else
+%	\def\TODO#1{
+%		\textbf{TODO:} #1
+%	}
+%\fi
 
 % hide TODOs
 %\def\TODO#1{}
+
+\newcounter{todonum}
+\setcounter{todonum}{1}
+
+
+\def\TODO#1{
+		%\makebox[10cm][c]{
+				\textcolor{red}{
+						\arabic{todonum}: #1
+				}
+				\addtocounter{todonum}{1}
+				%\addcontentsline{toc2}{section}{TODO \# \arabic{todonum}}
+		%}
+}
 
 
 % grades!
