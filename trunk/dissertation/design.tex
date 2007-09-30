@@ -10,6 +10,9 @@ by the implementation of this project.
 
 \section{Concepts}
 
+
+\subsection{Building}
+
 A \emph{building} should be defined by its overall box shape.
 Its purpose shall then be chosen, generating a building
 with a given facade color and material properties and
@@ -17,6 +20,9 @@ its facade components.
 
 One can then define an office building by setting its dimensions
 and purpose, letting the system generate the facade details.
+
+
+\subsection{Architecture Style}
 
 The process of facade generation is based on a chosen style,
 picked by the user from a set of available \emph{architecture styles}.
@@ -27,6 +33,9 @@ Architecture styles are defined a priori, in an orderly manner.
 At the system one can only make use the previously defined styles.
 
 \TODO{ADD FIGURE OF BUILDING VOLUME AND ANOTHER ONE WITH THE GENERATED BUILDING}
+
+
+\subsection{Facade Attachment}
 
 A \emph{facade attachment} is a physical feature placed on a facade.
 Examples of this are windows, doors and balconies.
@@ -39,6 +48,9 @@ by replacing, adding or deleting attachments.
 If other features are required for the building,
 additional shapes can be summoned.
 
+
+\subsection{Template Shape}
+
 A \emph{template shape} is one which has modifiable properties.
 Unlike facade attachments, the form of template shapes
 is not fixed, but follows a recipe for its generation,
@@ -50,7 +62,11 @@ An example of a template shape is linear stairs.
 Besides their dimensions, one can change the number of steps and
 whether the stairs have solid casing or are made of discrete structures.
 
+
 \TODO{INSERT STAIR EXAMPLE HERE}
+
+
+\subsection{Custom Shape}
 
 \emph{Custom shapes} can also be defined when no alternative is viable.
 Those can have their volume modeled by a set of modeling operations
@@ -112,7 +128,8 @@ the note is about and either take measures about it or answer the posted content
 
 \section{User Interface}
 
-\subsection{The gate concept}
+\subsection{The Gate Concept}
+\label{sec:gate-concept}
 
 The most common selection action in nowadays computer interactions works by
 pressing a button on the interface with the mouse, trackball or similar pointing devices.
@@ -129,7 +146,7 @@ with it one has to cross the space between the lines, hence the gate name.
 
 \TODO{INSERT GATE IMAGES AND MORE CONTENT}
 
-\subsubsection{Circular menus}
+\subsubsection{Circular Menus}
 
 \TODO{...}
 
