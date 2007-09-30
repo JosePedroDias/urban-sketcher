@@ -30,7 +30,7 @@ getting the opposite edge and getting the face loop,
 a	paramount to the split face loop operation.
 
 Aside from these data structures which hold the shape's form,
-there's a \emph{list of face colors}, one for face, to hold the shape's appearance.
+there's a \emph{list of face colors}, one per face, to hold the shape's appearance.
 
 These shapes support the undo operation. It was implemented based on the Memento design pattern \cite{despat}.
 Each object has an associated stack of states, so the user can return to any previous state of modeling if needed.
@@ -41,10 +41,10 @@ Each object has an associated stack of states, so the user can return to any pre
 Each modeled object is responsible for saving its geometry data.
 The chosen format for persistence was XML and each shape is translated into an XML element.
 
-The format resembles the simplified structure of an OBJ file, but described in XML.
-First the vertices are listed -- the order being relevant here -- we assume they start at index 0.
-Then each face is defined as an ordered list of 4 vertex indices.
-The a list of colors, one for each of the faces described earlier.
+The format resembles the simplified structure of a WaveFront OBJ file, but described in XML.
+The vertices are listed, starting from index 0.
+Next each face is defined as an ordered list of 4 vertex indices.
+The list of colors, one for each of the faces, is described in the end.
 
 \begin{small}
 	\begin{verbatim}
@@ -75,6 +75,7 @@ The a list of colors, one for each of the faces described earlier.
 \begin{figure}[!ht]
     \centering
     \includegraphics[width=9cm]{gfx/bevel.png}
+    \vspace{-1cm}
     \caption{Main directions and relations supporting the bevel operation}
     \label{FIG-GS-BEVEL}
 \end{figure}
@@ -94,6 +95,7 @@ The new vertex position is then:
 \begin{figure}[!ht]
     \centering
     \includegraphics[width=9cm]{gfx/face-dirs.png}
+    \vspace{-0.5cm}
     \caption{Determining edge directions from neighboring faces}
     \label{FIG-GS-FACE-DIRS}
 \end{figure}
@@ -117,12 +119,12 @@ for the faces containing the selected edge.
 \emph{Face selection} occurs by drawing a stroke exclusively over a face.
 
 \emph{Edge selection} occurs by crossing the desired edge, with the stroke beginning
-at one of its neighboring faces and ending on the remaining one.
+on one of its neighboring faces and ending on the remaining one.
 Figure \ref{fig:selection} illustrates this procedure.
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=12cm]{gfx/face-edge-selection.png}
+	\includegraphics[width=11cm]{gfx/face-edge-selection.png}
 	\caption{edge and face selection}
 	\label{fig:selection}
 \end{figure}
@@ -161,28 +163,29 @@ as seen in figure \ref{fig:shots}
 	\caption{geometry manipulation operations}
 	\label{fig:shots}
 \end{figure}
+\TODO{TAKE THESE SCREENSHOTS AGAIN (NOW WITH MORE VISIBLE EDGES)}
 
 \subsubsection{Geometry Manipulation Operations}
 
 \begin{description}
 	\item[Face Extrude] --
-		the direction is extracted from the select face normal. Displacement based on stroke length.
+		the direction is extracted from the selected face normal. Displacement based on stroke length.
 		
 	\item[Face Bevel] --
-		the bevel dimension depends on the stroke length.
+		the bevel distance depends on the stroke length.
 		
 	\item[Face Move] --
-		this operation supports not only the normal directions,
+		this operation supports not only the face normal directions,
 		but also the directions from the face center towards the four boundary edges.
 		
 	\item[Edge Move] --
-		supports the edge normals along with the directions towards the neighboring faces.
+		supports the edge normal along with the directions from it towards its neighboring faces.
 		
 	\item[Edge Split] --
 		this operation occurs immediately since it doesn't require any real-time input from the user.
 		The sketched cut propagates throughout the intrinsic selected face loop, each edge cutting
 		the opposite edge in each face of the loop, until either no more faces occur or an already
-		visited face is revisited.
+		visited face is revisited. \TODO{FIGURE FOR THIS PROCEDURE?}
 \end{description}
 
 \subsubsection{Other Operations}
