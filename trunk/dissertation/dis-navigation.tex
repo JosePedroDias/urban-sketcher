@@ -11,36 +11,89 @@
 
 %intro
 
+\begin{figure}[!ht]
+		\centering
+		\includegraphics[width=6cm]{gfx/don.png}
+		\caption{user navigating with the multimodal navigation mode}
+		\label{fig:don}
+\end{figure}
+
+Navigation in a 3D scene takes place normally using a desktop computer
+with the mouse and keyboard as input devices and the monitor as output device.
+In the multimedia lab there was a motion tracking system available.
+It was put to use in conjunction with a wireless microphone to allow for an
+alternative mode of navigation. A set of reflective markers is attached to
+the user's arms and the wireless microphone attached to his/her ear.
+The microphone allows for enabling and disabling the multimodal navigation mode
+by issuing respectively the commands \textbf{begin flying} / \textbf{stop flying}.
+
 \subsubsection{Physical Configuration}
 
+Motion tracking took place using reflective markers attached to the user's arms (figure \ref{fig:markers-cams} left).
+A set of 4 cameras with infrared lights were installed in the lab, which each
+captured image being processed by a computer identifying the visible markers in
+image-space, making the computation of the spacial position of each marker by
+merging the data from the 4 captured views and labeling each tracked marker
+from the initial extended arm pose (figure \ref{fig:markers-cams} right).
 
+The Microsoft Speech API 5.1, American English version was used to recognize the
+voice commands. Capturing of the commands was done by attaching a wireless microphone
+to the user's ear.
+
+%após a comparação do reconhecimento do mesmo face a um microfone fixo e um Bluetooth.
+
+%O reconhecedor mostrou-se algo limitado, tendo sido necessário adaptar a gramática a palavras não ambíguas entre si ou
+%que gerassem falsos positivos.
+%
+%%Preliminarmente realizou-se um teste para escolher o melhor hardware para reconhecimento de voz, entre um microfone Wireless, %um fixo a captar toda a sala e um auricular Bluetooth. Os comandos disponíveis na aplicação foram ditados repetidas vezes por 3 %utilizadores, em ordem aleatória e com os 3 dispositivos.
+%
+%%Conclui-se que o microfone Wireless era a melhor opção com uma taxa de reconhecimento média de 99\%, mas para distâncias curtas %(\(<\)3m) o auricular Bluetooth teve resultados semelhantes, com 98\%. O microfone fixo captou muito ruído e produziu resultados %muito insatisfatórios de menos de 50\%.
+
+%O reconhecedor mostrou-se algo limitado, tendo sido necessário adaptar a gramática a palavras não ambíguas entre si ou
+%que gerassem falsos positivos.
 
 \begin{figure}[!ht]
 		\centering
-		\includegraphics[width=8cm]{gfx/markers2.png}
-		\caption{markers and microphone for tracked user}
-		\label{fig:markers}
+		\includegraphics[width=7cm]{gfx/markers2.png}
+		\qquad
+		\includegraphics[width=5cm]{gfx/4cam-setup.png}
+		\caption{markers and camera setup}
+		\label{fig:markers-cams}
 \end{figure}
-
-\begin{figure}[!ht]
-		\centering
-		\includegraphics[width=7cm]{gfx/4cam-setup.png}
-		\caption{four cameras setup for motion tracking}
-		\label{fig:cam-setup}
-\end{figure}
+%
+%
+%\begin{figure}[!ht]
+%		\centering
+%		\includegraphics[width=6cm]{gfx/markers2.png}
+%		\caption{markers and microphone for tracked user}
+%		\label{fig:markers}
+%\end{figure}
+%
+%\begin{figure}[!ht]
+%		\centering
+%		\includegraphics[width=6cm]{gfx/4cam-setup.png}
+%		\caption{four cameras setup for motion tracking}
+%		\label{fig:cam-setup}
+%\end{figure}
 
 
 \subsubsection{Interaction}
 
+The multimodal navigation mode requires the user to have his / her arms extended towards the screen.
 
-\begin{figure}[!ht]
-		\centering
-		\includegraphics[width=5cm]{gfx/immi-fly-rotate.jpg}
-		\qquad
-		\includegraphics[width=5cm]{gfx/immi-fly-up.jpg}
-		\caption{rotate flight orientation and increasing flight altitude}
-		\label{fig:fly-rot-up}
-\end{figure}
+Controlling the flight speed works by the measurement of the distance between hands:
+the closer they are from each other, the faster the flight speed is.
+If the arms get close to a ninety degrees angle between them the flight halts (figure \ref{fig:fly-speed}).
+
+Changing the flight orientation relatively to the ground plane is achieved by setting the arms
+angle with the ground at opposing directions, with a bigger difference between angles generating
+a faster rotation movement. If the user wants to turn right, for instance, he / she has to
+raise the left arm and lower the right one (figure \ref{fig:fly-rot-up}, left).
+
+To change flight altitude, both arms must be oriented in the same direction relatively to the ground plane,
+either both raised or both lowered.
+Again, the higher the angle is from the original arms extended forward pose,
+the bigger the flight altitude shift occurs (figure \ref{fig:fly-rot-up}, right).
 
 \begin{figure}[!ht]
 		\centering
@@ -49,6 +102,15 @@
 		\includegraphics[width=5cm]{gfx/immi-fly-slow.jpg}
 		\caption{control flight speed}
 		\label{fig:fly-speed}
+\end{figure}
+
+\begin{figure}[!ht]
+		\centering
+		\includegraphics[width=5cm]{gfx/immi-fly-rotate.jpg}
+		\qquad
+		\includegraphics[width=5cm]{gfx/immi-fly-up.jpg}
+		\caption{rotate flight orientation and increasing flight altitude}
+		\label{fig:fly-rot-up}
 \end{figure}
 
 %
