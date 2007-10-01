@@ -4,28 +4,112 @@
 
 %%%%%%%%%%%%%%%%%%%
 
-motivation
+% motivation
 
-aplicabilidADE
+The produced work was made to provide architects a way
+of exploring large scale displays for the creation of urban sceneries.
+This task can be performed collaboratively using common laser pointers.
+The implementation of a set of navigational modes allow for easy
+exploration of complex 3D scenes.
+This scenario allows showcasing and reviewing of projects with clients.
+
+The support for tablet PCs permits a portable and cost-effective alternative
+to the large display screen.
+
+A building creation method was developed that provides a fast way
+of generating buildings based on their facade blueprints and height and
+setting its purpose, with the system generating walls and facades that
+reflect the choices made.
+
+
+% aplicabilidade
 
 \section{Main Contributions}
 
-\TODO{architecture workflow benefits}
+% work flow
+This system was thought out to aid the task of generating 3D buildings.
+An alternative work flow was defined where digital content supplied by
+the municipal government or other entity is put to use -- a virtual 3D
+version of the terrain is the starting point for the projection of
+architectural buildings.
+With it users have a way of generating buildings using a set of
+architecture styles to generate its facades, wall materials and roof,
+and they can do it surrounded by a simulation of the environment.
 
-\TODO{gates and menus for pen and laser}
+% u s concepts
+For this task several concepts were introduced -- facade attachments,
+template shapes, custom shapes and architecture styles.
+Facade attachments can be generated from a 3D modeler such as Blender,
+using an exporter plug-in to export the content into the internal shape format.
+Architecture styles can also be created by users, providing a 
+powerful way to define ``recipes'' for building creation, by setting the
+odds of a certain type of door, window, balcony etc appearing in the facade,
+setting floor height and layout, facade wall color and texture and roof type.
 
-\TODO{widget metaphors}
+% custom shapes
+In cases where custom 3D shapes are needed to fulfill a particular aspect
+of a building, the user has the ability to create custom shapes.
+These can be edited by a small set of face and edge operations,
+studied to cover the most common needs of geometry modeling.
+The most useful directions are available for the user to manipulate the
+faces and edges, without the overhead of dozens of menu commands and parameters
+so common in nowadays 3D modeling software.
 
-\TODO{modeling operations}
+% gates e menus
+In order to solve the limitations of using laser pointers / tablet PC pens
+for interaction, the gate concept was developed and exploited.
+It provides a way of activating options by drawing strokes instead of clicking.
+Stroke continuity data was used: the set of events from the start of the stroke
+until its ending, passing through gates can trigger complex operations
+such as dropping a shape from a menu into the 3D view.
+A non-intrusive menu form was defined and applied, with a minimalistic approach
+at the starting interface, letting the users invoke and position menus as they see fit.
+
+% navigation modes
+A set of navigational modes was developed to cover the most common exploration
+and inspection tasks.
+The common walk / fly mode was made available to give users the
+possibility of exploring the scene as real users would. 
+The compass navigation mode allows for seeing a top-down view of the nearby map,
+allowing dragging the map for movement and  rotating the orientation
+via a ring showing the cardinal points.
+The examine navigation mode provides an effective way of inspecting an object of any
+scale by dollying around it. The examined object or surface can be easily changed.
+Having a motion tracking system installed, one can also fly using the arms.
+This has proven both pleasing and effective, empowering the user of an alternative
+way to rotate, change the altitude and flight speed by making use of arm movements.
 
 %%%%%%%%%%%%%%%%%%%
 
 \section{Future Work}
 
-\TODO{arm/voice support for more tasks}
+There is space for improvement in several aspects of the project,
+even more since it addresses so many areas.
 
-\TODO{more modeling operations}
+% work flow
+The integration of real terrain data into the system could be eased by
+the direct support of height maps, topography maps data such as contour lines
+and aerial photographies. A work flow for the importing of such content is
+even so outlined.
 
-\TODO{textures, shaders...}
+The facade walls could have forms other than rectangles and most work was
+done so that such change could be easily supported, as long as a good
+interface is provided to input such blueprints.
 
-\TODO{more?!}
+% realism
+Lighting conditions could be manipulated inside the program with an
+accurate simulation of daylight and shadowing, a subject highly valued
+by architects for the definition of the location where a building is to be built.
+
+Textures and materials could make usage of the latest developments in GPU
+technology to simulate metals, glass and other materials and
+techniques such as bump maps to give greater depth to facade details and textures.
+
+% modeling operations
+A more elaborate set of operations could be supported for modeling custom shapes.
+Most operations could be generalized for application to a group of edges or faces.
+Even so, the available operations are a good compromise between the complexity
+of professional modelers and the stroke-based, minimalistic interface provided.
+
+% voice
+%Voice operations could 

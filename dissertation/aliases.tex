@@ -32,15 +32,31 @@
 \newcounter{todonum}
 \setcounter{todonum}{1}
 
+\newcounter{todolnum}
+\setcounter{todolnum}{1}
+
+
+% HIDE TO DOs
+%\def\TODO#1{}
+%\def\TODOL#1{}	
+
+
+% TO DO!
 
 \def\TODO#1{
-		%\makebox[10cm][c]{
-				\textcolor{red}{
-						\arabic{todonum}: #1
-				}
-				\addtocounter{todonum}{1}
-				%\addcontentsline{toc2}{section}{TODO \# \arabic{todonum}}
-		%}
+		\textcolor{red}{
+				\arabic{todonum}: #1
+		}
+		\addtocounter{todonum}{1}
+}
+
+% TO DO LATER...
+
+\def\TODOL#1{
+		\textcolor{green}{
+				\arabic{todolnum}: #1
+		}
+		\addtocounter{todolnum}{1}
 }
 
 
