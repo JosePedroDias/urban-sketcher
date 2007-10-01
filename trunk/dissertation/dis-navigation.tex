@@ -1,9 +1,16 @@
 
 \section{Navigation}
 
+\begin{figure}[!ht]
+		\centering
+		\includegraphics[width=14cm]{gfx/navigation.png}
+		\caption{Navigation widgets: 1st person, compass and examine}
+		\label{fig:navigation}
+\end{figure}
+
+
 \subsection{1st Person Navigation Mode}
 
-\TODO{ADD 1ST PERSON SHOT}
 This widget has four moving directions and four rotations.
 It allows to move forward/backward,
 go up/down,
@@ -21,8 +28,6 @@ Clarity was favored over efficiency.
 
 \subsection{Compass Navigation Mode}
 
-\TODO{ADD COMPASS SHOT}
-
 This is a direct application of the concept defined
 in section \ref{sec:bev} Bird's Eye View Mode, on page \pageref{sec:bev}.
 
@@ -35,9 +40,12 @@ changing user's position in the ground plane.
 
 \subsection{Examine Navigation Mode}
 
-\TODO{ADD EXAMINE SHOT}
-
-\TODO{ADD VIRTUAL SPHERE ILLUSTRATION}
+\begin{figure}[!ht]
+		\centering
+		\includegraphics[width=5cm]{gfx/virtual-sphere.png}
+		\caption{Virtual sphere}
+		\label{fig:virtual-sphere}
+\end{figure}
 
 This widget features a wire frame sphere at the center, two zooming gates
 and two additional gates whole purpose is described below.
@@ -50,7 +58,7 @@ on the subject of interest with radius $ dist $.
 The user is at distance $ dist $ from the subject of interest.
 This distance can be increased or decreased by activating the zoom gates.
 Movements in the $ XX $ direction are translated into rotations around $ \theta $, while
-movements in the $ YY $ direction translate into rotations around $ \phi $.
+movements in the $ YY $ direction translate into rotations around $ \phi $ (see figure \ref{fig:virtual-sphere}).
 
 Two additional gates allow changing the subject of interest.
 They work by crossing and ending the stroke at the target.
@@ -59,6 +67,9 @@ The remaining one, \emph{point of interest spot}, changes the examined position 
 position where the stroke ``touches''.
 The former is useful for inspection of the overall object while the latter is of great
 use in editing or inspecting surface details.
+
+% HACK
+\newpage
 
 \subsection{Fly Navigation Mode}
 \label{sec:imp-fly-nav}
