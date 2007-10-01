@@ -94,6 +94,40 @@ In order for users to inspect the meaning a gate with visual content, a
 tooltip appears when the stroke is inside the gate,
 which will happen prior to activation, so users can give it up (figure \ref{fig:gate3}).
 
+In conclusion, for a user to activate a gate, an horizontal or quasi-horizontal
+stroke must be drawn, as seen in figure \ref{fig:gate4}.
 
+\begin{figure}[!ht]
+		\centering
+		\includegraphics[width=4cm]{gfx/activation.png}
+		\caption{gate activation example}
+		\label{fig:gate4}
+\end{figure}
 
 \subsection{Menus}
+
+In order to get the main menu, the user has to draw a closed triangle stroke.
+The menu appears at the center of the drawn stroke.
+
+\begin{figure}[!ht]
+		\centering
+		\includegraphics[width=8cm]{gfx/menu.png}
+		\caption{menu and its components}
+		\label{fig:menu}
+\end{figure}
+
+Menus are round and have additional auxiliary gates and labels (figure \ref{fig:menu}).
+
+In the bottom right area a label clearly identifies the functionality provided by the menu.
+
+In the top right area menus feature a set of special gates.
+The \emph{close gate} dismisses the menu.
+The \emph{move gate}, when activated, makes the menu follow the stroke position until it ends.
+The \emph{home gate} allows the user to go back to the previous menu, when that action applies.
+
+Occasionally the menus are too complex and need to be segmented.
+When that happens, mode selection gates appear to the left of the menu.
+
+Different menus have different background colors.
+They're translucent so the main perspective remains partially visible.
+Menu colors were chosen to reflect the functionality, ex: all navigation menus are green.
