@@ -1,39 +1,37 @@
 \chapter*{Abstract}
 \addcontentsline{toc}{chapter}{Abstract}
 
-\TODO{review and summarize this part, add implementation part.}
-\TODO{CHECK FOR MAXIMUM250 WORDS!}
+%\TODO{review and summarize this part}
+%\TODO{CHECK FOR MAXIMUM 250 WORDS!}
 
-% context and problem
-Nowadays the architectural project workflow is highly segmented
-between the creative part and the CAD modeling part.
-It starts with the architects drafting hand-made sketches of building designs
-to study viable designs and validating them with clients, a stage without computer usage, 
-with all participants on location using pen and paper.
-Later on a set of documents is generated from the ground up on CAD software, 
-using desktop computers and WIMP interfaces.
+A system is developed for large display walls using regular laser pointers
+as input devices. It supports collaborative usage and can be deployed
+on tablet PCs. A novel interface is devised to support interaction with such
+input devices, based on the concept of gates and circular menus
+with a non-intrusive interface.
 
-% motivation, goals
-There's an increasing availability of alternative methods for both sketching, navigation and visualization
-of 3D scenes which can enrich the design process and provide a better experience for both
-building drafting, visualization and review.
-We're committed to developing a multimodal distributed system to fulfill these goals
-using tablet PCs or other devices facing a powerwall.
-%We're committed to developing a multimodal system allowing multi-user scene navigation,
-%building draft building designs, navigation and content reviewing.
-It is thought out to integrate the architectural workflow as a creative and reviewing tool
-to complement the early stages of architectural design.
+The system supports fast creation of buildings based on strokes to define
+its facade boundaries, height and selecting its purpose.
 
-% document organization
-This survey begins with an analysis of projects with similar goals,
-followed by a set of issues to handle:
-how to get input from users,
-display interactive content to them,
-make shape creation and transformation possible and
-allow scene navigation
-%provide content reviewing capabilities.
-A comparative analysis between architecture creation systems available in the market is then conducted and
-finally conclusions are reached and directions for project execution defined.
+The generation of the building and the populating of its facades with
+attachments such as windows, doors and balconies obeys to an XML
+grammar that defines the main color theme and texture of the walls,
+floor height, facade layout and roof type.
+A building purpose is therefore defined by an instance of such grammar,
+allowing instancing of buildings such as offices, residential houses and factories.
 
-\TODO{CHECK FOR 4 -- 6 KEYWORDS!}
-\textbf{Keywords:} urban architecture, city, building, multimodal interaction, navigation, content reviewing
+Architecture projects' locations and overall appearance can be prototyped,
+with support for reviewing by attaching notes to 3D objects.
+A comprehensive set of navigation modes is offered so
+the most common exploration tasks can be easily performed
+-- besides first person navigation mode, a bird's eye view,
+examine mode and motion tracked navigation modes are offered, with the
+latter making use of the user's arms to control flight movement.
+
+The context and objectives of the project are defined at the introduction.
+Related work is then commented, followed by the analysis of the problem.
+Concepts, tasks and interface are then designed, with their implementation following.
+Evaluation of the system and conclusions end the paper.
+
+%\TODO{CHECK FOR 4 -- 6 KEYWORDS!}
+\textbf{Keywords:} architecture prototype, sketch, building, multimodal interface, navigation, reviewing

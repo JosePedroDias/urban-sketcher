@@ -2,68 +2,94 @@
 
 \TODO{intro to evaluation}
 
-\TODO{Scenarios}
 
-\TODO{modeling capabilities of geosculpt against blender or sketchup (both in time and expressivity)}
+\section{User Tests for Improve}
 
-\TODO{tests made for improve}
+The inclusion of this project in the IMPROVE initiative provided an opportunity
+for the interface and some of its widgets to be tested throughout the development.
 
-\TODO{last test}
+Three user tests were carried out:
 
-\TODO{summary of evaluation}
+\begin{table}[ht]
+		\centering
+				\begin{tabular}{|l|l|l|}
+						\hline
+						Date						& Location					& Summary \\
+						\hline
+						16 -- 19 April	& Glasgow, Scotland	& power wall versus tablet PC \\
+						11 -- 12 June		& Lisbon, Portugal	& collaboration on power wall \\
+						16 -- 19 July		& Glasgow, Scotland	& tracked flight \\ %, voice recognition, object instancing 
+						\hline
+				\end{tabular}
+		\caption{user tests for improve}
+		\label{tab:user-tests}
+\end{table}
 
-%\section{Avaliação e Discussão}
-%
-%A leitura dos marcadores mostrou-se problemática em indivíduos de baixa estatura.
-%Supomos que a origem esteja numa maior frequência de oclusões.
-%
-%A necessidade do sistema de captura de movimentos ter início com uma posição predefinida do utilizador
-%e a pouca robustez do mesmo face a oclusões
-%dificulta a presença de outros indivíduos no espaço capturado.
-%
-%
-%%\subsection{Voz}
-%
-%Foi necessário alterar a gramática de voz para desambiguar alguns comandos.
-%% As palavras start, stop e "quit" são difíceis de distinguir, sendo erradamente reconhecidas. Sem esta alteração o sistema não %seria usável.
-%
-%Os utilizadores apreciaram as funcionalidades fornecidas,
-%não se mostrando inibidos na sua aplicação.
-%
-%Os modos alternativos de navegação e manipulação aqui descritos
-%mostram-se não só viáveis como vantajosos face a interfaces WIMP.
-%A navegação mostrou-se particularmente poderosa,
-%podendo o utilizador controlar de forma contínua diversos parâmetros do voo
-%recorrendo apenas à movimentação dos seus braços para o fazer.
+\subsection{Evaluated Subjects}
+
+The gate concept, the first person and compass navigation modes were tested extensively,
+both in the Glasgow April, Lisbon and Glasgow July tests.
+The motion tracked flight mode was tested at the Glasgow July test.
+
+Throughout the tests several enhancements were made regarding the interface.
+
+Gate tooltips were created to aid new users in the understanding of each gate functionality.
+Gate icons were validated, with some of them being remade for an easier interpretation by users.
+
+Widget layouts were corrected, with the first person navigation widget's gates being reordered
+for better performance, keeping the center area empty to allow a stroke to continuously activate
+several gates and grouping opposite actions for fast correction of overdone actions.
+
+The compass navigation widget was simplified -- its first release featured 4 gates for
+moving up/down and zooming up/down the center miniature map. These gates used to appear on top
+of the cardinal points outer ring, with them disappearing if it was rotated. This proved
+confusing, with the additional problem that the move up/down icons -- blue air balloons --
+were reported to resemble light bulbs and therefore were not used as regularly as they should at the Glasgow April test.
+
+This test was performed on a hand made wall with a barely planar surface.
+The algorithm for laser tracking wasn't as evolved as it is now so the power wall performance
+was mediocre when compared to using tablet PCs -- the drawn strokes often appeared centimeters
+apart from the laser point that has originated them, a technology problem that has been corrected
+and has no direct relationship with this project.
+
+During this test the feedback to the newly created compass navigation widget was enthusiastic.
+It was observed that the users with an artistic background used the first person mode oftentimes while the
+ones with a more technical background used the compass more often. It provides a faster way
+of moving to distant places and is also effective because the surroundings are visible while
+the user drags the map.
+
+A selection mode based on picking gave bad results. Users picked objects inadvertently and
+sometimes even dragged them, what built up chaos since large objects were displaced, confusing
+the user and blocking its vision. These false picks occurred more often using the power wall
+because stroke segmenting occurs occasionally there, due mainly to bad laser calibration.
+This picking mode was disabled on the last Glasgow user test, with a clear reduction in
+badly detected operations.
+
+The motion tracked flight mode was introduced in the last Glasgow test with the 4 cameras
+setup described in the section \ref{sec:imp-fly-nav} Fly Navigation Mode, on page \pageref{sec:imp-fly-nav}.
+Users had to wear 4 fabric bands with markers attached, closed by velcro.
+The most critical problem detected regarding this mode had to do with the detection of the starting pose.
+Most users often move their arms enthusiastically while performing others tasks, so when issuing the
+``begin flying'' command, the system sometimes interpreted incorrectly which markers belonged where
+(a labeling problem). This problem was addressed by asking users to leave the tracked space in the
+vicinity of the screen for a short period (10 seconds), returning to it with the arms raised towards
+the screen, to aid the motion tracking system to correctly do the labeling.
+After a minute of getting used to the three main available interpretable actions, users not only got
+to control the flight effectively, but also coupled actions correctly without any supervision
+-- such as slowing down and turning or turning and lowering the altitude at the same time --
+while visibly enjoying the experience. The shorter and fatter user in the test had serious trouble
+with this mode, being unable to start flying correctly. In the other end, tall users controlled the
+system perfectly, which leads to the conclusion that marker occlusion problems exist even with
+four cameras for subjects with short stature, a technology problem that doesn't compromise the idea
+behind this set of gestures and their associated actions.
 
 
+\section{Dedicated Tests}
 
-%
-%\section{Testes com utilizadores}
-%
-%Em Julho de 2007 foram efectuados testes de usabilidade
-%na cidade de Glasgow, na Escócia, no âmbito do programa IMPROVE, em que o ImmiView se insere.
-%
-%Participaram 10 utilizadores, estudantes de arquitectura e arquitectos.
-%Os mesmos foram distribuídos em grupos de 2, realizando cada um um conjunto de tarefas em separado
-%e uma tarefa colaborativa, estando um deles munido dos marcadores.
-%
-%%Dada a origem dos diferentes utilizadores (7 escoceses, 2 ingleses e 1 espanhol), verificou-se dificuldade em alguns deles em emitir comandos de voz correctamente reconhecidos pelo sistema.
-%
-%% O arranque das acções com gestos necessitou de algumas tentativas. Em particular, o utilizador não marcado foi aconselhado a afastar-se durante o tracking.
-%
-%%, tendo inviabilizado a tarefa de voo para um utilizador após 3 tentativas falhadas.
-%%Em indivíduos altos não houve qualquer problema%de captura de movimentos
-%%, o que leva a supor que os problemas ocorridos derivaram de oclusões.
-%
-%%\subsection{Análise}
-%
-%%Os utilizadores estranharam por vezes a utilização dos comandos \textbf{begin} e \textbf{stop}.
-%%As alternativas \textbf{begin} / \textbf{end} ou \textbf{start} / \textbf{stop} seriam as mais lógicas.
-%%No entanto as mesmas haviam sido testadas aquando dos primeiros testes de voz, tendo-se então concluído que
-%%\textbf{start} / \textbf{stop} eram confundidos entre si pelo motor e que \textbf{end} originava falsos positivos.
-%%
-%%Foi sugerida a alteração de \textbf{stop x} para simplesmente \textbf{stop}.
-%%Um utilizador em apuros na interacção não consegue por vezes recordar o contexto em que está,
-%%de modo a invocar o stop adequado.
-%
+\subsection{Building Creation}
+
+This test is addressed for execution during the first weeks of October.
+
+\subsection{Custom Shape modeling versus SketchUp}
+
+This test is addressed for execution during the first weeks of October.
