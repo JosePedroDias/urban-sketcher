@@ -11,13 +11,13 @@ Nowadays one has an immense array of input and output devices at disposal,
 capable of capturing any sense or property and representing alternate realities
 with credibility.
 
-% acabar frase do wimp, ~set of concepts
+% acabar frase do wimp, set of concepts
 Systems dealing heavily with tridimensional content
 tend to be overly technical, confined to a set of concepts
 and base themselves on a desktop mouse / keyboard / monitor interface
 with WIMP.
 
-\TODO{ADD TYPICAL IMAGE OF 3D SOFTWARE} 
+\TODOL{ADD TYPICAL IMAGE OF 3D SOFTWARE} 
 
 Being an avid user of such systems and someone who enjoys well designed
 interfaces, the author became interested in the proposed idea of
@@ -45,7 +45,7 @@ These drawings are highly subjective and clients have a hard time in their inter
 The information captured in such drawings has little use in the remaining stages of building design.
 
 % REF AUTOCAD GRAPHCAD, etc
-Systems such as Autocad TODO are commonly used for professional building layouts.
+Systems such as Autocad \cite{SITE-AUTOCAD} are commonly used for professional building layouts.
 The architect replicates his former ideas in the rigid standardized interface offered by these systems.
 This is a rigorous endeavor, taking much time to be asserted.
 
@@ -69,18 +69,18 @@ design and its surroundings.
 
 % projector
 % screen -> oco...
-LemeWall is a computer cluster of computers and projectors, with the projectors
+LemeWall \cite{LEME} is a computer cluster of computers and projectors, with the projectors
 being mounted in a matrix of 4 x 3, composing an image by back-projection on a screen.
 The computers form a intranet allowing any computer to control them all and render to the screen.
 
-\TODO{inserir imagem leme wall! esquema tb O:)}
+\TODOL{inserir imagem leme e esquema do cluster}
 
 The lab has a set of infrared cameras mounted on the back that are capable of detecting
 laser pointers when pointed at the screen.
 
-\TODO{Artigo lasers to jota? artigo do leme?}
+\TODOL{Artigo lasers to jota? artigo novo da sala?}
 
-\TODO{imagem motion tracking / esquema de cams de IMMI}
+\TODOL{imagem motion tracking / esquema de cams de IMMI}
 
 Additionally motion tracking systems from STT have been used in the lab, for with two and four cameras,
 allowing real-time capturing of a set of reflective markers' positions in the area near to the screen.
@@ -109,29 +109,28 @@ supporting both tablet PC and the power wall.
 Although the two scenarios are very different, the applications must share a common functionality subset
 (such as displaying the same geometry, providing annotation support and navigation) and a consistent user interface.
 
-\TODO{ADD REFERENCES TO GIDES, image of GIDES?}
+\TODOL{image of GIDES?}
 
 Since the beginning of IMPROVE in 2005, IST had been using GIDES++ to test IMPROVE's functionality.
-GIDES++ is a CAD/CAM application in orthographic 3D with a non-intrusive interface, having been developed by several students
-throughout the last years.
+GIDES++ is a CAD/CAM application \cite{GIDES} in orthographic 3D with a non-intrusive interface,
+having been developed by several students throughout the last years.
 
 A decision was made that GIDES++ could no longer serve IMPROVE due to its monolithic development and constrained 3D capabilities.
 
 \TODO{ADD REFERENCES TO OpenSG}
-\TODO{ADD REFERENCES TO AICI}
-\TODO{ADD REFERENCES TO OSGA}
 
 A new project was built from the ground up with the requirements of hardware and interaction in mind,
 making use of OpenSG, a scene graph system with support for rendering and synchronization between nodes of a cluster, providing other features such as multi-threading.
 
-On top of it an event framework named AICI was used and extended by our team. AICI is a framework developed
-both in Germany and South Korea, being part of IMPROVE's consortium.
+On top of it an event framework named AICI \cite{AICI}
+was used and extended by our team.
+AICI is a framework developed both in Germany and South Korea, being part of IMPROVE's consortium.
 
-OSGA is a communication framework based on XML, developed as a IST/INESC project.
+OSGA \cite{OSGA} is a communication backbone based on XML.
 It provides a way of sharing events between several applications through a clean XML schema.
 Each application can both subscribe types of events and/or generate them.
 
-\TODO{TOO MUCH FRAMEWORK DETAILS?}
+%\TODO{TOO MUCH FRAMEWORK DETAILS?}
 
 %%%%%%%%%%%%%%%%%%%
 
@@ -160,31 +159,26 @@ a collaborative scenario in front of a power wall.
 
 The success of this project shall therefore be evaluated by fulfilling the following goals:
 
-\TODO{REVER DEPOIS}
 \begin{description}
 	\item[Expressiveness of the system] --
 		The user should be given the expressiveness power of a sketch board.
-		There should be common building templates and be configurable with a good interface.
+		There should be common building templates and it should be configurable with a good interface.
 	\item[Good interface design] --
 		The system will feature a varied set of input interfaces.
 		The mixed use of sketching with laser pointer/pen, handling of artifacts and issuing
 		voice commands implies an interaction metaphor far from the WIMP interaction,
 		by far the most common approach to this problem.
 		The effectiveness and efficacy of the user interaction with the system and the
-		learning curve will dictate how well we have succeeded.
+		learning curve will dictate how well the project has succeeded.
 	\item[Filling the gap between architect and client] --
 		Another goal of the system is to allow the client to navigate throughout the
 		architectural model and validate it with small manipulations and note attachments.
 		Clients aren't used to visualizing the implicit model by the interpretation of 
 		common architectural documents such as orthogonal views or cuts.
-		They would surely benefit from a 3D virtual approximations.
+		They would surely benefit from 3D virtual approximations.
 \end{description}
 
 The system will be subject to usability tests in order to evaluate the fulfillment of these goals.
-%O sistema será alvo de testes de usabilidade de modo a averiguar o cumprimento destes objectivos.
-%Os mesmos serão elaborados de modo medir a performance deste sistema face a um sistema convencional
-%num conjunto de cenários de utilização, marcando os tempos das tarefas e obtendo \emph{feedback} dos utilizadores.
-
 
 %%%%%%%%%%%%%%%%%%%
 

@@ -67,7 +67,7 @@ The list of colors, one for each of the faces, is described in the end.
 	\end{verbatim}
 \end{small}
 
-\TODO{CLASS HIERARCHY, PROVIDED SHAPES (from CV document)}
+\TODOL{CLASS HIERARCHY, PROVIDED SHAPES (from CV document)}
 
 \subsubsection{Relevant Algorithms}
 
@@ -105,7 +105,7 @@ The most relevant directions according to an edge are those along the faces
 which share it and the direction farthest away from the other ones.
  
 Calculating direction 1 is easy once the edge map is calculated
-and GETOPPOSITEEDGE(EDGE) function defined.
+and getOppositeEdge(edge) function defined.
 
 Direction 2 works the same way, this time following the remaining direction.
 
@@ -164,6 +164,7 @@ as seen in figure \ref{fig:shots}
 	\caption{geometry manipulation operations}
 	\label{fig:shots}
 \end{figure}
+
 \TODO{TAKE THESE SCREENSHOTS AGAIN (NOW WITH MORE VISIBLE EDGES)}
 
 \subsubsection{Geometry Manipulation Operations}
@@ -186,7 +187,7 @@ as seen in figure \ref{fig:shots}
 		this operation occurs immediately since it doesn't require any real-time input from the user.
 		The sketched cut propagates throughout the intrinsic selected face loop, each edge cutting
 		the opposite edge in each face of the loop, until either no more faces occur or an already
-		visited face is revisited. \TODO{FIGURE FOR THIS PROCEDURE?}
+		visited face is revisited. \TODOL{FIGURE FOR THIS PROCEDURE?}
 \end{description}
 
 \subsubsection{Other Operations}
