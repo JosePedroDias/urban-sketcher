@@ -29,9 +29,15 @@
 <icon BUILTIN="button_ok"/>
 <icon BUILTIN="button_ok"/>
 </node>
-<node CREATED="1189206877683" ID="Freemind_Link_1969913242" MODIFIED="1189206880387" POSITION="right" TEXT="Implementation"/>
+<node CREATED="1189206877683" ID="Freemind_Link_1969913242" MODIFIED="1191210068179" POSITION="right" TEXT="Implementation">
+<icon BUILTIN="button_ok"/>
+<icon BUILTIN="button_ok"/>
+</node>
 <node CREATED="1189206884233" ID="Freemind_Link_1022213071" MODIFIED="1189206886556" POSITION="right" TEXT="Evaluation"/>
-<node CREATED="1189206891203" ID="Freemind_Link_681073139" MODIFIED="1189206893366" POSITION="right" TEXT="Conclusion">
+<node CREATED="1189206891203" FOLDED="true" ID="Freemind_Link_681073139" MODIFIED="1191210072786" POSITION="right" TEXT="Conclusion">
+<icon BUILTIN="button_ok"/>
+<icon BUILTIN="button_ok"/>
+<icon BUILTIN="button_ok"/>
 <node CREATED="1189206958459" ID="Freemind_Link_1581419046" MODIFIED="1189206962045" TEXT="Main Contributions"/>
 <node CREATED="1189206970356" ID="Freemind_Link_1333903382" MODIFIED="1189206972339" TEXT="Future Work"/>
 </node>
