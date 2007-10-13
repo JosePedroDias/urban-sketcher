@@ -5,13 +5,13 @@ Version=2
 [SessionInfo]
 ActiveTab=0
 FrameCount=8
-ActiveFrame=7
+ActiveFrame=0
 
 [Frame0]
 Columns=1
 Rows=1
-Flags=0
-ShowCmd=1
+Flags=2
+ShowCmd=3
 MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-4
@@ -24,17 +24,17 @@ Class=CLatexEdit
 Document=dissertation.tex
 
 [Frame0_Row0]
-cyCur=280
+cyCur=443
 cyMin=10
 
 [Frame0_Col0]
-cxCur=862
+cxCur=1006
 cxMin=10
 
 [Frame0_View0,0]
-Cursor.row=0
-Cursor.column=0
-TopSubLine=0
+Cursor.row=68
+Cursor.column=66
+TopSubLine=51
 
 [Frame1]
 Columns=1
@@ -148,8 +148,8 @@ cxCur=844
 cxMin=10
 
 [Frame4_View0,0]
-Cursor.row=70
-Cursor.column=6
+Cursor.row=0
+Cursor.column=0
 TopSubLine=43
 
 [Frame5]
@@ -177,8 +177,8 @@ cxCur=844
 cxMin=10
 
 [Frame5_View0,0]
-Cursor.row=45
-Cursor.column=12
+Cursor.row=0
+Cursor.column=0
 TopSubLine=21
 
 [Frame6]
@@ -206,15 +206,15 @@ cxCur=844
 cxMin=10
 
 [Frame6_View0,0]
-Cursor.row=158
-Cursor.column=34
+Cursor.row=0
+Cursor.column=0
 TopSubLine=154
 
 [Frame7]
 Columns=1
 Rows=1
-Flags=2
-ShowCmd=3
+Flags=0
+ShowCmd=1
 MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-4
@@ -227,15 +227,15 @@ Class=CLatexEdit
 Document=introduction.tex
 
 [Frame7_Row0]
-cyCur=443
+cyCur=262
 cyMin=10
 
 [Frame7_Col0]
-cxCur=1006
+cxCur=844
 cxMin=10
 
 [Frame7_View0,0]
-Cursor.row=181
-Cursor.column=0
-TopSubLine=163
+Cursor.row=180
+Cursor.column=27
+TopSubLine=172
 

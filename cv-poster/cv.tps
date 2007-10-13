@@ -5,7 +5,7 @@ Version=2
 [SessionInfo]
 ActiveTab=0
 FrameCount=8
-ActiveFrame=6
+ActiveFrame=2
 
 [Frame0]
 Columns=1
@@ -61,15 +61,15 @@ cxCur=947
 cxMin=10
 
 [Frame1_View0,0]
-Cursor.row=0
+Cursor.row=25
 Cursor.column=0
-TopSubLine=26
+TopSubLine=15
 
 [Frame2]
 Columns=1
 Rows=1
-Flags=0
-ShowCmd=1
+Flags=2
+ShowCmd=3
 MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-4
@@ -82,17 +82,17 @@ Class=CLatexEdit
 Document=sections\operacoes.tex
 
 [Frame2_Row0]
-cyCur=202
+cyCur=443
 cyMin=10
 
 [Frame2_Col0]
-cxCur=947
+cxCur=1006
 cxMin=10
 
 [Frame2_View0,0]
 Cursor.row=0
-Cursor.column=0
-TopSubLine=27
+Cursor.column=9
+TopSubLine=0
 
 [Frame3]
 Columns=1
@@ -119,9 +119,9 @@ cxCur=947
 cxMin=10
 
 [Frame3_View0,0]
-Cursor.row=2
-Cursor.column=8
-TopSubLine=0
+Cursor.row=28
+Cursor.column=0
+TopSubLine=28
 
 [Frame4]
 Columns=1
@@ -184,8 +184,8 @@ TopSubLine=21
 [Frame6]
 Columns=1
 Rows=1
-Flags=2
-ShowCmd=3
+Flags=0
+ShowCmd=1
 MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-4
@@ -198,11 +198,11 @@ Class=CLatexEdit
 Document=sections\abstract.tex
 
 [Frame6_Row0]
-cyCur=410
+cyCur=278
 cyMin=10
 
 [Frame6_Col0]
-cxCur=1065
+cxCur=925
 cxMin=10
 
 [Frame6_View0,0]
