@@ -7,6 +7,10 @@ Segue-se uma detalhada explicação sobre os diferentes modos de interacção suport
 A navegação no espaço usa os braços estendidos (imitando o super-homem) para determinar a direcção e velocidade do voo.
 
 O controlo da velocidade de voo é regulada pela distância entre mãos: Quando mais afastadas estiverem as mãos mais lentamente o utilizador se desloca, até a uma amplitude limite em que o utilizador pára no ar, aproximadamente com os braços a um ângulo de 90º entre si; A velocidade máxima é atingida com as mãos juntas [Figura \ref{fig:fly-speed}].
+Numa versão inicial da aplicação a velocidade foi calculada pela diferença de ângulos entre os braços.
+Na versão final passou-se a usar a distância entre as duas mãos, ou seja, entre os dois marcadores posicionados nos pulsos (ver figura \ref{fig:markers}).
+O cálculo através da distância provou ser mais fiável, em parte por envolver um cálculo mais simples e por outro depender de menos marcadores
+e consequentemente ser menos vulnerável a oclusões.
 
 O utilizador altera a direcção lateral do voo elevando um braço mais que o outro, quando maior a diferença maior a rotação imprimida. Para rodar para direita levanta o braço esquerdo e baixa o direito [Figura \ref{fig:fly-yaw}], vice-versa para rodar para a esquerda.
 
@@ -30,6 +34,10 @@ Para alterar a altitude do voo eleva ou baixa simultaneamente os braços [Figura 
 
 Para alterar a escala do objecto seleccionado tem relevância a distância entre mãos, a posição inicial dos braços aquando a selecção do modo escala serve de ponto de partida para a alteração da mesma. Assim, para aumentar a escala de um objecto o utilizador afasta as mãos e para o reduzir aproxima-as [Figura \ref{fig:scale}]. A escala é restringida a um eixo previamente escolhido através do comando de voz que inicia o modo.
 
+A escolha deste gesto para controlar a alteração de escala fez-se por o mesmo se aproximar da manipulação física de objectos.
+Este fixar de dois pontos e posterior arrastamento tem sido adaptado com sucesso nas mais recentes interfaces multi-touch como é o caso do
+telemóvel IPhone.
+
 \begin{figure}[!ht]
 \centering
    \includegraphics[width=.85\linewidth]{scale.png}
@@ -39,6 +47,12 @@ Para alterar a escala do objecto seleccionado tem relevância a distância entre m
 
 Para rodar um objecto estende o braço direito em direcção ao cenário e faz um movimento circular num plano imediatamente à sua frente paralelo ao ecrã (como se estivesse a limpar um vidro). O sentido da rotação do braço é mapeado directamente no sentido da rotação do objecto [Figura \ref{fig:rotate}]. O eixo de rotação é previamente escolhido através do comando de voz que inicia o modo.
 
+Numa primeira abordagem para a rotação pensou-se em fixar o vector sugerido por um braço como eixo fixo e o braço livre como ponto de rotação
+face ao eixo. Esta abordagem, ainda que conceptualmente interessante, foi descartada por diversas razões: o utilizador tem dificuldade em
+fixar o eixo que quer; a rotação de um braço face a outro origina oclusões graves, muitas vezes irrecuperáveis.
+Um utilizador tem também uma restrição grande face à expressividade de consegue imprimir num tão diminuto espaço físico (proximidade dos braços)
+impossibilitando uma correcta leitura de rotações precisas.
+
 \begin{figure}[!h]
 \centering
    \includegraphics[width=.85\linewidth]{rotate.png}
@@ -47,6 +61,11 @@ Para rodar um objecto estende o braço direito em direcção ao cenário e faz um mo
 \end{figure}
 
 Para mover um objecto estende o braço direito e a sua direcção determina a translacção do mesmo mapeada no plano horizontal do mundo [Figura \ref{fig:move}].
+
+Poder-se-ia ter optado por mapear a recta com a direcção do braço e calcular a sua intersecção com o plano de visualização. Tal oferece
+no entanto vários problemas: por um lado pressupõe uma mais fina configuração face ao espaço onde se desenrola o teste (origem do referencial,
+dimensões e posicionamento do ecrã face à origem); por outro a direcção apontada pelo braço não coincide com a perspectiva do olhar face à
+extremidade do membro superior do utilizador.
 
 \begin{figure}[!h]
 \centering

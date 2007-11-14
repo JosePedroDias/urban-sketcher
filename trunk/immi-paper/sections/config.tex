@@ -1,10 +1,42 @@
 \section{Configuração Física}\label{sec:config}
 
+\subsection{Reconhecimento de Voz}
+
+De modo a facilitar a interpretação das acções disponibilizadas e permitir ao utilizador não manusear qualquer dispositivo para controlar
+as mesmas, optou-se por segmentar as funcionalidades por modos estanques, sendo a alteração entre cada modo efectuada através da execução
+de ordens por via da fala de comandos pré-definidos.
+
+Tivemos à nossa disposição o Microsoft Speech API 5.1, versão American English, para a interpretação dos comandos de fala.
+A captura do sinal vocal do utilizador fez-se recorrendo a um microfone wireless.
+
+\subsubsection{Gramática}
+
+Foi projectada uma pequena gramática que permitisse entre outras funcionalidades a activação e paragem do modo "super-homem".
+Os comandos incorporados foram:
+\begin{description}
+	\item[Fly:]  begin flying , stop flying
+	\item[Drag:] begin drag, stop drag
+	\item[Rotate:] begin rotate ( X \(|\) Y \(|\) Z ) , stop rotate
+	\item[Scale:] begin scale ( X \(|\) Y \(|\) Z \(|\) Overall ) , stop scale
+\end{description}
+
+Preliminarmente realizou-se um teste para escolher o melhor hardware para reconhecimento de voz, entre um microfone Wireless, um fixo a captar toda a sala e um auricular Bluetooth. Os comandos disponíveis na aplicação foram ditados repetidas vezes por 3 utilizadores, em ordem aleatória e com os 3 dispositivos.
+
+Conclui-se que o microfone Wireless era a melhor opção com uma taxa de reconhecimento média de 99\%, mas para distâncias curtas (\(<\)3m) o auricular Bluetooth teve resultados semelhantes, com 98\%. O microfone fixo captou muito ruído e produziu resultados muito insatisfatórios de menos de 50\%.
+
+O reconhecedor mostrou-se algo limitado, tendo sido necessário adaptar a gramática a palavras não ambiguas entre si, explicadas.
+
+
+
+
+
+
 \subsection{Motion Tracking}
 
 Em diferentes fases do projecto estiveram disponíveis duas configurações de motion tracking.
 
 Em ambas os marcadores que o utilizador tem que usar são esferas revestidas com um material de características especulares especiais, com elevado índice reflectivo na gama dos infra-vermelhos. Os marcadores são posicionados nos braços como demonstrado na [Figura \ref{fig:markers}].
+Escolheu-se a máxima distância possível entre os marcadores de forma a aumentar a fiabilidade do sistema de tracking, identificando inequivocamente cada braço e marcador.
 
 \begin{figure}[!ht]
 \centering
@@ -29,32 +61,11 @@ A segunda configuração, de ora em diante denominada por Matrox (devido à marca d
   \label{fig:setups}
 \end{figure}
 
-\subsubsection{Diferenças Entre as Configuraçãoes Disponíveis}
+\subsubsection{Diferenças Entre as Configurações Disponíveis}
 
 A precisão obtida comparando as calibrações efectuadas com as duas configurações (ARTrack e Matrox) é semelhante.
 A sobrecarga no servidor devido à inclusão de mais uma fase no "ciclo de tracking", talvez devido ao pequeno número de marcadores, não é crítica, tendo sido possível amostrar o movimento do utilizador 50 vezes por segundo em ambas as soluções.
 
 O que é determinante entre as duas configurações é o número de câmaras. A presença de 4 câmaras a ler simultaneamente os marcadores do utilizador faculta um grau de redundância de dados que permite ao utilizador executar movimentos mais complexos, com oclusões. Mesmo quando a pose do utilizador é mal interpretada pelo sistema, o período para retomar o tracking correcto é mais curto.
-
-\subsection{Reconhecimento de Voz}
-
-Tivemos à nossa disposição o Microsoft Speech API 5.1, versão american english. 
-
-\subsubsection{Gramática}
-
-Foi projectada uma pequena gramática que permitisse entre outras funcionalidades a activação e paragem do modo "super-homem".
-Os comandos incorporados foram:
-\begin{description}
-	\item[Fly:]  begin flying , stop flying
-	\item[Drag:] begin drag, stop drag
-	\item[Rotate:] begin rotate ( X \(|\) Y \(|\) Z ) , stop rotate
-	\item[Scale:] begin scale ( X \(|\) Y \(|\) Z \(|\) Overall ) , stop scale
-\end{description}
-
-Preliminarmente realizou-se um teste para escolher o melhor hardware para reconhecimento de voz, entre um microfone Wireless, um fixo a captar toda a sala e um auricular Bluetooth. Os comandos disponíveis na aplicação foram ditados repetidas vezes por 3 utilizadores, em ordem aleatória e com os 3 dispositivos.
-
-Conclui-se que o microfone Wireless era a melhor opção com uma taxa de reconhecimento média de 99\%, mas para distâncias curtas (\(<\)3m) o auricular Bluetooth teve resultados semelhantes, com 98\%. O microfone fixo captou muito ruído e produziu resultados muito insatisfatórios de menos de 50\%.
-
-O reconhecedor mostrou-se algo limitado, tendo sido necessário adaptar a gramática a palavras não ambiguas entre si, explicadas.
-
+Conclui-se portanto que, para tornar o sistema tolerante a oclusões são necessárias pelo menos quatro câmaras para um utilizador com esta disposição corporal de marcadores.
 

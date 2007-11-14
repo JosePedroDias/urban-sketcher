@@ -32,3 +32,104 @@ No entanto os autores haviam testado estas possibilidades durante os primeiros t
 Foi sugerida a alteração de "stop x" para simplesmente stop. Um utilizador em apuros na interacção não consegue por vezes recordar o contexto em que está, de modo a invocar o stop adequado.
 
 Os utilizadores de modo geral ficaram agradados com as funcionalidades fornecidas por gestos + voz e não se mostraram inibidos na sua aplicação.
+
+
+
+A tarefa com maior taxa de sucesso foi a de scale (69\%).
+Tal deve-se ao facto de usar apenas 2 dos 4 marcadores.
+O modo drag foi frequentemente mal reconhecido pelo motor,
+devido à diferença de pronúncia da palavra ``drag'' entre o
+American English (motor de reconhecimento)
+e o British English (9 dos 10 utilizadores do teste originários do Reino Unido).
+
+\begin{figure}[!ht]
+	 \centering
+   \includegraphics[scale=0.4]{taxa-suc-t.png}
+\label{fig:taxa-suc-t}
+\end{figure}
+
+\begin{figure}[!ht]
+	 \centering
+   \includegraphics[scale=0.4]{taxa-suc.png}
+\label{fig:taxa-suc}
+\end{figure}
+
+
+
+A grande maioria das falhas teve origem na má interpretação por parte do sistema de tracking da posição inicial dos marcadores (78\%).
+As expressões ``begin fly'' ou ``begin flying'' foram inequivocamente interpretadas (9\%).
+Foi identificada uma oclusão durante o voo devido ao manuseio da lista de tarefas numa das mãos do utilizador. (4\%).
+
+\begin{figure}[!ht]
+	 \centering
+   \includegraphics[scale=0.4]{falhas-fly-t.png}
+\label{fig:falhas-fly-t}
+\end{figure}
+
+\begin{figure}[!ht]
+	 \centering
+   \includegraphics[scale=0.4]{falhas-fly.png}
+\label{fig:falhas-fly}
+\end{figure}
+
+
+Houve uma discrepância grande entre o tempo médio de
+navegação aos diferentes locais do mapa.
+Tal deve-se à ``distância visual'' entre o ponto de vista
+inicial e o requerido para observar o ponto destino.
+Ainda que ocasionalmente tarefas tenham sido completadas
+mais rapidamente no modo de uso de direcções convencional
+que com o fly, a grande maioria das vezes o utilizador não
+sabia previamente a posição relativa do destino face à sua
+posição. Nestes casos o fly permite a conjugação das acções
+de rotação face ao plano horizontal e alteração de altitude,
+acompanhando o ponto de vista de forma suave, o que facilita a pesquisa.
+
+\begin{figure}[!ht]
+\centering
+   \includegraphics[width=.95\linewidth]{mapa.png}
+ \caption{Mapa usado durante o teste}
+\label{fig:mapa}
+\end{figure}
+
+As variações de tempo médio de completude de tarefa foram dramáticas
+na navegação ao edifício amarelo (79\%) e ao parque de estacionamento (74\%).
+Tal explica-se por serem elementos com pouco relevo no mapa (edifício
+encontra-se entre quarteirões de outros edifícios de semelhante volumetria,
+parque de estacionamento encontra-se à altura do asfalto), ver figura \ref{fig:mapa}.
+A forma de navegar proporcionada pelo modo fly induz o utilizador a subir
+nos primeiros instantes e uma vez posicionado num ponto de vista mais abrangente
+direccionar a sua rota suavemente rumo ao ponto destino.
+Ora a identificação de elementos como os acima indicados faz-se facilmente
+desta forma -- o utilizador tem tendência a permanecer no plano do chão,
+vislumbrando apenas as fachadas que lhe estão mais próximas.
+
+\begin{figure}[!ht]
+	 \centering
+   \includegraphics[scale=0.4]{tempos-t.png}
+\label{fig:tempos-t}
+\end{figure}
+
+\begin{figure}[!ht]
+	 \centering
+   \includegraphics[scale=0.4]{tempos.png}
+\label{fig:tempos}
+\end{figure}
+
+
+O modo mais extensivamente testado e sobre o qual puderam ser feitas comparações
+face a um modo alternativo de completar a mesma tarefa foi o modo fly.
+O mesmo foi comparado com o modo de aplicação directa de direcções e rotações ao
+ponto de vista, tendo os resultados sido bastante positivos -- em média o uso
+do modo fly permitiu a utilizadores poupar 51\% do tempo na navegação para o seu destino.
+
+Devido a problemas de origem tecnológica a leitura dos marcadores e seu mapeamento
+nos membros do utilizador nem sempre se fez correctamente; o uso de um motor de reconhecimento
+de fala sem treino prévio ou especializado na vertente britânica do Inglês dificultou a
+correcta interpretação dos comandos. Os testes com a gramática haviam sido feitos com
+utilizadores portugueses, cuja pronúncia é fortemente influenciada pelo American English.
+
+A aprendizagem dos gestos de controlo dos modos foi quase imediata, tendo-se notado apenas
+alguma predisposição dos utilizadores para dobrarem o seu tronco numa tentativa de controlar
+a rotação de voo -- uma vez apreendido o controlo por elevação dos braços conseguiu-se 
+não só superar este tique como controlar com maior precisão a rotação do voo.
