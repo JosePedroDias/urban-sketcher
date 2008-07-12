@@ -51,138 +51,63 @@ purpose of supporting the straightforward creation, navigation and reviewing of 
 
 % detail - common architecture creation workflow
 
-
-% survey page 4
-Currently an architect starts the building design work flow by drawing
-rough free form sketches of the desired building.
+The current most common work flow process for defining the location and overall \TODO{volumetry}
+of a new building is a process made up of several discrete steps.
+First the architect draws rough sketches of the desired building.
 These are highly subjective and clients have a hard time in their interpretation and validation.
-The information captured in such drawings has little use in the remaining stages of building design.
-
-% REF AUTOCAD GRAPHCAD, etc
-Systems such as Autocad \cite{SITE-AUTOCAD} are commonly used for professional building layouts.
-The architect replicates his former ideas in the rigid standardized interface offered by these systems.
-This is a rigorous endeavor, taking much time to be asserted.
-
-After the main project documents are issued comes the time when the idea has to be pitched to end clients.
-In order to gather buyers and investors it's common to generate colorful previews of buildings featuring
-increasingly realistic features such as detailed materials, light propagation and crowd simulations.
-
-Despite the ongoing advances in computation, the architectural work flow
-keeps these three separated stages that don't share media or applications.
-Both the conceptual design and the final reviewing and marketing stages would
-benefit from an integrated system with a comprehensive set of design actions
-and good navigation and content reviewing capabilities.
-
-The architect can benefit from the system by being able to experiment different
-locations for the building and obtain a better integration between the new
-design and its surroundings.
-
-\subsection{The Multimedia Lab}
-
-% from rel-int
-
-% projector
-% screen -> oco...
-LemeWall \cite{LEME} is a computer cluster of computers and projectors, with the projectors
-being mounted in a matrix of 4 x 3, composing an image by back-projection on a screen.
-The computers form a intranet allowing any computer to control them all and render to the screen.
-
-\TODOL{inserir imagem leme e esquema do cluster}
-
-The lab has a set of infrared cameras mounted on the back that are capable of detecting
-laser pointers when pointed at the screen.
-
-\TODOL{Artigo lasers to jota? artigo novo da sala?}
-
-\TODOL{imagem motion tracking / esquema de cams de IMMI}
-
-Additionally motion tracking systems from STT have been used in the lab, for with two and four cameras,
-allowing real-time capturing of a set of reflective markers' positions in the area near to the screen.
-
-LemeWall is located at Prof. Lourenço Fernandes Lab, in Instituto Superior Técnico, Tagus Park, Oeiras.
+The architect proceeds to studying the best location and orientation for the building on the
+\TODO{destination landscape}. This step used to be performed based on 2D maps and on-site inspection.
+Once the location and overall shape are defined, a rigorous \TODO{plan} is defined using
+a Computer Aided Design (CAD) software such as Autodesk Autocad\cite{SITE-AUTOCAD}.
+This design is performed from the ground up.
+Then if architects want to showcase the building appearance they often rely of rendered images
+and pre-rendered animations.
 
 
-\subsection{Taking Part in IMPROVE}
+% high-level description of solution
 
-% http://urbansketcher.blogspot.com/2006_09_01_archive.html
+The proposed solution defines a system which allows architects to draft designs
+directly on the 3D scenery and allowing clients to better perceive the project at early stages,
+giving them navigation and reviewing capabilities.
+To accurately merge new buildings on the scenery one had to obtain
+satellite imagery and height maps of the landscape, a feasible task at present times.
+Additional benefits could come later on by sharing the landscape information with the CAD
+software and eventually exporting the draft buildings for reference.
+Another benefit comes from having already a showcase platform for the project set up.
+Instead of, or additionally to the set of pre-rendered images and short video clips,
+clients now have at their disposal a real-time navigation platform which can be used
+as a selling ad.
 
-IMPROVE \cite{SITE-IMPROVE} is a consortium of universities, hardware manufacturers and design studios in
-the areas of architecture and car design.
-The universities provide the developers and scientific innovation.
-The hardware manufacturers come up with prototype hardware devices
-to answer the project's needs and  support the developers in using them.
-The design studios serve as the main testers of the system, providing
-suggestions and feedback to the project so that the final results better suit their needs.
 
-The IMPROVE project is funded by the European Union.
-Instituto Superior Técnico got responsible for creating an application to the architecture scenario
-supporting both tablet PC and the power wall.
+% novelty
 
-Although the two scenarios are very different, the applications must share a common functionality subset
-(such as displaying the same geometry, providing annotation support and navigation) and a consistent user interface.
+This project is therefore a novel approach due to the support of large display screens
+possible by the devised interface based on gate activation and ring menus,
+with users applying discrete strokes using laser pointers.
+The navigation and shape creation functionalities are focused on simplicity and a set
+of tools is set so additional scenarios and facade styles can be implemented.
+A new work flow is proposed so the system is used both at early design stages and
+at showcasing the project.
 
-\TODOL{image of GIDES?}
+The success of the project shall be measured against the fulfilling of the following goals:
 
-Since the beginning of IMPROVE in 2005, IST had been using GIDES++ to test IMPROVE's functionality.
-GIDES++ is a CAD/CAM application \cite{GIDES} in orthographic 3D with a non-intrusive interface,
-having been developed by several students throughout the last years.
 
-A decision was made that GIDES++ could no longer serve IMPROVE due to its monolithic development and constrained 3D capabilities.
-
-A new project was built from the ground up with the requirements of hardware and interaction in mind,
-making use of OpenSG \cite{SITE-OPENSG}, a scene graph system with support for rendering and synchronization between nodes of a cluster, providing other features such as multi-threading.
-
-On top of it an event framework named AICI \cite{AICI}
-was used and extended by our team.
-AICI is a framework developed both in Germany and South Korea, being part of IMPROVE's consortium.
-
-OSGA \cite{OSGA} is a communication backbone based on XML.
-It provides a way of sharing events between several applications through a clean XML schema.
-Each application can both subscribe types of events and/or generate them.
-
-%\TODO{TOO MUCH FRAMEWORK DETAILS?}
-
-%%%%%%%%%%%%%%%%%%%
-
-\section{Objectives}
-
-The main purposes of the project are to allow architects to test possible solutions for
-building planning and to provide a way for clients and architects to review them.
-
-The project is therefore thought out to be applied in early stages in the conception of
-architectural projects for clients to convey the spatial distribution of the proposals in discussion.
-The content creator, which is henceforth called the architect, should be given the tools so he
-can create facades of buildings and test different building configurations in an experimental fashion.
-Creating three dimensional content should be an easy and imprecise task --
-it should be considered a rough approximation.
-
-The system may also serve as an interface for clients to explore the
-surroundings of the buildings at a later stage,
-either to validate the design or for marketing purposes.
-
-It is therefore crucial for a novice user to get the grip of the system easily.
-Tasks such as navigating the scene or attaching notes to objects ought to be of simple execution.
-Clients might also do small manipulations on the geometry or appearance of objects.
-
-Both scenarios should support users individually working with tablet PCs or
-a collaborative scenario in front of a power wall.
-
-The success of this project shall therefore be evaluated by fulfilling the following goals:
+\TODO{INSERT RESULT CONCLUSIONS HERE?}
 
 \begin{description}
-	\item[Expressiveness of the system] --
-		The user should be given the expressiveness power of a sketch board.
-		There should be common building templates and it should be configurable with a good interface.
 	\item[Good interface design] --
-		The system will feature a varied set of input interfaces.
-		The mixed use of sketching with laser pointer/pen, handling of artifacts and issuing
-		voice commands implies an interaction metaphor far from the WIMP interaction,
-		by far the most common approach to this problem.
-		The effectiveness and efficacy of the user interaction with the system and the
-		learning curve will dictate how well the project has succeeded.
+		The system works on large display screens using mostly laser pointers
+		-- an additional voice command and arm gesture interface is offered for navigation.
+		The average user has no experience with these environments let alone the gate crossing interface metaphor.
+		The system ought to be driven by first-time users after a few minutes and overcome most of the
+		problems derived from the input devices.
+		
+	\item[Expressiveness of the system] --
+		It is crucial for a novice user to get the grip of the system easily.
+		Tasks such as navigating the scene or attaching notes to objects ought to be of simple execution.
+		Clients might also do small manipulations on the geometry or positioning of objects.
+	
 	\item[Filling the gap between architect and client] --
-		Another goal of the system is to allow the client to navigate throughout the
-		architectural model and validate it with small manipulations and note attachments.
 		Clients aren't used to visualizing the implicit model by the interpretation of 
 		common architectural documents such as orthogonal views or cuts.
 		They would surely benefit from 3D virtual approximations.
@@ -190,8 +115,4 @@ The success of this project shall therefore be evaluated by fulfilling the follo
 
 The system will be subject to usability tests in order to evaluate the fulfillment of these goals.
 
-%%%%%%%%%%%%%%%%%%%
-
-%\section{Thesis Structure}
-
-\TODO{read all chapters and summarize them}
+\TODO{IS THIS REQUIRED? read all chapters and summarize them}

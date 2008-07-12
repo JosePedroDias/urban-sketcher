@@ -5,17 +5,17 @@
 % using a powerwall
 % using HMDs
 
-In order to obtain an immersive experience, there's a number of hardware
-setups commonly available:
+In order to obtain an immersive experience, these are the most commonly available hardware setups:
 
 \begin{description}
 	\item[Head-Mounted Display (HMD)] --
-	  Head-mounting displays are glass-shaped devices, projecting a pair of stereo
-	  transformed images to the user's retinas.
-	  They normally feature a gyroscope or similar apparatus to measure head orientation and tilt.
-	  There are two kinds of HMDs: in the former the images are projected in small opaque screens;
+	  Head-mounting displays are glass-shaped devices, projecting a pair of stereo-transformed images
+	  to the user's retinas.
+	  They often feature gyroscopes or similar apparatus to measure head orientation and tilt.
+	  There are two kinds of HMDs: opaque and translucid --
+	  in the former the images are projected on small opaque screens;
 	  in the latter the projected surface is translucid, allowing blending of real and virtual worlds.
-	  Translucid HMDs are best crafted for Augmented Reality (AR).
+	  Translucid HMDs are best suited for Augmented Reality.
 	  
 		Using an HMD has the benefit of sticking to the user's head and detecting head orientation.
 		On the other hand each HMD serves one single user and has limited resolution.
@@ -28,20 +28,24 @@ setups commonly available:
 	  A CAVE is an immersive virtual reality environment where projectors are directed to four,
 	  five or all the six walls of a room-sized cube.
 	  
-		It shares the benefit of enclosing the user's viewing area with HMDs.
-		Has a better resolution though.
-		The downside is the small number of simultaneous users who can experience the CAVE at the same time.
+		It shares the benefit of enclosing the user's viewing area with HMDs and has better resolution.
+		The downside is the small number of simultaneous users who can experience the CAVE at the same time
+		and the inability to set up some tracking systems due to space constraints.
 	
-	\item[Power Wall] --
-	  A power wall is a large surface, usually planar, filled by an image.
+	\item[Large Screen Display (LSD)] --
+	  An LSD is a large surface, usually planar, where a high resolution image is projected to.
+	  The bigger, higher resolution LSDs require a grid of projectors to project parts of the overall resulting image.
+	  In this case the projectors get their information from several computers working in a cluster.
+	  
 	  The whole image projection is responsibility of a cluster of projectors set up in a wall.
 	  Each projector renders part of the surface and the border between projections is ideally minimal.
 	  Each projector is controlled by an independent computer.
 	  
-		Its size and resolution depend entirely on the setup, but normally a wall offers high resolution
-		(depends on the number of projectors in the grid and each projector's resolution).
-		Due to the large surface of the wall, several users may be served as once. Another benefit
-		is users freedom of movement due to users not carrying wires \cite{INTTABLE}.
+		Its size and resolution depend entirely on the setup, but oftentimes a wall offers higher resolutions
+		(depending on the number of projectors in the grid and each projector's resolution)
+		than the remaining discussed hardware setups.
+		Due to the large surface of the wall, several users may be served as once.
+		Another benefit is the freedom of movement given to users due to users not carrying wires \cite{INTTABLE}.
 		The downside is users having to face the wall to experience the image entirely.
 \end{description}
 
@@ -53,13 +57,13 @@ setups commonly available:
 \end{figure}
 
 Any of these setups is suitable for single user interaction.
-In case of a reviewing session, in which at least two participants are required,
-CAVE or Wall are better suited, since they both offer a solution for a small group of people.
+In case of a reviewing session at which at least two participants are required,
+CAVEs or LSDs are better suited, since they both offer a single solution for a small group of people.
 
-Using a Wall or CAVE presents other challenges: the computers responsible for
-generating each projectors' images must be synchronized, its color parameters calibrated
-and the viewport must be well cropped.
-Several systems exist capable of delivering high performance 3D graphics and
+Using a CAVEs or LSDs presents other challenges:
+the computers responsible for the generation of the projectors' images must be synchronized,
+the projectors color parameters calibrated and the viewport must be well cropped.
+There are several systems capable of delivering high performance 3D graphics and
 offering the features mentioned above.
 Based on scene graphs there are two well established solutions:
 OpenSceneGraph\cite{SITE-OSG} and OpenSG\cite{SITE-OPENSG}.

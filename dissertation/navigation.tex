@@ -1,5 +1,8 @@
 \subsection{Scene Navigation}
 
+\TODO{RELATE THESE TO PROJECT IN DISCUSSION}
+
+
 % SCENE NATIGATION
 
 Following is a list o scene navigation solutions.
@@ -9,20 +12,18 @@ Each one can contribute to a more powerful and easy interface.
 \subsubsection{Smart and Physically Based Camera, 2006}
 
 In order to ensure users not ``getting lost'' in the virtual space,
-Buchholz, Bohnet and Döllner \cite{SMARTCAM}
-propose a camera that is is both smart and physically-based.
-Smart in the sense that it is aware of confusing,
-disorienting viewing situations, providing means to circumvent them.
+Buchholz, Bohnet and Döllner \cite{SMARTCAM} propose a smart and physically based camera.
+Smart in the sense that it is aware of confusing and disorienting viewing situations,
+providing means to circumvent them.
 Physically based because it is supported by a physics model of 3D motion
 to ensure steady, continuous user movements.
 
-In order to solve the disorientation problem, the camera must identify situations
+To solve the disorientation problem the camera must identify situations
 when to intervene.
 For that matter a metric, called orientation value, was created.
-Each view is classified by counting its pixels, granting each one a different value:
-landmarks are granted the highest values; terrain gets high values and sky gets low values.
+Each view is classified by counting its pixels, granting different values:
+landmarks get the highest values; terrain gets mid-range values and the sky gets lower values.
 A threshold can then be established and views below the threshold are classified ``disoriented''.
-
 When such an event takes place, smart navigation techniques restrict camera control.
 The constraints posed to user control must be as comprehensible as possible.
 Camera movement should also be time-coherent and physically sound.
@@ -46,42 +47,39 @@ The maintenance strategy solves critical situations such as (see Fig.\ref{FIG-SM
 	\label{FIG-SMARTCAM1}
 \end{figure}
 
-\paragraph{Discussion}
+%\paragraph{Discussion}
 
 A camera system such as this can be useful aiding non-experienced users such as clients in navigation tasks
-since it maintains useful landmarks in the user's view.
+since it maximizes the presence of landmarks in the user's view.
 The physically-based engine would grant additional realism to the navigation experience, providing collision
-detection, inertia and a spring behavior that would soften the user trajectories.
+detection, inertia and a spring behavior that would soften camera trajectories.
 
-\TODOL{RELATE TO PROJECT}
+%\TODOL{RELATE TO PROJECT}
 
 
 \subsubsection{Speed-dependent Automatic Zooming, 2000}
 
 Igarashi and Hinckley \cite{SPEEDZOOM} propose a simple idea for scrolling through large areas of information.
-The speed at which the scrolling occurs changes the zooming of the area seen.
+The speed at which the scrolling occurs changes the zooming of the seen area.
 This makes sense since the faster the area is scrolling, the longer ahead the user needs to see.
 
-\paragraph{Discussion}
+%\paragraph{Discussion}
 
 This could be easily applied to bird's-eye-view maps of large areas.
-The scrolling of the map by the user would then trigger different zooming factors
-depending on the scrolling speed, improving the navigation and exploration of the map.
+The scrolling of the map would trigger different zooming factors depending on
+the scrolling speed, improving the navigation and exploration of the map.
 
-\TODOL{CAN THIS BE APPLIED?}
+%\TODOL{CAN THIS BE APPLIED?}
 
 
 \subsubsection{Path Drawing for 3D Walkthrough, 1998}
 
-Igarashi et al. \cite{PATH3D} start by identifying the main two types of walkthrough techniques:
+Igarashi et al. \cite{PATH3D} start by identifying the two main types of walkthrough techniques:
 \emph{driving}, where the user continuously changes camera position with move and rotation buttons and
-\emph{flying}, where the user picks the target location with a pointing device and a trajectory is calculated
+\emph{flying}, where the user picks the desired destination with a pointing device and a trajectory is calculated
 and animated from the starting position to the picked one.
-
-Each of them has disadvantages:
-driving requires the user to control the trajectory all the way
-until arriving at the destination --
-during this time the controlling is hard if the system faces slow refreshing times;
+Each has it disadvantages:
+driving requires the user to control the trajectory at all times;
 flying lacks expressive power since the user can't control the path neither the final orientation.
 
 The proposed solution is an extension of the flying technique:
@@ -90,7 +88,6 @@ It gets projected onto the walking surfaces and the generated path is animated.
 During the animation the user faces the tangential direction related to the path.
 This brings the additional advantage of the user being able to define
 where he will be facing at the end of the animation.
-
 This technique can be used is two different ways.
 The user can draw a long stroke specifying the path at once
 or he can draw successions of small strokes.
@@ -108,8 +105,7 @@ if one wants to draw the path from the user's feet.
 	\label{FIG-PATH3D}
 \end{figure}
 
-\paragraph{Discussion}
+%\paragraph{Discussion}
 
 This navigation mode could be handy in the review scenario.
-The only disadvantage found is the need to see
-the user's avatar for the mapping to be perfect.
+Even so this might be hard to apply to the project due to LSD interface limitations.
