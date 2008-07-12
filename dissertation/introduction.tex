@@ -1,47 +1,61 @@
 \chapter{Introduction}
 
 
-\TODO{intro to introduction}
+\TODO{LESS PARAGRAPHS}
+\TODO{WHY IS IT AN IMPORTANT PROBLEM, WORTHY OF A MsD (NOT SOLVED). DESCRIBE BROAD VIEW OF SOLUTION.}
+\TODO{IMPROVE/TECH STUFF TO ARCHITECTURE OR OUT}
+\TODO{AT THE END: CONTRIBUTION AND RESULTS SUMMARIZED}
 
 %%%%%%%%%%%%%%%%%%%
 
-\section{Context}
+%\section{Context}
 
-Nowadays one has an immense array of input and output devices at disposal,
-capable of capturing any sense or property and representing alternate realities
-with credibility.
+% need
 
-% acabar frase do wimp, set of concepts
-Systems dealing heavily with tridimensional content
-tend to be overly technical, confined to a set of concepts
-and base themselves on a desktop mouse / keyboard / monitor interface
-with WIMP.
-
-\TODOL{ADD TYPICAL IMAGE OF 3D SOFTWARE} 
-
-Being an avid user of such systems and someone who enjoys well designed
-interfaces, the author became interested in the proposed idea of
-creating a multimodal interface for the creation of city sceneries.
-
-% WORKS?!
-Having made part of previous projects of less complexity in the college's
-multimedia lab and having dealt with rendering 3D content
-to a cluster of computers, there was already familiarity with the subject.
-
-% Project project?
-% http://urbansketcher.blogspot.com/2006_09_01_archive.html
-The fact that the project got to be part of the IMPROVE project,
-a consortium sponsored by the european union composed of universities and companies,
-only made the objectives more ambitious,
-bringing experienced people and their different perspectives to the project.
+With the advent of advanced visualization hardware it is now possible
+to interact with a complex representation of urban scenarios.
+Systems capable of editing 3-dimensional content
+tend to be overly complex and make use of concepts
+focused on mouse and keyboard interaction.
+Nowadays computers can be found everywhere and people in most disparate
+fields such as architecture, publicity or the  entertainment industry
+urge to have ways to display and allow multi-user interaction with large screens.
 
 
-\subsection{The Architectural Problem}
+% difficulty
+
+Developing an application for such purposes requires handling several aspects
+-- the large scale rendering of the scenario,
+giving people means to interact with the screen,
+allowing people to interact at the same time,
+offer a simple interface adapted to the running environment.
+
+
+% detail - laser / menu / gate interface
+
+A different input device must be offered, one which is \TODO{FÁCIL DE TRANSPORTAR}.
+The concurrent input of several users must be handled so that each user can
+take the best from the shared screen area.
+By having chosen laser pointers for user input issues arise.
+\TODO{REFERENCE}
+A laser pointer can't be tracked while the light is not turned on,
+so any clicking behaviors are hard to mimic, even because users can't be 
+precise while unable to view the laser pointer's projection on the screen.
+So, instead of the commonly used buttons and drop-down menus,
+gates and ring menus are introduced.
+To solve the screen real estate problem, menus can be invoked as needed
+by performing preset strokes on the screen (gestures).
+In order to make use of the designed interface, an application with the
+purpose of supporting the straightforward creation, navigation and reviewing of urban scenarios is designed.
+
+
+% detail - common architecture creation workflow
+
 
 % survey page 4
 Currently an architect starts the building design work flow by drawing
 rough free form sketches of the desired building.
-These drawings are highly subjective and clients have a hard time in their interpretation and validation.
+These are highly subjective and clients have a hard time in their interpretation and validation.
 The information captured in such drawings has little use in the remaining stages of building design.
 
 % REF AUTOCAD GRAPHCAD, etc

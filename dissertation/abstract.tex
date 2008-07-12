@@ -4,34 +4,43 @@
 %\TODO{review and summarize this part}
 %\TODO{CHECK FOR MAXIMUM 250 WORDS!}
 
-A system is developed for large display walls using regular laser pointers
-as input devices. It supports collaborative usage and can be deployed
-on tablet PCs. A novel interface is devised to support interaction with such
-input devices, based on the concept of gates and circular menus
-with a non-intrusive interface.
 
-The system supports fast creation of buildings based on strokes to define
-its facade boundaries, height and selecting its purpose.
+% problem
 
-The generation of the building and the populating of its facades with
-attachments such as windows, doors and balconies obeys to an XML
-grammar that defines the main color theme and texture of the walls,
-floor height, facade layout and roof type.
-A building purpose is therefore defined by an instance of such grammar,
-allowing instancing of buildings such as offices, residential houses and factories.
+A system is developed for urban scenarios creation um large display screens using laser
+pointers as input devices, supporting collaborative usage.
+A novel interface is devised to support interaction with such input devices,
+based on the concept of gates and circular menus with a non-intrusive interface.
 
-Architecture projects' locations and overall appearance can be prototyped,
-with support for reviewing by attaching notes to 3D objects.
-A comprehensive set of navigation modes is offered so
-the most common exploration tasks can be easily performed
--- besides first person navigation mode, a bird's eye view,
-examine mode and motion tracked navigation modes are offered, with the
-latter making use of the user's arms to control flight movement.
 
-The context and objectives of the project are defined at the introduction.
-Related work is then commented, followed by the analysis of the problem.
-Concepts, tasks and interface are then designed, with their implementation following.
-Evaluation of the system and conclusions end the paper.
+% implementation / features
+
+\TODO{MENU/GATE INTERFACE}
+Users can navigate on the virtual world using a set of comprehensive navigation modes
+-- first person, bird's eye view and examine, along with a multimodal hand-driven flight mode.
+Simple shapes can be created and modeled using straightforward move, extrude, split operations.
+Buildings can be instantiated from a library of facade styles by specifying
+the desired blueprint and height to generate a unique building.
+Objects in the scene can have notes attached to them to support reviewing sessions.
+
+In order to augment the available building possibilities, styles are defined using a dedicated XML grammar
+specifying the walls and roof types along with the spatial distribution of the facade attachments.
+
+Facade attachments such as doors, windows and balconies are described in
+a simple XML mesh format and an exporter plug in for the Blender 3D modeling software was developed
+for conveniently exporting 3D content.
+
+
+% results
+
+\TODO{TESTS AND CONCLUSION}
+
+
+
+%The context and objectives of the project are defined at the introduction.
+%Related work is then commented, followed by the analysis of the problem.
+%Concepts, tasks and interface are then designed, with their implementation following.
+%Evaluation of the system and conclusions end the paper.
 
 %\TODO{CHECK FOR 4 -- 6 KEYWORDS!}
 \textbf{Keywords:} architecture prototype, sketch, building, multimodal interface, navigation, reviewing
