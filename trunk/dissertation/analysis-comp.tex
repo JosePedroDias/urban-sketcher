@@ -1,28 +1,24 @@
 \section{Comparative Analysis of Building Modeling Software}
 
-In this section we will analyze popular solutions available in the market,
-highlighting each solution strengths and weaknesses.
-Later on a table is presented summarizing each solution
-with the most relevant features compared and its data is discussed.
-The section ends with the author's ideas for an alternative solution.
+In this section popular solutions in the market for modeling buildings will be analyzed,
+highlighting each solution's strengths and weaknesses.
+The a table will be presented summarizing each solution with the most relevant features compared and its data is discussed.
+This section ends with the discussion of the better features of the analyzed software .
 
 \subsection{AutoCAD}
 AutoCAD \cite{SITE-AUTOCAD} is the \emph{de facto} standard software for architecture designs.
 It has a steep learning curve (Fig.\ref{FIG-AUTOCAD}) but is nevertheless
 learned all over the world.
-
-One of its formats, DXF, is widely supported in 3D modelers and engines.
+One of its formats, DXF, is widely supported by 3D modeling software.
 AutoCAD features a powerful language, AutoLisp, which allows advanced users to create scripts for
 automating any aspect available in the interface.
-
 This program favors 2D drawing and modeling over real 3D concepts,
 but a skillful operator can create every shape necessary to an architectural scenario.
-Internally AutoCAD doesn't support any interactive preview of the created designs.
-
+Internally AutoCAD doesn't support interactive previewing of the created designs.
 It renders using the powerful Mental Ray\nocite{SITE-MENTAL} engine.
 Animations can be made using camera paths.
 
-There are hundreds of commercial plug-ins extending the capabilities of AutoCAD.
+There are hundreds of commercial plug-ins extending the capabilities of AutoCAD in a multitude of features.
 
 \begin{figure}[!ht]
     \centering
@@ -32,8 +28,7 @@ There are hundreds of commercial plug-ins extending the capabilities of AutoCAD.
 \end{figure}
 
 \subsection{ArchiCAD}
-GraphiCad's ArchiCAD \cite{SITE-ARCHICAD} aims at conquering new architecture students who haven't been exposed to AutoCAD.
-
+GraphiCad's ArchiCAD \cite{SITE-ARCHICAD} aims at conquering the new generation of architects who haven't been exposed to AutoCAD.
 It offers pre-made views and document templates for every architectural driven need.
 It is by definition a 3D CAD program and it is praised by architects for its easy 3D
 manipulation capabilities (Fig.\ref{FIG-ARCHICAD}).
@@ -43,7 +38,6 @@ ArchiCAD has navigation capabilities too, allowing first person perspective navi
 Its workflow is thought out to make it easy for an architect to do the most common tasks,
 making it a friendlier alternative when compared to AutoCAD.
 It lacks the expressive power to do about 10\% uncommon tasks though.
-
 There's a Software Development Kit for ArchiCAD plug-in creation.
 
 \begin{figure}[!ht]
@@ -59,15 +53,14 @@ Unlike AutoCAD, which spans its use to other areas such as mechanical engineerin
 Revit Building was explicitly thought out for architectural design.
 
 It works completely in 3D and has native templates for doors, windows, roofs, etc.
-Features the concept of mass, lacking in most packages.
 Common constraints are detected. Thick walls can be drawn as lines and solids can
 be cut as floors (compare the top-left and bottom right views in Fig.\ref{FIG-REVIT}).
 
 Revit Building features powerful templates for complex tasks such as roof design.
-It has a simple raytacer and radiosity engine.
-Cameras can be placed but only for view rendering, not animation.
+It has a simple raytacing and radiosity engine.
+Cameras can be placed for view rendering but not animation.
 
-Being a system for the professional segment, it has a lower learning curve that
+Being a system for the professional segment, it has a smoother learning curve than
 AutoCAD and provides tools that allow successful modeling of complex buildings,
 even for enthusiasts, a quality not held by AutoCAD.
 
@@ -80,31 +73,27 @@ even for enthusiasts, a quality not held by AutoCAD.
 
 \subsection{SketchUp}
 Google SketchUp \cite{SITE-SKETCHUP} is a friendly program for the novice 3D modeler.
-It features a simple interface and most of its tools are basic,
-still able to achieve acceptable results.
-Its learning curve is great -- everyone can sketch a room in a nick of time.
-
+It features a simple toolbar interface with 1 viewport and most of its tools are basic.
+One is still able to achieve acceptable results with it.
+Its learning curve is good.
 Its engine is based on drawing lines on top of lines,
 already created surfaces or a construction plane.
 It detects the most common geometry restrictions (such as midpoint and perpendicularity).
-
-Features an online repository of models, allowing importing of objects such as
-furniture, trees, props or well known buildings by just browsing and selection.
-
-Performs strange results when handling awkward angles or when several lines
-are the vicinity of the mouse.
+It features an online repository of models, allowing importing of objects such as
+furniture, trees, props or well known buildings by browsing and selection.
+Strange results occur when handling awkward angles
+or several lines are the vicinity of the mouse.
 Curve manipulation and generation of surfaces is nonexistent.
-Allows plug-in design using the Ruby language.
+SketchUp allows plug-in design using the Ruby language.
 
-Another bonus from being part of the Google software library, SketchUp features import/export capabilities to Google Earth \cite{SITE-EARTH}.
-This allows capturing a patch of land to SketchUp, design a building there and export the patch
-back with its new contents to Google Earth.
+Another bonus from being part of the Google software library, SketchUp features import/export capabilities with Google Earth \cite{SITE-EARTH}.
+This allows capturing a patch of land from Google Earth to SketchUp, design a building there and export the result
+back with its new contents to the map.
+A great feature SketchUp has is realtime shadows (see figure \ref{FIG-SKETCHUP})
+-- since there's only one viewport, shadows are crucial to give the user a sense of depth to a scene.
 
-A great feature SketchUp has is realtime shadows (see figure \ref{FIG-SKETCHUP}) -- since there's only one viewport, shadows are crucial to give the user a sense of depth to a scene.
-
-It renders configurable cartoon/sketchy renderings and allows interpolation of cameras
-in order to obtain simple animations.
-
+It renders configurable non-photorealistic lines and fillings and allows
+interpolating between camera instances in order to obtain simple animations.
 It provides importing capabilities from the most common 3D formats.
 The professional version of the program allows exporting to common 3D architectural formats too.
 
@@ -162,9 +151,9 @@ The professional version of the program allows exporting to common 3D architectu
   \label{TB-COMP-SOL}
 \end{table}
 
-\subsection{Discussing the Table}
+\subsection{Discussion}
 AutoCAD makes use of a well established workflow which takes time to master.
-There's a way of modeling everything architecturally speaking, though most
+There's a way of modeling everything architecturally speaking, though many
 tasks require expert training to be done.
 Since its a general enough package for supporting other uses,
 AutoCAD doesn't come with architectural templates,
@@ -179,14 +168,13 @@ ready for extracting bureaucratic papers out of the architect's workflow.
 SketchUp is the most amateur of the analyzed systems.
 It offers limited geometrical operations and doesn't have a real template library.
 It tries to overcome that limitation by offering a large online repository of models.
-SketchUp's best qualities are its learning curve
--- any user can feel confident in modeling a simple floor in a couple of minutes
--- and its Google Earth connection.
+SketchUp's best qualities are its learning curve and its Google Earth connection.
 
 It would be of great use if other programs were granted permission to get geographical
-data (both height maps and texture maps) of an area on Earth.
-This offers an important head start for an architect in designing a building that
+data (both height maps and texture maps) from Google Earth.
+This would offer an important head-start for an architect in designing a building that
 smoothly blends in its surroundings.
-
 Since this software was acquired by Google and associated with Google Earth,
-a large use base is taking shape.
+a large SketchUp use base is taking shape.
+
+\TODO{BETTER STUFF FROM EACH SW FOR PROJECT?}
