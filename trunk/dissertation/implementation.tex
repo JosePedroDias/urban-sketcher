@@ -5,19 +5,140 @@
 
 \section{Navigation}
 
-\subsection{1st Person Mode}
+\subsection{First Person Mode}
+
+This navigation mode is centered on the current point of view and works by triggering the displayed gates.
+It features 8 gates: 4 direction displacement gates and 4 rotation gates.
+To stop the movement/rotation one can either trigger the gate again, effectively disabling the ongoing action
+or by triggering a different gate action.
+
+The choice for this mode's layout suffered several evolutions.
+At early stages opposing directions where placed at opposite sides of the ring but this
+made correction by triggering the opposite action difficult, so opposing actions are now close together.
+In this mode a restriction of one enabled action at a time is imposed to keep the handling easy for novice users
+there as soon as an action starts the previous one stops.
+
+There are gates for moving forward/backwards, up/down, pitch up/down and yaw up/down
+\footnote{The verbs pitch and yaw come from flight semantics: to pitch is to look up/downwards; to yaw is to turn relatively to the ground plane.}.
+
+\TODO{FIGURE}
+
 
 \subsection{Compass Mode}
 
+The compass mode was thought out for searching tasks. It allows the user to move along the ground plane and turn around it.
+
+The compass navigation mode has 2 distinct areas:
+the center circle displays a top-down view of the scene centered on the user;
+the outer ring displays the main compass directions.
+
+In order for one to move a drag must be performed inside the top-down view.
+To reorient the user one must rotate the outer ring. The direction the user is facing can be read on the top part of the ring.
+
+This mode could not be tested on multi-screen displays due to technical problems. It was enthusiastically accepted on
+one-projector early tests.
+
+\TODO{FIGURE}
+
+
 \subsection{Examine Mode}
+
+The examine mode allows the user to recenter attention on an object of the scene.
+It features 3 gates and a center sphere.
+The user must initially select the new center of attention, by triggering the recenter gate,
+finishing the stroke at the desired object/location.
+Once the location is defined the remaining gates allow for zooming in and out the content
+while the sphere allows for repositioning the user on the space around the object -- 
+horizontal moves rotate horizontally, vertical moves vertically.
+
+This mode is the most effective when performing shape modeling tasks.
+
+\TODO{FIGURE}
 
 
 \section{Content Creation}
 
-\subsection{Shape Modeling}
+The system's interface offers 3 families of shapes which can be instanced on the scene.
+There are the primitives cube, cylinder and sphere; a set of previously generated shapes
+and set of known building styles from which one can create buildings.
+The primitives are the most versatile shapes since they support face and edge manipulation operations.
+All shapes support simple transformations and cloning.
+
+One uses building styles to create buildings on the scene, the library of generated shapes such as
+people, trees and other asserts to populate the scene with such details and the primitives as is or as
+building ground for custom shapes.
+
+\TODO{FIGURE SHAPE MENU}
+
+
+\subsection{Shape Instancing}
+
+The instancing of shapes works using the Apply-to-Scene concept \TODO{GET REF}.
+Every gate of this type has a small arrow running outwards as a hint to the user of the feature.
+The user activates the gate of the desired shape and ends the stroke where he wants it to rest.
+
+\TODO{EXAMPLE IMAGE}
+
 
 \subsection{Building Instancing}
 
+\TODO{ADD CALI TO BLOCKS, HERE AND TRIANGLE STROKE}
+Once the building parameters have been gathered by the interface, as described on \TODO{GET REF},
+the building needs to be generated.
+First the stroke is projected onto the construction plane and parsed by the shape recognizer as a rectangle.
+Its dimension serve as the blueprint which is extruded upwards for the measured height.
+Then the building facades are generated according to the chosen style grammar and so is the ceiling.
+The style grammar is fed each facade length and returns a set of spacings and facade elements that must be instanced
+according to the rules defined in the style.
+If for instance the facade rule for a given floor says
+``center a door and use windows everywhere else'' the system measures the width of both door and window and returns
+the maximum number of windows and a door in the center that fit the facade.
+To minimize the facade attachments in memory, a map of loaded attachments is managed so only the first instance of any
+attachment is loaded.
+
+
+\subsection{Building Style Grammar}
+
+\subsubsection{Grammar Structure}
+
+The building style grammar defines building parameters such as
+\textbf{floor-height}, \textbf{ceiling} parameters and \textbf{color-interval}s for the walls and ceiling.
+It also defines a set of rules for the generation of the facade attachments that make up the final facades,
+defined by the optional \textbf{front-facade} and the \textbf{facades} elements.
+
+One can define the layout of a floor with the \textbf{layout} element, composed of 4 sections:
+\textbf{left}, \textbf{center}, \textbf{right} and \textbf{other}.
+Only the \textbf{other} section is required and the layout works by trying to fill the facade space with \textbf{center}, \textbf{left} and \textbf{right}s' contents if those are present, repeating \textbf{other}'s contents for filling the remaining space.
+
+Inside these sections one can put the any of the \textbf{us-element}s: \textbf{atom}, \textbf{group}, \textbf{sequence} and \textbf{random}.
+An \textbf{atom} is the simplest \textbf{us-element}, having the attributes
+\emph{type}, \emph{spacing} and \emph{height}.
+The \emph{type} parameter defines which shape to instantiate on the facade,
+\emph{spacing} how many width it will consume and
+\emph{height} can be used to shift the shape upwards (to move a window, for instance).
+
+The remaining \textbf{us-element}s allow combining \textbf{us-element}s.
+A set of \textbf{us-element}s inside a \textbf{group} instance all content on the same place and measure the longest of its children.
+A set of \textbf{us-element}s inside a \textbf{sequence} instance all children one after the other.
+The \emph{random} \textbf{us-element} is similar to \textbf{group}, but has the attribute \emph{odds},
+a set of comma separated ratios defining the probability of the children to be picked.
+
+Several floors can share the same layout. To apply a layout to one or a set of floors, the floor-span element exists.
+It can have either the \emph{at} attribute defined or both \emph{min} and \emph{max},
+resulting in the application of the enclosed layout to all the floors in the interval.
+
+One can also define a different facade style for the front facade with the element \textbf{front-facade}.
+This is useful when one wants to apply columns and doors to one facade but not the remaining ones.
+
+
+%It is defined on the XSD document for reference.
+
+
+%\input{grammar.tex}
+
+\subsubsection{Grammar Example: Residential Style}
+
+notation and examples
 
 \section{Content Editing}
 
@@ -27,7 +148,8 @@
 
 \subsection{Direction Election}
 
-\subsection{Building Instancing}
+\subsection{Shape Structure and Operations}
+
 
 
 
