@@ -2,10 +2,10 @@
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
 <node COLOR="#000000" CREATED="1190407561609" ID="Freemind_Link_287049071" MODIFIED="1190417380608" TEXT="GOAL">
 <edge COLOR="#000000" WIDTH="4"/>
-<node COLOR="#0033ff" CREATED="1190407591732" ID="Freemind_Link_569879555" MODIFIED="1211201954875" POSITION="right" TEXT="O que falta PROJECTAR p/ ele?">
+<node COLOR="#0033ff" CREATED="1190407591732" FOLDED="true" ID="Freemind_Link_569879555" MODIFIED="1216339362500" POSITION="right" TEXT="O que falta PROJECTAR p/ ele?">
 <edge COLOR="#0033ff" WIDTH="4"/>
 <font NAME="SansSerif" SIZE="12"/>
-<node COLOR="#00b439" CREATED="1190409154710" ID="Freemind_Link_937319715" MODIFIED="1211201957171" TEXT="defini&#xe7;&#xe3;o de forma">
+<node COLOR="#00b439" CREATED="1190409154710" FOLDED="true" ID="Freemind_Link_937319715" MODIFIED="1216339317500" TEXT="defini&#xe7;&#xe3;o de forma">
 <edge COLOR="#00b439" WIDTH="2"/>
 <node COLOR="#990000" CREATED="1190411523236" ID="Freemind_Link_1673014432" MODIFIED="1190411659602" TEXT="vertex data">
 <edge COLOR="#990000" WIDTH="1"/>
@@ -20,7 +20,7 @@
 <edge COLOR="#990000" WIDTH="1"/>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1190411371658" ID="Freemind_Link_177901174" MODIFIED="1211201985140" TEXT="defini&#xe7;&#xe3;o de attachment">
+<node COLOR="#00b439" CREATED="1190411371658" FOLDED="true" ID="Freemind_Link_177901174" MODIFIED="1216339316671" TEXT="defini&#xe7;&#xe3;o de attachment">
 <edge COLOR="#00b439" WIDTH="2"/>
 <node COLOR="#990000" CREATED="1190411378017" ID="Freemind_Link_282255393" MODIFIED="1190411720740" TEXT="nome do shape original">
 <edge COLOR="#990000" WIDTH="1"/>
@@ -225,7 +225,7 @@
 </node>
 </node>
 </node>
-<node COLOR="#0033ff" CREATED="1190407602127" FOLDED="true" ID="Freemind_Link_186851076" MODIFIED="1190417380848" POSITION="right" TEXT="O que falta PROGRAMAR p/ ele?">
+<node COLOR="#0033ff" CREATED="1190407602127" ID="Freemind_Link_186851076" MODIFIED="1216339363750" POSITION="right" TEXT="O que falta PROGRAMAR p/ ele?">
 <edge COLOR="#0033ff" WIDTH="4"/>
 <node COLOR="#00b439" CREATED="1190414640829" ID="Freemind_Link_1396954595" MODIFIED="1190417380858" TEXT="templates (shapes com interface uniformizada)">
 <edge COLOR="#00b439" WIDTH="2"/>
@@ -255,19 +255,10 @@
 </node>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1190407815364" ID="Freemind_Link_815224870" MODIFIED="1190417380889" TEXT="cloning scheme">
-<edge COLOR="#00b439" WIDTH="2"/>
-<node COLOR="#990000" CREATED="1190407823436" ID="Freemind_Link_1877071167" MODIFIED="1190410202617" TEXT="transform + clone option + nr de c&#xf3;pias">
-<edge COLOR="#990000" WIDTH="1"/>
-</node>
-<node COLOR="#990000" CREATED="1190407943899" ID="Freemind_Link_45422730" MODIFIED="1190410202627" TEXT="plano aux + stroke direc&#xe7;&#xe3;o + nr de c&#xf3;pias">
-<edge COLOR="#990000" WIDTH="1"/>
-</node>
-</node>
 <node COLOR="#00b439" CREATED="1190409839414" ID="Freemind_Link_437569361" MODIFIED="1190417380889" TEXT="number picker (p/ edi&#xe7;&#xe3;o de templates)">
 <edge COLOR="#00b439" WIDTH="2"/>
 </node>
-<node COLOR="#00b439" CREATED="1190409783885" FOLDED="true" ID="Freemind_Link_387312102" MODIFIED="1190417380899" TEXT="save/load 3D">
+<node COLOR="#00b439" CREATED="1190409783885" FOLDED="true" ID="Freemind_Link_387312102" MODIFIED="1216339398359" TEXT="save/load 3D">
 <edge COLOR="#00b439" WIDTH="2"/>
 <node COLOR="#990000" CREATED="1190409796002" ID="Freemind_Link_1800065906" MODIFIED="1190410202737" TEXT="take screenshot + date/time">
 <edge COLOR="#990000" WIDTH="1"/>
@@ -276,16 +267,10 @@
 <edge COLOR="#990000" WIDTH="1"/>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1190417456277" ID="Freemind_Link_803426504" MODIFIED="1190417493280" TEXT="port remaining shapes (as templates?!)">
-<edge COLOR="#00b439" WIDTH="2"/>
-</node>
-<node COLOR="#00b439" CREATED="1190417470367" ID="Freemind_Link_185688275" MODIFIED="1190417493280" TEXT="support shape operations (move, transform?)">
-<edge COLOR="#00b439" WIDTH="2"/>
-</node>
 <node COLOR="#00b439" CREATED="1190409850260" ID="Freemind_Link_1290532776" MODIFIED="1190417380899" TEXT="color picker (p / edi&#xe7;&#xe3;o de templates/formas)">
 <edge COLOR="#00b439" WIDTH="2"/>
 </node>
-<node COLOR="#00b439" CREATED="1190409168349" ID="Freemind_Link_321242410" MODIFIED="1190417380899" TEXT="suporte para texturas??">
+<node COLOR="#00b439" CREATED="1190409168349" FOLDED="true" ID="Freemind_Link_321242410" MODIFIED="1216339369203" TEXT="suporte para texturas??">
 <edge COLOR="#00b439" WIDTH="2"/>
 <node COLOR="#990000" CREATED="1190409180156" ID="Freemind_Link_1529946284" MODIFIED="1190410202667" TEXT="em que objectos?">
 <edge COLOR="#990000" WIDTH="1"/>
@@ -303,13 +288,13 @@
 <edge COLOR="#990000" WIDTH="1"/>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1190409201287" FOLDED="true" ID="Freemind_Link_97630457" MODIFIED="1190417380909" TEXT="suporte para tri&#xe2;ngulos">
+<node COLOR="#00b439" CREATED="1190409201287" FOLDED="true" ID="Freemind_Link_97630457" MODIFIED="1216339412093" TEXT="suporte para tri&#xe2;ngulos">
 <edge COLOR="#00b439" WIDTH="2"/>
 <node COLOR="#990000" CREATED="1190409210500" ID="Freemind_Link_991181965" MODIFIED="1190410202687" TEXT="conformidade GS::Shape">
 <edge COLOR="#990000" WIDTH="1"/>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1190409910937" FOLDED="true" ID="Freemind_Link_869265959" MODIFIED="1190417380919" TEXT="suporte multiface/multi-edge">
+<node COLOR="#00b439" CREATED="1190409910937" FOLDED="true" ID="Freemind_Link_869265959" MODIFIED="1216339410078" TEXT="suporte multiface/multi-edge">
 <edge COLOR="#00b439" WIDTH="2"/>
 <node COLOR="#990000" CREATED="1190409923616" ID="Freemind_Link_480991162" MODIFIED="1190410202697" TEXT="escolha">
 <edge COLOR="#990000" WIDTH="1"/>
@@ -349,33 +334,24 @@
 <edge COLOR="#00b439" WIDTH="2"/>
 </node>
 </node>
-<node COLOR="#0033ff" CREATED="1190407610590" FOLDED="true" ID="Freemind_Link_185642153" MODIFIED="1190591795727" POSITION="right" TEXT="O que falta CORRIGIR p/ ele?">
+<node COLOR="#0033ff" CREATED="1190407610590" FOLDED="true" ID="Freemind_Link_185642153" MODIFIED="1216339309562" POSITION="right" TEXT="O que falta CORRIGIR p/ ele?">
 <edge COLOR="#0033ff" WIDTH="4"/>
-<node COLOR="#00b439" CREATED="1190407659500" FOLDED="true" ID="Freemind_Link_1622291532" MODIFIED="1190417380949" TEXT="comportamento na wall">
+<node COLOR="#00b439" CREATED="1190407659500" ID="Freemind_Link_1622291532" MODIFIED="1216339296265" TEXT="comportamento na wall">
 <edge COLOR="#00b439" WIDTH="2"/>
 <node COLOR="#990000" CREATED="1190407668613" ID="Freemind_Link_832833542" MODIFIED="1190417380959" TEXT="compass">
-<edge COLOR="#990000" WIDTH="1"/>
-</node>
-<node COLOR="#990000" CREATED="1190407749259" ID="Freemind_Link_1546641681" MODIFIED="1190417380959" TEXT="extrudedShape">
-<edge COLOR="#990000" WIDTH="1"/>
-</node>
-<node COLOR="#990000" CREATED="1190407690665" ID="Freemind_Link_1436927282" MODIFIED="1190417380959" TEXT="aux vectors geoSculpt">
 <edge COLOR="#990000" WIDTH="1"/>
 </node>
 </node>
 <node COLOR="#00b439" CREATED="1190410047694" ID="Freemind_Link_528459924" MODIFIED="1190417380959" TEXT="rever face-loop + robusto">
 <edge COLOR="#00b439" WIDTH="2"/>
 </node>
-<node COLOR="#00b439" CREATED="1190409884740" ID="Freemind_Link_1409830654" MODIFIED="1190417380959" TEXT="election algorithm corrigido">
-<edge COLOR="#00b439" WIDTH="2"/>
-</node>
 <node COLOR="#00b439" CREATED="1190409872081" ID="Freemind_Link_403656478" MODIFIED="1190417380959" TEXT="bevel melhorzito (intersec&#xe7;&#xe3;o de rectas)">
 <edge COLOR="#00b439" WIDTH="2"/>
 </node>
 </node>
-<node COLOR="#0033ff" CREATED="1190407579575" ID="_" MODIFIED="1211201205015" POSITION="left" TEXT="Cen&#xe1;rio Ideal">
+<node COLOR="#0033ff" CREATED="1190407579575" FOLDED="true" ID="_" MODIFIED="1216339269578" POSITION="left" TEXT="Cen&#xe1;rio Ideal">
 <edge COLOR="#0033ff" WIDTH="4"/>
-<node COLOR="#00b439" CREATED="1190408019097" FOLDED="true" ID="Freemind_Link_1743323891" MODIFIED="1211201328390" TEXT="utilizadores/m&#xe1;quinas">
+<node COLOR="#00b439" CREATED="1190408019097" FOLDED="true" ID="Freemind_Link_1743323891" MODIFIED="1216339268375" TEXT="utilizadores/m&#xe1;quinas">
 <edge COLOR="#00b439" WIDTH="2"/>
 <node COLOR="#990000" CREATED="1190408043893" ID="ID_982608251" MODIFIED="1211201276000" TEXT="1 user wall">
 <edge COLOR="#990000" WIDTH="1"/>
@@ -394,7 +370,7 @@
 <icon BUILTIN="button_cancel"/>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1190408026558" FOLDED="true" ID="Freemind_Link_290715512" MODIFIED="1211201529187" TEXT="tarefas">
+<node COLOR="#00b439" CREATED="1190408026558" ID="Freemind_Link_290715512" MODIFIED="1216339259296" TEXT="tarefas">
 <edge COLOR="#00b439" WIDTH="2"/>
 <node COLOR="#990000" CREATED="1190408069910" FOLDED="true" ID="Freemind_Link_852963733" MODIFIED="1211201386421" TEXT="navega&#xe7;&#xe3;o">
 <edge COLOR="#990000" WIDTH="1"/>
@@ -431,7 +407,7 @@
 <edge COLOR="#990000" WIDTH="1"/>
 <icon BUILTIN="button_cancel"/>
 </node>
-<node COLOR="#990000" CREATED="1190408413274" FOLDED="true" ID="Freemind_Link_862648791" MODIFIED="1211201526937" TEXT="tarefas colaborativas">
+<node COLOR="#990000" CREATED="1190408413274" FOLDED="true" ID="Freemind_Link_862648791" MODIFIED="1216339266765" TEXT="tarefas colaborativas">
 <edge COLOR="#990000" WIDTH="1"/>
 <icon BUILTIN="help"/>
 <node COLOR="#111111" CREATED="1190415791483" ID="Freemind_Link_620755557" MODIFIED="1211201520671" TEXT="navega&#xe7;&#xe3;o/edi&#xe7;&#xe3;o">
@@ -448,7 +424,7 @@
 </node>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1190415888052" FOLDED="true" ID="Freemind_Link_1398598162" MODIFIED="1211201549031" TEXT="An&#xe1;lises">
+<node COLOR="#00b439" CREATED="1190415888052" ID="Freemind_Link_1398598162" MODIFIED="1216339254812" TEXT="An&#xe1;lises">
 <edge COLOR="#00b439" WIDTH="2"/>
 <node COLOR="#990000" CREATED="1190415937733" ID="ID_1635132889" MODIFIED="1190417381029" TEXT="navega&#xe7;&#xe3;o">
 <edge COLOR="#990000" WIDTH="1"/>
@@ -559,7 +535,7 @@
 </node>
 </node>
 </node>
-<node COLOR="#0033ff" CREATED="1190409720373" FOLDED="true" ID="Freemind_Link_373350170" MODIFIED="1211201945062" POSITION="left" TEXT="future work">
+<node COLOR="#0033ff" CREATED="1190409720373" FOLDED="true" ID="Freemind_Link_373350170" MODIFIED="1216339271921" POSITION="left" TEXT="future work">
 <edge COLOR="#0033ff" WIDTH="4"/>
 <node COLOR="#00b439" CREATED="1190409729396" ID="Freemind_Link_867504547" MODIFIED="1211201931968" TEXT="self-occluding shadows">
 <edge COLOR="#00b439" WIDTH="2"/>
