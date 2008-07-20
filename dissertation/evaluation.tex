@@ -1,95 +1,169 @@
 \chapter{Evaluation}
 
-\TODO{intro to evaluation}
+The system has evolved with several user tests along the way.
+During the course of the IMPROVE program several features were tested and enhanced.
+The shape modeling operations, examine navigation mode
+and building creation module were developed later on and were focus of the final user tests.
 
 
-\section{User Tests for IMPROVE}
+\section{Intermediate Tests}
 
-The inclusion of this project in the IMPROVE initiative provided an opportunity
-for the interface and some of its widgets to be tested throughout the development.
+% IMPROVE INTRO
+Early stages of development of Urban Sketcher were supported by the European Union's
+IMPROVE consortium\cite{SITE-IMPROVE}. IMPROVE joined universities, hardware manufacturers
+and design studios in the areas of architecture and car design.
+Early prototypes of the interface and most of the navigation and reviewing functionalities
+were developed during the period of the program. The interface, then called ImmiView,
+was used for experimenting large screen display, tablet PC and head-mounted displays on tasks
+of architecture design and reviewing sessions.
 
-Three user tests were carried out:
+IMPROVE was beneficial for the large brainstorming sessions which defined several of the concepts
+availabe today on Urban Sketcher, as with the series of User Tests which took place both in
+Glasgow Scotland and Lisbon Portugal.
+These tests served to get feedback on interface design and the
+navigation modes available at the time: first person and compass modes and the multimodal flight mode.
 
-\begin{table}[ht]
-		\centering
-				\begin{tabular}{|l|l|l|}
-						\hline
-						Date						& Location					& Summary \\
-						\hline
-						16 -- 19 April	& Glasgow, Scotland	& power wall versus tablet PC \\
-						11 -- 12 June		& Lisbon, Portugal	& collaboration on power wall \\
-						16 -- 19 July		& Glasgow, Scotland	& tracked flight \\ %, voice recognition, object instancing 
-						\hline
-				\end{tabular}
-		\caption{User Tests for IMPROVE}
-		\label{tab:user-tests}
+
+\subsection{Test Environments}
+
+The first Glasgow test occurred between the 16th and the 19th of April 2007 at the Glasgow Caledonian University.
+A hand-made screen frame was mounted and one infrared camera calibrated behind the screen.
+One regular XVGA projector was used with forward projection.
+
+The Lisbon tests took place between the 11th and 12th of June 2007 and focused on testing collaboration tasks.
+For these tests the Instituto Superior Técnico Multimedia Lab was used\cite{LEME}. It has a structure of 4 by 3 projectors
+behind a translucent screen. The projection is performed from the back and 2 infrared cameras are mounted on the
+projector structure so a bigger portion of the screen is tracked.
+
+The second Glasgow test occurred between the 16th and 19th of July 2007 at The Lighthouse.
+This test was performed on a portable display and a projector with back projection was used along with one infrared camera
+for laser tracking.
+4 STT system cameras and reflective markers were used for tracking the user's arms.
+One Microsoft ZX-6000 wireless headset microphone was used to get the user's voice and the Microsoft Speech API 5.1
+American English version performed speech recognition to identify a set of commands issued by the user.
+
+\TODO{INSERT PIC FROM GLASGOW, MARKERS AND TRACKING FIGURES}
+
+\subsection{Results}
+
+The test at Caledonian provided feedback about the navigation first person and compass navigation modes.
+The layout of the first person mode was changed -- its gates layout used to mimic the 3 axis for movement and had
+rotation gates in between. These were changed to the cleaner design we have today.
+The compass mode was enthusiastically adopted. It used to feature additional gates to move up/down and zoom compass view.
+These gates were dropped to obtain a simpler design.
+
+The Lisbon tests proved the system could handle collaborative design and review tasks.
+\TODO{MORE?}
+
+The Lighthouse test focused on testing the flight navigation mode. One user had to wear 4 velcro fabric strips
+with reflective markers and a wireless microphone. A 3 by 3 meters area in front of the screen was tracked by
+motion tracking cameras.
+\TODO{...}
+
+
+
+
+\section{Final Tests}
+
+The final tests were conducted several months later, with the system fully centered on the Urban Sketcher
+objectives and features. The most notorious features were tested in a series of small tasks: 2 for navigation,
+2 for shape modeling and one for building manipulation. To have reference data from which to compare to,
+one of the analyzed systems on the Related Work section, Google SketchUp, was also used on the test.
+Both the navigation and shape modeling tasks were performed on SketchUp -- building manipulation isn't supported by the system.
+
+It is important to highlight that Google SketchUp is a commercial product with several years of development and
+is based on familiar interface concepts and tested on a regular computer screen with keyboard and mouse input.
+On the other hand Urban Sketcher tests are to be performed on a large screen display using a laser pointer
+and an \emph{ad hoc} laser tracking system, with a set of novel interface concepts.
+
+
+\subsection{Test Environment}
+
+The final tests took place on the Instituto Superior Técnico Multimedia Lab between the 28th of June and 1st of July 2008.
+The tests were performed with the same environment as the Lisbon IMPROVE test described above -- a large display screen
+of 4 by 3 projectors on a translucent screen. The laser tracking system was calibrated to get only laser information
+from about 1/3 of the screen area. During the 4 days period 16 users performed a series of tests described below.
+The distributed documents for task performance and questionnaires can be found at APPENDIX\TODO{APP}.
+94\% of the users had college degrees, 31\% were women and the average user age was 37 years old.
+
+User tests were performed individually and took between 60 and 90 minutes.
+First a preliminary questionnaire composed of 5 close-ended scaled questions was handed and filled, to assert the past experience
+of users on relevant topics.
+Then the purpose of the project was presented along with a tutorial of Urban Sketcher's features and how to use them.
+After a small hands-on period the tasks were given to the user to perform on the Urban Sketcher system.
+Then a tutorial was given of the Google SketchUp program, focused on the features necessary to perform the tasks.
+Alter a small hands-on period the navigation and modeling tasks were performed on the Google SketchUp system.
+To finalize the test, the final questionnaire was handed and filled. It was composed of 13 close-ended scaled questions
+and 5 open-ended questions, the former to obtain feedback regarding the Urban Sketcher system and the latter
+focused on comparing the two systems.
+
+
+\TODO{MULTIMEDIA WALL DIAGRAM, TRACKED SCREEN AREA}
+
+\subsection{Results}
+
+During the tests task completion time was measured in minutes and both user errors and system unexpected events were
+logged. On table \ref{table-times} the summary of times for completing all the tasks is listed.
+Chart \ref{graph-comparison} depicts average times for completing the tasks on both systems.
+
+
+\begin{table}[!ht]
+	\centering
+		\includegraphics[scale=0.6]{gfx/eval/table-times.png}
+	\caption{Task completion times on Urban Sketcher and Google SketchUp}
+	\label{table-times}
 \end{table}
 
-\subsection{Evaluated Subjects}
 
-The gate concept, the first person and compass navigation modes were tested extensively,
-both in the Glasgow April, Lisbon and Glasgow July tests.
-The motion tracked flight mode was tested at the Glasgow July test.
-
-Throughout the tests several enhancements were made regarding the interface.
-
-Gate tooltips were created to aid new users in the understanding of each gate functionality.
-Gate icons were validated, with some of them being remade for an easier interpretation by users.
-
-Widget layouts were corrected, with the first person navigation widget's gates being reordered
-for better performance, keeping the center area empty to allow a stroke to continuously activate
-several gates and grouping opposite actions for fast correction of overdone actions.
-
-The compass navigation widget was simplified -- its first release featured 4 gates for
-moving up/down and zooming up/down the center miniature map. These gates used to appear on top
-of the cardinal points outer ring, with them disappearing if it was rotated. This proved
-confusing, with the additional problem that the move up/down icons -- blue air balloons --
-were reported to resemble light bulbs and therefore were not used as regularly as they should at the Glasgow April test.
-
-This test was performed on a hand made wall with a barely planar surface.
-The algorithm for laser tracking wasn't as evolved as it is now so the power wall performance
-was mediocre when compared to using tablet PCs -- the drawn strokes often appeared centimeters
-apart from the laser point that has originated them, a technology problem that has been corrected
-and has no direct relationship with this project.
-
-During this test the feedback to the newly created compass navigation widget was enthusiastic.
-It was observed that the users with an artistic background used the first person mode oftentimes while the
-ones with a more technical background used the compass more often. It provides a faster way
-of moving to distant places and is also effective because the surroundings are visible while
-the user drags the map.
-
-A selection mode based on picking gave bad results. Users picked objects inadvertently and
-sometimes even dragged them, what built up chaos since large objects were displaced, confusing
-the user and blocking its vision. These false picks occurred more often using the power wall
-because stroke segmenting occurs occasionally there, due mainly to bad laser calibration.
-This picking mode was disabled on the last Glasgow user test, with a clear reduction in
-badly detected operations.
-
-The motion tracked flight mode was introduced in the last Glasgow test with the 4 cameras
-setup described in the section \ref{sec:imp-fly-nav} Fly Navigation Mode, on page \pageref{sec:imp-fly-nav}.
-Users had to wear 4 fabric bands with markers attached, closed by velcro.
-The most critical problem detected regarding this mode had to do with the detection of the starting pose.
-Most users often move their arms enthusiastically while performing others tasks, so when issuing the
-``begin flying'' command, the system sometimes interpreted incorrectly which markers belonged where
-(a labeling problem). This problem was addressed by asking users to leave the tracked space in the
-vicinity of the screen for a short period (10 seconds), returning to it with the arms raised towards
-the screen, to aid the motion tracking system to correctly do the labeling.
-After a minute of getting used to the three main available interpretable actions, users not only got
-to control the flight effectively, but also coupled actions correctly without any supervision
--- such as slowing down and turning or turning and lowering the altitude at the same time --
-while visibly enjoying the experience. The shorter and fatter user in the test had serious trouble
-with this mode, being unable to start flying correctly. In the other end, tall users controlled the
-system perfectly, which leads to the conclusion that marker occlusion problems exist even with
-four cameras for subjects with short stature, a technology problem that doesn't compromise the idea
-behind this set of gestures and their associated actions.
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.6]{gfx/eval/graph-comparison.png}
+	\caption{Bar chart comparing task completion times on both systems}
+	\label{graph-comparison}
+\end{figure}
 
 
-\section{Dedicated Tests}
+The questionnaires feature a total of 18 close-ended scaled questions. These had to be graded from 1 to 6, with
+1 meaning complete disagreement to/infrequent statement and 6 completely agree/very frequent. Out of these questions,
+the first 5 tested the users past experience in relevant topics and the remaining 13 got feedback on using Urban Sketcher.
+Additionally, 5 open-ended questions were given at the end, focusing on the comparison of both systems.
 
-\subsection{Building Creation}
+The translated questions and their results are listed on tables \ref{table-questions18} and \ref{table-questions5}.
+To aid in the interpretation of these results, charts \ref{graph-quantified} and \ref{graph-pies} were respectively created.
 
-This test is addressed for execution during the first weeks of October.
+\begin{table}[!ht]
+	\centering
+		\includegraphics[scale=0.6]{gfx/eval/table-questions18.png}
+	\caption{Preliminary and Final Questionnaire close-ended questions and results}
+	\label{table-questions18}
+\end{table}
 
-\subsection{Custom Shape modeling versus SketchUp}
 
-This test is addressed for execution during the first weeks of October.
+\begin{table}[!ht]
+	\centering
+		\includegraphics[scale=0.6]{gfx/eval/table-questions5.png}
+		\caption{Final Questionnaire open-ended questions and clustered answers}
+	\label{table-questions5}
+\end{table}
+
+
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.6]{gfx/eval/graph-quantified.png}
+		\caption{Chart illustrative of close-ended answers, average value and uncertainty}
+	\label{graph-quantified}
+\end{figure}
+
+
+
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[scale=0.5]{gfx/eval/graph-pies.png}
+		\caption{Pie charts featuring the clustered open-ended answers}
+	\label{graph-pies}
+\end{figure}
+
+
+\subsection{Discussion}
+
+ad asd 
