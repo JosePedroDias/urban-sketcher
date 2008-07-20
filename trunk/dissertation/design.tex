@@ -5,7 +5,7 @@
 
 \section{System Architecture}
 
-\TODO{High-Level description and block diagram}
+%\TODO{High-Level description and block diagram}
 
 \begin{figure}[!ht]
 		\centering
@@ -14,7 +14,7 @@
 		\label{fig:block-diagram}
 \end{figure}
 
-\TODO{REMOVE 'ricardo jota'; add mouse input; add broadcast and remove input arrow}
+%\TODO{REMOVE 'ricardo jota'; add mouse input; add broadcast and remove input arrow}
 
 Urban Sketcher has at its core the following items\footnote{Blue items denote work done by the author.}:
 
@@ -70,7 +70,7 @@ Given that users will rely on laser pointers to interact with the system's GUI, 
 using them instead of mice or track balls -- while a user isn't pressing the laser light button,
 neither the system nor the user can accurately know where on the screen the laser is pointing to.
 In order for the user to see the laser projection on the screen he must be pressing the button.
-This necessity \TODO{urges} for a different GUI solution.
+This system requires a different GUI solution.
 
 Based on prior research by \cite{CROSSY}, the gate concept was implemented with slight changes.
 
@@ -88,7 +88,7 @@ by approaching the gate's area of influence without crossing it, so the tooltip 
 
 \TODO{REVIEW TEXT...}
 The menus of this system are ring-shaped, with the options (gates) spread along the ring.
-Menus aren't totally opaque so the main viewport remains visible and each menu's background color
+The menu's background ring is translucent so the main viewport remains visible and each background color
 depends on the functionality it offers.
 On the bottom-right area a curved label identifies the menu title.
 The top-right area features additional gates for the dismissal of the menu, moving it around and
@@ -99,7 +99,7 @@ those were clustered into modes to keep a conveniently small number of visible o
 On such menus, a set of gates at the left side of the menu represent the available modes.
 Selecting a different mode is a matter of activating the respective illustrative gate.
 
-Submenus are another way of clustering options. \TODO{...}
+%Submenus are another way of clustering options. \TODO{...}
 
 \TODO{MENU WITH CAPTIONS, MODES, DRAG?}
 
@@ -115,9 +115,7 @@ When such stroke is drawn one main menu instance appears centered on it.
 Besides menus derived from the main menu tree, which is invoked as we've just seen by drawing a closed triangle stroke,
 there are menus which focus on an existing shape on the 3D world.
 These are called contextual menus and they can be invoked by selecting a desired shape's face or edge.
-
 To select a face one has to draw a small stroke starting and ending inside the face.
-
 To select an edge one has to draw a small stroke starting on one of the edge's neighboring faces and ending at the remaining one,
 effectively crossing the edge to select it.
 
@@ -161,6 +159,7 @@ the bigger the flight altitude shift is.
 \section{Content Creation Concepts}
 
 \subsection{Apply-to-Scene Creation}
+\label{design:apply-to-scene}
 
 To create a new object on the scene one has to perform a stroke which activates the desired shape creation gate (cube for instance)
 and continue the stroke onto the desired location where the shape is to rest. As soon as the gate is activated the shape appears
@@ -172,7 +171,9 @@ existing scene geometry so it stays in touch with the environment.
 \TODO{FIGURE APPLY-TO-SCENE}
 
 
+
 \subsection{Instancing a Building}
+\label{design:building}
 
 To create a building one has to feed the system 3 parameters: building style, blueprint and height.
 Due to the system decision for stroke-driven actions without global state, these 3 parameters are given with the
