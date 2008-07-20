@@ -73,7 +73,7 @@ as is or as building ground for custom shapes.
 
 \subsection{Shape Instancing}
 
-The instancing of shapes works using the Apply-to-Scene concept \TODO{GET REF}.
+The instancing of shapes works using the Apply-to-Scene concept described on section \ref{design:apply-to-scene}.
 Every gate of this type has a small arrow running outwards as a hint to the user of this feature.
 The user activates the gate of the desired shape and ends the stroke where he wants it to rest.
 
@@ -82,8 +82,8 @@ The user activates the gate of the desired shape and ends the stroke where he wa
 
 \subsection{Building Instancing}
 
-\TODO{ADD CALI TO BLOCKS, HERE AND TRIANGLE STROKE}
-Once the building parameters have been gathered by the interface, as described on \TODO{GET REF},
+%\TODO{ADD CALI TO BLOCKS, HERE AND TRIANGLE STROKE}
+Once the building parameters have been gathered by the interface, as described on section \ref{design:building},
 the building needs to be generated.
 First the stroke is projected onto the construction plane and parsed by the shape recognizer as a rectangle.
 The recognized rectangle dimensions serve as the blueprint which is extruded upwards for the measured height.
@@ -132,14 +132,7 @@ This is useful when one wants to apply columns and doors to one facade but not t
 
 \TODO{INSERT FIGURE WITH EXAMPLES OF ELEMENTS}
 
-%It is defined on the XSD document for reference.
-
-
-%\input{grammar.tex}
-
-\subsubsection{Grammar Example: Residential Style}
-
-\TODO{INSERT residential.xml}
+An example of a complete building style can be found on appendix \ref{residentialGrammar}.
 
 
 \section{Content Editing}

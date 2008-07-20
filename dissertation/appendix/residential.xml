@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style
+	name="residential"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="styles.xsd">
+	
+	
+	<!-- 	floor height and ceiling. values in meters.
+			known ceiling types: simple, 4, 2, arched. defaults to simple.	-->
+	<floor-height value="3.2"/>
+	<ceiling type="4" height="0.6" par1="0.2" par2="0.4"/>
+		
+	
+	<!--	color factories for both the facades and ceiling.
+			hue 0 - 360,	get from photoshop (HSB color)
+			sat 0 - 1,		from gray to pure color
+			value 0 - 1,	from black to brightest	-->
+		<color-factories>
+		<color-factory target="facades">
+			<!--	pale yellow	-->
+			<hue				min="56"	max="58"/>
+			<saturation	min="0.3"	max="0.5"/>
+			<value			min="0.8"	max="1"/>
+		</color-factory>
+		<color-factory target="ceiling">
+			<!--	dark red with low saturation	-->
+			<hue				min="0"	max="5"/>
+			<saturation	min="0.4"	max="0.5"/>
+			<value			min="0.4"	max="0.5"/>
+		</color-factory>
+	</color-factories>
+	
+	
+	<!-- front facade: optional. -->
+	<front-facade>
+		<layout>
+			<center>
+				<sequence>
+					<atom type="residential-window" spacing="3"/>
+					<atom type="residential-balcony" spacing="3"/>
+					<atom type="residential-window" spacing="3"/>
+					<atom type="residential-balcony" spacing="3"/>
+					<atom type="residential-window" spacing="3"/>
+				</sequence>
+			</center>
+			
+			<other>
+				<atom type="residential-window" spacing="3"/>
+			</other>
+		</layout>
+		
+		<floor-span at="1">
+			<layout>
+				<center>
+					<atom type="residential-door" spacing="3"/>
+				</center>
+				
+				<other>
+					<atom type="residential-window" spacing="3"/>
+				</other>
+			</layout>
+		</floor-span>
+	</front-facade>
+	
+	
+	<!-- remaining facades. -->
+	<facades>		
+		<layout>
+			<other>
+				<atom type="residential-window" spacing="3"/>
+			</other>
+		</layout>
+	</facades>
+</style>
