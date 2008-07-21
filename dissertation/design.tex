@@ -1,11 +1,11 @@
 \chapter{Design}
 
-\TODO{INTRO}
+%\TODO{INTRO}
+
+The cornerstone concepts of the system and the engines which allow the system to perform are described here.
 
 
 \section{System Architecture}
-
-%\TODO{High-Level description and block diagram}
 
 \begin{figure}[!ht]
 		\centering
@@ -81,7 +81,13 @@ Gates can feature a text label or a suggestive image to symbolize the action the
 It was decided not to mix both representations -- if the gate is illustrated, a tooltip can be invoked
 by approaching the gate's area of influence without crossing it, so the tooltip can be read and the action optionally avoided.
 
-\TODO{IMAGE ACTIVATION GATE}
+\begin{figure}[ht]
+	\centering
+		\includegraphics{gfx/activation.png}
+		\caption{Gate activation}
+	\label{fig:activation}
+\end{figure}
+
 
 
 \subsection{Menus}
@@ -101,7 +107,14 @@ Selecting a different mode is a matter of activating the respective illustrative
 
 %Submenus are another way of clustering options. \TODO{...}
 
-\TODO{MENU WITH CAPTIONS, MODES, DRAG?}
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics[scale=0.75]{gfx/menu.png}
+	\caption{Menu and its areas}
+	\label{fig:menu}
+\end{figure}
+
 
 
 
@@ -110,7 +123,13 @@ Selecting a different mode is a matter of activating the respective illustrative
 To invoke the main menu the user needs to draw a closed stroke resembling a triangle.
 When such stroke is drawn one main menu instance appears centered on it.
 
-\TODO{MAIN MENU STOKE, TREE OF MENUS}
+\begin{figure}[ht]
+	\centering
+		\includegraphics[scale=0.75]{gfx/triangle.png}
+	\caption{Main menu stroke}
+	\label{fig:triangle}
+\end{figure}
+
 
 Besides menus derived from the main menu tree, which is invoked as we've just seen by drawing a closed triangle stroke,
 there are menus which focus on an existing shape on the 3D world.
@@ -119,7 +138,14 @@ To select a face one has to draw a small stroke starting and ending inside the f
 To select an edge one has to draw a small stroke starting on one of the edge's neighboring faces and ending at the remaining one,
 effectively crossing the edge to select it.
 
-\TODO{FACE AND EDGE SELECTION}
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics[scale=0.75]{gfx/face-edge-selection.png}
+		\caption{Edge and Face selection}
+	\label{fig:face-edge-selection}
+\end{figure}
+
 
 
 \section{Multimodal Input Interface}
@@ -129,7 +155,15 @@ Even so, an alternative arm-tracking and speech recognition command interface ex
 The arms are tracked by attaching 2 reflective markers on each arm: one on each wrist and one close to each elbow.
 Speech commands are obtained from a wireless headset attached to the user's ear.
 
-\TODO{REFLECTIVE MARKETS / HEADSET FIGURE}
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics[scale=1.3]{gfx/markers2.png}
+	\caption{user with reflective markers and wireless headset}
+	\label{fig:markers2}
+\end{figure}
+
+
 
 \subsection{Arm Posing Flight Mode}
 
@@ -153,7 +187,13 @@ To change flight altitude both arms must be oriented in the same direction relat
 -- either both raised or lowered. Again, the higher the angle is from the original forward pose position
 the bigger the flight altitude shift is.
 
-\TODO{INSERT FLIGHT FIGURES}
+\begin{figure}[ht]
+	\centering
+		\includegraphics[scale=0.3]{gfx/flight.png}
+	\caption{Flight mode: controlling speed and direction}
+	\label{fig:flight}
+\end{figure}
+
 
 
 \section{Content Creation Concepts}
@@ -168,7 +208,12 @@ if the stroke ended that particular moment.
 To figure out the actual location for the shape during the task the shape is iteratively collided against the
 existing scene geometry so it stays in touch with the environment.
 
-\TODO{FIGURE APPLY-TO-SCENE}
+\begin{figure}[ht]
+	\centering
+		\includegraphics[scale=0.5]{gfx/apply-to-scene.png}
+	\caption{Apply-to-scene procedure - creating a shape}
+	\label{fig:apply-to-scene}
+\end{figure}
 
 
 
@@ -186,5 +231,9 @@ the stroke upwards in order to define the building's height.
 Once the stroke ends the building is generated according to the given parameters.
 The construction plane has now carried out its purpose and therefore is terminated.
 
-
-\TODO{FIGURES BUILDING CREATION}
+\begin{figure}[ht]
+	\centering
+		\includegraphics[scale=0.4]{gfx/building.png}
+	\caption{Building creation procedure}
+	\label{fig:building}
+\end{figure}

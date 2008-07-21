@@ -9,33 +9,35 @@
 
 % problem
 
-A system is developed for urban scenarios creation um large display screens using laser
-pointers as input devices, supporting collaborative usage.
-A novel interface is devised to support interaction with such input devices,
+A system is developed for the creation of urban scenarios creation on large screen displays
+using laser pointers as input devices and supporting collaborative usage.
+A novel interface is developed to support interaction with such input devices,
 based on the concept of gates and circular menus with a non-intrusive interface.
 
 
 % implementation / features
 
-\TODO{MENU/GATE INTERFACE}
 Users can navigate on the virtual world using a set of comprehensive navigation modes
--- first person, bird's eye view and examine, along with a multimodal hand-driven flight mode.
-Simple shapes can be created and modeled using straightforward move, extrude, split operations.
-Buildings can be instantiated from a library of facade styles by specifying
-the desired blueprint and height to generate a unique building.
-Objects in the scene can have notes attached to them to support reviewing sessions.
-
+-- first person, bird's eye view and examine modes, along with a multimodal flight mode.
+Simple shapes can be created and modeled using a minimalistic set of modeling tools.
+Buildings can be instantiated from a library of facade styles by drawing
+the desired blueprint and setting the facade height to generate unique buildings.
+Buildings and other shapes can also be transformed and cloned.
+Objects in the scene can have notes attached to them to aid in reviewing sessions.
 In order to augment the available building possibilities, styles are defined using a dedicated XML grammar
-specifying the walls and roof types along with the spatial distribution of the facade attachments.
+specifying the walls and roof types along with the spatial distribution of its facade attachments.
+An alternative building creation work flow is proposed to take advantage of this system for early prototypes
+and showcasing projects.
 
-Facade attachments such as doors, windows and balconies are described in
-a simple XML mesh format and an exporter plug in for the Blender 3D modeling software was developed
-for conveniently exporting 3D content.
+The system architecture is described, followed by implementation details and evaluation tests.
+It is shown that users could successfully make use of the offered features based on a stroke-based
+interface and set of comprehensive menus. 
+The project conclusions and future work close this document.
 
 
 % results
 
-\TODO{TESTS AND CONCLUSION}
+%\TODO{TESTS AND CONCLUSION}
 
 
 
@@ -45,4 +47,4 @@ for conveniently exporting 3D content.
 %Evaluation of the system and conclusions end the paper.
 
 %\TODO{CHECK FOR 4 -- 6 KEYWORDS!}
-\textbf{Keywords:} architecture prototype, sketch, building, multimodal interface, navigation, reviewing
+\textbf{Keywords:} architecture prototype, facade, stroke, building, multimodal interface, navigation, reviewing, large screen display, collaboration, shape modeling
