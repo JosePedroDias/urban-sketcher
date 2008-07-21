@@ -1,39 +1,80 @@
 \chapter*{Resumo}
 \addcontentsline{toc}{chapter}{Resumo}
 
-\TODO{TRANSLATE FROM ENGLISH AFTER THAT IS CLOSED}
-
 %\TODO{CHECK FOR MAXIMUM 250 WORDS!}
 
-Um sistema é desenvolvido para ecrãs de larga escala,
+%A system is developed for the creation of urban scenarios creation on large screen displays
+%using laser pointers as input devices and supporting collaborative usage.
+%A novel interface is developed to support interaction with such input devices,
+%based on the concept of gates and circular menus with a non-intrusive interface.
+
+Desenvolveu-se um sistema para ecrãs de larga escala,
 fazendo uso de ponteiros laser convencionais como interface de entrada.
-Suporta uso colaborativo e pode correr em tablet PCs.
+Este sistema suporta uso colaborativo.
 Uma interface inovadora é criada para suportar a interacção com tais dispositivos,
 baseada no conceito de portões e menus circulares com uma interface não-intrusiva.
 
-O mesmo suporta a criação rápida de edifícios através de traços que definem
-a planta, altura e função dos mesmos.
 
-A geração do edifício e o preenchimento das suas fachadas com acessórios
-como janelas, portas e varandas obedece a uma gramática em XML que define
-o tema cromático das paredes e sua textura, a altura por andar, distribuição
-da fachada e tipo de telhado.
-A função de um edifício é então definida por uma instância de tal gramática,
-permitindo a instanciação de edifícios como escritórios, vivendas e fábricas.
 
-A localização e configuração volumétrica de projectos arquitectónicos
-pode então ser prototipada, suportando a revisão das mesmas pela
-anexação de anotações a objectos tridimensionais.
-Um conjunto de modos de navegação é oferecido de modo a facilitar as mais
-comuns tarefas de exploração -- além do modo de primeira pessoa são oferecidos
-um de vista de topo, examinar e outro baseado em movimentos de braços
-para controlar o voo.
+% implementation / features
 
-O contexto e objectivos do projecto são definidos na introdução.
-O trabalho relacionado é então comentado, seguido da análise do problema.
-Conceitos, tarefas e a interface são então desenhadas, seguidas da sua implementação.
-A avaliação e conclusões do sistema terminam o documento.
+%Users can navigate on the virtual world using a set of comprehensive navigation modes
+%-- first person, bird's eye view and examine modes, along with a multimodal flight mode.
+%Simple shapes can be created and modeled using a minimalistic set of modeling tools.
+%Buildings can be instantiated from a library of facade styles by drawing
+%the desired blueprint and setting the facade height to generate unique buildings.
+%Buildings and other shapes can also be transformed and cloned.
+%Objects in the scene can have notes attached to them to aid in reviewing sessions.
+%In order to augment the available building possibilities, styles are defined using a dedicated XML grammar
+%specifying the walls and roof types along with the spatial distribution of its facade attachments.
+%An alternative building creation work flow is proposed to take advantage of this system for early prototypes
+%and showcasing projects.
+
+Os utilizadores são capacitados de navegar no mundo virtual utilizando um conjunto de
+modos de navegação -- na primeira pessoa, modo bússula e modo examinar, assim como
+um modo de vôo multimodal.
+Podem ser criadas e modeladas formas simples, fazendo uso de um conjunto de ferramentas
+de modelação minimalista.
+Podem instanciar-se edifícios a partir de um conjunto de estilos de fachada pré-existentes,
+pelo desenho da sua planta e alçado, dando origem a edifícios únicos.
+Os edifícios e restantes objectos podem igualmente ser transformados e clonados.
+Pode anexar-se a objectos da cena notas de modo a suportar cenários de revisão.
+De forma a poder expandir o conjunto de edifícios passíveis de criar, os estilos de fachada
+são definidos usando uma gramática XML dedicada permitindo alterar aspecto, telhado e distribuição
+dos elementos que compõem as fachadas.
+Um processo de criação de edifícos alternativo é proposta de modo a tirar proveito do sistema
+tanto nas primeiras fases como na apresentação de projectos.
+
+
+
+
+%O mesmo suporta a criação rápida de edifícios através de traços que definem
+%a planta, altura e função dos mesmos.
+%A geração do edifício e o preenchimento das suas fachadas com acessórios
+%como janelas, portas e varandas obedece a uma gramática em XML que define
+%o tema cromático das paredes e sua textura, a altura por andar, distribuição
+%da fachada e tipo de telhado.
+%A função de um edifício é então definida por uma instância de tal gramática,
+%permitindo a instanciação de edifícios como escritórios, vivendas e fábricas.
+%A localização e configuração volumétrica de projectos arquitectónicos
+%pode então ser prototipada, suportando a revisão das mesmas pela
+%anexação de anotações a objectos tridimensionais.
+%Um conjunto de modos de navegação é oferecido de modo a facilitar as mais
+%comuns tarefas de exploração -- além do modo de primeira pessoa são oferecidos
+%um de vista de topo, examinar e outro baseado em movimentos de braços
+%para controlar o voo.
+
+%The system architecture is described, followed by implementation details and evaluation tests.
+%It is shown that users could successfully make use of the offered features based on a stroke-based
+%interface and set of comprehensive menus. 
+%The project conclusions and future work close this document.
+
+A arquitectura dos sistema é descrita, seguida de detalhes de implementação e testes de avaliação.
+É demonstrado que os utilizadores conseguiram com sucesso fazer uso das capacidades do sistema baseado
+em traços, portões e menus circulares.
+As conclusões do projecto e trabalho futuro fecham este documento.
 
 
 %\TODO{CHECK FOR 4 -- 6 KEYWORDS!}
-\textbf{Palavras-Chave:} protótipo arquitectural, esboço, edifício, interface multimodal, navegação, revisão
+\textbf{Palavras-Chave:} protótipo arquitectural, fachada, traço, edifício, interface multimodal, navegação, revisão,
+ecrã de larga escala, colaboração, modelação de formas

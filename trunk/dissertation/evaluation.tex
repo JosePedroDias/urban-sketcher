@@ -18,7 +18,7 @@ was used for experimenting large screen display, tablet PC and head-mounted disp
 of architecture design and reviewing sessions.
 
 IMPROVE was beneficial for the large brainstorming sessions which defined several of the concepts
-availabe today on Urban Sketcher, as with the series of User Tests which took place both in
+available today on Urban Sketcher, as with the series of User Tests which took place both in
 Glasgow Scotland and Lisbon Portugal.
 These tests served to get feedback on interface design and the
 navigation modes available at the time: first person and compass modes and the multimodal flight mode.
@@ -42,7 +42,13 @@ for laser tracking.
 One Microsoft ZX-6000 wireless headset microphone was used to get the user's voice and the Microsoft Speech API 5.1
 American English version performed speech recognition to identify a set of commands issued by the user.
 
-\TODO{INSERT PIC FROM GLASGOW, MARKERS AND TRACKING FIGURES}
+\begin{figure}[ht]
+	\centering
+		\includegraphics[scale=0.75]{gfx/don.png}
+	\caption{User performing multimodal flight during the Lighthouse test}
+	\label{fig:don}
+\end{figure}
+
 
 \subsection{Results}
 
@@ -184,8 +190,8 @@ This can be inputed to the carefully crafted modeling operations and their menus
 Some users took more time grasping the concept of stroke-long operations and their requirement to
 keep the stroke active after triggering the operation to set its direction and length.
 The main menu stroke gesture (a closed triangle) had worse recognition success on these operations.
-This might have to do with users requiring more context menu invocations and temporarily forgetting the correct
-gesture to perform or drawing triangles it more roughly.
+This might have to do with users performing more context menu invocations and temporarily forgetting the correct
+gesture to invoke the main menu or drawing triangles more roughly.
 
 The building creation task was performed very smoothly in regard to its complexity.
 Only a small set of individual problems occurred and users felt satisfied with the easy at
@@ -196,7 +202,7 @@ which they instanced buildings and assets.
 
 % perguntas fechadas - 1o mais certas, depois mais favoráveis
 The familiarity of users with 3D software and CAD is low and the usage of 3D first person games is disparate.
-Few users were used to handling laser pointers and some of them were used to make use of vertical boards
+Few users were used to handling laser pointers and some of them used vertical boards occasionally
 -- this might be explained by the presence of 2 teachers on the user test.
 
 Users found navigation, creation of buildings and shape creation and modeling fairly easy.
@@ -207,25 +213,28 @@ Both the move and clone operations were credited as functional and the learning 
 Users diverged the most when asked about the success at which they controlled their strokes.
 This problem can be credited to the laser tracking limitations on both tracked screen area and slow capturing frequency.
 These originated visual deviations between real stroke and its interpretation, especially notable near the tracking boundaries.
-Due to the slow capturing frequency, strokes have to be drawn slowly, otherwise they get segmented.
-This problem is enphasized when performing apply-to-scene operations such as recentering the examine center of interest or instancing new shapes.
+Due to the slow capturing frequency, strokes had to be drawn slowly, otherwise they'd get segmented.
+This problem was emphasized when performing apply-to-scene operations such as re-centering the examine center of interest or instancing new shapes which required continuity of stroke.
 
 
 \subsubsection{Open-ended Answers Analysis}
 
 Most users held the laser tracking facilities responsible for some dissatisfaction and slowness in performing the tasks
-when compared to Google SketchUp (81\% of the users).
-13\% of the users cited the novel interface unfamiliar therefore harder to master for a novice user while only 6\% elected
+when comparing with Google SketchUp (81\% of the users).
+13\% of the users felt the novel interface unfamiliar therefore harder to master for a novice user while only 6\% elected
 Google SketchUp as the best interface.
-94\% of the users enjoyed the capacity of invoking menus as needed -- of these, 13\% said that the navigation menus
-could be fixed on the screen due to their constant usage, though this screen allocation problem being result of the
-limited tracked area of screen. If all screen was being tracked the menu could have remained there the whole time.
+94\% of the users enjoyed the capacity of invoking menus as needed -- of these, 13\% pointed out that the navigation menu
+could be fixed to the screen due to its constant usage, though this screen allocation problem was result solely of the
+limited tracked area of screen -- if all screen was being tracked the menu could have remained there the whole time.
 Out of all the users, only 25\% state having trouble with the modeling tools. This is satisfactory since many users
-have shown low confidence when asked for perform the modeling tasks, ending up completing them with success and
-reasserting their beliefs regarding such tasks.
+have shown low confidence at first when asked to perform the modeling tasks, ending up completing them with success and
+reasserting their beliefs regarding such tasks. Several users felt this interface could be very effective on several domains
+for controlling large screen displays.
 
-
-\TODO{SUM IT UP}
+It was shown that a stroke-based interface is capable of offering a set of complex actions and navigation modes to novice users
+with them successfully performing tasks in reasonable time frames. Most users identified the laser tracking input as an obstacle
+to an even better experience. This is a technical limitation which doesn't invalidate the application of these concepts and
+interface with other technologies such as large multi touch surfaces.
 
 
 % perguntas abertas - comparação?!

@@ -1,9 +1,21 @@
 \chapter{Implementation}
 
-\TODO{intro to implementation}
+%\TODO{intro to implementation}
+
+The developed system features are explained next. The navigation modes, content creation actions
+and supported modeling operations are described and an alternative work flow for building creation defined.
 
 
 \section{Navigation}
+
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics[scale=0.5]{gfx/main-nav-menus.png}
+	\caption{Main menu and all 3 navigation menu modes}
+	\label{fig:main-nav-menus}
+\end{figure}
+
 
 \subsection{First Person Mode}
 
@@ -16,29 +28,23 @@ The choice for this mode's layout suffered several evolutions.
 At early stages opposing directions where placed at opposite sides of the ring but this
 made correction by triggering the opposite action difficult, so opposing actions are now close together.
 In this mode a restriction of one enabled action at a time is imposed to keep the handling easy for novice users.
-%there as soon as an action starts the previous one stops.
 
 There are gates for moving forward/backwards, up/down, pitch up/down and yaw up/down
 \footnote{The verbs pitch and yaw come from flight semantics: to pitch is to look up/downwards; to yaw is to turn relatively to the ground plane.}.
 
-\TODO{FIGURE}
 
 
 \subsection{Compass Mode}
 
 The compass mode was thought out for searching tasks. It allows the user to move along the ground plane and turn around it.
-
 The compass navigation mode has 2 distinct areas:
 the center circle displays a top-down view of the scene centered on the user;
 the outer ring displays the main compass directions.
-
 In order for one to move, a dragging movement must be performed inside the top-down view.
 To reorient the user one must rotate the outer ring. The direction the user is facing can be read on the top part of the ring.
 
-This mode could not be tested on multi-screen displays due to technical problems. It was enthusiastically accepted on
-one-projector early tests.
-
-\TODO{FIGURE}
+This mode could not be tested on multi-screen displays due to technical problems.
+It was enthusiastically accepted on one-projector early tests.
 
 
 \subsection{Examine Mode}
@@ -53,7 +59,13 @@ horizontal drags rotate horizontally, vertical moves vertically.
 
 This mode is the most effective when performing shape modeling tasks.
 
-\TODO{FIGURE}
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics[scale=0.6]{gfx/virtual-sphere.png}
+	\caption{Concept supporting examine mode}
+	\label{fig:shape}
+\end{figure}
 
 
 \section{Content Creation}
@@ -68,7 +80,12 @@ One uses building styles to create buildings on the scene. A library of generate
 people a trees serve as asserts to populate the scene with details and primitives can be instanced
 as is or as building ground for custom shapes.
 
-\TODO{FIGURE SHAPE MENU}
+\begin{figure}[ht]
+	\centering
+		\includegraphics[scale=0.5]{gfx/shape.png}
+	\caption{Shape menu}
+	\label{fig:shape}
+\end{figure}
 
 
 \subsection{Shape Instancing}
@@ -77,7 +94,6 @@ The instancing of shapes works using the Apply-to-Scene concept described on sec
 Every gate of this type has a small arrow running outwards as a hint to the user of this feature.
 The user activates the gate of the desired shape and ends the stroke where he wants it to rest.
 
-\TODO{EXAMPLE IMAGE}
 
 
 \subsection{Building Instancing}
@@ -90,9 +106,6 @@ The recognized rectangle dimensions serve as the blueprint which is extruded upw
 Then the building facades are generated according to the chosen style grammar and so is the ceiling.
 The style grammar is fed each facade length and returns a set of spacings and facade elements that must be instanced
 according to the rules defined in the style.
-%If for instance the facade rule for a given floor says
-%``center a door and use windows everywhere else'' the system measures the width of both door and window and returns
-%the maximum number of windows and a door in the center that fit the facade.
 To minimize the facade attachments in memory, a map of loaded attachments is managed so only the first instance of any
 attachment is loaded.
 
@@ -130,9 +143,18 @@ resulting in the application of the enclosed layout to all the floors in the int
 One can also define a different facade style for the front facade with the element \textbf{front-facade}.
 This is useful when one wants to apply columns and doors to one facade but not the remaining ones.
 
-\TODO{INSERT FIGURE WITH EXAMPLES OF ELEMENTS}
 
-An example of a complete building style can be found on appendix \ref{residentialGrammar}.
+An example of a complete building style can be found on appendix \ref{residentialGrammar}. The resulting building is depicted on
+figure .
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=\textwidth]{gfx/style.png}
+	\caption{Resulting building of residential style. Several components are highlighted for comprehension.}
+	\label{fig:style}
+\end{figure}
+
+
 
 
 \section{Content Editing}
@@ -150,15 +172,19 @@ used for optimized queries for neighbors.
 When a stroke finishes its start and ending points are projected onto the scene's available geometry.
 If these 2 points lie on the same face of the same object that face is selected and the face contextual menu appears.
 
-\TODO{Add face selection diagram and menu}
+\begin{figure}[ht]
+	\centering
+		\includegraphics[scale=0.5]{gfx/face-edge-selection-imp.png}
+	\caption{Edge and Face selection and their contextual menus}
+	\label{fig:face-edge-selection-imp}
+\end{figure}
+
 
 
 \subsection{Edge Selection}
 
 If the stroke start and ending points lie on different but neighboring faces of the same shape, the edge between
 those faces is selected and the edge contextual menu appears.
-
-\TODO{Add edge selection diagram and menu}
 
 
 \subsection{Determining and Selecting Directions}
@@ -172,16 +198,33 @@ to each of its neighboring faces.
 If an operation requires the user to select a direction from the user the computed directions are displayed centered on the selected aspect
 and color coded. The interface relies on the user to keep drawing the stroke after the operation is triggered so the remaining of the stroke's direction serves to select the desired direction by approximation -- while the stroke is being drawn the operation is previewed by applying the currently most approximate vector direction to the shape. The length of the stroke can be also used from the provided information by using the stroke's direct length.
 
-\TODO{EDGE DIRECTIONS, FACE DIRECTIONS}
+\begin{figure}[ht]
+	\centering
+		\includegraphics[scale=0.6]{gfx/face-dirs.png}
+	\caption{Face directions}
+	\label{fig:face-dirs}
+\end{figure}
 
-\TODO{DIRECTION SELECTION}
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics[scale=0.6]{gfx/election.png}
+	\caption{Direction selection}
+	\label{fig:election}
+\end{figure}
 
 
 
 
 \subsection{Shape Operations}
 
-\TODO{OPERATIONS FIGURE}
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=\textwidth]{gfx/ops.png}
+	\caption{Shape operation example applications}
+	\label{fig:ops}
+\end{figure}
+
 
 By selecting a face the following operations can be performed:
 \begin{itemize}
@@ -189,7 +232,7 @@ By selecting a face the following operations can be performed:
 	\item	\textbf{bevel face} - Bevel moves the face vertices, getting distance from stroke length.
 	\item	\textbf{extrude \& bevel} - This is a compound operation of zero length extrude followed by bevel. It exists for convenience to aid in the creation of holes for features such as windows or chimneys.
 	\item	\textbf{move face} - Move face displaces the face vertices, getting the direction from the selected face's normal and 4 computed directions.
-	\item	\textbf{move coplanar faces} - This operation works as the previous one but the neighboring faces having an angle with the selected one smaller than the threshold are also affected by the movement. \TODO{EXAMPLE CYLINDER}
+	\item	\textbf{move coplanar faces} - This operation works as the previous one but the neighboring faces having an angle with the selected one smaller than the threshold are also affected by the movement.
 \end{itemize}
 
 By selecting an edge the following operations can be performed:
@@ -211,7 +254,12 @@ Notes can be created on the scene. A menu exists featuring a large area at the c
 A rubber option allows wiping the note contents. Once the note is written it can be attached to any scene object by using the
 apply-to-scene concept. Notes are real 3D entities and can be hidden or edited by performing a closed stroke around them.
 
-\TODO{CREATING NOTE, ATTACHED NOTE}
+\begin{figure}[ht]
+	\centering
+		\includegraphics[scale=0.5]{gfx/note.png}
+	\caption{Creating a note and the result attached to a door}
+	\label{fig:note}
+\end{figure}
 
 
 \section{Proposed Work Flow}
@@ -226,7 +274,7 @@ The system is a prototype tool so not much emphasis was put into the importing o
 Even so, different scenarios could be created.
 The height data from a terrain patch can be represented by either:
 \begin{itemize}
-	\item an height map - a grayscale matrix with heighest values represented by brighter colors.
+	\item an height map - a gray-scale matrix with highest values represented by brighter colors.
 	\item a topographic map - a discrete set of contour lines uniting points with the same altitude.
 \end{itemize}
 
@@ -245,17 +293,4 @@ the layout for the building floors using existing and/or newly created attachmen
 \TODO{UPDATED WORK FLOW DIAGRAM}
 
 \TODO{example stages}
-
-%\TODOL{IMMIVIEW OVERVIEW?}
-%\input{dis-immiview}
-
-%\input{dis-general-interface}
-
-%\input{dis-navigation}
-
-%\input{dis-building-creation}
-
-%\input{dis-shape-creation}
-
-%\input{dis-workflow}
 
