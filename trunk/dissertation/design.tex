@@ -2,7 +2,7 @@
 
 %\TODO{INTRO}
 
-The cornerstone concepts of the system and the engines which allow the system to perform are described here.
+The cornerstone concepts of the system and the engines which allow the system to perform are described below.
 
 
 \section{System Architecture}
@@ -16,11 +16,11 @@ The cornerstone concepts of the system and the engines which allow the system to
 
 %\TODO{REMOVE 'ricardo jota'; add mouse input; add broadcast and remove input arrow}
 
-Urban Sketcher has at its core the following items\footnote{Blue items denote work done by the author.}:
+Urban Sketcher is made of the following items\footnote{Blue items denote work done by the author.}:
 
 The \textbf{Navigation Manager} is
 		responsible for assembling navigation data from
-		both voice and tracking input plus gate events which trigger navigation changes,
+		both voice and tracking input, along with gate events which trigger navigation changes,
 		supporting several navigation modes;
 	
 The \textbf{Shape Modeling Manager} is
@@ -75,7 +75,8 @@ This system requires a different GUI solution.
 Based on prior research by \cite{CROSSY}, the gate concept was implemented with slight changes.
 
 A gate is an imaginary two dimensional line on the screen, bound by two visible extremes.
-To activate it one must draw a stroke which crosses the line, as if scoring a goal.
+In order to activate it, one must draw a stroke which crosses the imaginary line, effectively crossing the gate
+(see Fig.\ref{fig:activation}).
 
 Gates can feature a text label or a suggestive image to symbolize the action they perform.
 It was decided not to mix both representations -- if the gate is illustrated, a tooltip can be invoked
@@ -98,7 +99,7 @@ The menu's background ring is translucent so the main viewport remains visible a
 depends on the functionality it offers.
 On the bottom-right area a curved label identifies the menu title.
 The top-right area features additional gates for the dismissal of the menu, moving it around and
-returning to the main menu if at a subsequent level.
+returning to the main menu if at a subsequent level (see Fig.\ref{fig:menu}).
 
 A lot of effort has been put for menus to be usable. On cases where menus offered a large number of actions/options,
 those were clustered into modes to keep a conveniently small number of visible options.
@@ -120,7 +121,7 @@ Selecting a different mode is a matter of activating the respective illustrative
 
 \subsection{Stroke Gestures}
 
-To invoke the main menu the user needs to draw a closed stroke resembling a triangle.
+To invoke the main menu the user needs to draw a closed stroke resembling a triangle (see Fig.\ref{fig:triangle}).
 When such stroke is drawn one main menu instance appears centered on it.
 
 \begin{figure}[ht]
@@ -136,7 +137,7 @@ there are menus which focus on an existing shape on the 3D world.
 These are called contextual menus and they can be invoked by selecting a desired shape's face or edge.
 To select a face one has to draw a small stroke starting and ending inside the face.
 To select an edge one has to draw a small stroke starting on one of the edge's neighboring faces and ending at the remaining one,
-effectively crossing the edge to select it.
+effectively crossing the edge to select it (see Fig.\ref{fig:face-edge-selection}).
 
 
 \begin{figure}[ht]
@@ -153,7 +154,7 @@ effectively crossing the edge to select it.
 Using laser input allows the usage of all system's functionalities.
 Even so, an alternative arm-tracking and speech recognition command interface exists to enhance particular tasks.
 The arms are tracked by attaching 2 reflective markers on each arm: one on each wrist and one close to each elbow.
-Speech commands are obtained from a wireless headset attached to the user's ear.
+Speech commands are obtained from a wireless headset attached to the user's ear (see Fig.\ref{fig:markers2}).
 
 
 \begin{figure}[ht]
@@ -169,7 +170,7 @@ Speech commands are obtained from a wireless headset attached to the user's ear.
 
 The flight mode is an alternative navigation mode. Since it affects the point of view, this task can't be performed by
 several people simultaneously, therefore unlike most of the system this navigation mode has global states
--- the user might be either stationary of flying.
+-- the user might be either stationary of flying (see Fig.\ref{fig:flight}).
 
 The user starts interacting by having his arms extended toward the screen.
 In order to begin flying the command ``Begin flying'' must be given.
@@ -204,7 +205,7 @@ the bigger the flight altitude shift is.
 To create a new object on the scene one has to perform a stroke which activates the desired shape creation gate (cube for instance)
 and continue the stroke onto the desired location where the shape is to rest. As soon as the gate is activated the shape appears
 on top of the stroke and keeps following the stroke until it ends, offering a preview of the location where is would rest
-if the stroke ended that particular moment.
+if the stroke ended that particular moment (see Fig.\ref{fig:apply-to-scene}).
 To figure out the actual location for the shape during the task the shape is iteratively collided against the
 existing scene geometry so it stays in touch with the environment.
 
@@ -229,7 +230,7 @@ be put where the blueprint is to be drawn.
 The user draws a closed rectangle representing the blueprint and after closing it continues
 the stroke upwards in order to define the building's height.
 Once the stroke ends the building is generated according to the given parameters.
-The construction plane has now carried out its purpose and therefore is terminated.
+The construction plane has now carried out its purpose and therefore is terminated (see Fig.\ref{fig:building}).
 
 \begin{figure}[ht]
 	\centering
