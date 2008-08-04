@@ -19,7 +19,7 @@ and supported modeling operations are described and an alternative work flow for
 
 \subsection{First Person Mode}
 
-This navigation mode is centered on the current point of view and works by triggering the displayed gates.
+This first person navigation mode (Fig.\ref{fig:main-nav-menus}, top right) is centered on the current point of view and works by triggering the displayed gates.
 It features 8 gates: 4 direction displacement gates and 4 rotation gates.
 To stop the movement/rotation one can either trigger the gate again, effectively disabling the ongoing action
 or by triggering a different gate action.
@@ -36,7 +36,7 @@ There are gates for moving forward/backwards, up/down, pitch up/down and yaw up/
 
 \subsection{Compass Mode}
 
-The compass mode was thought out for searching tasks. It allows the user to move along the ground plane and turn around it.
+The compass navigation mode (Fig.\ref{fig:main-nav-menus}, bottom left) was thought out for searching tasks. It allows the user to move along the ground plane and turn around it.
 The compass navigation mode has 2 distinct areas:
 the center circle displays a top-down view of the scene centered on the user;
 the outer ring displays the main compass directions.
@@ -49,7 +49,7 @@ It was enthusiastically accepted on one-projector early tests.
 
 \subsection{Examine Mode}
 
-The examine mode allows the user to recenter attention on an object of the scene.
+The examine navigation mode (Fig.\ref{fig:main-nav-menus}, bottom right) allows the user to recenter attention on an object of the scene.
 It features 3 gates and a center sphere.
 The user must initially select the new center of attention by triggering the recenter gate,
 finishing the stroke at the desired object/location.
@@ -70,15 +70,14 @@ This mode is the most effective when performing shape modeling tasks.
 
 \section{Content Creation}
 
-The system's interface offers 3 families of shapes which can be instanced on the scene.
-There are the primitives cube, cylinder and sphere; a set of previously generated shapes
-and set of known building styles from which one can create buildings.
+The system's interface offers 3 families of shapes which can be instanced on the scene:
+primitives, a set of previously generated shapes and set of known building styles from which to create buildings.
 Primitives are the most versatile shapes since they support face and edge manipulation operations.
 All shapes support simple transformations and cloning.
 
 One uses building styles to create buildings on the scene. A library of generated shapes such as
-people a trees serve as asserts to populate the scene with details and primitives can be instanced
-as is or as building ground for custom shapes.
+people and trees serve as assets to populate the scene with details.
+Primitives can be instanced as is or as building ground for custom shapes.
 
 \begin{figure}[ht]
 	\centering
@@ -90,7 +89,7 @@ as is or as building ground for custom shapes.
 
 \subsection{Shape Instancing}
 
-The instancing of shapes works using the Apply-to-Scene concept described on section \ref{design:apply-to-scene}.
+The instancing of shapes works using the Apply-to-Scene concept described on section \ref{design:apply-to-scene} Apply-to-Scene Creation.
 Every gate of this type has a small arrow running outwards as a hint to the user of this feature.
 The user activates the gate of the desired shape and ends the stroke where he wants it to rest.
 
@@ -104,7 +103,7 @@ the building needs to be generated.
 First the stroke is projected onto the construction plane and parsed by the shape recognizer as a rectangle.
 The recognized rectangle dimensions serve as the blueprint which is extruded upwards for the measured height.
 Then the building facades are generated according to the chosen style grammar and so is the ceiling.
-The style grammar is fed each facade length and returns a set of spacings and facade elements that must be instanced
+The style grammar is fed each facade's dimensions and returns a set of spacings and facade elements that must be instanced
 according to the rules defined in the style.
 To minimize the facade attachments in memory, a map of loaded attachments is managed so only the first instance of any
 attachment is loaded.
@@ -145,7 +144,7 @@ This is useful when one wants to apply columns and doors to one facade but not t
 
 
 An example of a complete building style can be found on appendix \ref{residentialGrammar}. The resulting building is depicted on
-figure .
+Fig. \ref{fig:style}.
 
 \begin{figure}[ht]
 	\centering
@@ -170,7 +169,8 @@ used for optimized queries for neighbors.
 \subsection{Face Selection}
 
 When a stroke finishes its start and ending points are projected onto the scene's available geometry.
-If these 2 points lie on the same face of the same object that face is selected and the face contextual menu appears.
+If these 2 points lie on the same face of the same object that face is selected and the face contextual menu appears
+(see Fig.\ref{fig:face-edge-selection-imp} top).
 
 \begin{figure}[ht]
 	\centering
@@ -184,7 +184,8 @@ If these 2 points lie on the same face of the same object that face is selected 
 \subsection{Edge Selection}
 
 If the stroke start and ending points lie on different but neighboring faces of the same shape, the edge between
-those faces is selected and the edge contextual menu appears.
+those faces is selected and the edge contextual menu appears
+(see Fig.\ref{fig:face-edge-selection-imp} bottom).
 
 
 \subsection{Determining and Selecting Directions}
@@ -193,10 +194,11 @@ In order to keep the interface simple and to minimize the number of steps to per
 is estimated for edge and face selections -- these are believed to be the most frequently needed vectors for shape operations.
 When an edge is selected the computed directions are the edge outwards normal and the directions from the edge along its neighboring faces.
 When a face is selected the computed directions are the face normal along with the 4 directions from the center of the face
-to each of its neighboring faces.
+to each of its neighboring faces (see Fig.\ref{fig:face-dirs}).
 
 If an operation requires the user to select a direction from the user the computed directions are displayed centered on the selected aspect
-and color coded. The interface relies on the user to keep drawing the stroke after the operation is triggered so the remaining of the stroke's direction serves to select the desired direction by approximation -- while the stroke is being drawn the operation is previewed by applying the currently most approximate vector direction to the shape. The length of the stroke can be also used from the provided information by using the stroke's direct length.
+and color coded. The interface relies on the user to keep drawing the stroke after the operation is triggered so the remaining of the stroke's direction serves to select the desired direction by approximation -- while the stroke is being drawn the operation is previewed by applying the currently most approximate vector direction to the shape (see Fig.\ref{fig:election}).
+The length of the stroke can be also used from the provided information by using the stroke's direct length.
 
 \begin{figure}[ht]
 	\centering
@@ -226,7 +228,7 @@ and color coded. The interface relies on the user to keep drawing the stroke aft
 \end{figure}
 
 
-By selecting a face the following operations can be performed:
+By selecting a face the following operations can be performed (example applications on Fig.\ref{fig:ops}):
 \begin{itemize}
 	\item \textbf{extrude face} - Extrude generates 4 additional faces, getting the direction from the selected face's normal and the displacement from stroke length.
 	\item	\textbf{bevel face} - Bevel moves the face vertices, getting distance from stroke length.
@@ -252,7 +254,8 @@ can be restored if backup is needed.
 
 Notes can be created on the scene. A menu exists featuring a large area at the center where strokes can be drawn as if writing on paper.
 A rubber option allows wiping the note contents. Once the note is written it can be attached to any scene object by using the
-apply-to-scene concept. Notes are real 3D entities and can be hidden or edited by performing a closed stroke around them.
+apply-to-scene concept (see Fig.\ref{fig:note}).
+Notes are real 3D entities and can be hidden or edited by performing a closed stroke around them.
 
 \begin{figure}[ht]
 	\centering

@@ -18,11 +18,12 @@ providing means to circumvent them.
 Physically based because it is supported by a physics model of 3D motion
 to ensure steady, continuous user movements.
 
-To solve the disorientation problem the camera must identify situations
-when to intervene.
-For that matter a metric, called orientation value, was created.
+Experience shows that people frequently lose track of their location when moving on a 3 dimensional
+world.
+To solve this problem, the camera must identify situations when to intervene.
+For that reason a metric, called orientation value, was created.
 Each view is classified by counting its pixels, granting different values:
-landmarks get the highest values; terrain gets mid-range values and the sky gets lower values.
+landmarks get the highest values; terrain gets mid-range values and the sky gets lower values (see Fig. \ref{FIG-SMARTCAM1}, right).
 A threshold can then be established and views below the threshold are classified ``disoriented''.
 When such an event takes place, smart navigation techniques restrict camera control.
 The constraints posed to user control must be as comprehensible as possible.
@@ -43,7 +44,7 @@ The maintenance strategy solves critical situations such as (see Fig.\ref{FIG-SM
 	\centering
 	\includegraphics[height=7cm]{gfx/smartcam05-1.png}
 	\includegraphics[height=5cm]{gfx/smartcam05-2.png}
-	\caption{SPB Cam: Maintenance strategy for keeping high orientation values (left); Adjustment strategy for ensuring of feasible view specifications (right).}
+	\caption{SPB Cam: Maintenance strategy for keeping high orientation values; Adjustment strategy for ensuring of feasible view specifications.}
 	\label{FIG-SMARTCAM1}
 \end{figure}
 
@@ -90,7 +91,7 @@ This brings the additional advantage of the user being able to define
 where he will be facing at the end of the animation.
 This technique can be used is two different ways.
 The user can draw a long stroke specifying the path at once
-or he can draw successions of small strokes.
+or he can draw successions of small strokes (see Fig.\ref{FIG-PATH3D}).
 
 As limitations the authors state the path expressiveness
 being limited to the walking surface planes
