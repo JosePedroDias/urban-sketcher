@@ -1,204 +1,204 @@
 \chapter{TEMP Complements TEMP}
 
-\section{Shape Internal Structure}
-
-A shape in this system is a boundary representation (B-REP) \cite{REP-SOLID}.
-The shape surface is defined by two data structures:
-an indexed array of \textbf{vertex positions}, used to store the position of each shape vertex;
-an indexed array of \textbf{faces}, with every face being a counter-clockwise ordered set of 4 vertex indices.
-An \textbf{edge} in the system is a pair of ordered vertex indices.
-The ordering step makes the edge direction irrelevant for the edge definition, a desired feature.
-
-Besides this information, each shape manages an auxiliary \textbf{edge map}.
-This map associates a face to its bounding edges and vice versa.
-The edge map allows efficient queries to be performed, such as:
-\textit{which faces are bound by edge x};
-\textit{what is the opposite edge of edge x in face y};
-\textit{which other edges beside edge x make part of the face loop}.
-These are all relevant queries for the implementation of internal shape operations.
-
-Shapes offer methods to update their visual representation.
-Shapes also make available a set of geometry modifying operations --
-these are not only exposed to the user via UI, but also used by templates, as further explained.
-
-In order to support undo operations, the memento design pattern \cite{despat} was implemented.
-A shape memento stores the internal structure of a shape at one point in time
-and is able to restore that shape's state later on, if so requested.
-A shape has a stack of mementos so multiple undo steps can be executed.
-
-
-
-\section{Template}
-
-A template is a shape recipe with input parameters, defining a way of obtaining the desired shape
-by applying a set of operations, with the passed parameters affecting the final geometry.
-Templates are not directly exposed on the system UI. They're currently used solely to generate building ceilings,
-but could be extended for other means.
-
-Templates make use of shape exposed operations to generate the final shape.
-For instance, the creation of a 2-slanted ceiling starts from a regular box shape,
-applying a sequence of 2 edge move operations.
-\TODO{EXAMPLE 2-SLANTED CEILING}
-Additional templates could be easily created to aid in the generation of repetitive structures
-such as railings and staircases.
-
-
-\section{Building Style Definition}
-
-A building is a complex shape, composed of side walls, a ceiling and a set of attached shapes enriching the façades
-with details such as doors, windows and balconies.
-
-A building style is a set of rules and parameters, written according to an XML grammar. 
-The system comes with a set of styles, with the user choosing the desired style to apply to the building he's about to create.
-The building style factory is able to parse the style definition, instantiating and distributing attached shapes to make up
-the façades according to the chosen style.
-\TODO{ADD XSD AND REFERENCE IT}
+%\section{Shape Internal Structure}
+%
+%A shape in this system is a boundary representation (B-REP) \cite{REP-SOLID}.
+%The shape surface is defined by two data structures:
+%an indexed array of \textbf{vertex positions}, used to store the position of each shape vertex;
+%an indexed array of \textbf{faces}, with every face being a counter-clockwise ordered set of 4 vertex indices.
+%An \textbf{edge} in the system is a pair of ordered vertex indices.
+%The ordering step makes the edge direction irrelevant for the edge definition, a desired feature.
+%
+%Besides this information, each shape manages an auxiliary \textbf{edge map}.
+%This map associates a face to its bounding edges and vice versa.
+%The edge map allows efficient queries to be performed, such as:
+%\textit{which faces are bound by edge x};
+%\textit{what is the opposite edge of edge x in face y};
+%\textit{which other edges beside edge x make part of the face loop}.
+%These are all relevant queries for the implementation of internal shape operations.
+%
+%Shapes offer methods to update their visual representation.
+%Shapes also make available a set of geometry modifying operations --
+%these are not only exposed to the user via UI, but also used by templates, as further explained.
+%
+%In order to support undo operations, the memento design pattern \cite{despat} was implemented.
+%A shape memento stores the internal structure of a shape at one point in time
+%and is able to restore that shape's state later on, if so requested.
+%A shape has a stack of mementos so multiple undo steps can be executed.
+%
+%
+%
+%\section{Template}
+%
+%A template is a shape recipe with input parameters, defining a way of obtaining the desired shape
+%by applying a set of operations, with the passed parameters affecting the final geometry.
+%Templates are not directly exposed on the system UI. They're currently used solely to generate building ceilings,
+%but could be extended for other means.
+%
+%Templates make use of shape exposed operations to generate the final shape.
+%For instance, the creation of a 2-slanted ceiling starts from a regular box shape,
+%applying a sequence of 2 edge move operations.
+%\TODO{EXAMPLE 2-SLANTED CEILING}
+%Additional templates could be easily created to aid in the generation of repetitive structures
+%such as railings and staircases.
 
 
-\section{Supported Operations / Relevant Future Work}
+%\section{Building Style Definition}
+%
+%A building is a complex shape, composed of side walls, a ceiling and a set of attached shapes enriching the façades
+%with details such as doors, windows and balconies.
+%
+%A building style is a set of rules and parameters, written according to an XML grammar. 
+%The system comes with a set of styles, with the user choosing the desired style to apply to the building he's about to create.
+%The building style factory is able to parse the style definition, instantiating and distributing attached shapes to make up
+%the façades according to the chosen style.
+%\TODO{ADD XSD AND REFERENCE IT}
 
-This system has the goal of offering an easy yet reasonably powerful interface for modeling shapes.
-The shape's internal structure was planned so both face and edge-based operations could be performed.
-Every operation takes the triggering element (edge or face) as input parameter.
-Most operations require additional information, obtained by extracting the user's stroke direction and length.
-This interaction model keeps the number of stroke steps minimal while offering valid functionality for each operation.
-
-
-\subsection{Object Operations}
-
-Available object operations are \textbf{translation}, \textbf{rotation}, \textbf{scale} and \textbf{clone}.
-The \textbf{translation} operation accepts a delta vector, applying it in real-time on one of the 5 directions:
-normal and the 4 surrounding edge directions.
-\textbf{Rotation} and \textbf{scale} operations take only the stroke length --
-scale transforms all 3 axes proportionally;
-rotation can take the triggered face's normal as axis of rotation or can default to the YY axis for simplification,
-since most urban changing operations make use of this rotation.
-An additional object operation is \textbf{cloning}. The clone operation works like a regular translation,
-leaving behind a copy of the original shape.
-Since it uses the face normal and face-bounding edges' directions, the cloning operation allows efficient generation
-of building blocks and repetitive structures.
+%\section{Supported Operations / Relevant Future Work}
+%
+%This system has the goal of offering an easy yet reasonably powerful interface for modeling shapes.
+%The shape's internal structure was planned so both face and edge-based operations could be performed.
+%Every operation takes the triggering element (edge or face) as input parameter.
+%Most operations require additional information, obtained by extracting the user's stroke direction and length.
+%This interaction model keeps the number of stroke steps minimal while offering valid functionality for each operation.
 
 
-\subsection{Face Operations}
+%\subsection{Object Operations}
+%
+%Available object operations are \textbf{translation}, \textbf{rotation}, \textbf{scale} and \textbf{clone}.
+%The \textbf{translation} operation accepts a delta vector, applying it in real-time on one of the 5 directions:
+%normal and the 4 surrounding edge directions.
+%\textbf{Rotation} and \textbf{scale} operations take only the stroke length --
+%scale transforms all 3 axes proportionally;
+%rotation can take the triggered face's normal as axis of rotation or can default to the YY axis for simplification,
+%since most urban changing operations make use of this rotation.
+%An additional object operation is \textbf{cloning}. The clone operation works like a regular translation,
+%leaving behind a copy of the original shape.
+%Since it uses the face normal and face-bounding edges' directions, the cloning operation allows efficient generation
+%of building blocks and repetitive structures.
+%
+%
+%\subsection{Face Operations}
+%
+%The \textbf{move} operation uses the same directions as translation, changing the position of the face vertices.
+%\textbf{Move neighbors} identifies neighboring faces having a smaller angle with the selected face than a defined threshold,
+%applying a move operation to the set of affected faces.
+%\textbf{Extrude} generates a new face for every face's edge and offers only the normal direction for moving the face outwards/inwards.
+%\textbf{Bevel} scales the face vertices, preserving inner angles.
+%The \textbf{beveled extrude} operation exists solely for convenience, generating a set of faces and applying an immediate bevel operation
+%to provide a simple way of creating relief details on faces for chimneys or windows.
+%
+%
+%\subsection{Edge Operations}
+%
+%Edges can be \textbf{moved}, with the offered directions being the edge normal and the opposite edges along the neighboring faces.
+%\TODO{EDGE DIRS}.
+%
+%The \textbf{split along face loop} operation allows increasing the detail of a shape by cutting new faces along the center of the
+%implied edges.
+%\TODO{SPLIT}
+%
+%
+%\subsection{Possible Additions}
+%
+%The set of given operations offers a competent tool set for modeling simple shapes.
+%During tests users have found several creative ways of modeling the requested shapes.
+%Even so, multi-selection operations would be a nice addition to the tool set.
+%In early prototypes of the system the closed lasso stroke was used to select multiple objects, which proved problematic
+%since users inadvertently selected too many objects.
+%Furthermore, using multi-selection for shape operations limited the direction seeking algorithms described above,
+%which are key to the proposed simplified interface.
 
-The \textbf{move} operation uses the same directions as translation, changing the position of the face vertices.
-\textbf{Move neighbors} identifies neighboring faces having a smaller angle with the selected face than a defined threshold,
-applying a move operation to the set of affected faces.
-\textbf{Extrude} generates a new face for every face's edge and offers only the normal direction for moving the face outwards/inwards.
-\textbf{Bevel} scales the face vertices, preserving inner angles.
-The \textbf{beveled extrude} operation exists solely for convenience, generating a set of faces and applying an immediate bevel operation
-to provide a simple way of creating relief details on faces for chimneys or windows.
 
-
-\subsection{Edge Operations}
-
-Edges can be \textbf{moved}, with the offered directions being the edge normal and the opposite edges along the neighboring faces.
-\TODO{EDGE DIRS}.
-
-The \textbf{split along face loop} operation allows increasing the detail of a shape by cutting new faces along the center of the
-implied edges.
-\TODO{SPLIT}
-
-
-\subsection{Possible Additions}
-
-The set of given operations offers a competent tool set for modeling simple shapes.
-During tests users have found several creative ways of modeling the requested shapes.
-Even so, multi-selection operations would be a nice addition to the tool set.
-In early prototypes of the system the closed lasso stroke was used to select multiple objects, which proved problematic
-since users inadvertently selected too many objects.
-Furthermore, using multi-selection for shape operations limited the direction seeking algorithms described above,
-which are key to the proposed simplified interface.
-
-
-\section{Main Menu vs Contextual Menu}
-
-Every action which generates new shapes is accessible from the main menu.
-Actions which change existing contents are available from context menus for face and edge.
-This segmentation rule was enforced so users know where to search when in need of an untried operation.
+%\section{Main Menu vs Contextual Menu}
+%
+%Every action which generates new shapes is accessible from the main menu.
+%Actions which change existing contents are available from context menus for face and edge.
+%This segmentation rule was enforced so users know where to search when in need of an untried operation.
 
 
 \section{Navigation Modes - why, relevant future work}
 
-Good navigation modes are paramount for the success of any 3D based system.
-The nature of this system, with the availability of a large screen,
-stroke-controlled input and the aim of allowing unexperienced users to take control
-of the system quickly, made this requirement even more relevant.
-
-According both to the task at hand and personal taste,
-several alternative modes may be useful to users.
-For tasks of simulating human movement, a \textbf{first person} based mode is expected.
-When searching for scenario features and moving big distances, a \textbf{top-down view} manipulation mode can be of aid.
-In occasions when an object is clearly the center of attention of the user,
-such as shape exploration and modeling operations, a \textbf{view centered on the object} mode is helpful.
-For giving an overview of the scenario and showcasing blocks of buildings, a \textbf{flight movement} mode might be interesting.
-
-The first 3 of the 4 mentioned modes were implemented with regular menu/gate widgets.
-The flight mode is multimodal, relying on arm tracking and speech controlled input.
+%Good navigation modes are paramount for the success of any 3D based system.
+%The nature of this system, with the availability of a large screen,
+%stroke-controlled input and the aim of allowing unexperienced users to take control
+%of the system quickly, made this requirement even more relevant.
+%
+%According both to the task at hand and personal taste,
+%several alternative modes may be useful to users.
+%For tasks of simulating human movement, a \textbf{first person} based mode is expected.
+%When searching for scenario features and moving big distances, a \textbf{top-down view} manipulation mode can be of aid.
+%In occasions when an object is clearly the center of attention of the user,
+%such as shape exploration and modeling operations, a \textbf{view centered on the object} mode is helpful.
+%For giving an overview of the scenario and showcasing blocks of buildings, a \textbf{flight movement} mode might be interesting.
+%
+%The first 3 of the 4 mentioned modes were implemented with regular menu/gate widgets.
+%The flight mode is multimodal, relying on arm tracking and speech controlled input.
 
 
 \subsection{1st person}
 
-Similar to most first person shooters, offers translations and rotations around the current point of view (POV).
-
-A helpful addition to this mode would be collision detection, to keep users from crossing walls and the ground.
-This could also help users moving on ramps and staircases.
-The application of SmartCam \cite{SMARTCAM}, commented on section \ref{SMARTCAM-LABEL} would also enhance this mode,
-at least the physics spring model simulation part.
+%Similar to most first person shooters, offers translations and rotations around the current point of view (POV).
+%
+%A helpful addition to this mode would be collision detection, to keep users from crossing walls and the ground.
+%This could also help users moving on ramps and staircases.
+%The application of SmartCam \cite{SMARTCAM}, commented on section \ref{SMARTCAM-LABEL} would also enhance this mode,
+%at least the physics spring model simulation part.
 
 
 \subsection{Compass}
 
-A birds-eye-view of the POV is helpful in many ways. It allows the user to better perceive his positioning in the scenario.
-The superimposed cardinal compass points are useful, particularly for people with a more technical background.
-The dragging gesture is increasingly more popular, and this mode uses it extensively:
-dragging the center view translates the user along the ground plane;
-dragging the outer ring rotates the POV, a concept easily grasped by test users.
+%A birds-eye-view of the POV is helpful in many ways. It allows the user to better perceive his positioning in the scenario.
+%The superimposed cardinal compass points are useful, particularly for people with a more technical background.
+%The dragging gesture is increasingly more popular, and this mode uses it extensively:
+%dragging the center view translates the user along the ground plane;
+%dragging the outer ring rotates the POV, a concept easily grasped by test users.
 
-To enhance the reach of the translation movement, the Speed-dependent zooming \cite{SPEEDZOOM},
-commented on section \ref{SPEEDZOOM-LABEL} could be applied,
-translating drag velocity into exponential translation changes.
+%To enhance the reach of the translation movement, the Speed-dependent zooming \cite{SPEEDZOOM},
+%commented on section \ref{SPEEDZOOM-LABEL} could be applied,
+%translating drag velocity into exponential translation changes.
 
 
 \subsection{Examine}
 
-The examine mode is based on moving along the space close to the center of attention.
-The user is offered a gate so a new center of attention can be set.
-Once this is done, a spherical widget allows performing rotations around the object by dragging the sphere.
-Two additional gates allow zooming in and out to reveal more or less detail, respectively.
+%The examine mode is based on moving along the space close to the center of attention.
+%The user is offered a gate so a new center of attention can be set.
+%Once this is done, a spherical widget allows performing rotations around the object by dragging the sphere.
+%Two additional gates allow zooming in and out to reveal more or less detail, respectively.
+%
+%For the users who got the grip of this mode, it has revealed itself a very efficient way
+%for both looking around and repositioning oneself.
+%Only laser-tracking problems inhibited a better use of repeatedly re-centering operation for movement.
 
-For the users who got the grip of this mode, it has revealed itself a very efficient way for both looking around and repositioning oneself.
-Only laser-tracking problems inhibited a better use of repeatedly re-centering operation for movement.
 
-
-\subsection{Flight}
-
-Given the available space in front of the large screen display and the existence of tracking hardware on the test lab,
-an experimental mode was implemented, integrating the input extracted from tracking users arm movements and speech commands.
-The idea is of offering a hands-on mode for flying.
-The arm movements control both flight speed, rotation and altitude shift.
-The voice commands are only required for controlling the application/inhibition of this mode.
+%\subsection{Flight}
+%
+%Given the available space in front of the large screen display and the existence of tracking hardware on the test lab,
+%an experimental mode was implemented, integrating the input extracted from tracking users arm movements and speech commands.
+%The idea is of offering a hands-on mode for flying.
+%The arm movements control both flight speed, rotation and altitude shift.
+%The voice commands are only required for controlling the application/inhibition of this mode.
 ...
 
 
-\subsection{Other navigational modes}
-
-In addition to the navigation modes made available in the system, the following modes might be of use.
-
-The multimodal ``go-to-here'' \TODO{REF}, with a combination of laser pointing to the destination
-and speech command to trigger the movement. This mode was requested on the final tests.
-
-The stroke-defined path, as suggested on the Path Drawing \cite{PATH3D}, discussed on section \ref{PATH3D-LABEL}.
-It would be useful to experiment this mode, but the requirements for its application were unmatchable:
-Igarashi's system uses a third person view with explicit avatar rendering. Moreover,
-Urban Sketcher stroke-based interface makes it hard to map a movement path stroke
--- this would require multimodal integration with a ``move-like-this'' speech command.
-
-During the navigation tests at Glasgow, users suggested the addition of a list of recorded locations.
-The idea is for the user to get to an unrecorded and relevant point of view, such as a good façade angle,
-and trigger the record location action.
-Recorded locations might be tagged by either speech recognition (example: ``record location \textbf{stadium front} now'')
-or scribble text recognition. Later on resuming to the saved location would be a matter of invoking the related metadata.
+%\subsection{Other navigational modes}
+%
+%In addition to the navigation modes made available in the system, the following modes might be of use.
+%
+%The multimodal ``go-to-here'' \TODO{REF}, with a combination of laser pointing to the destination
+%and speech command to trigger the movement. This mode was requested on the final tests.
+%
+%The stroke-defined path, as suggested on the Path Drawing \cite{PATH3D}, discussed on section \ref{PATH3D-LABEL}.
+%It would be useful to experiment this mode, but the requirements for its application were unmatchable:
+%Igarashi's system uses a third person view with explicit avatar rendering. Moreover,
+%Urban Sketcher stroke-based interface makes it hard to map a movement path stroke
+%-- this would require multimodal integration with a ``move-like-this'' speech command.
+%
+%During the navigation tests at Glasgow, users suggested the addition of a list of recorded locations.
+%The idea is for the user to get to an unrecorded and relevant point of view, such as a good façade angle,
+%and trigger the record location action.
+%Recorded locations might be tagged by either speech recognition (example: ``record location \textbf{stadium front} now'')
+%or scribble text recognition. Later on resuming to the saved location would be a matter of invoking the related metadata.
 
 
 \section{Evaluation - intro, objectives, improve, ccu}
@@ -211,27 +211,27 @@ thus user interface methodologies and tests were applied.TODO
 
 Objectives
 
-Most of the Urban Sketcher features were tested by handing out a set of vaguely
-defined tasks for users to perform.
-
-The largest possible subset of tasks was also performed on a well established software product.
-For this matter, Google SketchUp was chosen. GSU also denotes the aim of offering
-a simple yet powerful interface. Even so, it is a desktop-based program and heavily relies on WIMP
-concepts and mouse input.
-Most tasks were successfully reproduced with Google SketchUp, with only the building creation task
-absent for lack of supporting tools in the product.
-
-Tasks performed on both systems were expected to show discrepancies in both completion time
-and number of errors.
-Most users are proefficient working with the mouse.
-The \textit{ad-hoc} laser tracking system used in the test:
-didn't map the whole screen;
-had calibration issues, particularly near the edges;
-had a low sampling rate (about 20 Hz).
-
-The point is to try to obtain reasonable times and expect US to overcome
-many problems by the convenient grouping of actions in both the main and contextual menus,
-along with the alternate method for applying operations on shapes and navigating the scene.
+%Most of the Urban Sketcher features were tested by handing out a set of vaguely
+%defined tasks for users to perform.
+%
+%The largest possible subset of tasks was also performed on a well established software product.
+%For this matter, Google SketchUp was chosen. GSU also denotes the aim of offering
+%a simple yet powerful interface. Even so, it is a desktop-based program and heavily relies on WIMP
+%concepts and mouse input.
+%Most tasks were successfully reproduced with Google SketchUp, with only the building creation task
+%absent for lack of supporting tools in the product.
+%
+%Tasks performed on both systems were expected to show discrepancies in both completion time
+%and number of errors.
+%Most users are proefficient working with the mouse.
+%The \textit{ad-hoc} laser tracking system used in the test:
+%didn't map the whole screen;
+%had calibration issues, particularly near the edges;
+%had a low sampling rate (about 20 Hz).
+%
+%The point is to try to obtain reasonable times and expect US to overcome
+%many problems by the convenient grouping of actions in both the main and contextual menus,
+%along with the alternate method for applying operations on shapes and navigating the scene.
 TODO
 
 
@@ -249,46 +249,46 @@ some users dollied around objects into bad POVs.
 
 \section{Design}
 
-This section introduces the concepts used extensively throughout the system.
-It also describes the modules which make part of the system and each module responsibility.
-
-Urban Sketcher is composed of a set of modules, most of them implemented as singleton classes
-for managing subsets of the functionality.
-
-A set of input adapters get data from several media -- laser strokes, mouse pointer events,
-speech commands and motion tracked markers' coordinates.
-These adapters generate commands which are consumed by higher level managers.
-
-\textbf{Strokes} are managed and at low level, with key stroke gestures triggering commands.
-A shape recognition engine named \textbf{Cali}\TODO{REF!} was integrated to provide shape detection on 2 cases:
-triangle, to invoke the main menu and
-rectangle, to identify blueprint sketches over construction planes.
-Cali is fed polyline information and returns the recognized shape family and its parameters, if found.
-The \textbf{2D Widget Manager} takes care of the visible interface, handling gate and menu events.
-
-The \textbf{Navigation Manager} is responsible for keeping positioning information up to date.
-It transforms the positioning state in response to actions issued by the supported navigation modes.
-
-The \textbf{Shape Manager} holds the existing shape references and provides means for them to be selected and manipulated.
-It caches loaded shapes to enhance to performance in the generation of buildings, where attached geometry is bound
-to repeat.
-
-The \textbf{Building Style Factory} loads and parses style definitions into façade-generating algorithms.
-Once fed with blueprint information, desired style and height, this component is able to instantiate
-a building and its details.
-
-The \textbf{2D Gate/Menu Interface} is a set of widgets and their logic, affected by strokes and other media-generated commands
-such as speech and tracking events.
-The widgets make use of the Model-View-Controller design pattern, with the controller ultimately making use of
-higher level managers functionalities.
-These widgets are oftentimes created by composition of simpler, general purpose widgets.
+%This section introduces the concepts used extensively throughout the system.
+%It also describes the modules which make part of the system and each module responsibility.
+%
+%Urban Sketcher is composed of a set of modules, most of them implemented as singleton classes
+%for managing subsets of the functionality.
+%
+%A set of input adapters get data from several media -- laser strokes, mouse pointer events,
+%speech commands and motion tracked markers' coordinates.
+%These adapters generate commands which are consumed by higher level managers.
+%
+%\textbf{Strokes} are managed and at low level, with key stroke gestures triggering commands.
+%A shape recognition engine named \textbf{Cali}\TODO{REF!} was integrated to provide shape detection on 2 cases:
+%triangle, to invoke the main menu and
+%rectangle, to identify blueprint sketches over construction planes.
+%Cali is fed polyline information and returns the recognized shape family and its parameters, if found.
+%The \textbf{2D Widget Manager} takes care of the visible interface, handling gate and menu events.
+%
+%The \textbf{Navigation Manager} is responsible for keeping positioning information up to date.
+%It transforms the positioning state in response to actions issued by the supported navigation modes.
+%
+%The \textbf{Shape Manager} holds the existing shape references and provides means for them to be selected and manipulated.
+%It caches loaded shapes to enhance to performance in the generation of buildings, where attached geometry is bound
+%to repeat.
+%
+%The \textbf{Building Style Factory} loads and parses style definitions into façade-generating algorithms.
+%Once fed with blueprint information, desired style and height, this component is able to instantiate
+%a building and its details.
+%
+%The \textbf{2D Gate/Menu Interface} is a set of widgets and their logic, affected by strokes and other media-generated commands
+%such as speech and tracking events.
+%The widgets make use of the Model-View-Controller design pattern, with the controller ultimately making use of
+%higher level managers functionalities.
+%These widgets are oftentimes created by composition of simpler, general purpose widgets.
 
 
 \section{Implementation}
 
-The execution of the projected features described on the previous section is the focus of Implementation.
-Functionalities are grouped by purpose and its details explained and discussed.
-To close this section, an alternative work flow is proposed to take advantage of the system features.
+%The execution of the projected features described on the previous section is the focus of Implementation.
+%Functionalities are grouped by purpose and its details explained and discussed.
+%To close this section, an alternative work flow is proposed to take advantage of the system features.
 
 
 Evaluation
@@ -307,7 +307,3 @@ rever conclusão
 
 
 \section{Related Work - why these, summary table, what has been learned}
-
-adicionar instant architecture
-
-ver outros artigos não mencionados

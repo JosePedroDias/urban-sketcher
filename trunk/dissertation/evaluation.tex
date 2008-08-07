@@ -10,7 +10,8 @@ and building creation module were developed later on and were focus of the final
 
 % IMPROVE INTRO
 Early stages of development of Urban Sketcher were supported by the European Union's
-IMPROVE consortium \cite{SITE-IMPROVE}. IMPROVE joined universities, hardware manufacturers
+IMPROVE consortium \cite{SITE-IMPROVE}.
+IMPROVE joined universities, hardware manufacturers
 and design studios in the areas of architecture and car design.
 Early prototypes of the interface and most of the navigation and reviewing functionalities
 were developed during the period of the program. The interface, then called ImmiView,
@@ -22,6 +23,10 @@ available today on Urban Sketcher, as with the series of User Tests which took p
 Glasgow Scotland and Lisbon Portugal.
 These tests served to get feedback on interface design and the
 navigation modes available at the time: first person and compass modes and the multimodal flight mode.
+
+Several IMPROVE related publications were written, such as  \cite{IMPROVE1} \cite{IMPROVE2} \cite{IMPROVE3}.
+A more 
+\TODO{MORE IMPROVE. MAYBE INT TESTS SHOULD GO TO IMPLEMENTATION?}
 
 
 \subsection{Test Environments}
@@ -71,6 +76,25 @@ motion tracking cameras.
 
 \section{Final Tests}
 
+\subsection{Objectives}
+
+Most of the Urban Sketcher features were tested by handing out a set of vaguely
+defined tasks for users to perform.
+
+The largest possible subset of tasks was also performed on a well established software product.
+For this matter, Google SketchUp was chosen. GSU also denotes the aim of offering
+a simple yet powerful interface. Even so, it is a desktop-based program and heavily relies on WIMP
+concepts and mouse input.
+Most tasks were successfully reproduced with Google SketchUp, with only the building creation task
+absent for lack of supporting tools in the product.
+
+The point is to try to obtain reasonable times and expect US to overcome
+many problems by the convenient grouping of actions in both the main and contextual menus,
+along with the alternate method for applying operations on shapes and navigating the scene.
+
+
+\subsection{Conditions}
+
 The final tests were conducted several months later, with the system fully centered on the Urban Sketcher
 objectives and features. The most notorious features were tested in a series of small tasks: 2 for navigation,
 2 for shape modeling and one for building manipulation. To have reference data from which to compare to,
@@ -104,7 +128,7 @@ and 5 open-ended questions, the former to obtain feedback regarding the Urban Sk
 focused on comparing the two systems.
 
 
-\TODO{MULTIMEDIA WALL DIAGRAM, TRACKED SCREEN AREA}
+\TODO{MULTIMEDIA WALL DIAGRAM, GLASGOW WALL DIAGRAM?}
 
 \subsection{Results}
 
@@ -127,6 +151,15 @@ Chart \ref{graph-comparison} depicts average times for completing the tasks on b
 	\caption{Box and whiskers charts comparing task completion times on both systems}
 	\label{graph-comparison}
 \end{figure}
+
+
+Tasks performed on both systems were expected to show discrepancies in both completion time
+and number of errors.
+Most users are proefficient working with the mouse.
+The \textit{ad-hoc} laser tracking system used in the test:
+didn't map the whole screen;
+had calibration issues, particularly near the edges;
+had a low sampling rate (about 20 Hz).
 
 
 The questionnaires feature a total of 18 close-ended scaled questions. These had to be graded from 1 to 6, with
