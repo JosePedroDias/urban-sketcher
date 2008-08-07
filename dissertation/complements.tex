@@ -201,15 +201,113 @@ Recorded locations might be tagged by either speech recognition (example: ``reco
 or scribble text recognition. Later on resuming to the saved location would be a matter of invoking the related metadata.
 
 
---------------EVALUATION INTRO, OBJECTIVES, IMPROVE, CCU CENTERED
+\section{Evaluation - intro, objectives, improve, ccu}
+
+The system was periodically tested throughout its design and implementation stages.
+Emphasis was put in obtaining a user-centered interface,
+thus user interface methodologies and tests were applied.TODO
+
+\TODO{improve}
+
+Objectives
+
+Most of the Urban Sketcher features were tested by handing out a set of vaguely
+defined tasks for users to perform.
+
+The largest possible subset of tasks was also performed on a well established software product.
+For this matter, Google SketchUp was chosen. GSU also denotes the aim of offering
+a simple yet powerful interface. Even so, it is a desktop-based program and heavily relies on WIMP
+concepts and mouse input.
+Most tasks were successfully reproduced with Google SketchUp, with only the building creation task
+absent for lack of supporting tools in the product.
+
+Tasks performed on both systems were expected to show discrepancies in both completion time
+and number of errors.
+Most users are proefficient working with the mouse.
+The \textit{ad-hoc} laser tracking system used in the test:
+didn't map the whole screen;
+had calibration issues, particularly near the edges;
+had a low sampling rate (about 20 Hz).
+
+The point is to try to obtain reasonable times and expect US to overcome
+many problems by the convenient grouping of actions in both the main and contextual menus,
+along with the alternate method for applying operations on shapes and navigating the scene.
+TODO
+
+
+Evaluation comments
+
+The menu and gate interaction model proved both usable and satisfactory for the tested users.
+They benefited from having the interface logically grouped and many gained confidence
+while performing operations they'd never tried before and used to find intimidating, such as modeling shapes.
+
+Some navigation modes might gain from having a more tight ``safety net''.
+In order to keep users from being let down from a mode and avoiding it thereafter:
+some users crossed over walls/the ground;
+some users dollied around objects into bad POVs.
+
+
+\section{Design}
+
+This section introduces the concepts used extensively throughout the system.
+It also describes the modules which make part of the system and each module responsibility.
+
+Urban Sketcher is composed of a set of modules, most of them implemented as singleton classes
+for managing subsets of the functionality.
+
+A set of input adapters get data from several media -- laser strokes, mouse pointer events,
+speech commands and motion tracked markers' coordinates.
+These adapters generate commands which are consumed by higher level managers.
+
+\textbf{Strokes} are managed and at low level, with key stroke gestures triggering commands.
+A shape recognition engine named \textbf{Cali}\TODO{REF!} was integrated to provide shape detection on 2 cases:
+triangle, to invoke the main menu and
+rectangle, to identify blueprint sketches over construction planes.
+Cali is fed polyline information and returns the recognized shape family and its parameters, if found.
+The \textbf{2D Widget Manager} takes care of the visible interface, handling gate and menu events.
+
+The \textbf{Navigation Manager} is responsible for keeping positioning information up to date.
+It transforms the positioning state in response to actions issued by the supported navigation modes.
+
+The \textbf{Shape Manager} holds the existing shape references and provides means for them to be selected and manipulated.
+It caches loaded shapes to enhance to performance in the generation of buildings, where attached geometry is bound
+to repeat.
+
+The \textbf{Building Style Factory} loads and parses style definitions into façade-generating algorithms.
+Once fed with blueprint information, desired style and height, this component is able to instantiate
+a building and its details.
+
+The \textbf{2D Gate/Menu Interface} is a set of widgets and their logic, affected by strokes and other media-generated commands
+such as speech and tracking events.
+The widgets make use of the Model-View-Controller design pattern, with the controller ultimately making use of
+higher level managers functionalities.
+These widgets are oftentimes created by composition of simpler, general purpose widgets.
+
+
+\section{Implementation}
+
+The execution of the projected features described on the previous section is the focus of Implementation.
+Functionalities are grouped by purpose and its details explained and discussed.
+To close this section, an alternative work flow is proposed to take advantage of the system features.
+
+
+Evaluation
+2 diagramas:
+Lab - 2 cams tracking, 12 proj
+Glasgow - 4 cams tracking, 1 proj
+
+Justificar flight n ter sido testado no fim por falta de cams, tempo e mapeamento no GSU.
+
+Rever comentário Eval
+
+falar de median pra sample < 30, complementar \% com (a/b)
+
+rever conclusão
 
 
 
---------------RELATED WORK - WHY THESE AND STRUCTURE, WHAT HAS BEEN LEARNED
+\section{Related Work - why these, summary table, what has been learned}
 
+adicionar instant architecture
 
---------------DIAGRAMA DE BLOCOS, INTERACÇÃO ENTRE ELES, CALI
-
-
---------------VANTAGENS MENUS CONTEXTUAIS
-
+ver outros artigos não mencionados
