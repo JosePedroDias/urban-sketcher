@@ -1,11 +1,15 @@
 \chapter{Design}
 
-%\TODO{INTRO}
-
-The cornerstone concepts of the system and the engines which allow the system to perform are described below.
+This section describes the modules which make part of the system and each module's responsibility.
+It also introduces concepts used extensively throughout the system.
 
 
 \section{System Architecture}
+
+Urban Sketcher is composed of a set of modules, most of them implemented as singleton classes
+for managing subsets of the functionality. The interaction between system components is illustrated
+on Figure \ref{fig:block-diagram}.
+Implemented modules are shaded blue, while integrated modules are shaded green.
 
 \begin{figure}[!ht]
 		\centering
@@ -14,59 +18,71 @@ The cornerstone concepts of the system and the engines which allow the system to
 		\label{fig:block-diagram}
 \end{figure}
 
+A set of input adapters get data from several media -- laser strokes, mouse pointer events,
+speech commands and motion tracked markers' coordinates.
+These adapters generate commands which are consumed by higher level managers.
+
+\textbf{Strokes} are managed and at low level, with key stroke gestures triggering commands.
+A shape recognition engine named \textbf{Cali} \cite{CALI} was integrated to provide shape detection on 2 cases:
+triangle, to invoke the main menu and
+rectangle, to identify blueprint sketches over construction planes.
+Cali is fed polyline information and returns the recognized shape family and its parameters, if found.
+The \textbf{2D Widget Manager} takes care of the visible interface, handling gate and menu events.
+
+The \textbf{Navigation Manager} is responsible for keeping positioning information up to date.
+It transforms the positioning state in response to actions issued by the supported navigation modes.
+
+The \textbf{Shape Manager} holds the existing shape references and provides means for them to be selected and manipulated.
+It caches loaded shapes to enhance to performance in the generation of buildings, where attached geometry is bound
+to repeat.
+
+The \textbf{Building Style Factory} loads and parses style definitions into façade-generating algorithms.
+Once fed with blueprint information, desired style and height, this component is able to instantiate
+a building and its details.
+
+The \textbf{2D Gate/Menu Interface} is a set of widgets and their logic, affected by strokes.
+The widgets make use of the Model-View-Controller \cite{DESPAT} design pattern, with the controller ultimately making use of
+higher level managers functionalities.
+These widgets are oftentimes created by composition of simpler, general purpose widgets.
+
+Both shapes and 2D widgets know how to render themselves on OpenSG, so they both interact with it.
+\textbf{3D Scene Management} handles the representation of the virtual world and is controlled by both the Shape and Navigation
+managers.
+
+\section{Urban Sketcher Input/Output Communication}
+
 \begin{figure}[!ht]
 		\centering
 		\includegraphics[scale=0.4]{gfx/charts/external-block-diagram.png}
 		\caption{Urban Sketcher input/output Diagram}
-		\label{fig:block-diagram}
+		\label{fig:ext-block-diagram}
 \end{figure}
 
-%\TODO{REMOVE 'ricardo jota'; add mouse input; add broadcast and remove input arrow}
-
-Urban Sketcher is made of the following items\footnote{Blue items denote work done by the author.}:
-
-The \textbf{Navigation Manager} is
-		responsible for assembling navigation data from
-		both voice and tracking input, along with gate events which trigger navigation changes,
-		supporting several navigation modes;
-	
-The \textbf{Shape Modeling Manager} is
-		responsible for representing a 3D editable shapes
-		along with their geometry information and supporting a range of operations;
-	
-The \textbf{Building Style Factory} is
-		responsible for parsing building style definitions
-		and converting blueprints and building height into actual building instances;
-	
-The \textbf{2D Stroke-Based Interface} is 
-		a set of interface widgets and their controllers,
-		supporting option gates, ring menus and stroke-based operation handling.
-Urban Sketcher gets input from several media:
+Urban Sketcher gets input from several media (see Fig.\ref{fig:ext-block-diagram}):
 laser pointers, the server machine's mouse and optionally voice commands and tracking postures.
-The system can render real-time views to any number of slave machines.
+The system renders real-time views to any number of slave machines.
 An XML configuration allows parameterizing the range of affected machines and topology of the rendering slaves,
 so rendering solely on the server, to a large screen display or both is a matter of switching configurations.
 
+Both the speech command and tracking postures input listeners are fed by simple
+application of the available APIs from respectively Microsoft and STT.
+The laser input listener receives data from the laser tracking module, work developed by Ricardo Jota \cite{IMMIVIEW-EPCG}.
 
 \section{Stroke-Based Input Interface}
 
-This section details the concepts used in the creation of the interface for the system.
+This section details the concepts used for the implementation of the system user interface.
 
 \subsection{Strokes}
 
 A stroke is the result of continuous input from one laser pointer, from the time the laser
 light button is pressed until it is released. 
-
 By using the laser detection module, the system gets a stream of laser readings which
 come sequentially tagged, that is, the module identifies with reasonable success when different strokes
 occur simultaneously, returning both readings tagged with different stroke IDs.
 Even so, the module can't infer whether different strokes came from the same source laser pointer.
-
 This limitation sets an important assumption in our system -- one can not know whether 2 strokes came
 from the same user, therefore operations must take place during at most the stroke period.
-
-Strokes can also be emulated by using a mouse and pressing
-the button as if it were a laser pointer.
+Strokes can also be emulated by using a mouse and pressing the button as if it were a laser pointer.
 
 
 \subsection{Gates}
@@ -79,12 +95,11 @@ neither the system nor the user can accurately know where on the screen the lase
 In order for the user to see the laser projection on the screen he must be pressing the button.
 This system requires a different GUI solution.
 
-Based on prior research by \cite{CROSSY}, the gate concept was implemented with slight changes.
-
+Based on prior research on CrossY by Apitz and Guimbretière \cite{CROSSY04},
+the gate concept was implemented with slight changes.
 A gate is an imaginary two dimensional line on the screen, bound by two visible extremes.
 In order to activate it, one must draw a stroke which crosses the imaginary line, effectively crossing the gate
 (see Fig.\ref{fig:activation}).
-
 Gates can feature a text label or a suggestive image to symbolize the action they perform.
 It was decided not to mix both representations -- if the gate is illustrated, a tooltip can be invoked
 by approaching the gate's area of influence without crossing it, so the tooltip can be read and the action optionally avoided.
@@ -100,29 +115,31 @@ by approaching the gate's area of influence without crossing it, so the tooltip 
 
 \subsection{Menus}
 
-\TODO{REVIEW TEXT...}
-The menus of this system are ring-shaped, with the options (gates) spread along the ring.
+The menus of this system are ring-shaped, with its options spread along the ring in the form or gates.
 The menu's background ring is translucent so the main viewport remains visible and each background color
 depends on the functionality it offers.
 On the bottom-right area a curved label identifies the menu title.
 The top-right area features additional gates for the dismissal of the menu, moving it around and
 returning to the main menu if at a subsequent level (see Fig.\ref{fig:menu}).
 
+\begin{figure}[ht]
+	\centering
+		\includegraphics[scale=0.6]{gfx/menu.png}
+	\caption{Menu and its areas}
+	\label{fig:menu}
+\end{figure}
+
 A lot of effort has been put for menus to be usable. On cases where menus offered a large number of actions/options,
 those were clustered into modes to keep a conveniently small number of visible options.
 On such menus, a set of gates at the left side of the menu represent the available modes.
 Selecting a different mode is a matter of activating the respective illustrative gate.
 
-%Submenus are another way of clustering options. \TODO{...}
-
-
-\begin{figure}[ht]
-	\centering
-		\includegraphics[scale=0.75]{gfx/menu.png}
-	\caption{Menu and its areas}
-	\label{fig:menu}
-\end{figure}
-
+Additionally to splitting menu gates into modes, gates can be grouped by purpose.
+On shape manipulation menus, gates which share similar functionality are clustered into
+general purpose action gates. As an example: move, move neighbors and extrude operations are clustered,
+as are bevel and beveled extrude. This solution favors Hick's Law as stated by Landauer and Nachbar \cite{MENU-TREES},
+since it shows a smaller set of easily distinguishable options, with the user setting the exact action
+he intends to reach from a smaller, filtered set of gates.
 
 
 
@@ -155,6 +172,12 @@ effectively crossing the edge to select it (see Fig.\ref{fig:face-edge-selection
 \end{figure}
 
 
+\subsection{Main Menu vs Contextual Menu}
+
+Every action which generates new shapes is accessible from the main menu.
+Actions which change existing contents are available from context menus for face and edge.
+This segmentation rule was enforced so users know where to search when in need of an untried operation.
+
 
 \section{Multimodal Input Interface}
 
@@ -166,7 +189,7 @@ Speech commands are obtained from a wireless headset attached to the user's ear 
 
 \begin{figure}[ht]
 	\centering
-		\includegraphics[scale=1.3]{gfx/markers2.png}
+		\includegraphics[scale=1.15]{gfx/markers2.png}
 	\caption{user with reflective markers and wireless headset}
 	\label{fig:markers2}
 \end{figure}
@@ -174,33 +197,13 @@ Speech commands are obtained from a wireless headset attached to the user's ear 
 
 
 \subsection{Arm Posing Flight Mode}
+\label{FLIGHT-DESIGN-LABEL}
 
-The flight mode is an alternative navigation mode. Since it affects the point of view, this task can't be performed by
-several people simultaneously, therefore unlike most of the system this navigation mode has global states
--- the user might be either stationary of flying (see Fig.\ref{fig:flight}).
-
-The user starts interacting by having his arms extended toward the screen.
-In order to begin flying the command ``Begin flying'' must be given.
-To stop at any time one only needs to say ``Stop flying''
-\footnote{Although semantically inconsistent, the words begin and stop were used after performing speech recognition
-tests with both start/stop, begin/end and begin/stop, concluding that this combination had the better recognition ratio.}.
-
-Controlling flight speed works by measuring the distance between hands -- the closer they are to each other the faster
-the flight speed is. If the arms do a wide enough angle between them the flight comes to an halt.
-Changing the flight orientation relatively to the ground is achieved by setting the arms angle with the ground at opposing directions,
-with a bigger difference between these angles generating a faster rotation movement. If the user wants to turn right, for instance,
-he has to raise the left arm and lower the right one.
-
-To change flight altitude both arms must be oriented in the same direction relatively to the ground plane
--- either both raised or lowered. Again, the higher the angle is from the original forward pose position
-the bigger the flight altitude shift is.
-
-\begin{figure}[ht]
-	\centering
-		\includegraphics[scale=0.3]{gfx/flight.png}
-	\caption{Flight mode: controlling speed and direction}
-	\label{fig:flight}
-\end{figure}
+Given the available space in front of the large screen display and the existence of tracking hardware on the test lab,
+an experimental mode was implemented, integrating the input extracted from tracking users arm movements and speech commands.
+The idea is of offering a hands-on mode for flying.
+The arm movements control both flight speed, rotation and altitude shift.
+The voice commands are only required for controlling the application/inhibition of this mode.
 
 
 
