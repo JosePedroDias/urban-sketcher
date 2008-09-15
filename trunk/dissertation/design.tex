@@ -1,8 +1,31 @@
 \chapter{Design}
 
-This section describes the modules which make part of the system and each module's responsibility.
-It also introduces concepts used extensively throughout the system.
+This section describes the proposed solution, the various modules which take part in the system and each module's responsibility.
+It also introduces concepts used extensively throughout the solution.
 
+
+\section{Proposed Solution}
+
+The proposed solution is Urban Sketcher,
+a system capable of controlling a large screen display,
+offering conventional laser pointers for users to be able to draw on the screen,
+with multi-user cooperative control (see Fig.\ref{fig:screen}).
+To meet these goals,
+a novel user interface is introduced, supporting multi-user laser interaction,
+free invocation and dismissal of menus and purpose-organized options for easy
+learning and usage of the interface.
+The interface is based on gates and circular menus,
+with a set of constraints driving the need for new ways of executing actions such as
+creating and editing shapes and buildings, navigating and note taking.
+Common actions are to be performed during the course of stroke drawing, making
+the system stroke-based.
+
+\begin{figure}[!ht]
+		\centering
+		\includegraphics[scale=0.6]{gfx/screen.png}
+		\caption{Urban Sketcher interaction scenario}
+		\label{fig:screen}
+\end{figure}
 
 \section{System Architecture}
 
@@ -33,12 +56,13 @@ The \textbf{Navigation Manager} is responsible for keeping positioning informati
 It transforms the positioning state in response to actions issued by the supported navigation modes.
 
 The \textbf{Shape Manager} holds the existing shape references and provides means for them to be selected and manipulated.
-It caches loaded shapes to enhance to performance in the generation of buildings, where attached geometry is bound
+It caches loaded shapes to enhance performance in the generation of buildings, where attached geometry is bound
 to repeat.
 
 The \textbf{Building Style Factory} loads and parses style definitions into façade-generating algorithms.
 Once fed with blueprint information, desired style and height, this component is able to instantiate
-a building and its details.
+a building and its details. Building details are attached shapes such as doors and windows, which makes the Building
+Style Factory a consumer of Shape Manager.
 
 The \textbf{2D Gate/Menu Interface} is a set of widgets and their logic, affected by strokes.
 The widgets make use of the Model-View-Controller \cite{DESPAT} design pattern, with the controller ultimately making use of
@@ -66,7 +90,14 @@ so rendering solely on the server, to a large screen display or both is a matter
 
 Both the speech command and tracking postures input listeners are fed by simple
 application of the available APIs from respectively Microsoft and STT.
-The laser input listener receives data from the laser tracking module, work developed by Ricardo Jota \cite{IMMIVIEW-EPCG}.
+The laser input listener receives data from the laser tracking module.
+The laser tracking module obtains images from cameras mounted behind the screen,
+with their lenses filtered for receiving infrared wavelengths, effectively isolating
+the laser projections on the translucent screen surface. The contribution of all
+laser projections sampled by the cameras are merged into screen space.
+By using a Kalman Filter on the sampled positions, different strokes can be detected
+simultaneously.
+Development of the laser tracking module is work done by Ricardo Jota \cite{IMMIVIEW-EPCG}.
 
 \section{Stroke-Based Input Interface}
 

@@ -16,13 +16,14 @@ to interact with complex representations of urban scenarios.
 Systems capable of editing 3-dimensional content
 tend to be overly complex and make use of concepts
 focused on mouse and keyboard interaction.
-Fields so disparate as architecture and the entertainment industry
-urge to have ways to display and allow multi-user interaction with large screens.
+There's a demand for systems capable of offering 3D scenes rendering
+and supporting multi-user interaction on large screens on fields
+so disparate as architecture and the entertainment industry.
 
 
 % difficulty
 
-Developing an application for such purposes requires handling several aspects
+Developing an application for such purposes requires dealing with several aspects
 -- the large scale rendering of the scenario,
 giving people means to interact with the screen,
 allowing people to interact at the same time and
@@ -35,10 +36,9 @@ A different input device must be used, one being both portable and light.
 The concurrent input of several users must be handled so that each user can
 take the most from the large screen area.
 
-As discussed on the following section, this system's interface was set
-for large screen displays and laser pointers used as the main source of user input.
-By having chosen laser pointers for user input, new issues arise.
-%\TODO{REFERENCE}
+As will be discussed on the following section, this system's interface was set
+for large screen displays and laser pointers chosen as the main source of user input.
+These decisions raise some issues.
 A laser pointer can't be tracked while the light is not turned on,
 so any clicking behaviors are hard to mimic, even because users can't be 
 precise while unable to view the laser pointer's projection on the screen.
@@ -53,27 +53,27 @@ purpose of supporting the straightforward creation, navigation and reviewing of 
 % detail - common architecture creation workflow
 
 The current most common work flow process for defining the location and overall shape
-of a new building is a process composed up of several discrete steps.
-First the architect draws rough sketches of the desired building.
-These are highly subjective and clients have a hard time in their interpretation and validation.
-The architect proceeds on studying the best location and orientation for the building.
-This step used to be performed based on 2D maps and on-site inspection.
-Once the location and overall shape are defined, a rigorous project is drawn using
+of a new building is a process comprised of several discrete steps.
+The architect starts by drawing rough sketches of the desired building.
+These are highly subjective, with clients having a hard time in their interpretation and validation.
+The architect then proceeds on studying the best location and orientation for the building.
+This step used to be performed by observing 2D maps and on-site examination.
+Once the location and overall building shape are defined, a rigorous project is drawn using
 Computer Aided Design (CAD) software such as Autodesk Autocad\cite{SITE-AUTOCAD}.
-This design is performed from the ground up.
-Then if architects want to showcase the building appearance they often rely of rendered images
-and pre-rendered animations.
+This design is performed from scratch.
+If architects are required to subsequently showcase the building appearance,
+they rely of pre-rendered images and animations.
 
 
 % high-level description of solution
 
 The proposed solution defines a system which allows architects to draft designs
-directly on the 3D scenery and allowing clients to better perceive the project at early stages,
-giving them navigation and reviewing capabilities.
+directly on the 3D scene, allowing clients to better perceive the project at early stages
+and empowering them with navigation and reviewing capabilities.
 To accurately merge new buildings on the scenery one needs to obtain
 satellite imagery and height maps of the landscape, a feasible task at present times.
-Additional benefits could come later on by sharing the landscape information with the CAD
-software and eventually exporting the draft buildings for reference.
+Additional benefits could come later on by sharing the collected landscape information
+with the CAD software and eventually exporting the draft buildings for reference.
 Another benefit comes from getting a showcase platform for the project set up for free.
 Instead of, or additionally to the set of pre-rendered images and short video clips,
 clients now have at their disposal a real-time navigation platform which can be used
@@ -82,7 +82,7 @@ as a selling ad.
 
 % novelty
 
-This project is takes advantage of large screen displays,
+This project takes advantage of large screen displays,
 made possible by the devised interface based on gate activation and ring menus,
 with users applying discrete strokes using laser pointers.
 The navigation and shape creation functionalities are focused on simplicity and a set

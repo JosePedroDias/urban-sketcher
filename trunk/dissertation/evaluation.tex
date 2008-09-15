@@ -95,7 +95,7 @@ along with the alternate method for applying operations on shapes and navigating
 
 \subsection{Conditions}
 
-The final tests were conducted several months later, with the system fully centered on the Urban Sketcher
+The final tests were conducted months later the prior ones, with the system fully centered on Urban Sketcher
 objectives and features. The most notorious features were tested in a series of small tasks: 2 for navigation,
 2 for shape modeling and one for building manipulation. To have reference data from which to compare to,
 one of the analyzed systems on the Related Work section, Google SketchUp, was also used on the test.
@@ -112,18 +112,21 @@ and an \emph{ad hoc} laser tracking system, with a set of novel interface concep
 The final tests took place on the Instituto Superior Técnico Multimedia Lab between the 28th of June and 1st of July 2008.
 The tests were performed with the same environment as the Lisbon IMPROVE test described above -- a large display screen
 of 4 by 3 projectors on a translucent screen. The laser tracking system was calibrated to get only laser information
-from about 1/3 of the screen area. During the 4 days period 16 users performed a series of tests described below.
+from about 1/3 of the screen area. During the 4 days period they took place, 16 users performed a series of tests described below.
 The distributed documents for task performance and questionnaires can be found on appendix \ref{finalTests}.
-94\% of the users had college degrees, 31\% were women and the average user age was 37 years old.
+Out of the user sample,
+94\% of the users had college degrees,
+31\% were women and the average user age was 37 years old.
+This is a population with high levels of education. On the other hand the average age is of adult users,
+not prone to new interface metaphors and with less motor skills.
 
 User tests were performed individually and took between 60 and 90 minutes.
-First a preliminary questionnaire composed of 5 close-ended scaled questions was handed and filled, to assert the past experience
-of users on relevant topics.
+First a preliminary questionnaire composed of 5 close-ended scaled questions was handed and filled, to assert the past experience of users on relevant topics.
 Then the purpose of the project was presented along with a tutorial of Urban Sketcher's features and how to use them.
 After a small hands-on period the tasks were given to the user to perform on the Urban Sketcher system.
 Then a tutorial was given of the Google SketchUp program, focused on the features necessary to perform the tasks.
-Alter a small hands-on period the navigation and modeling tasks were performed on the Google SketchUp system.
-To finalize the test, the final questionnaire was handed and filled. It was composed of 13 close-ended scaled questions
+After a small hands-on period the navigation and modeling tasks were performed on the Google SketchUp system.
+To finalize the test, the final questionnaire was handed out and filled. It was composed of 13 close-ended scaled questions
 and 5 open-ended questions, the former to obtain feedback regarding the Urban Sketcher system and the latter
 focused on comparing the two systems.
 
@@ -135,6 +138,7 @@ focused on comparing the two systems.
 During the tests task completion time was measured in minutes and both user errors and system unexpected events were
 logged. On table \ref{table-times} the summary of times for completing all the tasks is listed.
 Chart \ref{graph-comparison} depicts average times for completing the tasks on both systems.
+On such small populations, the median is more meaningful than the average, so it is also present on results.
 
 
 \begin{table}[!ht]
@@ -147,7 +151,7 @@ Chart \ref{graph-comparison} depicts average times for completing the tasks on b
 
 \begin{figure}[!ht]
 	\centering
-		\includegraphics[scale=0.6]{gfx/eval/bw-times.png}
+		\includegraphics[scale=0.5]{gfx/eval/bw-times.png}
 	\caption{Box and whiskers charts comparing task completion times on both systems}
 	\label{graph-comparison}
 \end{figure}
@@ -209,17 +213,17 @@ To aid in the interpretation of these results, charts \ref{graph-quantified} and
 
 \subsubsection{Task Performance and Issues}
 
-When looking at the average time it took users to complete the tasks,
-Urban Sketcher results have taken between 28\% and 50\% more time than Google SketchUp.
-This difference is surprisingly small given that users performed Urban Sketcher tasks standing up,
+When looking at the time it took users to complete the tasks,
+Urban Sketcher took between 50\% and 83\% more time than Google SketchUp.
+This difference is small given that users performed Urban Sketcher tasks standing up,
 using a novel user interface and handling a laser pointer on a limited tracking area.
 
-The navigation tasks were the first to perform, with users getting used to the interface.
-Some undesired context menus were invoked at these first tasks, probably due to users drawing too fast,
-which segments the real strokes into small segments, misleading the system into recognizing these context menu invocations.
+The navigation tasks were the first to perform, with users getting acquainted with the interface.
+Some undesired context menus were invoked at these first tasks, probably due to users drawing too fast.
+When this happens, the laser tracking module segments the real strokes into small segments, misleading the system into recognizing these events as context menu invocations.
 
-It was on the modeling tasks that those differences were less notable.
-This can be inputed to the carefully crafted modeling operations and their menus.
+It was on the modeling tasks that differences between the systems were less notable.
+This can be imputed to the carefully crafted modeling operations and their menus.
 Some users took more time grasping the concept of stroke-long operations and their requirement to
 keep the stroke active after triggering the operation to set its direction and length.
 The main menu stroke gesture (a closed triangle) had worse recognition success on these operations.
@@ -227,14 +231,14 @@ This might have to do with users performing more context menu invocations and te
 gesture to invoke the main menu or drawing triangles more roughly.
 
 The building creation task was performed very smoothly in regard to its complexity.
-Only a small set of individual problems occurred and users felt satisfied with the easy at
+Only a small set of individual problems occurred and users felt satisfied by the ease at
 which they instanced buildings and assets.
 
 
 \subsubsection{Close-ended Answers Analysis}
 
 % perguntas fechadas - 1o mais certas, depois mais favoráveis
-The familiarity of users with 3D software and CAD is low and the usage of 3D first person games is disparate.
+The familiarity of users with 3D software and CAD proved to be low and the usage of 3D first person games disparate.
 Few users were used to handling laser pointers and some of them used vertical boards occasionally
 -- this might be explained by the presence of 2 teachers on the user test.
 
@@ -244,7 +248,7 @@ Menu invocation and shape feature selection were easy to learn.
 Both the move and clone operations were credited as functional and the learning curve classified comfortable.
 
 Users diverged the most when asked about the success at which they controlled their strokes.
-This problem can be credited to the laser tracking limitations on both tracked screen area and slow capturing frequency.
+This problem can be credited to laser tracking limitations on both tracked screen area and slow capturing frequency.
 These originated visual deviations between real stroke and its interpretation, especially notable near the tracking boundaries.
 Due to the slow capturing frequency, strokes had to be drawn slowly, otherwise they'd get segmented.
 This problem was emphasized when performing apply-to-scene operations such as re-centering the examine center of interest or instancing new shapes which required continuity of stroke.
