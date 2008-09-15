@@ -1,9 +1,9 @@
 \chapter{Implementation}
 
-The execution of the projected features described on the previous section is the focus of Implementation.
-Functionalities are grouped by purpose and its details explained and discussed.
+The execution of the projected features described earlier on is the focus of this section.
+Functionalities are grouped by purpose and their details explained and discussed.
 The navigation modes, content creation, content editing and review features are described.
-To close this section, an alternative work flow is proposed to take advantage of the system features.
+To close this section, an alternative work flow is proposed for taking advantage of the Urban Sketcher features.
 
 
 \section{Navigation}
@@ -39,14 +39,13 @@ It maps an interface resembling most first person shooters, offering translation
 It features 8 gates: 4 direction displacement gates and 4 rotation gates.
 To stop the movement/rotation one can either trigger the gate again, effectively disabling the ongoing action
 or by triggering a different gate action.
+There are gates for moving forward/backwards, up/down, pitch up/down and yaw up/down
+\footnote{The verbs pitch and yaw come from flight semantics: to pitch is to look up/downwards; to yaw is to turn relatively to the ground plane.}.
 
 The choice for this mode's layout suffered several evolutions.
 At early stages opposing directions where placed at opposite sides of the ring but this
 made correction by triggering the opposite action difficult, so opposing actions are now close together.
 In this mode a restriction of one enabled action at a time is imposed to keep the handling easy for novice users.
-
-There are gates for moving forward/backwards, up/down, pitch up/down and yaw up/down
-\footnote{The verbs pitch and yaw come from flight semantics: to pitch is to look up/downwards; to yaw is to turn relatively to the ground plane.}.
 
 A helpful addition to this mode would be collision detection, to keep users from crossing walls and the ground.
 This could also help users moving on ramps and staircases.
@@ -296,9 +295,10 @@ First the stroke is projected onto the construction plane and parsed by the shap
 The recognized rectangle dimensions serve as the blueprint which is extruded upwards for the measured height.
 Then the building facades are generated according to the chosen style grammar and so is the ceiling.
 The style grammar is fed each facade's dimensions and returns a set of spacings and facade elements that must be instanced
-according to the rules defined in the style.
+according to the rules defined in the style (see Fig.\ref{fig:style}).
 To minimize the facade attachments in memory, a map of loaded attachments is managed so only the first instance of any
 attachment is loaded.
+Appendix \ref{residentialGrammar} lists the residential style depicted above.
 
 
 
@@ -314,7 +314,7 @@ used for optimized queries for neighbors.
 
 When a stroke finishes its start and ending points are projected onto the scene's available geometry.
 If these 2 points lie on the same face of the same object that face is selected and the face contextual menu appears
-(see Fig.\ref{fig:face-edge-selection-imp} top).
+(see Fig.\ref{fig:face-edge-selection-imp} bottom).
 
 \begin{figure}[ht]
 	\centering
@@ -329,21 +329,21 @@ If these 2 points lie on the same face of the same object that face is selected 
 
 If the stroke start and ending points lie on different but neighboring faces of the same shape, the edge between
 those faces is selected and the edge contextual menu appears
-(see Fig.\ref{fig:face-edge-selection-imp} bottom).
+(see Fig.\ref{fig:face-edge-selection-imp} top).
 
 
 \subsection{Determining and Selecting Directions}
 \label{DIRECTIONS-LABEL}
 
-In order to keep the interface simple and to minimize the number of steps to perform an operation, a set of directions
-is estimated for edge and face selections -- these are believed to be the most frequently needed vectors for shape operations.
+In order to keep the interface simple and to minimize the number of steps needed to perform an operation,
+a set of directions is estimated for edge and face selections
+-- these are believed to be the most frequently needed vectors for shape operations.
 When an edge is selected the computed directions are the edge outwards normal and the directions from the edge along its neighboring faces.
 When a face is selected the computed directions are the face normal along with the 4 directions from the center of the face
 to each of its neighboring faces (see Fig.\ref{fig:face-dirs}).
 
 If an operation requires the user to select a direction from the user the computed directions are displayed centered on the selected aspect
-and color coded. The interface relies on the user to keep drawing the stroke after the operation is triggered so the remaining of the stroke's direction serves to select the desired direction by approximation -- while the stroke is being drawn the operation is previewed by applying the currently most approximate vector direction to the shape.
-The length of the stroke can be also used from the provided information by using the stroke's direct length.
+and color coded. The interface relies on the user to keep drawing the stroke after the operation is triggered so the remaining of the stroke data parameterizes the operation.
 
 \begin{figure}[ht]
 	\centering
