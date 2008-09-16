@@ -14,7 +14,7 @@ so that custom shapes can be modeled with ease. Figure \ref{fig:example} shows a
 
 \subsection{Internal Structure}
 
-The defined structure to support the custom shape is based on 4 sided faces.
+The defined structure to support the custom shape is based on four sided faces.
 This decision implies that:
 \begin{itemize}
 	\item every edge is shared by two faces;
@@ -22,7 +22,7 @@ This decision implies that:
 \end{itemize}
 
 Besides the \emph{list of vertices} and its positions and the \emph{list of faces}
-(each face being a list of 4 vertex indices),
+(each face being a list of four vertex indices),
 an additional structure is computed: the \emph{edge map}.
 It maps which faces share each edge.
 This information is used to optimize the low-level operations for
@@ -44,7 +44,7 @@ The chosen format for persistence was XML and each shape is translated into an X
 
 The format resembles the simplified structure of a WaveFront OBJ file, but described in XML.
 The vertices are listed, starting from index 0.
-Next each face is defined as an ordered list of 4 vertex indices.
+Next each face is defined as an ordered list of four vertex indices.
 The list of colors, one for each of the faces, is described in the end.
 
 \begin{small}
@@ -104,10 +104,10 @@ The new vertex position is then:
 The most relevant directions according to an edge are those along the faces
 which share it and the direction farthest away from the other ones.
  
-Calculating direction 1 is easy once the edge map is calculated
+Calculating direction1 is easy once the edge map is calculated
 and getOppositeEdge(edge) function defined.
 
-Direction 2 works the same way, this time following the remaining direction.
+Direction2 works the same way, this time following the remaining direction.
 
 The outwards direction resembles the concept of a face normal but applied to an edge
 -- it points out relating to the neighboring faces.

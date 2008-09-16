@@ -2,7 +2,7 @@
 
 The execution of the projected features described earlier on is the focus of this section.
 Functionalities are grouped by purpose and their details explained and discussed.
-The navigation modes, content creation, content editing and review features are described.
+The several offered navigation modes, content creation and editing features and review features are described.
 To close this section, an alternative work flow is proposed for taking advantage of the Urban Sketcher features.
 
 
@@ -16,18 +16,18 @@ of the system quickly, made this requirement even more relevant.
 According both to the task at hand and personal taste,
 several alternative modes may be useful to users.
 For tasks of simulating human movement, a \textbf{first person} based mode is expected.
-When searching for scenario features and moving big distances, a \textbf{top-down view} manipulation mode can be of aid.
+When searching for scenario features and moving big distances, a \textbf{top-down view} manipulation mode can be valuable.
 In occasions when an object is clearly the center of attention of the user,
 such as shape exploration and modeling operations, a \textbf{view centered on the object} mode is helpful.
-For giving an overview of the scenario and showcasing blocks of buildings, a \textbf{flight movement} mode might be interesting.
+For giving an overview of the scenario and showcasing blocks of buildings, a high impact multimodal \textbf{flight movement} mode was developed.
 
-The first 3 of the 4 mentioned modes were implemented with regular menu/gate widgets.
+The first three of the four mentioned modes were implemented with regular menu/gate widgets.
 The flight mode is multimodal, relying on arm tracking and speech controlled input.
 
 \begin{figure}[ht]
 	\centering
 		\includegraphics[scale=0.5]{gfx/main-nav-menus.png}
-	\caption{Main menu and all 3 navigation menu modes}
+	\caption{Main menu and all three navigation menu modes}
 	\label{fig:main-nav-menus}
 \end{figure}
 
@@ -36,7 +36,10 @@ The flight mode is multimodal, relying on arm tracking and speech controlled inp
 
 This first person navigation mode (Fig.\ref{fig:main-nav-menus}, top right) is centered on the current point of view and works by triggering the displayed gates.
 It maps an interface resembling most first person shooters, offering translations and rotations around the current point of view (POV).
-It features 8 gates: 4 direction displacement gates and 4 rotation gates.
+Such a mode is common on both games and modeling applications, so such mode is expected by users due to its familiarity
+and good first-person-centered operators.
+
+The First Person Mode features eight gates: four direction displacement gates and four rotation gates.
 To stop the movement/rotation one can either trigger the gate again, effectively disabling the ongoing action
 or by triggering a different gate action.
 There are gates for moving forward/backwards, up/down, pitch up/down and yaw up/down
@@ -47,7 +50,7 @@ At early stages opposing directions where placed at opposite sides of the ring b
 made correction by triggering the opposite action difficult, so opposing actions are now close together.
 In this mode a restriction of one enabled action at a time is imposed to keep the handling easy for novice users.
 
-A helpful addition to this mode would be collision detection, to keep users from crossing walls and the ground.
+A helpful addition to this mode would be collision detection to keep users from crossing walls and the ground.
 This could also help users moving on ramps and staircases.
 The application of SmartCam \cite{SMARTCAM}, commented on section \ref{SMARTCAM-LABEL} would also enhance this mode,
 at least the physics spring model simulation part.
@@ -56,11 +59,14 @@ at least the physics spring model simulation part.
 
 \subsection{Compass Mode}
 
-A birds-eye-view of the POV is helpful in 3D exploration scenarions,
-allowing the user to better perceive his positioning in the scenario.
-The compass navigation mode (Fig.\ref{fig:main-nav-menus}, bottom left) was thought out for searching tasks.
+A birds-eye-view of the POV is helpful in 3D exploration scenarios,
+allowing the user to better perceive the overall positioning in the world.
+An increasingly number of games feature a top-down view of the world.
+This system dues so too, not only for visualization but also for manipulation of the user's location and orientation.
+
+The compass navigation mode was developed for that purpose (Fig.\ref{fig:main-nav-menus}, bottom left).
 It allows the user to move along the ground plane and turn around it.
-The compass navigation mode has 2 distinct areas:
+The compass navigation mode has two distinct areas:
 the center circle displays a top-down view of the scene centered on the user;
 the outer ring displays the main compass directions.
 
@@ -69,34 +75,27 @@ dragging the center view translates the user along the ground plane;
 dragging the outer ring rotates the POV, a concept easily grasped by test users.
 The superimposed cardinal compass points are useful, particularly for people with a more technical background.
 
-%In order for one to move, a dragging movement must be performed inside the top-down view.
-%To reorient the user one must rotate the outer ring. The direction the user is facing can be read on the top part of the ring.
-
 To enhance the reach of the translation movement, the Speed-dependent zooming \cite{SPEEDZOOM},
 commented on section \ref{SPEEDZOOM-LABEL} could be applied,
 translating drag velocity into exponential translation changes.
 
 This mode could not be tested on multi-screen displays due to technical problems.
-It was enthusiastically accepted on one-projector early tests.
+It was enthusiastically accepted on one-projector early tests, specially on users with a more technical background.
 
 
 \subsection{Examine Mode}
 
+When a program has the purpose of supporting the exploration of the shape of an object, an object-centric view is offered.
+On simple scenarios the object occupies the center of the world and the view rotates around the world's center.
+Urban Sketcher allows the center of attention to be dynamically set to any object of the world.
+
 The examine mode is based on moving along the space close to the center of attention (Fig. \ref{fig:vsphere}).
-It features 3 gates and a center sphere (see Fig.\ref{fig:main-nav-menus}, bottom right).
+It features three gates and a center sphere (see Fig.\ref{fig:main-nav-menus}, bottom right).
 
 The user is offered a gate so a new center of attention can be set. This action is performed by
 activating the gate and ending the same stroke at the desired center of attention.
 Once this is done, a spherical widget allows performing rotations around the object by dragging the sphere.
 Two additional gates allow zooming in and out to reveal more or less detail, respectively.
-
-%The examine mode  allows the user to recenter attention on an object of the scene.
-%It features 3 gates and a center sphere.
-%The user must initially select the new center of attention by triggering the recenter gate,
-%finishing the stroke at the desired object/location.
-%Once the location is defined the remaining gates allow for zooming in and out the centered content
-%while the sphere allows for repositioning the user on the space around the object -- 
-%horizontal drags rotate horizontally, vertical moves vertically.
 
 For the users who got the grip of this mode, it has revealed itself a very efficient way
 for both looking around and repositioning oneself.
@@ -113,8 +112,15 @@ Only laser-tracking problems inhibited a better use of repeatedly re-centering o
 
 \subsection{Multimodal Flight Mode}
 
-This mode is the implementation of \ref{FLIGHT-DESIGN-LABEL} Arm Posing Flight Mode.
-It is an alternative navigation mode. Since it affects the point of view, this task can't be performed by
+The Multimodal Flight Mode is an alternative navigation mode devised by the author to provide an alternative way
+of moving on the world.
+This mode relies on arm gestures to control flight speed, rotation and altitude shift.
+These operations are smoothly applied by continuous arm tracking and the application of a set of simple
+rules to identify the user's purpose. This mode doesn't rely on laser input and can be enabled or disabled
+by speech commands.
+
+To implement such mode the \ref{MMODAL-ITF} Multimodal Input Interface was used.
+Since it affects the point of view, this task can't be performed by
 several people simultaneously, therefore unlike most of the system this navigation mode has global states
 -- the user might be either stationary of flying (see Fig.\ref{fig:flight}).
 
@@ -122,7 +128,7 @@ The user starts interacting by having his arms extended toward the screen.
 In order to begin flying the command ``Begin flying'' must be given.
 To stop at any time one only needs to say ``Stop flying''
 \footnote{Although semantically inconsistent, the words begin and stop were used after performing speech recognition
-tests with both start/stop, begin/end and begin/stop, concluding that this combination had the better recognition ratio.}.
+tests with both start/stop, begin/end and begin/stop commands, concluding that this combination had the better recognition ratio.}.
 
 Controlling flight speed works by measuring the distance between hands -- the closer they are to each other the faster
 the flight speed is. If the arms do a wide enough angle between them the flight comes to an halt.
@@ -142,7 +148,7 @@ the bigger the flight altitude shift is.
 \end{figure}
 
 
-\subsection{Other navigational modes}
+\subsection{Other possible navigational modes}
 
 In addition to the navigation modes made available in the system, the following modes might be of use.
 
@@ -156,16 +162,17 @@ Urban Sketcher stroke-based interface makes it hard to map a movement path strok
 -- this would require multimodal integration with a ``move-like-this'' speech command.
 
 During the navigation tests at Glasgow, users suggested the addition of a list of recorded locations.
-The idea is for the user to get to an unrecorded and relevant point of view, such as a good façade angle,
+The idea was for the user to get to a new and relevant point of view, such as a good façade angle,
 and trigger the record location action.
 Recorded locations might be tagged by either speech recognition (example: ``record location \textbf{stadium front} now'')
-or scribble text recognition. Later on resuming to the saved location would be a matter of invoking the related metadata.
+or scribble text recognition. Later on resuming to the saved location would be a matter of invoking the metadata
+recorded earlier.
 
 
 
-\section{Content Creation}
+\section{Creating Content}
 
-The system's interface offers 3 families of shapes which can be instanced on the scene:
+The system's interface offers three families of shapes which can be instanced on the scene:
 primitives, a set of previously generated shapes and set of known building styles from which to create buildings.
 Primitives are the most versatile shapes since they support face and edge manipulation operations.
 All shapes support simple transformations and cloning.
@@ -184,10 +191,15 @@ Primitives can be instanced as is or as building ground for custom shapes.
 
 \subsection{Shape Internal Structure}
 
-A shape in this system is a boundary representation (B-REP) \cite{REP-SOLID}.
-The shape surface is defined by two data structures:
+A shape in this system was implemented as a boundary representation (B-REP) \cite{REP-SOLID}.
+This structured was used due to its simple translation to visual representation and
+ease of shape modification.
+To support several geometry operations an additional constraint was enforced --
+all faces have four edges and therefore each edge has at most two neighboring faces.
+
+The shape's surface is defined by two data structures:
 an indexed array of \textbf{vertex positions}, used to store the position of each shape vertex;
-an indexed array of \textbf{faces}, with every face being a counter-clockwise ordered set of 4 vertex indices.
+an indexed array of \textbf{faces}, with every face being a counter-clockwise ordered set of four vertex indices.
 An \textbf{edge} in the system is a pair of ordered vertex indices.
 The ordering step makes the edge direction irrelevant for the edge definition, a desired feature.
 
@@ -225,8 +237,8 @@ Templates are not directly exposed on the system UI. They're currently used sole
 but could be extended for other means.
 
 Templates make use of shape exposed operations to generate the final shape.
-For instance, the creation of a 2-slanted ceiling starts from a regular box shape,
-applying a sequence of 2 edge move operations.
+For instance, the creation of a two-slanted ceiling starts from a regular box shape,
+applying a sequence of two edge move operations.
 \TODO{EXAMPLE 2-SLANTED CEILING}
 Additional templates could be easily created to aid in the generation of repetitive structures
 such as railings and staircases.
@@ -234,12 +246,16 @@ such as railings and staircases.
 
 \subsection{Building Style}
 
-A building is a complex shape, composed of side walls, a ceiling and a set of attached shapes enriching the façades
-with details such as doors, windows and balconies.
+Buildings with the same purpose share most of their properties -- colors, floor height, façade appearance, ceiling type, etc.
+Such buildings differ the most on their number of floors and façade dimensions.
 
-A building style is a set of rules and parameters, written according to an XML grammar. 
+To streamline the generation of building, the concept of building style was developed and implemented.
+
+In Urban Sketcher a building is a complex shape composed of side walls, a ceiling and a set of attached shapes enriching the façades with details such as doors, windows and balconies.
+
+A building style is a set of rules and parameters, written according to a developed XML format. 
 The system comes with a set of styles, with the user choosing the desired style to apply to the building he's about to create.
-The building style factory is able to parse the style definition, instantiating and distributing attached shapes to make up
+The building style factory is able to parse style definitions, instantiating and distributing attached shapes to make up
 the façades according to the chosen style.
 
 
@@ -250,7 +266,7 @@ The building style grammar defines building parameters such as
 It also defines a set of rules for the generation of the facade attachments that make up the final facades,
 defined by the optional \textbf{front-facade} and the \textbf{facades} elements.
 
-One can define the layout of a floor with the \textbf{layout} element, composed of 4 sections:
+One can define the layout of a floor with the \textbf{layout} element, composed of four sections:
 \textbf{left}, \textbf{center}, \textbf{right} and \textbf{other}.
 Of these only the \textbf{other} section is required and the layout works by trying to fill the facade space with \textbf{center}, \textbf{left} and \textbf{right}s' contents if those are present, repeating \textbf{other}'s contents for filling the remaining space.
 
@@ -286,7 +302,7 @@ Fig. \ref{fig:style}.
 \end{figure}
 
 
-\subsection{Building Instancing}
+\subsection{Instancing Buildings}
 
 
 Once the building parameters have been gathered by the interface, the building needs to be generated.
@@ -302,18 +318,18 @@ Appendix \ref{residentialGrammar} lists the residential style depicted above.
 
 
 
-\section{Content Editing}
+\section{Editing Content}
 
-All shapes in the system are made of 4-edged faces and all shapes are closed surfaces.
+All shapes in the system are made of four-edged faces and all shapes are closed surfaces.
 Operations such as the split by face loop rely on these properties.
-Each shape computes each edge's neighboring faces (always 2)
+Each shape computes each edge's neighboring faces (always two)
 and therefore each face's neighboring faces, forming an auxiliary structure called the edge map,
 used for optimized queries for neighbors.
 
-\subsection{Face Selection}
+\subsection{Face and Edge Selection}
 
 When a stroke finishes its start and ending points are projected onto the scene's available geometry.
-If these 2 points lie on the same face of the same object that face is selected and the face contextual menu appears
+If these two points lie on the same face of the same object that face is selected and the face contextual menu appears
 (see Fig.\ref{fig:face-edge-selection-imp} bottom).
 
 \begin{figure}[ht]
@@ -322,10 +338,6 @@ If these 2 points lie on the same face of the same object that face is selected 
 	\caption{Edge and Face selection and their contextual menus}
 	\label{fig:face-edge-selection-imp}
 \end{figure}
-
-
-
-\subsection{Edge Selection}
 
 If the stroke start and ending points lie on different but neighboring faces of the same shape, the edge between
 those faces is selected and the edge contextual menu appears
@@ -339,8 +351,8 @@ In order to keep the interface simple and to minimize the number of steps needed
 a set of directions is estimated for edge and face selections
 -- these are believed to be the most frequently needed vectors for shape operations.
 When an edge is selected the computed directions are the edge outwards normal and the directions from the edge along its neighboring faces.
-When a face is selected the computed directions are the face normal along with the 4 directions from the center of the face
-to each of its neighboring faces (see Fig.\ref{fig:face-dirs}).
+When a face is selected the computed directions are the face normal along with
+the four directions from the center of the face to each of its neighboring faces (see Fig.\ref{fig:face-dirs}).
 
 If an operation requires the user to select a direction from the user the computed directions are displayed centered on the selected aspect
 and color coded. The interface relies on the user to keep drawing the stroke after the operation is triggered so the remaining of the stroke data parameterizes the operation.
@@ -386,10 +398,10 @@ faces or one of its edges. Figure \ref{fig:ops} illustrates the application of t
 \subsubsection{Object Operations}
 
 Available object operations are \textbf{translation}, \textbf{rotation}, \textbf{scale} and \textbf{clone}.
-The \textbf{translation} operation accepts a delta vector, applying it in real-time on one of the 5 directions:
-normal and the 4 surrounding edge directions.
+The \textbf{translation} operation accepts a delta vector, applying it in real-time on one of the five directions:
+normal and the four surrounding edge directions.
 \textbf{Rotation} and \textbf{scale} operations take only the stroke length --
-scale transforms all 3 axes proportionally;
+scale transforms all three axes proportionally;
 rotation can take the triggered face's normal as axis of rotation or can default to the YY axis for simplification,
 since most urban changing operations make use of this rotation.
 An additional object operation is \textbf{cloning}. The clone operation works like a regular translation,
@@ -431,28 +443,6 @@ since users inadvertently selected too many objects.
 Furthermore, using multi-selection for shape operations limited the direction seeking algorithms described above,
 which are key to the proposed simplified interface.
 
-
-
-%By selecting a face the following operations can be performed (example applications on Fig.\ref{fig:ops}):
-%\begin{itemize}
-%	\item \textbf{extrude face} - Extrude generates 4 additional faces, getting the direction from the selected face's normal and the displacement from stroke length.
-%	\item	\textbf{bevel face} - Bevel moves the face vertices, getting distance from stroke length.
-%	\item	\textbf{extrude \& bevel} - This is a compound operation of zero length extrude followed by bevel. It exists for convenience to aid in the creation of holes for features such as windows or chimneys.
-%	\item	\textbf{move face} - Move face displaces the face vertices, getting the direction from the selected face's normal and 4 computed directions.
-%	\item	\textbf{move coplanar faces} - This operation works as the previous one but the neighboring faces having an angle with the selected one smaller than the threshold are also affected by the movement.
-%\end{itemize}
-%
-%By selecting an edge the following operations can be performed:
-%\begin{itemize}
-%	\item \textbf{move edge} - Moves the edge vertices along one of the directions: edge normal and neighboring faces, obtaining the displacement from stroke length.
-%	\item	\textbf{split at face loop} - The crossed edge defines a direction. All faces on that face loop are split in the middle, creating additional geometry. This operation has instant application as it doesn't require additional data.
-%\end{itemize}
-%
-%On both edge and face context menus there's an option to \textbf{toggle} the visibility of the \textbf{shape edges}.
-%
-%All shapes have a stack of memento objects for supporting the undo operation, also available on both menus.
-%The memento design pattern states that an auxiliary object - the memento object - decorates the state of the key object structures so they
-%can be restored if backup is needed.
 
 
 \section{Reviewing}
