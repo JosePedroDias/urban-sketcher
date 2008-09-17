@@ -4,31 +4,48 @@
 
 % motivation
 
-The produced work was made to provide architects a way
-of exploring large scale displays for the creation of urban sceneries.
-This task can be performed collaboratively using common laser pointers.
-The implementation of a set of navigational modes allow for easy
-exploration of complex 3D scenes.
-This scenario allows showcasing and reviewing of projects with clients.
+The author designed and implemented a system named Urban Sketcher,
+whose purpose is to provide architects and average users a way of making good use of large scale displays
+for the creation of urban sceneries. Users can navigate the scene using several modes,
+create and edit content such as buildings and custom shapes and review the scene by attaching notes to surfaces.
+
+The system was implemented as a distributed modular application.
+It was designed to support collaborative usage and laser pointers were used as main input device.
+A novel user interface was devised, controlled by stroke input, with gestures, circular menus, area crossing activation 
+(extending the work of \cite{CROSSY}).
+The interface supports also multimodal modes -- speech commands and arm tracking were used to offer an alternate
+way of moving the scene -- the multimodal flight mode. 
+
+%This scenario allows showcasing and reviewing of projects with clients.
 
 %The support for tablet PCs permits a portable and cost-effective alternative
 %to the large display screen.
 
-A building creation method was developed providing a fast way
+A building creation method was developed to provide a faster way
 of generating buildings based on their style, described by a custom XML format
 for describing façade appearance, ceiling and shape details layout.
 
 The set of provided tools for shape modeling proved sufficient for modeling simple shapes,
-with users figuring out any creative ways of obtaining the requested shapes.
+with users figuring out many creative ways of obtaining the requested shapes.
 
+
+
+\section{Results}
+
+% RESULTS
 The system was tested on several occasions for validation of navigation modes,
 the multimodal mode and the building and modeling tools.
-Tests were conducted on a large screen display and compared with the same tasks
+Since there's no clear contender in this area,
+tests were conducted by comparing tasks performed by users
+on Urban Sketcher on a large screen display against the same tasks
 performed on Google SketchUp on a regular computer with keyboard and mouse input.
 Users enjoyed working with the system and their performance completing the tasks
-was at the most 50\% slower when comparing to their results on SketchUp.
+was at the most 50\% slower when comparing to their results on SketchUp,
+an exciting result given the differences between both systems.
+Users were introduced to a new way of input, a novel user interface and a set
+of supported features uncommon to desktop software.
 The stroke-based interface and menus proved capable on large screen environments
-and the urban drafting and shape modeling application was learned and used efficiently.
+and the building creation and shape modeling features were learned and used efficiently.
 
 
 % aplicabilidade
@@ -36,57 +53,59 @@ and the urban drafting and shape modeling application was learned and used effic
 \section{Main Contributions}
 
 % work flow
-This system was thought out to aid the task of generating 3D buildings.
-An alternative work flow was defined where digital content supplied by
-the local government is put to use -- a virtual 3D
-version of the terrain is the starting point for the projection of
-architectural buildings.
-With it users have a way of generating buildings using a set of
-architecture styles to generate its facades and they can do it surrounded by a simulation of the environment.
+%This system was thought out to aid in the task of generating and distributing buildings
+%over a 3D scenario.
+%An alternative work flow was defined where digital content supplied by
+%the local government is put to use -- a virtual 3D
+%version of the terrain is the starting point for the projection of
+%architectural buildings.
+%With it users have a way of generating buildings using a set of
+%architecture styles to generate its facades and they can do it surrounded by a simulation of the environment.
 
 % u s concepts
-This project introduced a new way of instantiating a building using two strokes
+This project introduced a new way of instantiating buildings using two strokes
 -- one for defining the style and construction plane and the other to set the 
 blueprint and facade height dimensions.
-Architecture styles can be created by users, providing a 
-powerful way to define recipes for building creation by setting the
-layout distribution of doors, windows and other features.
-Facade attachments can be generated from other 3D applications such as the Blender 3D Modeler,
-for which an exporter plug-in was generated, exporting 3D content into the system internal shape format.
+The architecture styles set can be enriched by users, with the system supporting
+a custom XML format to define their layout and characteristics.
 
 % custom shapes
-In cases where custom 3D shapes are needed to fulfill a particular aspect
-of a building, the user has the ability to create custom shapes.
+In cases where custom 3D shapes are needed to enhance a particular aspect
+of a building, users have the ability to creating custom shapes.
 These can be edited by a small set of face and edge operations,
-studied to cover the most common needs of geometry modeling.
-The most useful directions are available for the user to manipulate the
-faces and edges, without the overhead of dozens of menu commands and parameters
-so common in nowadays 3D modeling software.
+crafted to cover the most common needs of geometry modeling.
+The most useful directions are estimated and made available for the user to manipulate the shape's
+faces and edges, without the overhead of dozens of menu commands and parameters.
+%so common in nowadays 3D modeling software.
+Shapes can also be generated from other 3D applications such as the Blender 3D Modeler,
+for which an exporter plug-in was generated, allowing the integration of externally created 3D content
+into the system's internal shape format.
 
 % gates e menus
-In order to solve limitations of using laser pointers
-for interaction, the gate concept was developed and exploited.
-It provides a way of activating options by drawing strokes instead of clicking.
-Stroke continuity data was used: the set of events from the start of the stroke
-until its ending, passing through gates can trigger complex operations
-such as dropping a shape from a menu into the 3D view.
+To minimize the limitations of using laser pointers for interaction,
+the gate concept was enhanced and applied.
+Gates provide a way of users to activate options by drawing strokes over areas instead of clicking.
 A non-intrusive menu form was defined and applied, with a minimalistic approach
 at the starting interface, letting the users invoke and position menus as they see fit.
+Complex operations were designed by activating the proper sequence of gates and interacting with
+the scene in the stroke lifetime. Example of these is
+shape instantiation by dropping it from a menu into the 3D view;
+defining a building style and dimensions in two strokes time.
 
 % navigation modes
-A set of navigational modes was developed to cover the most common exploration
-and inspection tasks.
-The common first person mode was made available to give users the
+A set of navigational modes was developed to cover the most common repositioning 
+and tasks.
+The popular first person mode was made available to give users the
 possibility of exploring the scene as real users would. 
 The compass navigation mode allows for seeing a top-down view of the nearby map,
 allowing dragging the map for movement and  rotating the orientation
 via a ring showing the cardinal points.
 The examine navigation mode provides an effective way of inspecting an object of any
 scale by moving around it. The examined object can also be easily changed.
-Having a motion tracking capable system installed, one can also fly using the arms
-using the multimodal flight mode.
-This has proven both pleasing and effective, empowering the user of an alternative
-way to rotate, change the altitude and flight speed by making use of arm movements.
+Having a motion tracking capable system installed, one can also fly using the arms and voice
+in the multimodal flight mode, which has proven both pleasing and effective,
+empowering the user of an alternative way to rotate, change the altitude and flight speed
+by making use of continuous arm movements.
 
 
 %%%%%%%%%%%%%%%%%%%
@@ -101,17 +120,17 @@ The integration of real terrain data into the system could be eased by
 the direct support of height maps, topography maps data such as contour lines
 and aerial photographies. A work flow for the importing of such content is
 even so outlined.
-The facade walls could support blueprints other than rectangles and most work was
+Facade walls could support blueprints other than rectangles and most work was
 done so that such change to be easily supported, as long as a more rich
 interface is provided to input such blueprints.
 
 % realism
 Lighting conditions could be manipulated inside the program with an
 accurate simulation of daylight and shadowing, a subject highly valued
-by architects for the definition of the location where a building is to be built.
+by architects for the definition of the location and orientation where a building is to be built.
 Textures and materials could make usage of the latest developments in GPU
-technology to simulate metals, glass and other materials and
-techniques such as bump maps to give greater depth to facade details and textures.
+technology to better convey the appearance of metal, glass and other materials.
+Techniques such as displacement or bump maps could be applied to offer greater depth to facade details.
 
 % modeling operations
 A more elaborate set of operations could be supported for modeling custom shapes.
@@ -126,5 +145,19 @@ application for it. Users managed to complete simple navigation and modeling tas
 with building manipulation with reasonable performance times.
 
 
-% voice
-%Voice operations could 
+% aplicações
+
+\section{Possible Applications}
+
+Urban Sketcher is an application using the underlying system for the purpose of creating urban scenarios,
+but other fields could benefit from its features.
+The system would be a good starting point for the development of an interactive whiteboard for teaching.
+It could be further extended for collaborative exploration and reviewing scenarios.
+
+Given its modular framework, laser pointers could also be replaced by multi-touch surfaces as input device,
+a trend gaining momentum and being applied to an ever growing set of systems.
+The replacement of lasers by the touch surface would increase the accuracy of the strokes due to the
+proximity of user finger and screen. The increased sampling frequency would also improve the Kalman Filter's
+success in asserting which user owns each stroke. Most of the user interface work keep relevancy with such
+input device, such as stroke gestures to call menus, the menu functionality itself and gate usage.
+
