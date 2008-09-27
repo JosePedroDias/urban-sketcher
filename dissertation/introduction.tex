@@ -1,15 +1,11 @@
 \chapter{Introduction}
 
 
-%\TODO{LESS PARAGRAPHS}
-%\TODO{WHY IS IT AN IMPORTANT PROBLEM, WORTHY OF A MsD (NOT SOLVED). DESCRIBE BROAD VIEW OF SOLUTION.}
-\TODO{AT THE END: CONTRIBUTION AND RESULTS SUMMARIZED}
-
 %%%%%%%%%%%%%%%%%%%
 
 %\section{Context}
 
-% need
+% problem
 
 With the advent of advanced visualization hardware it is now possible
 to interact with complex representations of urban scenarios.
@@ -19,37 +15,6 @@ focused on mouse and keyboard interaction.
 There's a demand for systems capable of offering 3D scenes rendering
 and supporting multi-user interaction on large screens on fields
 so disparate as architecture and the entertainment industry.
-
-
-% difficulty
-
-Developing an application for such purposes requires dealing with several aspects
--- the large scale rendering of the scenario,
-giving people means to interact with the screen,
-allowing people to interact at the same time and
-offering a simple interface adapted to the running environment.
-
-
-% detail - laser / menu / gate interface
-
-A different input device was chosen, being both portable and light.
-The concurrent input of several users was handled so that each user
-could make the best possible use of the large screen area.
-
-This system's interface was set for large screen displays and laser pointers chosen as the main source of user input.
-This decision raised issues.
-A laser pointer can't be tracked while the light is not turned on,
-so any clicking behaviors are hard to mimic, even because users can't be 
-precise while unable to view the laser pointer's projection on the screen.
-So, instead of the commonly used buttons and drop-down menus,
-crossable areas and ring menus were introduced.
-To better explore the available space on the screen,
-menus can be invoked as needed by performing preset strokes on the screen (gestures).
-An application was then developed over the designed interface
-supporting straightforward creation, navigation and reviewing of urban scenarios.
-
-
-% detail - common architecture creation workflow
 
 The current most common work flow process for defining the location and overall shape
 of a new building is a process comprised of several discrete steps.
@@ -64,31 +29,77 @@ If architects are required to subsequently showcase the building appearance,
 they rely on pre-rendered images and animations.
 
 
-% high-level description of solution
+% related work intro
 
-The proposed solution defines a system which allows architects to draft designs
-directly on the 3D scene, allowing clients to better perceive the project at early stages
-and empowering them with navigation and reviewing capabilities.
-To accurately merge new buildings on the scenery one needs to obtain
-satellite imagery and height maps of the landscape, a feasible task at present times.
-Additional benefits could come later on by sharing the collected landscape information
-with the CAD software and eventually exporting the draft buildings for reference.
-Another benefit comes from getting a showcase platform for the project set up for free.
-Instead of, or additionally to the set of pre-rendered images and short video clips,
-clients now have at their disposal a real-time navigation platform which can be used
-as a selling ad.
+The state of the art in this domain was sought out. No project mapping the objectives of this project
+has been developed though some, due to their dimension or common ground, were subject of analysis.
+Work from other authors was reviewed when it addressed relevant problems, subject of usage on the project.
+The most well known software bundles were compared to analyze possible solutions and avoid common mistakes.
+A set of two interviews served as starting point for obtaining of both the current and desirable work flows
+for cityscape creation, along with the definition of the main concepts the system was to support.
 
 
-% novelty
+% challenge
+
+Developing an application for such purposes requires dealing with several aspects
+-- the large scale rendering of the scenario,
+giving people means to interact with the screen,
+allowing people to interact at the same time and
+offering a simple interface adapted to the running environment.
+
+
+% detail - laser / menu / gate interface
+
+%The concurrent input of several users was handled so that each user
+%could make the best possible use of the large screen area.
+
+This system's interface was set for large screen displays and laser pointers chosen as the main source of user input
+due to it being both portable and light.
+The problem is that a laser pointer can't be tracked while the light is not turned on,
+so any clicking behaviors are hard to mimic, even because users can't be 
+precise while unable to view the laser pointer's projection on the screen.
+An alternate interface urged to solve this issue, so instead of the commonly used buttons and drop-down menus,
+crossable areas and ring menus were introduced.
+To better explore the available space on the screen,
+menus can be invoked as needed by performing preset strokes on the screen (gestures).
+
+% important results
+
+For every mappable feature, tasks were performed on both Urban Sketcher and other system - Google SketchUp.
+Even though GSU relies on desktop concepts and input/output devices, users were able to perform the tasks
+successfully and took less than twice the time performing them using such devices and interface.
+Users easily learned the system's features and their menus, being able to easily
+create 3D content such as buildings (template-based) and custom objects (using a tool set of simple modeling tools).
+
+
+% main contributions
 
 This project takes advantage of large screen displays,
-made possible by the devised interface based on gate activation and ring menus,
+made possible by the devised interface based on area activation and ring menus,
 with users applying discrete strokes using laser pointers.
 The navigation and shape creation functionalities focused on simplicity,
-offering a set of tools and the capability to extends the software with additional scenarios and facade styles.
-A novel set of modeling tools and interaction gestures was put to work.
+offering a set of tools and the capability to extend the software with additional scenarios and facade styles.
+A novel set of modeling tools and interaction gestures was put to work, with emphasis on a multimodal flight navigation mode.
 A new work flow was proposed so the system to be used both at early design stages and
 when showcasing the project.
+
+
+% mapa das estradas
+
+Following is the related work chapter where three existing solutions are analyzed due to their relevancy,
+along with a set of approaches other authors defined with might suit the application.
+A comparative analysis on commercial software bundles is performed to emphasize their advantages and avoid
+their flaws. The chapter ends with a summary of the obtained data after two interviews with architects.
+The design chapter is next, describing the broad view of the Urban Sketcher project, its architecture, modules
+and purpose. The concepts used throughout this document are defined here.
+Subsequently one can find the implementation chapter, where the various navigation modes are defined and
+justified, as are the content creation, editing and review features which make part of the system.
+A proposed work flow taking advantage of the system developed is then stated.
+The process of evaluation is described, presented and discussed on the evaluation chapter.
+This document ends stating the results which have been reached, the main contributions
+this project introduces and ways it can be enriched in the future.
+
+
 
 %The success of the project shall be measured against the fulfillment of the following goals:
 %
