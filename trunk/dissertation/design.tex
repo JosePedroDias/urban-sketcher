@@ -269,8 +269,17 @@ Speech commands are obtained from a wireless headset attached to the user's ear 
 
 \section{Content Creation Concepts}
 
+The interaction between 2D menu based interface and the underlying projection of the virtual scene required a way of transferring
+selected options to the scene and a dynamic way of specifying the parameters of a building so it can be easily created.
+To provide such mechanisms to work, two content creation concepts were created.
+
 \subsection{Apply-to-Scene Creation}
 \label{design:apply-to-scene}
+
+Several menus allow the selection of options (such as shapes or building styles), triggered from a menu.
+The destination of such choice must be mapped into an object on the scene, therefore the concept of drag and drop was extended
+-- the remaining of a stroke where such a selection is made server to point out the destination object, with the tip of the
+stroke being the preview location while the stroke is taking place.
 
 To create a new object on the scene one has to perform a stroke which activates the desired shape creation gate (cube for instance)
 and continue the stroke onto the desired location where the shape is to rest. As soon as the gate is activated the shape appears
@@ -286,7 +295,34 @@ existing scene geometry so it stays in touch with the environment.
 	\label{fig:apply-to-scene}
 \end{figure}
 
+\begin{figure}[ht]
+	\centering
+		\includegraphics[scale=0.4]{gfx/building.png}
+	\caption{Building creation procedure}
+	\label{fig:building}
+\end{figure}
+%
+%\begin{figure}[ht]
+%	\centering
+%	\subfloat[Apply-to-scene procedure - creating a shape]{
+%		\label{fig:apply-to-scene}
+%		\includegraphics[scale=0.3]{gfx/apply-to-scene.png}
+%	}
+%	\subfloat[Building creation procedure]{
+%		\label{fig:building}
+%		\includegraphics[scale=0.2]{gfx/building.png}
+%	}
+%	\caption{Content Creation Concepts}
+%\end{figure}
 
+%
+%\begin{figure}[ht]
+%	\centering
+%		\label{fig:apply-to-scene}
+%		\includegraphics[scale=0.5]{gfx/apply-to-scene.png}
+%		\label{fig:building}
+%		\includegraphics[scale=0.4]{gfx/building.png}
+%\end{figure}
 
 \subsection{Instancing a Building}
 \label{design:building}
@@ -302,9 +338,3 @@ the stroke upwards in order to define the building's height.
 Once the stroke ends the building is generated according to the given parameters.
 The construction plane has now carried out its purpose and therefore is terminated (see Fig.\ref{fig:building}).
 
-\begin{figure}[ht]
-	\centering
-		\includegraphics[scale=0.4]{gfx/building.png}
-	\caption{Building creation procedure}
-	\label{fig:building}
-\end{figure}
