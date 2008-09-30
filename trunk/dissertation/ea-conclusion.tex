@@ -1,0 +1,143 @@
+
+\section{Conclusions and Future Work}
+
+% motivation
+
+The author designed and implemented a system named Urban Sketcher,
+whose purpose is to provide architects and average users a way of making good use of large scale displays
+for the creation of urban sceneries. Users can navigate the scene using several modes,
+create and edit content such as buildings and custom shapes and review the scene by attaching notes to surfaces.
+The system was implemented as a distributed modular application.
+It was designed to support collaborative usage and laser pointers were used as main input device.
+A novel user interface was devised, controlled by stroke input, with gestures, circular menus, area crossing activation 
+(extending the work of \cite{CROSSY}).
+The interface supports also multimodal modes -- speech commands and arm tracking were used to offer an alternate
+way of moving the scene -- the multimodal flight mode. 
+A building creation method was developed to provide a faster way
+of generating buildings based on their style, described by a custom XML format
+for describing façade appearance, ceiling and shape details layout.
+The set of provided tools for shape modeling proved sufficient for modeling simple shapes,
+with users figuring out many creative ways of obtaining the requested shapes.
+
+
+
+%\subsection{Results}
+
+% RESULTS
+The system was tested on several occasions for validation of navigation modes,
+the multimodal mode and the building and modeling tools.
+Since there's no clear contender in this area,
+tests were conducted by comparing tasks performed by users
+on Urban Sketcher on a large screen display against the same tasks
+performed on Google SketchUp on a regular computer with keyboard and mouse input.
+Users enjoyed working with the system and their performance completing the tasks
+was at the most 50\% slower when comparing to their results on SketchUp,
+an exciting result given the differences between both systems.
+Users were introduced to a new way of input, a novel user interface and a set
+of supported features uncommon to desktop software.
+The stroke-based interface and menus proved capable on large screen environments
+and the building creation and shape modeling features were learned and used efficiently.
+
+
+% aplicabilidade
+
+%\subsection{Main Contributions}
+
+% u s concepts
+This project introduced a new way of instantiating buildings using two strokes
+-- one for defining the style and construction plane and the other to set the 
+blueprint and facade height dimensions.
+The architecture styles set can be enriched by users, with the system supporting
+a custom XML format to define their layout and characteristics.
+
+% custom shapes
+In cases where custom 3D shapes are needed to enhance a particular aspect
+of a building, users have the ability to creating custom shapes.
+These can be edited by a small set of face and edge operations,
+crafted to cover the most common needs of geometry modeling.
+The most useful directions are estimated and made available for the user to manipulate the shape's
+faces and edges, without the overhead of dozens of menu commands and parameters.
+%so common in nowadays 3D modeling software.
+Shapes can also be generated from other 3D applications such as the Blender 3D Modeler,
+for which an exporter plug-in was generated, allowing the integration of externally created 3D content
+into the system's internal shape format.
+
+% gates e menus
+To minimize the limitations of using laser pointers for interaction,
+the gate concept was enhanced and applied.
+Gates provide a way of users to activate options by drawing strokes over areas instead of clicking.
+A non-intrusive menu form was defined and applied, with a minimalistic approach
+at the starting interface, letting the users invoke and position menus as they see fit.
+Complex operations were designed by activating the proper sequence of gates and interacting with
+the scene in the stroke lifetime. Example of these is
+shape instantiation by dropping it from a menu into the 3D view;
+defining a building style and dimensions in two strokes time.
+
+% navigation modes
+A set of navigational modes was developed to cover the most common repositioning 
+and tasks.
+The popular first person mode was made available to give users the
+possibility of exploring the scene as real users would. 
+The compass navigation mode allows for seeing a top-down view of the nearby map,
+allowing dragging the map for movement and  rotating the orientation
+via a ring showing the cardinal points.
+The examine navigation mode provides an effective way of inspecting an object of any
+scale by moving around it. The examined object can also be easily changed.
+Having a motion tracking capable system installed, one can also fly using the arms and voice
+in the multimodal flight mode, which has proven both pleasing and effective,
+empowering the user of an alternative way to rotate, change the altitude and flight speed
+by making use of continuous arm movements.
+
+
+%%%%%%%%%%%%%%%%%%%
+
+%\subsection{Conclusions and Future Work}
+
+Since this project addresses several subjects, there's space for
+improvement on various aspects.
+%There is space for improvement in several aspects of the project,
+%even more since it addresses so many areas.
+% work flow
+The integration of real terrain data into the system could be eased by
+the direct support of height maps, topography maps and aerial photographies.
+A work flow for the importing of such content is outlined.
+Facade walls could support blueprints other than rectangles.
+% realism
+Lighting conditions could be manipulated inside the program with an
+accurate simulation of daylight, a subject highly valued
+by architects for the definition of the location a building is to be built.
+Textures and materials could make usage of the latest developments in GPU
+technology to better convey the appearance of metal, glass and other materials.
+%Techniques such as displacement or bump maps could be applied to offer greater depth to facade details.
+% modeling operations
+A more elaborate set of operations could be supported for modeling custom shapes.
+%Most operations could be generalized for application to a group of edges or faces.
+Even so, the available operations are a good compromise between the complexity
+of professional modelers and the stroke-based, minimalistic interface provided.
+Given the state of the art on large screen displays and input technologies for them,
+this project successfully made use of laser pointers and a cluster of projectors
+to deliver both a comprehensive interface based on strokes and a building prototyping
+application for it. Users managed to complete simple navigation and modeling tasks along
+with building manipulation with reasonable performance times.
+
+
+% aplicações
+
+%\section{Possible Applications}
+
+Urban Sketcher is an application using the underlying system for the purpose of creating urban scenarios,
+but other fields could benefit from its features.
+The system would be a good starting point for the development of an interactive whiteboard for teaching.
+It could be further extended for collaborative exploration and reviewing scenarios.
+Given its modular framework, laser pointers could also be replaced by multi-touch surfaces as input device,
+a trend gaining momentum and being applied to an ever growing set of systems.
+The replacement of lasers by the touch surface would increase the accuracy of the strokes due to the
+proximity of user finger and screen. The increased sampling frequency would also improve the Kalman Filter's
+success in asserting which user owns each stroke. Most of the user interface work keep relevancy with such
+input device, such as stroke gestures to call menus, the menu functionality itself and gate usage.
+
+This project spawned a number of novel interaction concepts, offering a way of modeling custom shapes and
+buildings according to predetermined styles and explore the virtual world using several navigation modes.
+Most of the interaction concepts developed here can be applied to emerging technologies such as multi-touch
+surfaces.
+The project's architecture proved robust and users got along with the system, its concepts and interface.
