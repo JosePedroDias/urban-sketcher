@@ -1,0 +1,158 @@
+%%% RELATED WORK %%%
+\section{Related Work}
+
+This section is the result of researching existing academic and commercial software systems and publications.
+Since no prior systems with these requirements could be determined, related work was sought to cover subproblems
+related to the design and implementation of such a system.
+
+%The section starts by the revision of three academic solutions with common goals with the proposed solution:
+%Arvika, Multi-User Tabletop Speech and Gestures and Digital Whiteboard.
+%An analysis is then conducted regarding input and output modalities capable of enabling such scenarios,
+%along with a set of shape creation and scene navigation techniques.
+%A comparative analysis of commercially available building modeling software is then conducted.
+%The section ends with the result of two interviews gathered with architects in order to survey
+%building characteristics and possible improvements over the common architectural work flow.
+
+
+\subsection{Existing Solutions}
+
+
+% intro
+
+Three systems will be discussed in this area, each one 
+withstanding common goals with the idealized solution.
+
+
+\subsubsection{ARVIKA, 2003}
+
+
+ARVIKA \cite{ARVIKA} is a project with sponsoring from the
+German Federal Ministry of Education and Research that was implemented between 1999 and 2003.
+It focused on the development of Augmented Reality (AR) technologies to aid in performing industrial tasks.
+
+An expert in the industrial area would carry a head-mounted display (HMD) with a camera mounted on it.
+The real-time captured video was then interpreted and markers extracted from the image.
+The camera's positioning and orientation were estimated and the HMD view was enriched with virtual objects
+(see figure \ref{FIG-ARVIKA}, left).
+The framework was distributed in the form of an ActiveX plug-in for the Internet Explorer browser
+named ARBrowser.
+
+\begin{figure}[htb]
+		\centering
+    \includegraphics[width=0.8\columnwidth]{gfx/arvika.png}
+    \caption{HMD augmented view; a user of the ARVIKA system}
+    \label{FIG-ARVIKA}
+\end{figure}
+
+
+% discussion
+
+Weidenhausen et al. \cite{ARVIKA-LESSONS} consider the deployment of the project as an ActiveX component
+to be an advantage since it is based on a widespread program (Internet Explorer) and allowed developers
+to create task scenarios with familiar technologies such as JavaScript and HTML.
+Although the world's largest research project in the area, ARVIKA focused too much on the technical problems
+regarding AR and little effort was spent on the creation of a suitable user interface.
+The authors agree on a point: ``most people judge the usefulness of a technology mainly by its user interface''.
+ARVIKA was meant to support many industrial scenarios -- development, production and services for several
+industrial partners on different domains.
+Creating a scenario was a time consuming task -- taking several days, according to Weidenhausen et al.
+-- and required extensive knowledge in 3D modeling tools and VRML. No authoring capabilities were given to end-users.
+This problem was identified as paramount and an authoring tool was scheduled for future development,
+supporting generic task creation with parameters controlled by the users.
+
+
+
+
+\subsubsection{Speech and Gestures on a Multi-User Tabletop, 2006}
+
+Tse et al. \cite{SP-GEST-TTOP} developed a multimodal interface on top of Google Earth \cite{SITE-EARTH}
+to be run on a multi-touch table.
+The system allows multi-user collaboration with touch and voice commands.
+
+The main problems found in adapting Google Earth reside in the fact that it was thought out as a single user program,
+where only one action could be done at a time.
+In this scenario several users could be disposed around the table with different orientations,
+so text readability problems arose.
+Additionally, user interface components such as the compass were placed at fixed points on the screen,
+an approach that does not favor multi-user scenarios.
+At 1024 x 768 resolution it was estimated that 42\% of the screen was originally consumed by GUI elements.
+Since all users shared the surface, turn-taking had to be agreed by the users,
+not being enforced by the system (see figure \ref{FIG-SP-TABLETOP}).
+Most Google Earth interactive actions were mapped into gestures,
+leaving the most abstract actions for voice commands activation.
+
+\begin{figure}[htb]
+		\centering
+    \includegraphics[width=0.4\columnwidth]{gfx/sp-gest-ttop.png}
+    \caption{Two users collaborating on a Google Earth tabletop session}
+    \label{FIG-SP-TABLETOP}
+\end{figure}
+
+This project shows the difficulties in adapting a production software thought out
+for single user WIMP\footnote{Window Icon Menu Pointing device} interfaces for the support of collaborative scenarios.
+A multimodal interface was built over the existing one, mapping most of its commands.
+The set of obtained commands is a good example of how navigation can be performed on
+3D scenery using a multimodal interface.
+Google Earth is a good example of a navigation system suited for single user interaction.
+It provides several functionality and could support the creation of buildings.
+Making use of its large dataset of satellite images and topography would be excellent
+for the target system.
+
+
+
+\subsubsection{Digital Whiteboard, 1998}
+
+
+
+Rekimoto \cite{WBOARD} created a digital whiteboard where each participant is given
+a palmtop computer to handle. It works as a tool palette, remote commander, text entry box as
+well as a temporary data buffer during whiteboard collaboration interaction.
+
+The solution involves each participant carrying a pen and a palmtop,
+with the pen working on both palmtop and whiteboard.
+A direct manipulation method called Pick-and-drop(see Fig. \ref{FIG-WBOARD} left) was developed.
+It allows a user to pick an object in his palmtop and dropping it on the whiteboard.
+Text entry is performed on the palmtop and each user can choose the method he favors
+(i.e.: handwritten recognition, soft keyboard, etc) for entering text.
+No menus or tool palettes exist on the whiteboard -- they're available on each user's palmtop.
+The main window is a multi page tool panel.
+Users can store data elements in this window and paste them to the whiteboard
+using Pick-and-Drop operations. (see Fig. \ref{FIG-WBOARD} right).
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.4\columnwidth]{gfx/wboard.png}
+	\caption{Digital Whiteboard: Pick-and-drop interaction}
+	\label{FIG-WBOARD}
+\end{figure}
+
+Rekimoto concludes that by putting many functions on palmtops,
+users tend to concentrate too much on their own palmtop devices,
+degrading mutual awareness among the participants.
+Pick-and-Drop often worked better than drag-and-drop,
+particularly when user had to move objects for a long distance.
+Drag-and-drop forces a user to keep the pen tip in contact
+with the board during the entire operation,
+a restriction not suitable for large display surfaces.
+
+%\paragraph{Discussion}
+
+%The solution where each user carries a palmtop for the creation of content such as note taking
+%is suitable for an architectural design and review scenario.
+%It grants the user the power to draw, type text or compose graphics 
+%independently from one another and then replicating the information on the whiteboard.
+%On the other hand there's the danger of users focusing too much on their palmtop and losing
+%awareness of what's happening at the whiteboard.
+%As result of this, a smaller interface device without all this functionality might be as suitable
+%for interacting with a large screen, provided that these functionalities are offered by the interface.
+
+
+%\subsection{Approaches}
+%
+%The set of available motion tracking techniques for gathering user input is discussed.
+%The most common setups for rendering virtual reality scenes are compared.
+%The shape creation projects Sesame and SmartPaper are analysed and three scene navigation concepts are visited.
+
+%\TODO{??}
+
+%%------!!!-------%%

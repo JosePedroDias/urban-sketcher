@@ -1,4 +1,6 @@
-\chapter{Evaluation}
+%%% Evaluation %%%
+\section{Evaluation}
+
 
 The system has evolved with several user tests along the way.
 During the course of the IMPROVE program several features were tested and enhanced.
@@ -6,7 +8,7 @@ The shape modeling operations, examine navigation mode
 and building creation module were developed later on and were focus of the final user tests.
 
 
-\section{Intermediate Tests}
+\subsection{Intermediate Tests}
 
 % IMPROVE INTRO
 Early stages of development of Urban Sketcher were supported by the European Union's
@@ -19,34 +21,34 @@ were developed during the period of the program. The interface, then called Immi
 was used for experimenting large screen display, tablet PC and head-mounted displays on tasks
 of architecture design and reviewing sessions.
 
-IMPROVE was beneficial for the large brainstorming sessions which defined several of the concepts
-available today on Urban Sketcher, as with the series of User Tests which took place both in
-Glasgow Scotland and Lisbon Portugal.
-These tests served to get feedback on interface design and the
-navigation modes available at the time: first person and compass modes and the multimodal flight mode.
+%IMPROVE was beneficial for the large brainstorming sessions which defined several of the concepts
+%available today on Urban Sketcher, as with the series of User Tests which took place both in
+%Glasgow Scotland and Lisbon Portugal.
+%These tests served to get feedback on interface design and the
+%navigation modes available at the time: first person and compass modes and the multimodal flight mode.
 
 Several IMPROVE related publications were written as result of this project, such as  \cite{IMPROVE1} \cite{IMPROVE2} \cite{IMPROVE3}.
-%A more 
+A more 
 %\TODO{MORE IMPROVE. MAYBE INT TESTS SHOULD GO TO IMPLEMENTATION?}
 
 
-\subsection{Test Environments}
-
-The first Glasgow test occurred between the 16th and the 19th of April 2007 at the Glasgow Caledonian University.
-A hand-made screen frame was mounted and one infrared camera calibrated behind the screen.
-One regular XVGA projector was used with forward projection.
-
-The Lisbon tests took place between the 11th and 12th of June 2007 and focused on evaluating collaboration tasks.
-For these tests the Instituto Superior Técnico Multimedia Lab was used\cite{LEME}. It has a structure of 4 by 3 projectors
-behind a translucent screen. The projection was performed from the back, with two infrared cameras mounted on the
-projector structure so a bigger portion of the screen could be tracked.
-
-The second Glasgow test occurred between the 16th and 19th of July 2007 at The Lighthouse building.
-This test was performed on a portable display and a projector set up for back projection along with one infrared camera
-for laser tracking.
-Four STT system cameras and reflective markers were used for tracking the user's arms.
-One Microsoft ZX-6000 wireless headset microphone was used to get the user's voice and the Microsoft Speech API 5.1
-American English version performed speech recognition to identify a set of commands issued by users.
+%\subsubsection{Test Environments}
+%
+%The first Glasgow test occurred between the 16th and the 19th of April 2007 at the Glasgow Caledonian University.
+%A hand-made screen frame was mounted and one infrared camera calibrated behind the screen.
+%One regular XVGA projector was used with forward projection.
+%
+%The Lisbon tests took place between the 11th and 12th of June 2007 and focused on evaluating collaboration tasks.
+%For these tests the Instituto Superior Técnico Multimedia Lab was used\cite{LEME}. It has a structure of 4 by 3 projectors
+%behind a translucent screen. The projection was performed from the back, with two infrared cameras mounted on the
+%projector structure so a bigger portion of the screen could be tracked.
+%
+%The second Glasgow test occurred between the 16th and 19th of July 2007 at The Lighthouse building.
+%This test was performed on a portable display and a projector set up for back projection along with one infrared camera
+%for laser tracking.
+%Four STT system cameras and reflective markers were used for tracking the user's arms.
+%One Microsoft ZX-6000 wireless headset microphone was used to get the user's voice and the Microsoft Speech API 5.1
+%American English version performed speech recognition to identify a set of commands issued by users.
 
 \begin{figure}[ht]
 	\centering
@@ -56,9 +58,9 @@ American English version performed speech recognition to identify a set of comma
 \end{figure}
 
 
-\subsection{Results}
+%\subsubsection{Results}
 
-The test at Caledonian provided feedback about the first person and compass navigation modes.
+The test at Caledonian University provided feedback about the first person and compass navigation modes.
 The layout of the first person mode was changed as a result of this test --
 its gates layout used to mimic the three axes for movement and had
 rotation gates in between. These were changed to the cleaner design we have today.
@@ -68,14 +70,14 @@ The Lisbon tests focused on testing collaborative tasks. Users were put in front
 for the completion of navigation, annotation writing and object manipulation tasks.
 %It proved the system could handle collaborative design and review tasks.
 %\TODO{MORE?}
-The Lighthouse test focused on testing the flight navigation mode. One user had to wear four velcro fabric strips
+The Glasgow Lighthouse test focused on testing the flight navigation mode. One user had to wear four velcro fabric strips
 with reflective markers and a wireless microphone. A 3 by 3 meters area in front of the screen was tracked by
 motion tracking cameras.
 %\TODO{...}
 
 
 
-\section{Final Tests}
+\subsection{Final Tests}
 
 %\subsection{Objectives}
 
@@ -92,7 +94,7 @@ many problems by the convenient grouping of actions in both the main and context
 along with the alternate method for applying operations on shapes and navigating the scene.
 
 
-\subsection{Conditions}
+\subsubsection{Conditions}
 
 The final tests were conducted months after the ones described above, with the system fully centered on Urban Sketcher
 objectives and features. The most notorious features were tested in a series of small tasks: two for navigation,
@@ -106,13 +108,12 @@ On the other hand Urban Sketcher tests are to be performed on a large screen dis
 and an \emph{ad hoc} laser tracking system, with a set of novel interface concepts.
 
 
-\subsection{Test Environment}
+\subsubsection{Test Environment}
 
 The final tests took place on the Instituto Superior Técnico Multimedia Lab between the 28th of June and 1st of July 2008.
 The tests were performed with the same environment as the Lisbon IMPROVE test described above -- a large display screen
 of 4 by 3 projectors on a translucent screen. The laser tracking system was calibrated to get only laser information
 from about 1/3 of the screen area. During the 4 days period they took place, 16 users performed the tasks described below.
-The task description documents and questionnaires can be found on appendix \ref{finalTests}.
 Out of the user sample,
 94\% of the users had college degrees,
 31\% were women and the average user age was 37 years old.
@@ -130,9 +131,8 @@ and five open-ended questions, the former to obtain feedback regarding the Urban
 focused on comparing the two systems.
 
 
-\TODO{MULTIMEDIA WALL DIAGRAM, GLASGOW WALL DIAGRAM?}
 
-\subsection{Results}
+\subsubsection{Results}
 
 During the tests, task completion times were measured in minutes and both user errors and system unexpected events were
 logged. On table \ref{table-times} the summary of times for completing all the tasks is listed.
@@ -142,20 +142,14 @@ The whiskers define the range of sampled results, while the box ends mark the 25
 The diamond marks the average value. Blue boxes were used on Urban Sketcher, gray ones on Google SketchUp.
 
 
-\begin{table}[!ht]
+\begin{table}[htb]
 	\centering
-		\includegraphics[scale=0.6]{gfx/eval/table-times.png}
+	\includegraphics[width=\columnwidth]{gfx/eval/table-times.png}
 	\caption{Task completion times on Urban Sketcher and Google SketchUp}
 	\label{table-times}
 \end{table}
 
 
-\begin{figure}[!ht]
-	\centering
-		\includegraphics[scale=0.5]{gfx/eval/bw-times2.png}
-	\caption{Box and whiskers charts comparing task completion times on both systems}
-	\label{graph-comparison}
-\end{figure}
 
 
 Tasks performed on both systems were expected to show discrepancies in both completion time
@@ -171,47 +165,53 @@ The questionnaires feature a total of 18 close-ended scaled questions. These had
 1 meaning complete disagreement to/infrequent statement and 6 completely agree/very frequent. Out of these questions,
 the first five tested the users past experience in relevant topics and the remaining 13 got feedback on using Urban Sketcher.
 Additionally, five open-ended questions were given at the end, focusing on the comparison of both systems.
-
 The translated questions and their results are listed on tables \ref{table-questions18} (close ended) and \ref{table-questions5} (open ended). Its responses were analyzed and clustered.
-To aid in the interpretation of these results, charts \ref{graph-quantified} and \ref{graph-pies} were respectively created.
+%To aid in the interpretation of these results, the charts \ref{graph-quantified} was created.
 
-\begin{table}[!ht]
+\begin{table}[htb]
 	\centering
-		\includegraphics[scale=0.6]{gfx/eval/table-questions18.png}
+	\includegraphics[width=0.8\columnwidth]{gfx/eval/table-questions18.png}
 	\caption{Preliminary and Final Questionnaire close-ended questions and results}
 	\label{table-questions18}
 \end{table}
 
-
-\begin{figure}[!ht]
+\begin{table}[htb]
 	\centering
-		\includegraphics[scale=0.5]{gfx/eval/bw-questions.png}
-		\caption{Box and whiskers charts illustrating close-ended answers}
-	\label{graph-quantified}
-\end{figure}
-
-
-\begin{table}[!ht]
-	\centering
-		\includegraphics[scale=0.6]{gfx/eval/table-questions5.png}
-		\caption{Final Questionnaire open-ended questions and clustered answers}
+	\includegraphics[width=0.8\columnwidth]{gfx/eval/table-questions5.png}
+	\caption{Final Questionnaire open-ended questions and clustered answers}
 	\label{table-questions5}
 \end{table}
 
-
-\begin{figure}[!ht]
+\begin{figure}[htb]
 	\centering
-		\includegraphics[scale=0.5]{gfx/eval/graph-pies.png}
-		\caption{Pie charts illustrating the clustered open-ended answers}
-	\label{graph-pies}
+	\includegraphics[width=0.8\columnwidth]{gfx/eval/bw-times2.png}
+	\caption{Box and whiskers charts comparing task completion times on both systems}
+	\label{graph-comparison}
 \end{figure}
+
+
+%\begin{figure}[htb]
+%	\centering
+%	\includegraphics[width=\columnwidth]{gfx/eval/bw-questions.png}
+%	\caption{Box and whiskers charts illustrating close-ended answers}
+%	\label{graph-quantified}
+%\end{figure}
+
+
+
+
+%\begin{figure}[htb]
+%	\includegraphics[width=\columnwidth]{gfx/eval/graph-pies.png}
+%	\caption{Pie charts illustrating the clustered open-ended answers}
+%	\label{graph-pies}
+%\end{figure}
 
 
 %\subsection{Discussion}
 
 % US vs GSO - tempos, diferenças, issues
 
-\subsubsection{Task Performance and Issues}
+%\subsubsection{Task Performance and Issues}
 
 When looking at the time it took users to complete the tasks,
 Urban Sketcher took between 50\% and 83\% more time than Google SketchUp.
@@ -235,7 +235,7 @@ Only a small set of individual problems occurred and users felt satisfied by the
 which they instanced buildings and assets.
 
 
-\subsubsection{Close-ended Answers Analysis}
+%\subsubsection{Close-ended Answers Analysis}
 
 % perguntas fechadas - 1o mais certas, depois mais favoráveis
 The familiarity of users with 3D software and CAD proved to be low and the usage of 3D first person games disparate (P3, P2, P1).
@@ -254,24 +254,21 @@ Due to the slow capturing frequency, strokes had to be drawn slowly, otherwise t
 This problem was emphasized when performing apply-to-scene operations such as re-centering the examine center of interest or instancing new shapes which required continuity of stroke.
 
 
-\subsubsection{Open-ended Answers Analysis}
+%\subsubsection{Open-ended Answers Analysis}
 
 Most users held the laser tracking facilities responsible for some dissatisfaction and slowness in performing the tasks
-when comparing with Google SketchUp (81\% of the users, O1).
+when comparing with Google SketchUp (81\% of the users).
 13\% of the users felt the novel interface unfamiliar therefore harder to master for a novice user while only 6\% elected
-Google SketchUp as the best interface (O2).
+Google SketchUp as the best interface.
 94\% of the users enjoyed the capacity of invoking menus as needed -- of these, 13\% pointed out that the navigation menu
 could be fixed to the screen due to its constant usage, though this screen allocation problem was result solely of the
-limited tracked area of screen -- if all screen was being tracked the menu could have remained there the whole time (O3).
+limited tracked area of screen -- if all screen was being tracked the menu could have remained there the whole time.
 Out of all the users, only 25\% state having trouble with the modeling tools. This is satisfactory since many users
 have shown low confidence at first when asked to perform the modeling tasks, ending up completing them with success and
-reasserting their beliefs regarding such tasks (O4). Several users felt this interface could be very effective on several domains
+reasserting their beliefs regarding such tasks. Several users felt this interface could be very effective on several domains
 for controlling large screen displays.
 
 It was shown that a stroke-based interface is capable of offering a set of complex actions and navigation modes to novice users
 with them successfully performing tasks in reasonable time frames. Most users identified the laser tracking input as an obstacle
 to an even better experience. This is a technical limitation which doesn't invalidate the application of these concepts and
 interface with other technologies such as large multi touch surfaces.
-
-
-% perguntas abertas - comparação?!

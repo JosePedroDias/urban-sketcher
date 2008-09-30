@@ -1,0 +1,74 @@
+\documentclass{acm_proc_article-sp}
+
+\renewcommand{\rmdefault}{ptm}
+%\usepackage[scaled=0.92]{helvet}
+\usepackage{helvet}
+\usepackage{courier}
+\normalfont % in case the EC fonts aren't available
+\usepackage[T1]{fontenc}
+\usepackage{ifpdf}
+
+%\usepackage[latin1]{inputenc}
+%\usepackage[english]{babel}
+
+%\ifpdf
+%	\usepackage[pdftex]{graphicx}
+%\else
+%	\usepackage{graphicx}
+%\fi
+
+%\usepackage{subfig}			% to allow several sub figures
+
+\usepackage{url}
+
+\ifpdf
+	\usepackage[pdftex,
+		pdftitle					= {Urban Sketcher: creating urban scenery using multimodal interfaces on large screen displays},
+		pdfauthor					= {Jose Pedro Dias},
+		bookmarks         = true,				% do bookmarks
+		bookmarksnumbered = true,				% keep sedtion numbers
+	%	pdfpagemode       = None,				% start with closed bookmarks
+		pdfstartview      = FitH,				% starting view scale
+	%	pdfpagelayout     = SinglePage,	% one page at a time
+		linkcolor					= black,			% links inside the document
+		citecolor					= black,			% for cites
+	%	linkcolor					= blue,				% links inside the document
+	%	citecolor					= red,				% for cites
+	%	urlcolor					= green,			% for urls
+		colorlinks        = true]{hyperref}
+\else
+	\usepackage{hyperref}
+\fi
+
+\numberofauthors{2}
+\author{
+	\alignauthor José Pedro Dias\\
+	    \affaddr{Instituto Superior Técnico}\\
+	    \affaddr{Av. Prof. Dr. Aníbal Cavaco Silva}\\
+			\affaddr{2744-016 Porto Salvo, Portugal}\\
+	    \affaddr{jose.dias@tagus.ist.utl.pt}
+	\alignauthor Joaquim A. Jorge\\
+	    \affaddr{Instituto Superior Técnico}\\
+	    \affaddr{Av. Rovisco Pais}\\
+	    \affaddr{1049-001 Lisboa, Portugal}\\
+	    \affaddr{jaj@inesc-id.pt}
+}
+    
+\title{Urban Sketcher: Creating Urban Scenery Using Multimodal Interfaces on Large Screen Displays}
+\begin{document}
+\maketitle
+
+\input{aliases}
+
+\input{ea-abstract}
+\input{ea-introduction}
+\input{ea-relwork}
+\input{ea-design}
+\input{ea-implementation}
+\input{ea-evaluation}
+\input{ea-conclusion}
+
+\bibliographystyle{plain}
+\bibliography{dissertation} 
+
+\end{document}

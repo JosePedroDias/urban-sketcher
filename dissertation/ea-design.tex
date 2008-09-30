@@ -1,10 +1,10 @@
-\chapter{Design}
+\section{Design}
 
 This section describes the proposed solution, the various modules which take part in the system and each module's responsibility.
 It also introduces concepts used extensively throughout the solution.
 
 
-\section{Proposed Solution}
+\subsection{Proposed Solution}
 
 Urban Sketcher is a system capable of controlling a large screen display,
 offering conventional laser pointers for users to be able to draw on the screen,
@@ -18,14 +18,14 @@ The heavy usage on such concepts drove the author to devise
 new ways of executing actions such as creating and editing shapes and buildings, scene navigation and note taking.
 Most actions span the lifetime of a laser stroke, making the system stroke-based.
 
-\begin{figure}[!ht]
-		\centering
-		\includegraphics[scale=0.6]{gfx/screen.png}
-		\caption{Urban Sketcher interaction scenario}
-		\label{fig:screen}
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.6\columnwidth]{gfx/screen.png}
+	\caption{Urban Sketcher interaction scenario}
+	\label{fig:screen}
 \end{figure}
 
-\section{System Architecture}
+\subsection{System Architecture}
 
 Urban Sketcher is a distributed application -- it is composed of several modules which can run on different machines,
 making use of a wired intranet network on the lab for the different modules to communicate.
@@ -37,24 +37,22 @@ modules for integrating input modalities establish standard interfaces so they c
 The core and middle-tier modules are modular mainly for abstraction purposes, dividing the complex problems of interface
 and content management into manageable solutions.
 
-For easing up the development and flexibility, the system is able to run on a simple laptop machine with some of its
-modules disabled. On such setups the computer mouse generates events similar to the laser.
+%For easing up the development and flexibility, the system is able to run on a simple laptop machine with some of its
+%modules disabled. On such setups the computer mouse generates events similar to the laser.
 
 Urban Sketcher composed of a set of modules, most of them implemented as singleton classes
 for managing subsets of the functionality. The interaction between system components is illustrated
 on Figure \ref{fig:block-diagram}.
 Modules implemented by the author are shaded blue, while integrated modules are shaded green.
-
-\begin{figure}[!ht]
-		\centering
-		\includegraphics[scale=0.4]{gfx/charts/internal-block-diagram.png}
-		\caption{Urban Sketcher Architecture Diagram}
-		\label{fig:block-diagram}
-\end{figure}
-
 A set of input adapters get data from several media -- laser strokes,
 speech commands and motion tracked markers' coordinates.
 These adapters generate commands which are consumed by higher level managers.
+
+\begin{figure}[htb]
+	\includegraphics[width=\columnwidth]{gfx/charts/internal-block-diagram.png}
+	\caption{Urban Sketcher Architecture Diagram}
+	\label{fig:block-diagram}
+\end{figure}
 
 \textbf{Strokes} are managed and at low level, with key stroke gestures triggering commands.
 A shape recognition engine named \textbf{Cali} \cite{CALI} was integrated to provide shape detection on two
@@ -85,13 +83,12 @@ Both shapes and 2D widgets know how to render themselves using OpenSG, so they b
 \textbf{3D Scene Management} handles the representation of the virtual world and is controlled by both the Shape and Navigation
 managers.
 
-\section{Urban Sketcher Input/Output Communication}
+\subsection{Input/Output Communication}
 
-\begin{figure}[!ht]
-		\centering
-		\includegraphics[scale=0.4]{gfx/charts/external-block-diagram.png}
-		\caption{Urban Sketcher input/output Diagram}
-		\label{fig:ext-block-diagram}
+\begin{figure}[htb]
+	\includegraphics[width=\columnwidth]{gfx/charts/external-block-diagram.png}
+	\caption{Urban Sketcher input/output Diagram}
+	\label{fig:ext-block-diagram}
 \end{figure}
 
 Urban Sketcher gets input from the following media (see Fig.\ref{fig:ext-block-diagram}):
@@ -103,7 +100,6 @@ so rendering solely on the server, to a large screen display or both is a matter
 
 Both the speech command and tracking postures input listeners are fed by simple
 applications of the available APIs from respectively Microsoft and STT.
-
 STT is a hardware vendor of motion tracking systems and STT hardware was used during the development of this project,
 along with various two and four camera tracking setups. Its software was used for calibrating the cameras and tracking
 reflective markers.
@@ -117,7 +113,7 @@ Since several users might be interacting simultaneously, a Kalman filter was use
 to predict the path of each laser input and discriminate different strokes.
 Development of the laser tracking module is work done by Ricardo Jota \cite{IMMIVIEW-EPCG}.
 
-\section{Stroke-Based Input Interface}
+\subsection{Stroke-Based Input Interface}
 
 This section details the concepts used for the implementation of the system user interface.
 
@@ -133,7 +129,7 @@ This limitation sets an important assumption in our system -- one can not know w
 from the same user, therefore operations must take place during lifespan of a drawn stroke.
 
 
-\subsection{Gates}
+\subsubsection{Gates}
 
 The most common activation action in current Graphical User Interface (GUI) computer interactions works
 by displaying a button on the screen and the user activating it by pressing the pointer device's button.
@@ -142,7 +138,6 @@ using them instead of mice or track balls -- while a user isn't pressing the las
 neither the system nor the user can accurately know where on the screen the laser is pointing to.
 In order for the user to see the laser projection on the screen he must be pressing the button.
 This system requires a different GUI solution.
-
 Based on prior research by Apitz and Guimbretière \cite{CROSSY04},
 the gate concept was implemented with slight changes.
 The former idea was for actions to be activated by crossing an area by its explicitly drawn edges.
@@ -164,10 +159,10 @@ To help novice users to learn the function of each gate, a tooltip appears on ga
 that is, when approaching the gate's area of influence without crossing it. This way the tooltip can be read and the action optionally avoided.
 
 
-\begin{figure}[ht]
+\begin{figure}[htb]
 	\centering
-		\includegraphics{gfx/activation.png}
-		\caption{Gate activation}
+	\includegraphics[width=0.25\columnwidth]{gfx/activation.png}
+	\caption{Gate activation}
 	\label{fig:activation}
 \end{figure}
 
@@ -175,7 +170,6 @@ that is, when approaching the gate's area of influence without crossing it. This
 Though gates are a formally rigid concept, its implementation is just an approximation:
 users can easily stay oblivious of these, keeping as bottom line the idea
 of scribbling over the desired gate to activate it. 
-
 With a set of distinguishable and clearly purposed illustrations such as those designed for the
 Urban Sketcher system, gates can easily recognized and their purpose learned.
 A gate can be repeatedly triggered for precision operations, as several gates can be sequentially
@@ -183,7 +177,7 @@ activated for achieving a complex state or action.
 
 
 
-\subsection{Menus}
+\subsubsection{Menus}
 
 The menus of this system are ring-shaped, with its options spread along the ring in the form or gates.
 The menu's background ring is translucent so the main viewport remains visible.
@@ -193,9 +187,9 @@ On the bottom-right area a curved label identifies the menu title.
 The top-right area features additional gates for the dismissal of the menu, moving it around and
 returning to the main menu if at a subsequent level (see Fig.\ref{fig:menu}).
 
-\begin{figure}[ht]
+\begin{figure}[htb]
 	\centering
-		\includegraphics[scale=0.6]{gfx/menu.png}
+	\includegraphics[width=0.45\columnwidth]{gfx/menu.png}
 	\caption{Menu and its areas}
 	\label{fig:menu}
 \end{figure}
@@ -214,42 +208,38 @@ he intends to reach from a smaller, filtered set of gates.
 
 
 
-\subsection{Stroke Gestures}
+\subsubsection{Stroke Gestures}
 
-To invoke the main menu the user needs to draw a closed stroke resembling a triangle (see Fig.\ref{fig:triangle}).
+To invoke the main menu the user needs to draw a closed stroke resembling a triangle.
 When such stroke is drawn one main menu instance appears centered on it.
-
-\begin{figure}[ht]
-	\centering
-		\includegraphics[scale=0.75]{gfx/triangle.png}
-	\caption{Main menu stroke}
-	\label{fig:triangle}
-\end{figure}
-
-
 Besides menus derived from the main menu tree -- which is invoked as we've just seen by drawing a closed triangle stroke --
 there are menus which allow operating on existing shapes on the 3D world.
 These are called contextual menus and they can be invoked by selecting a desired shape's face or edge.
 To select a face one has to draw a small stroke starting and ending inside the face.
-To select an edge one has to draw a small stroke starting on one of the edge's neighboring faces and ending at the remaining one, effectively crossing the edge to select it (see Fig.\ref{fig:face-edge-selection}).
+To select an edge one has to draw a small stroke starting on one of the edge's neighboring faces and ending at the remaining one, effectively crossing the edge to select it.
+
+%\begin{figure}[htb]
+%	\centering
+%	\includegraphics[width=0.15\columnwidth]{gfx/triangle.png}
+%	\caption{Main menu stroke}
+%	\label{fig:triangle}
+%\end{figure}
+%
+%\begin{figure}[htb]
+%	\includegraphics[width=\columnwidth]{gfx/face-edge-selection.png}
+%	\caption{Edge and Face selection}
+%	\label{fig:face-edge-selection}
+%\end{figure}
 
 
-\begin{figure}[ht]
-	\centering
-		\includegraphics[scale=0.75]{gfx/face-edge-selection.png}
-		\caption{Edge and Face selection}
-	\label{fig:face-edge-selection}
-\end{figure}
-
-
-\subsection{Main Menu vs Contextual Menu}
+%\subsubsection{Main Menu vs Contextual Menu}
 
 Every action which generates new shapes is accessible from the main menu.
 Actions which change existing contents are available from context menus for face and edge.
 This segmentation rule was enforced so users know where to search when in need of an untried operation.
 
 
-\section{Multimodal Input Interface}
+\subsection{Multimodal Input Interface}
 \label{MMODAL-ITF}
 
 Using laser input allows the usage of all system's functionalities.
@@ -258,22 +248,22 @@ The arms are tracked by attaching two reflective markers on each arm: one on eac
 Speech commands are obtained from a wireless headset attached to the user's ear (see Fig.\ref{fig:markers2}).
 
 
-\begin{figure}[ht]
+\begin{figure}[htb]
 	\centering
-		\includegraphics[scale=1.15]{gfx/markers2.png}
+	\includegraphics[width=0.6\columnwidth]{gfx/markers2.png}
 	\caption{A user with reflective markers and wireless headset}
 	\label{fig:markers2}
 \end{figure}
 
 
-\section{Content Creation Concepts}
+\subsubsection{Content Creation Concepts}
 
 The interaction between 2D menu based interface and the underlying projection of the virtual scene required a way of transferring
 selected options to the scene and a dynamic way of specifying the parameters of a building so it can be easily created.
 To provide such mechanisms to work, two content creation concepts were created.
 
-\subsection{Apply-to-Scene Creation}
-\label{design:apply-to-scene}
+%\subsection{Apply-to-Scene Creation}
+%\label{design:apply-to-scene}
 
 Several menus allow the selection of options (such as shapes or building styles), triggered from a menu.
 The destination of such choice must be mapped into an object on the scene, therefore the concept of drag and drop was extended
@@ -287,44 +277,21 @@ if the stroke ended that particular moment (see Fig.\ref{fig:apply-to-scene}).
 To figure out the actual location for the shape during the task the shape is iteratively collided against the
 existing scene geometry so it stays in touch with the environment.
 
-\begin{figure}[ht]
+\begin{figure}[htb]
 	\centering
-		\includegraphics[scale=0.5]{gfx/apply-to-scene.png}
+	\includegraphics[width=0.7\columnwidth]{gfx/apply-to-scene.png}
 	\caption{Apply-to-scene procedure - creating a shape}
 	\label{fig:apply-to-scene}
 \end{figure}
 
-\begin{figure}[ht]
-	\centering
-		\includegraphics[scale=0.4]{gfx/building.png}
+\begin{figure}[htb]
+	\includegraphics[width=\columnwidth]{gfx/building.png}
 	\caption{Building creation procedure}
 	\label{fig:building}
 \end{figure}
-%
-%\begin{figure}[ht]
-%	\centering
-%	\subfloat[Apply-to-scene procedure - creating a shape]{
-%		\label{fig:apply-to-scene}
-%		\includegraphics[scale=0.3]{gfx/apply-to-scene.png}
-%	}
-%	\subfloat[Building creation procedure]{
-%		\label{fig:building}
-%		\includegraphics[scale=0.2]{gfx/building.png}
-%	}
-%	\caption{Content Creation Concepts}
-%\end{figure}
 
-%
-%\begin{figure}[ht]
-%	\centering
-%		\label{fig:apply-to-scene}
-%		\includegraphics[scale=0.5]{gfx/apply-to-scene.png}
-%		\label{fig:building}
-%		\includegraphics[scale=0.4]{gfx/building.png}
-%\end{figure}
-
-\subsection{Instancing a Building}
-\label{design:building}
+%\subsection{Instancing a Building}
+%\label{design:building}
 
 To create a building one has to feed the system three parameters: building style, blueprint and height.
 Due to the system decision for stroke-driven actions without global state, these three parameters are given with the
