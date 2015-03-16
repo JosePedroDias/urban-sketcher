@@ -1,0 +1,5 @@
+My thesis aims at developing a program to allow the creation of buildings in urban sceneries making use of multimodal interfaces. My project was made part of the Improve consortium (read the first entry of my blog, http://urbansketcher.blogspot.com for an extensive explanation of Improve and the whole project), a group of european universities and companies, the former providing developers and scientific innovation; the latter providing experience in the fields of architecture and the automotive industry.
+
+Being part of Improve, the project inherits requirements both in terms of functionalities to provide, hardware to use and a set of frameworks to work on.
+
+My program is intended to be run in a collaborative scenario where both people using tablet PCs and using a laser pointer in front of the powerwall (consists of a cluster of 4 x 3 projectors and their controlling computers, set up in Lourenço Fernandes lab at IST Tagus Park) can generate and manipulate buildings, navigate the city and read or post annotations on the geometry of the world.
